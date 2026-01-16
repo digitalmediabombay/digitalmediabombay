@@ -1970,123 +1970,80 @@ const BrandScroller = () => {
 
 
 const Footer = () => (
-
   <footer className="bg-[#050c18] border-t border-slate-800 pt-16 pb-8">
-
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-x-20">
-
-        {/* Column 1: Logo Section - Redirects to Home */}
-
+        
+        {/* Column 1: Logo Section */}
         <div className="col-span-1">
-
-          <img 
-
-            src="footlogo.png" 
-
-            alt="Digital Media Bombay Logo" 
-
-            onClick={() => navigateTo('home')}
-
-            className="h-40 w-auto object-contain mb-0 opacity-90 hover:opacity-100 transition-opacity cursor-pointer" 
-
-            style={{ filter: 'brightness(0) invert(1)' }} 
-
-          />
-
-          <span 
-
-            onClick={() => navigateTo('home')}
-
-            className="font-bold text-2xl tracking-tight text-white block whitespace-nowrap cursor-pointer"
-
+          <div 
+            onClick={() => navigateTo('home')} 
+            className="flex-shrink-0 cursor-pointer group mb-4"
           >
-
+            {/* Logo size increased from h-20 to h-60 (and w-auto for aspect ratio) */}
+            <img 
+              src="/logo.png" 
+              alt="Digital Media Bombay Logo" 
+              className="h-60 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+            />
+          </div>
+          
+          <span 
+            onClick={() => navigateTo('home')}
+            className="font-bold text-2xl tracking-tight text-white block whitespace-nowrap cursor-pointer"
+          >
             DIGITAL MEDIA <span className="text-amber-400">BOMBAY</span>
-
           </span>
-
-          <p className="mt-4 text-slate-400 text-sm">Mumbai's first AI-Powered Smart Agency. We combine top 1% human talent with advanced automation.</p>
-
+          
+          <p className="mt-4 text-slate-400 text-sm leading-relaxed">
+            Mumbai's first AI-Powered Smart Agency. We combine top 1% human talent with advanced automation.
+          </p>
+          
           <div className="flex space-x-4 mt-6">
-
-  <Facebook className="text-slate-400 hover:text-blue-600 cursor-pointer transition-colors" onClick={() => window.open('https://facebook.com/digitalmediabombay', '_blank')} />
-
-  <Instagram className="text-slate-400 hover:text-pink-500 cursor-pointer transition-colors" onClick={() => window.open('https://instagram.com/digitalmediabombay', '_blank')} />
-
-  <Linkedin className="text-slate-400 hover:text-blue-500 cursor-pointer transition-colors" onClick={() => window.open('https://linkedin.com/company/digitalmediabombay', '_blank')} />
-
-  <Twitter className="text-slate-400 hover:text-white cursor-pointer transition-colors" onClick={() => window.open('https://x.com/digitalmediabom', '_blank')} />
-
-<MessageCircle className="text-slate-400 hover:text-green-500 cursor-pointer transition-colors" onClick={() => window.open('https://wa.me/918850739933', '_blank')} />
-
-  <Mail className="text-slate-400 hover:text-white cursor-pointer transition-colors" onClick={() => window.open('mailto:digitalmediabombay@gmail.com', '_blank')} />
-
-</div>
-
+            <Facebook className="text-slate-400 hover:text-blue-600 cursor-pointer transition-colors" onClick={() => window.open('https://facebook.com/digitalmediabombay', '_blank')} />
+            <Instagram className="text-slate-400 hover:text-pink-500 cursor-pointer transition-colors" onClick={() => window.open('https://instagram.com/digitalmediabombay', '_blank')} />
+            <Linkedin className="text-slate-400 hover:text-blue-500 cursor-pointer transition-colors" onClick={() => window.open('https://linkedin.com/company/digitalmediabombay', '_blank')} />
+            <Twitter className="text-slate-400 hover:text-white cursor-pointer transition-colors" onClick={() => window.open('https://x.com/digitalmediabom', '_blank')} />
+            <MessageCircle className="text-slate-400 hover:text-green-500 cursor-pointer transition-colors" onClick={() => window.open('https://wa.me/918850739933', '_blank')} />
+            <Mail className="text-slate-400 hover:text-white cursor-pointer transition-colors" onClick={() => window.open('mailto:digitalmediabombay@gmail.com', '_blank')} />
+          </div>
         </div>
 
         <div className="md:pl-10">
-
           <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Our Services</h3>
-
           <ul className="space-y-3 text-slate-400 text-sm">
-
             {servicesList.map((service) => (
-
               <li key={service.id} className="hover:text-cyan-400 cursor-pointer transition-colors" onClick={() => navigateTo('services')}>
-
                 {service.title}
-
               </li>
-
             ))}
-
           </ul>
-
         </div>
 
         <div className="md:pl-10">
-
           <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Locations</h3>
-
           <ul className="space-y-3 text-slate-400 text-sm">
-
             <li className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-400 rounded-full"></div> Mumbai (HQ)</li>
-
             <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> New York (Sales)</li>
-
             <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> London (Support)</li>
-
           </ul>
-
         </div>
 
         <div className="md:pl-10">
-
           <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Company</h3>
-
           <ul className="space-y-3 text-slate-400 text-sm">
-
             <li className="hover:text-cyan-400 cursor-pointer" onClick={() => navigateTo('about')}>About Us</li>
-
             <li className="hover:text-cyan-400 cursor-pointer" onClick={() => navigateTo('freelancer')}>Freelancer Login</li>
-
             <li className="hover:text-cyan-400 cursor-pointer" onClick={() => navigateTo('privacy')}>Privacy Policy</li>
-
             <li className="hover:text-cyan-400 cursor-pointer" onClick={() => navigateTo('terms')}>Terms of Service</li>
-
           </ul>
-
         </div>
-
       </div>
 
-      <div className="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">&copy; {new Date().getFullYear()} Digital Media <span className="text-amber-400">Bombay.</span> All rights reserved.</div>
-
+      <div className="mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+        &copy; {new Date().getFullYear()} Digital Media <span className="text-amber-400">Bombay.</span> All rights reserved.
+      </div>
     </div>
-
 
 
     {/* MASTER SEO ENGINE - RANKING FOR MUMBAI, INDIA, AND GLOBAL */}
