@@ -121,7 +121,7 @@ const blogPosts = [
     date: "January 17, 2026",
     category: "Agency News",
     author: "Kaleem Shaikh",
-    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1080",
+    img: "dmblaunch.png",
     excerpt: "The wait is over. Digital Media Bombay officially launches today, bringing a new era of AI-integrated marketing and 3D web experiences to the global stage.",
     content: `<h3>The Future is Here: Media Bombay Starts Now</h3><p>Today marks a historic milestone in the Mumbai tech scene. Digital Media Bombay has officially launched its full suite of services, moving from a specialized lab to a global powerhouse. Founded by Kaleem Shaikh, the agency is built on the philosophy of 'Hybrid Intelligence'—merging the raw hustle of Mumbai with the precision of Silicon Valley AI.</p><h3>Why Digital Media Bombay?</h3><p>While traditional agencies are still figuring out 2024 tactics, we are operating in the heart of 2026. Our launch introduces the 'Global ROI Engine,' a proprietary system that allows businesses in India to scale into US and UK markets with zero friction. We aren't just an agency; we are a digital transformation partner for the next generation of billionaires.</p><h3>Our Mission</h3><p>We are here to prove that world-class 3D web development and AI automation don't need a New York price tag. From our headquarters in Mumbai, we are delivering elite digital assets that dominate search results and social feeds across the planet.</p>`,
     keywords: "Digital Media Bombay Launch, Media Bombay, Kaleem Shaikh, Best AI Agency Mumbai, Global Marketing Launch 2026, Digital Media Bombay Services"
@@ -132,7 +132,7 @@ const blogPosts = [
     date: "January 16, 2026",
     category: "Social Media",
     author: "Social Squad",
-    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080",
+    img: "aicore.png",
     excerpt: "In 2026, the walls between Instagram, TikTok, and X have crumbled. Learn how AI-driven distribution is the key to viral growth.",
     content: `<h3>The New Social Ecosystem</h3><p>By mid-January 2026, we've seen a massive shift toward cross-platform AI synchronization. At Digital Media Bombay, we no longer create for one app. We create 'Master Assets' that our AI engines automatically reshape for every social platform, ensuring brand consistency and maximum reach.</p><h3>Native vs. Synthetic Content</h3><p>The 2026 algorithms now prioritize 'Synthetic Authenticity.' This means using AI to enhance your real-world video footage. Our labs in Mumbai have perfected the 'Infinite Reel'—a single video that branches into 50 different variations based on the viewer's personal interests.</p>`,
     keywords: "Social Media Strategy 2026, AI Content Distribution, Viral Marketing Mumbai, Digital Media Bombay Social, Cross-Platform Marketing"
@@ -143,7 +143,7 @@ const blogPosts = [
     date: "January 15, 2026",
     category: "Digital Media",
     author: "Digital Media Bombay",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1080",
+    img: "pms.png",
     excerpt: "Stop reacting to trends. Digital Media Bombay explains how predictive modeling is securing top ad placements before they trend.",
     content: `<h3>The Shift to Proactive Media</h3><p>Waiting for a trend to go viral before jumping on it is a 2024 mistake. In 2026, Digital Media Bombay uses predictive neural networks to forecast cultural shifts in Mumbai and London. We buy ad space on topics 48 hours before the rest of the world even knows they exist.</p><h3>The ROI of Foresight</h3><p>By leveraging these 'Early-Bird' algorithms, our clients are seeing a 400% decrease in CPC (Cost Per Click). We are helping brands own the conversation rather than just joining it.</p>`,
     keywords: "Predictive Media 2026, Digital Media Trends, AI Ad Placements, Digital Media Bombay ROI, Future of Digital Media"
@@ -154,7 +154,7 @@ const blogPosts = [
     date: "January 14, 2026",
     category: "Digital Marketing",
     author: "Kaleem Shaikh",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1080",
+    img: "gbai.png",
     excerpt: "Generic ads are dead. Discover how Digital Media Bombay uses 'Hyper-Personalization' to speak to 10,000 customers individually.",
     content: `<h3>Marketing to the Individual</h3><p>In early 2026, the average consumer in Mumbai is exposed to over 15,000 digital touchpoints a day. To stand out, your marketing must be surgical. We use 'Deep-Data' to ensure that when a user sees an ad from Digital Media Bombay, it feels like it was written specifically for them.</p><h3>Scalable Personalization</h3><p>Using our custom AI LLMs, we generate personalized landing pages in real-time. If a user from South Mumbai visits your site, they see different imagery than a visitor from New York. This is not just marketing; it's digital psychology.</p>`,
     keywords: "Hyper-Personalization 2026, AI Digital Marketing, Personalized Ads India, Digital Media Bombay Strategy, Kaleem Shaikh Marketing"
@@ -165,7 +165,7 @@ const blogPosts = [
     date: "January 13, 2026",
     category: "SEO",
     author: "Digital Media Bombay",
-    img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1080",
+    img: "yttiktok.png",
     excerpt: "Video is the new text. If your videos aren't optimized for Search Engines, you're losing 70% of your potential traffic.",
     content: `<h3>SEO Beyond Google</h3><p>As of January 2026, TikTok and YouTube have surpassed Google as the primary search engines for Gen Z and Gen Alpha. Digital Media Bombay's 'Video-First' SEO strategy ensures your content is indexed within minutes of posting.</p><h3>AI Meta-Tagging</h3><p>We use AI to transcribe, tag, and chapter every second of your video content. This allows search engines to 'read' your videos. When someone in Mumbai searches for a service, our clients' videos appear as the top 'Suggested Answer' every single time.</p>`,
     keywords: "Video SEO 2026, TikTok Search Ranking, YouTube SEO Mumbai, Digital Media Bombay SEO, Search Engine Optimization India"
