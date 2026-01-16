@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://digitalmediabombay.in/sitemap.xml
+Sitemap: https://digitalmediabombay.com/sitemap.xml
