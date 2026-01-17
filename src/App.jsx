@@ -820,7 +820,7 @@ const App = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const [isLocationLocked, setIsLocationLocked] = useState(false);
+  const [isLocationLocked, setIsLocationLocked] = useState(true);
 
   const [currencySymbol, setCurrencySymbol] = useState('₹');
 
