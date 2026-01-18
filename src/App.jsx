@@ -105,6 +105,7 @@ import {
   Star
 
 } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 
@@ -4893,6 +4894,7 @@ const AIStrategyPage = () => {
 
   return (
     <div className="font-sans">
+      <SpeedInsights />
       <Header />
       <main>
         {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
