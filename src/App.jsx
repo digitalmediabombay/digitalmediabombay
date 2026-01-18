@@ -118,6 +118,28 @@ const blogPosts = [
 // --- NEW DOMINATION POSTS (JAN 13 - JAN 17, 2026) ---
 
   {
+    id: "mumbai-dubai-digital-corridor-2026",
+    title: "The Mumbai-Dubai Digital Corridor: New 2026 Trade Pact for Media Agencies",
+    date: "January 19, 2026",
+    category: "Digital Media",
+    author: "Kaleem Shaikh",
+    img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1080",
+    excerpt: "A historic digital trade agreement between India and the UAE has just been signed. Here is what it means for Mumbai's media exports.",
+    content: `<h3>Breaking: The Digital Silk Road of 2026</h3><p>Today, January 19, 2026, government officials in Mumbai and Dubai finalized the 'Digital Corridor' pact. This agreement removes barriers for digital service providers. At Digital Media Bombay, we are already seeing this as a massive win for our clients looking to expand into the Middle East.</p><h3>Zero-Tax Digital Exports</h3><p>This news is a game-changer for B2B lead generation. Mumbai agencies can now provide AI and Web services to UAE firms with simplified billing and zero-tax protocols. Kaleem Shaikh, founder of Digital Media Bombay, noted that this will solidify Mumbai's position as the primary tech-backend for the Gulf's 2030 vision.</p><h3>Global SEO Implications</h3><p>We are now optimizing campaigns to rank simultaneously in both Mumbai and Dubai markets, using cross-territory AI algorithms. If you are a brand in India, your reach just doubled overnight.</p>`,
+    keywords: "Mumbai Dubai Digital Corridor, Digital Trade Pact 2026, Media Agency India UAE, Digital Media Bombay International, Kaleem Shaikh News"
+  },
+  {
+    id: "google-quantum-sge-update-2026",
+    title: "Google's 'Quantum-SGE' Update Hits India: 90% of SEO Tactics Just Died",
+    date: "January 18, 2026",
+    category: "SEO",
+    author: "Digital Media Bombay",
+    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1080",
+    excerpt: "Google just rolled out its most aggressive AI search update yet. If your site isn't 'Quantum-Ready,' your rankings are about to vanish.",
+    content: `<h3>The Quantum Search Revolution</h3><p>On January 18, 2026, Google officially deployed the 'Quantum-SGE' update across the Indian subcontinent. This isn't just another core update; it's a total rewrite of how the internet is indexed. Traditional keyword stuffing is now officially obsolete.</p><h3>Intent-Mapping vs. Keywords</h3><p>The new algorithm uses quantum-processing to understand 'User Sentiment' rather than words. At Digital Media Bombay, we've spent the morning auditing our clients' sites to ensure they meet the new 'Real-Time Utility' scores. Websites that provide instant, AI-verified answers are jumping to Position Zero, while slow, fluff-filled blogs are losing 80% of their traffic.</p><h3>Is Your Brand Safe?</h3><p>Digital Media Bombay is currently the only agency in Mumbai with a 'Quantum-Ready' SEO framework. We use the latest LLM-Scrapers to verify your content against Google's new 2026 trust-signals before the update even settles.</p>`,
+    keywords: "Google Quantum SGE Update 2026, Future of SEO India, Google AI Search News, Digital Media Bombay SEO Lab, Best SEO Mumbai"
+  },
+  {
     id: "digital-media-bombay-launch-2026",
     title: "Digital Media Bombay Official Launch: Redefining India's Agency Landscape",
     date: "January 17, 2026",
