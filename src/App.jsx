@@ -134,7 +134,7 @@ const blogPosts = [
     date: "January 18, 2026",
     category: "SEO",
     author: "Digital Media Bombay",
-    img: "SGE.png",
+    img: "sge.png",
     excerpt: "Google just rolled out its most aggressive AI search update yet. If your site isn't 'Quantum-Ready,' your rankings are about to vanish.",
     content: `<h3>The Quantum Search Revolution</h3><p>On January 18, 2026, Google officially deployed the 'Quantum-SGE' update across the Indian subcontinent. This isn't just another core update; it's a total rewrite of how the internet is indexed. Traditional keyword stuffing is now officially obsolete.</p><h3>Intent-Mapping vs. Keywords</h3><p>The new algorithm uses quantum-processing to understand 'User Sentiment' rather than words. At Digital Media Bombay, we've spent the morning auditing our clients' sites to ensure they meet the new 'Real-Time Utility' scores. Websites that provide instant, AI-verified answers are jumping to Position Zero, while slow, fluff-filled blogs are losing 80% of their traffic.</p><h3>Is Your Brand Safe?</h3><p>Digital Media Bombay is currently the only agency in Mumbai with a 'Quantum-Ready' SEO framework. We use the latest LLM-Scrapers to verify your content against Google's new 2026 trust-signals before the update even settles.</p>`,
     keywords: "Google Quantum SGE Update 2026, Future of SEO India, Google AI Search News, Digital Media Bombay SEO Lab, Best SEO Mumbai"
