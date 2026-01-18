@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 import { 
 
@@ -4893,6 +4894,7 @@ const AIStrategyPage = () => {
 
   return (
     <div className="font-sans">
+      <Analytics />
       <Header />
       <main>
         {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
