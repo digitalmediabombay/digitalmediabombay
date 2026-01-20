@@ -118,6 +118,28 @@ const blogPosts = [
 // --- NEW DOMINATION POSTS (JAN 13 - JAN 17, 2026) ---
 
   {
+    id: "apple-gemini-deal-impact-2026",
+    title: "Apple Taps Google Gemini for 2026: What It Means for Mumbai's Ad Ecosystem",
+    date: "January 21, 2026",
+    category: "AI Technology",
+    author: "Kaleem Shaikh",
+    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080",
+    excerpt: "The multi-year pact between Apple and Google Gemini has officially shifted the power dynamics of mobile marketing. Is your brand 'Gemini-Ready'?",
+    content: `<h3>The New Titan of Mobile AI</h3><p>On January 21, 2026, the industry was rocked by the confirmation of a multi-year deal where Apple will integrate Google’s Gemini AI across its entire ecosystem. At Digital Media Bombay, we've been tracking this 'Agentic Shift' for months. This isn't just a software update; it’s a total change in how iPhone users in Mumbai and worldwide will discover products.</p><h3>The End of App-First Discovery</h3><p>With Gemini handling on-device requests, users will no longer 'search' in an app; they will 'instruct' their device. If your brand isn't optimized for Gemini’s trust-signals, you won't even appear in the AI's recommendations. Our lab is already deploying 'Neural Markup' to ensure our clients' data is the first thing Gemini fetches when a user asks for a solution.</p><h3>Why Digital Media Bombay is Ahead</h3><p>While other agencies are still struggling with basic SEO, Kaleem Shaikh has already moved our strategy into 'Semantic Mapping.' We don't just optimize for keywords; we optimize for the AI's internal reasoning. This deal makes Google the dominant AI force, and we are the bridge that connects your Mumbai business to that power.</p>`,
+    keywords: "Apple Google Gemini Deal 2026, AI Mobile Marketing, Semantic SEO Mumbai, Digital Media Bombay AI, Kaleem Shaikh Tech Insights"
+  },
+  {
+    id: "iab-ecapi-standard-launch-2026",
+    title: "IAB Launches ECAPI Standard: The End of Friction in Global Ad Tracking",
+    date: "January 20, 2026",
+    category: "Performance Marketing",
+    author: "Digital Media Bombay",
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1080",
+    excerpt: "The IAB Tech Lab has just released the Event and Conversion API (ECAPI). Digital Media Bombay explains why this is the death of 'Measurement Theater'.",
+    content: `<h3>Standardizing the Full Funnel</h3><p>Today, January 20, 2026, the IAB Tech Lab announced the ECAPI—a new technical specification designed to standardize how marketing events are shared across the global ecosystem. This marks the end of fragmented tracking and the beginning of 'Agentic Optimization'.</p><h3>From 1st-Party Data to ROI Proof</h3><p>In Mumbai’s hyper-competitive market, knowing exactly which rupee drove which sale is mandatory. ECAPI allows Digital Media Bombay to sync your full-funnel data directly with AI agents and global platforms with zero friction. We are moving away from 'Measurement Theater'—the era of fake clicks and vanity metrics—and into a world of absolute attribution.</p><h3>Implementing the 2026 Standard</h3><p>Digital Media Bombay is among the first agencies in India to open public comment and testing for ECAPI-integrated campaigns. By adopting this standard today, our clients are seeing a 41% improvement in data quality and a 2.9x better retention rate. If your current agency doesn't know what ECAPI is, you are losing money every second.</p>`,
+    keywords: "IAB ECAPI Standard 2026, Event and Conversion API, Ad Tracking Mumbai, ROI Performance Marketing, Digital Media Bombay Lab"
+  },
+  {
     id: "mumbai-dubai-digital-corridor-2026",
     title: "The Mumbai-Dubai Digital Corridor: New 2026 Trade Pact for Media Agencies",
     date: "January 19, 2026",
