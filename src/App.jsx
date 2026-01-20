@@ -123,7 +123,7 @@ const blogPosts = [
     date: "January 21, 2026",
     category: "AI Technology",
     author: "Kaleem Shaikh",
-    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080",
+    img: "applegoogle.png",
     excerpt: "The multi-year pact between Apple and Google Gemini has officially shifted the power dynamics of mobile marketing. Is your brand 'Gemini-Ready'?",
     content: `<h3>The New Titan of Mobile AI</h3><p>On January 21, 2026, the industry was rocked by the confirmation of a multi-year deal where Apple will integrate Google’s Gemini AI across its entire ecosystem. At Digital Media Bombay, we've been tracking this 'Agentic Shift' for months. This isn't just a software update; it’s a total change in how iPhone users in Mumbai and worldwide will discover products.</p><h3>The End of App-First Discovery</h3><p>With Gemini handling on-device requests, users will no longer 'search' in an app; they will 'instruct' their device. If your brand isn't optimized for Gemini’s trust-signals, you won't even appear in the AI's recommendations. Our lab is already deploying 'Neural Markup' to ensure our clients' data is the first thing Gemini fetches when a user asks for a solution.</p><h3>Why Digital Media Bombay is Ahead</h3><p>While other agencies are still struggling with basic SEO, Kaleem Shaikh has already moved our strategy into 'Semantic Mapping.' We don't just optimize for keywords; we optimize for the AI's internal reasoning. This deal makes Google the dominant AI force, and we are the bridge that connects your Mumbai business to that power.</p>`,
     keywords: "Apple Google Gemini Deal 2026, AI Mobile Marketing, Semantic SEO Mumbai, Digital Media Bombay AI, Kaleem Shaikh Tech Insights"
@@ -134,7 +134,7 @@ const blogPosts = [
     date: "January 20, 2026",
     category: "Digital Marketing",
     author: "Digital Media Bombay",
-    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080",
+    img: "metaads.png",
     excerpt: "Meta just released the 'Neural-Feed' update in India. If your ads don't trigger 'Positive Sentiment' within 0.2 seconds, you're paying for ghosts.",
     content: `<h3>Breaking: The End of the Traditional Ad Funnel</h3><p>On January 20, 2026, Meta (Facebook/Instagram) pushed their largest algorithm update in two years to the Indian market. They've moved to 'Neural-Bidding.' This means the algorithm no longer looks at your budget first; it looks at the physiological response of the user.</p><h3>Stopping the Scroll in 2026</h3><p>At Digital Media Bombay, we've decoded this update. If your creative doesn't hit specific 'Dopamine Triggers' in the first 0.2 seconds, the algorithm hides your ad to protect user experience. We are using our proprietary 'Sentiment-Testing Lab' in Mumbai to pre-validate every ad before it spends a single rupee.</p><h3>The Solution: Data-Driven Creativity</h3><p>Our Performance Ads team is already seeing a 60% drop in Lead Cost for clients who switched to our 'Neural-Ready' creatives today. Stop guessing and start using the science of the 2026 feed. Digital Media Bombay is the only agency in Maharashtra currently certified in Neural-Ad Architecture.</p>`,
     keywords: "Meta Neural Ads 2026, Instagram Algorithm Update, Digital Media Bombay Performance, Best Digital Agency Mumbai, Performance Marketing News"
