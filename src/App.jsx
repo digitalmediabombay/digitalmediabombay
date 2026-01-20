@@ -129,15 +129,15 @@ const blogPosts = [
     keywords: "Apple Google Gemini Deal 2026, AI Mobile Marketing, Semantic SEO Mumbai, Digital Media Bombay AI, Kaleem Shaikh Tech Insights"
   },
   {
-    id: "iab-ecapi-standard-launch-2026",
-    title: "IAB Launches ECAPI Standard: The End of Friction in Global Ad Tracking",
+    id: "meta-neural-ads-launch-2026",
+    title: "Meta's 'Neural Ad' Update: Why Your Instagram Ads Aren't Working Anymore",
     date: "January 20, 2026",
-    category: "Performance Marketing",
+    category: "Digital Marketing",
     author: "Digital Media Bombay",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1080",
-    excerpt: "The IAB Tech Lab has just released the Event and Conversion API (ECAPI). Digital Media Bombay explains why this is the death of 'Measurement Theater'.",
-    content: `<h3>Standardizing the Full Funnel</h3><p>Today, January 20, 2026, the IAB Tech Lab announced the ECAPI—a new technical specification designed to standardize how marketing events are shared across the global ecosystem. This marks the end of fragmented tracking and the beginning of 'Agentic Optimization'.</p><h3>From 1st-Party Data to ROI Proof</h3><p>In Mumbai’s hyper-competitive market, knowing exactly which rupee drove which sale is mandatory. ECAPI allows Digital Media Bombay to sync your full-funnel data directly with AI agents and global platforms with zero friction. We are moving away from 'Measurement Theater'—the era of fake clicks and vanity metrics—and into a world of absolute attribution.</p><h3>Implementing the 2026 Standard</h3><p>Digital Media Bombay is among the first agencies in India to open public comment and testing for ECAPI-integrated campaigns. By adopting this standard today, our clients are seeing a 41% improvement in data quality and a 2.9x better retention rate. If your current agency doesn't know what ECAPI is, you are losing money every second.</p>`,
-    keywords: "IAB ECAPI Standard 2026, Event and Conversion API, Ad Tracking Mumbai, ROI Performance Marketing, Digital Media Bombay Lab"
+    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080",
+    excerpt: "Meta just released the 'Neural-Feed' update in India. If your ads don't trigger 'Positive Sentiment' within 0.2 seconds, you're paying for ghosts.",
+    content: `<h3>Breaking: The End of the Traditional Ad Funnel</h3><p>On January 20, 2026, Meta (Facebook/Instagram) pushed their largest algorithm update in two years to the Indian market. They've moved to 'Neural-Bidding.' This means the algorithm no longer looks at your budget first; it looks at the physiological response of the user.</p><h3>Stopping the Scroll in 2026</h3><p>At Digital Media Bombay, we've decoded this update. If your creative doesn't hit specific 'Dopamine Triggers' in the first 0.2 seconds, the algorithm hides your ad to protect user experience. We are using our proprietary 'Sentiment-Testing Lab' in Mumbai to pre-validate every ad before it spends a single rupee.</p><h3>The Solution: Data-Driven Creativity</h3><p>Our Performance Ads team is already seeing a 60% drop in Lead Cost for clients who switched to our 'Neural-Ready' creatives today. Stop guessing and start using the science of the 2026 feed. Digital Media Bombay is the only agency in Maharashtra currently certified in Neural-Ad Architecture.</p>`,
+    keywords: "Meta Neural Ads 2026, Instagram Algorithm Update, Digital Media Bombay Performance, Best Digital Agency Mumbai, Performance Marketing News"
   },
   {
     id: "mumbai-dubai-digital-corridor-2026",
