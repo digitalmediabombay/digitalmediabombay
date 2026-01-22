@@ -123,7 +123,7 @@ const blogPosts = [
     date: "January 23, 2026",
     category: "AI Strategy",
     author: "Kaleem Shaikh",
-    img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1080",
+    img: "bot.png",
     excerpt: "The traditional App Store model is dying. In 2026, discovery happens inside AI conversations. Is your brand discoverable by an Agent?",
     content: `<h3>The Collapse of the App Click</h3><p>Today, January 23, 2026, industry reports confirmed that over 40% of global e-commerce transactions are now initiated by 'Agentic AI.' Users no longer download a brand’s app; they ask their personal AI agent to find and buy the best solution. At Digital Media Bombay, we call this <strong>Agentic Commerce</strong>.</p><h3>Optimization for the Machine Consumer</h3><p>We've spent the last 48 hours updating our clients' API backends to be 'Agent-Readable.' If an AI agent can't verify your inventory and pricing in milliseconds, your brand doesn't exist to the 2026 consumer. Kaleem Shaikh’s new 'Bot-SEO' framework ensures your business is the primary recommendation when an agent searches for services in Mumbai or New York.</p><h3>Why This Matters</h3><p>Clicks are no longer the metric of success—Conversations are. Digital Media Bombay is leading the transition from traditional web traffic to 'Agentic Flow,' ensuring your revenue scales even when humans aren't looking at a screen.</p>`,
     keywords: "Agentic AI 2026, AI Marketplaces, Agentic Commerce Mumbai, Digital Media Bombay Strategy, Future of E-commerce, Kaleem Shaikh AI"
@@ -134,7 +134,7 @@ const blogPosts = [
     date: "January 22, 2026",
     category: "Digital Media",
     author: "Social Squad",
-    img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1080",
+    img: "humver.png",
     excerpt: "As the internet becomes 90% AI-generated, trust has become the world's scarcest resource. Here is how Digital Media Bombay scales 'Realness'.",
     content: `<h3>Breaking: The AI Content Saturation Point</h3><p>On January 22, 2026, major social platforms in India implemented the 'Origin-S' tag, a mandatory label for AI-generated media. As the web is flooded with synthetic content, 'Human-Verified' media has officially become a luxury brand signal. At Digital Media Bombay, we predicted this shift.</p><h3>Scalable Authenticity</h3><p>Our lab uses a 'Hybrid Content Model.' We use AI to handle the data and distribution, but we keep the 'Soul' human. We are helping Mumbai's elite brands move away from generic AI-looking posts and toward cinematic, high-trust storytelling that feels real because it *is* real. Our 'Verified-Human' badge for clients has already led to a 32% higher conversion rate compared to purely synthetic campaigns.</p><h3>The Return to Authority</h3><p>Trust is the only moat left. If your marketing feels like a bot, you will lose. Digital Media Bombay specializes in 'Credibility Marketing,' using AI to find where your audience is and delivering human-led value that builds long-term legacy.</p>`,
     keywords: "AI Media Ethics 2026, Human-Verified Content, Digital Media Bombay Authority, Authentic Marketing India, Kaleem Shaikh Brand Building"
