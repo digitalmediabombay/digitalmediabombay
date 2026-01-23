@@ -1,8 +1,12 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "https://www.digitalmediabombay.com/$1",
+      "permanent": true
     }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
