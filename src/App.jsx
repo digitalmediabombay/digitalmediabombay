@@ -869,27 +869,27 @@ const App = () => {
 
 
   // 1. Logic to read the URL path when page loads
-  const getInitialPage = () => {
+  // Helper to find the blog post data from the URL
+  const getPostFromUrl = () => {
     const path = window.location.pathname;
-    
     if (path.startsWith('/blog/')) {
       const postId = path.replace('/blog/', '');
-      const post = blogPosts.find(p => p.id === postId);
-      if (post) {
-        setSelectedPost(post);
-        return 'blog-detail';
-      }
+      return blogPosts.find(p => p.id === postId) || null;
     }
-    
+    return null;
+  };
+
+  // Helper to tell the app which page to show
+  const getInitialPage = () => {
+    const path = window.location.pathname;
+    if (path.startsWith('/blog/')) return 'blog-detail';
     const cleanPath = path.replace('/', '');
     return cleanPath || 'home';
   };
 
-
-
+  // Setup the starting data
+  const [selectedPost, setSelectedPost] = useState(getPostFromUrl());
   const [activePage, setActivePage] = useState(getInitialPage()); 
-
-  const [selectedWebType, setSelectedWebType] = useState(null); 
 
   const [pricingMode, setPricingMode] = useState('india'); 
 
@@ -995,17 +995,15 @@ const App = () => {
 
   // 3. Listen for the Browser "Back" and "Forward" buttons
 
+  // This makes sure the page content changes when you click Back/Forward
   useEffect(() => {
-
     const handleLocationChange = () => {
-
       setActivePage(getInitialPage());
-
+      setSelectedPost(getPostFromUrl());
     };
-
     window.addEventListener('popstate', handleLocationChange);
-
     return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
 
   }, []);
 
@@ -1092,8 +1090,8 @@ const App = () => {
   const openBlogPost = (post) => {
     setSelectedPost(post);
     const path = `/blog/${post.id}`;
-    window.history.pushState({}, '', path);
-    setActivePage('blog-detail');
+    window.history.pushState({}, '', path); // Changes URL to digitalmediabombay.com/blog/title
+    setActivePage('blog-detail'); 
     window.scrollTo(0, 0);
   };
 
