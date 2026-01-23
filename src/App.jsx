@@ -885,7 +885,7 @@ const App = () => {
     return cleanPath || 'home';
   };
 
-  // 2. Initialize all states ONLY ONCE
+  // 2. Initialize ALL states (Defined ONLY ONCE here)
   const [selectedPost, setSelectedPost] = useState(getPostFromUrl());
   const [activePage, setActivePage] = useState(getInitialPage()); 
   const [pricingMode, setPricingMode] = useState('india'); 
@@ -986,10 +986,8 @@ const App = () => {
   // 3. Listen for the Browser "Back" and "Forward" buttons
   useEffect(() => {
     const handleLocationChange = () => {
-      const page = getInitialPage();
-      const post = getPostFromUrl();
-      setActivePage(page);
-      setSelectedPost(post);
+      setActivePage(getInitialPage());
+      setSelectedPost(getPostFromUrl());
     };
     window.addEventListener('popstate', handleLocationChange);
     return () => window.removeEventListener('popstate', handleLocationChange);
