@@ -868,14 +868,21 @@ const App = () => {
 
 
 
-  // 1. Logic to read the URL path (e.g., /about) when page loads
-
+  // 1. Logic to read the URL path when page loads
   const getInitialPage = () => {
-
-    const path = window.location.pathname.replace('/', '');
-
-    return path || 'home';
-
+    const path = window.location.pathname;
+    
+    if (path.startsWith('/blog/')) {
+      const postId = path.replace('/blog/', '');
+      const post = blogPosts.find(p => p.id === postId);
+      if (post) {
+        setSelectedPost(post);
+        return 'blog-detail';
+      }
+    }
+    
+    const cleanPath = path.replace('/', '');
+    return cleanPath || 'home';
   };
 
 
@@ -1053,17 +1060,25 @@ const App = () => {
   // 5. Navigation Function that updates the URL in the address bar
 
   const navigateTo = (page) => {
-
     setSelectedPost(null);
+    let path = page === 'home' ? '/' : `/${page}`;
+    
+    // Special handling for pricing section
+    if (page === 'pricing') {
+      path = '/#pricing';
+      setActivePage('home');
+      window.history.pushState({}, '', path);
+      setTimeout(() => {
+        const sect = document.getElementById('pricing');
+        if (sect) sect.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
 
-    const path = page === 'home' ? '/' : `/${page}`;
-
-    window.history.pushState({}, '', path); // This changes the URL to digitalmediabombay.in/about
-
+    window.history.pushState({}, '', path);
     setActivePage(page);
-
     setIsMobileMenuOpen(false);
-
+    window.scrollTo(0, 0);
   };
 
   const openBundles = (tier) => {
@@ -1075,14 +1090,12 @@ const App = () => {
   };
 
   const openBlogPost = (post) => {
-
-  setSelectedPost(post);
-
-  setActivePage('blog-detail');
-
-  window.scrollTo(0,0);
-
-};
+    setSelectedPost(post);
+    const path = `/blog/${post.id}`;
+    window.history.pushState({}, '', path);
+    setActivePage('blog-detail');
+    window.scrollTo(0, 0);
+  };
 
   const navigateToContact = () => {
 
@@ -1810,21 +1823,12 @@ const Header = () => (
 </div>
 
         <div className="hidden md:flex items-center space-x-6">
-
-          {/* HOME BUTTON - Redirects to Home */}
-
           <button onClick={() => navigateTo('home')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Home</button>
-
           <button onClick={() => navigateTo('about')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">About</button>
-
           <button onClick={() => navigateTo('services')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Services</button>
-
-          <a href="#pricing" onClick={() => navigateTo('home')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Pricing</a>
-
+          <button onClick={() => navigateTo('pricing')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Pricing</button>
           <button onClick={() => navigateTo('freelancer')} className="text-slate-300 hover:text-amber-400 transition-colors text-sm font-medium">Join the Squad</button>
-
           <button onClick={() => navigateTo('ai-strategy')} className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white px-4 py-2 rounded-full font-bold text-xs shadow-lg shadow-purple-500/20 transition-all flex items-center gap-2 transform hover:scale-105"><Sparkles size={14} /> Free AI Strategy</button>
-
         </div>
 
         <div className="md:hidden flex items-center gap-4">
