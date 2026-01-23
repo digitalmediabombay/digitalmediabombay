@@ -2156,155 +2156,79 @@ const Footer = () => (
 
 );
 
-
-
 const BlogSection = ({ navigateTo, onPostClick }) => {
-
   const scrollRef = useRef(null);
 
-
-
   const scroll = (direction) => {
-
     if (scrollRef.current) {
-
-      const { scrollLeft, clientWidth } = scrollRef.current;
-
-      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
-
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
-
+      // Use scrollBy for much smoother movement
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
-
   };
 
-
-
   return (
+    // Added id="blog-section" here
+    <section id="blog-section" className="py-24 bg-[#0a192f] border-t border-slate-800 relative overflow-hidden">
 
-    <section className="py-24 bg-[#0a192f] border-t border-slate-800 relative overflow-hidden">
-
-
-
-      {/* HEADER SECTION - CENTER ALIGNED */}
-
+      {/* HEADER SECTION */}
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
-
           <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-3 block">Insights & Intelligence</span>
-
           <h2 className="text-4xl md:text-6xl font-black text-white">LATEST FROM THE <span className="text-amber-400">LAB</span></h2>
-
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mt-6 rounded-full"></div>
-
       </div>
-
-
 
       {/* CARD SCROLLER */}
-
       <div 
-
         ref={scrollRef}
-
-        className="flex gap-8 overflow-x-auto px-[5%] pb-12 hide-scrollbar snap-x"
-
+        className="flex gap-8 overflow-x-auto px-[5%] pb-12 hide-scrollbar snap-x scroll-smooth"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-
       >
-
         {blogPosts.map((post) => (
-
           <div 
-
             key={post.id}
-
             onClick={() => onPostClick(post)}
-
-            className="min-w-[320px] md:min-w-[450px] snap-start group cursor-pointer"
-
+            className="min-w-[320px] md:min-w-[450px] snap-center group cursor-pointer"
           >
-
-            {/* Glassmorphism Card Style */}
-
             <div className="relative bg-[#0f2440]/40 backdrop-blur-xl border border-slate-700 rounded-3xl overflow-hidden transition-all duration-500 group-hover:border-cyan-500/50 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.2)]">
-
               <div className="relative h-64 overflow-hidden">
-
                 <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" />
-
                 <div className="absolute top-4 left-4 z-20">
-
                   <span className="px-4 py-1 bg-cyan-500 text-black text-[10px] font-black uppercase rounded-full shadow-lg">{post.category}</span>
-
                 </div>
-
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f2440] via-transparent to-transparent"></div>
-
               </div>
-
               <div className="p-8">
-
                 <p className="text-slate-500 text-xs font-mono mb-3 uppercase tracking-tighter">{post.date} • {post.author}</p>
-
                 <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-2 mb-4 leading-tight">{post.title}</h3>
-
                 <p className="text-slate-400 text-sm line-clamp-3 mb-6 leading-relaxed">{post.excerpt}</p>
-
                 <div className="flex items-center gap-2 text-cyan-400 font-black text-sm uppercase tracking-widest border-b border-transparent group-hover:border-cyan-400 inline-block transition-all pb-1">
-
                   Read Intelligence <ArrowRight size={16} />
-
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
         ))}
-
       </div>
 
-
-
-      {/* NAVIGATION BUTTONS - MOVED TO BOTTOM CENTER */}
-
+      {/* NAVIGATION BUTTONS */}
       <div className="flex justify-center gap-6 mt-12">
-
           <button 
-
             onClick={() => scroll('left')} 
-
-            className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center justify-center shadow-xl hover:shadow-cyan-500/20"
-
+            className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center justify-center shadow-xl"
           >
-
             <ChevronLeft size={28}/>
-
           </button>
-
           <button 
-
             onClick={() => scroll('right')} 
-
-            className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center justify-center shadow-xl hover:shadow-cyan-500/20"
-
+            className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center justify-center shadow-xl"
           >
-
             <ChevronRight size={28}/>
-
           </button>
-
       </div>
-
     </section>
-
   );
-
 };
-
-
 
 const BlogDetailPage = ({ post, onBack }) => {
 
@@ -4954,7 +4878,19 @@ const AIStrategyPage = () => {
       <Header />
       <main>
         {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
-        {activePage === 'blog-detail' && <BlogDetailPage post={selectedPost} onBack={() => navigateTo('home')} />}
+        {activePage === 'blog-detail' && (
+          <BlogDetailPage 
+            post={selectedPost} 
+            onBack={() => {
+              navigateTo('home');
+              // Give the page 100ms to load, then scroll to the feed
+              setTimeout(() => {
+                const section = document.getElementById('blog-section');
+                if (section) section.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }} 
+          />
+        )}
         {activePage === 'about' && <AboutPage onContactClick={navigateToContact} />}
         {activePage === 'freelancer' && <FreelancerPage />}
         {activePage === 'bundles' && <BundlesPage currencySymbol={currencySymbol} />}
