@@ -178,7 +178,7 @@ const blogPosts = [
     date: "January 18, 2026",
     category: "SEO",
     author: "Digital Media Bombay",
-    img: "sge.png",
+    img: "/sge.png",
     excerpt: "Google just rolled out its most aggressive AI search update yet. If your site isn't 'Quantum-Ready,' your rankings are about to vanish.",
     content: `<h3>The Quantum Search Revolution</h3><p>On January 18, 2026, Google officially deployed the 'Quantum-SGE' update across the Indian subcontinent. This isn't just another core update; it's a total rewrite of how the internet is indexed. Traditional keyword stuffing is now officially obsolete.</p><h3>Intent-Mapping vs. Keywords</h3><p>The new algorithm uses quantum-processing to understand 'User Sentiment' rather than words. At Digital Media Bombay, we've spent the morning auditing our clients' sites to ensure they meet the new 'Real-Time Utility' scores. Websites that provide instant, AI-verified answers are jumping to Position Zero, while slow, fluff-filled blogs are losing 80% of their traffic.</p><h3>Is Your Brand Safe?</h3><p>Digital Media Bombay is currently the only agency in Mumbai with a 'Quantum-Ready' SEO framework. We use the latest LLM-Scrapers to verify your content against Google's new 2026 trust-signals before the update even settles.</p>`,
     keywords: "Google Quantum SGE Update 2026, Future of SEO India, Google AI Search News, Digital Media Bombay SEO Lab, Best SEO Mumbai"
@@ -189,7 +189,7 @@ const blogPosts = [
     date: "January 17, 2026",
     category: "Agency News",
     author: "Kaleem Shaikh",
-    img: "dmblaunch.png",
+    img: "/dmblaunch.png",
     excerpt: "The wait is over. Digital Media Bombay officially launches today, bringing a new era of AI-integrated marketing and 3D web experiences to the global stage.",
     content: `<h3>The Future is Here: Media Bombay Starts Now</h3><p>Today marks a historic milestone in the Mumbai tech scene. Digital Media Bombay has officially launched its full suite of services, moving from a specialized lab to a global powerhouse. Founded by Kaleem Shaikh, the agency is built on the philosophy of 'Hybrid Intelligence'—merging the raw hustle of Mumbai with the precision of Silicon Valley AI.</p><h3>Why Digital Media Bombay?</h3><p>While traditional agencies are still figuring out 2024 tactics, we are operating in the heart of 2026. Our launch introduces the 'Global ROI Engine,' a proprietary system that allows businesses in India to scale into US and UK markets with zero friction. We aren't just an agency; we are a digital transformation partner for the next generation of billionaires.</p><h3>Our Mission</h3><p>We are here to prove that world-class 3D web development and AI automation don't need a New York price tag. From our headquarters in Mumbai, we are delivering elite digital assets that dominate search results and social feeds across the planet.</p>`,
     keywords: "Digital Media Bombay Launch, Media Bombay, Kaleem Shaikh, Best AI Agency Mumbai, Global Marketing Launch 2026, Digital Media Bombay Services"
@@ -200,7 +200,7 @@ const blogPosts = [
     date: "January 16, 2026",
     category: "Social Media",
     author: "Social Squad",
-    img: "aicore.png",
+    img: "/aicore.png",
     excerpt: "In 2026, the walls between Instagram, TikTok, and X have crumbled. Learn how AI-driven distribution is the key to viral growth.",
     content: `<h3>The New Social Ecosystem</h3><p>By mid-January 2026, we've seen a massive shift toward cross-platform AI synchronization. At Digital Media Bombay, we no longer create for one app. We create 'Master Assets' that our AI engines automatically reshape for every social platform, ensuring brand consistency and maximum reach.</p><h3>Native vs. Synthetic Content</h3><p>The 2026 algorithms now prioritize 'Synthetic Authenticity.' This means using AI to enhance your real-world video footage. Our labs in Mumbai have perfected the 'Infinite Reel'—a single video that branches into 50 different variations based on the viewer's personal interests.</p>`,
     keywords: "Social Media Strategy 2026, AI Content Distribution, Viral Marketing Mumbai, Digital Media Bombay Social, Cross-Platform Marketing"
@@ -211,7 +211,7 @@ const blogPosts = [
     date: "January 15, 2026",
     category: "Digital Media",
     author: "Digital Media Bombay",
-    img: "pms.png",
+    img: "/pms.png",
     excerpt: "Stop reacting to trends. Digital Media Bombay explains how predictive modeling is securing top ad placements before they trend.",
     content: `<h3>The Shift to Proactive Media</h3><p>Waiting for a trend to go viral before jumping on it is a 2024 mistake. In 2026, Digital Media Bombay uses predictive neural networks to forecast cultural shifts in Mumbai and London. We buy ad space on topics 48 hours before the rest of the world even knows they exist.</p><h3>The ROI of Foresight</h3><p>By leveraging these 'Early-Bird' algorithms, our clients are seeing a 400% decrease in CPC (Cost Per Click). We are helping brands own the conversation rather than just joining it.</p>`,
     keywords: "Predictive Media 2026, Digital Media Trends, AI Ad Placements, Digital Media Bombay ROI, Future of Digital Media"
@@ -222,7 +222,7 @@ const blogPosts = [
     date: "January 14, 2026",
     category: "Digital Marketing",
     author: "Kaleem Shaikh",
-    img: "gbai.png",
+    img: "/gbai.png",
     excerpt: "Generic ads are dead. Discover how Digital Media Bombay uses 'Hyper-Personalization' to speak to 10,000 customers individually.",
     content: `<h3>Marketing to the Individual</h3><p>In early 2026, the average consumer in Mumbai is exposed to over 15,000 digital touchpoints a day. To stand out, your marketing must be surgical. We use 'Deep-Data' to ensure that when a user sees an ad from Digital Media Bombay, it feels like it was written specifically for them.</p><h3>Scalable Personalization</h3><p>Using our custom AI LLMs, we generate personalized landing pages in real-time. If a user from South Mumbai visits your site, they see different imagery than a visitor from New York. This is not just marketing; it's digital psychology.</p>`,
     keywords: "Hyper-Personalization 2026, AI Digital Marketing, Personalized Ads India, Digital Media Bombay Strategy, Kaleem Shaikh Marketing"
@@ -233,7 +233,7 @@ const blogPosts = [
     date: "January 13, 2026",
     category: "SEO",
     author: "Digital Media Bombay",
-    img: "yttiktok.png",
+    img: "/yttiktok.png",
     excerpt: "Video is the new text. If your videos aren't optimized for Search Engines, you're losing 70% of your potential traffic.",
     content: `<h3>SEO Beyond Google</h3><p>As of January 2026, TikTok and YouTube have surpassed Google as the primary search engines for Gen Z and Gen Alpha. Digital Media Bombay's 'Video-First' SEO strategy ensures your content is indexed within minutes of posting.</p><h3>AI Meta-Tagging</h3><p>We use AI to transcribe, tag, and chapter every second of your video content. This allows search engines to 'read' your videos. When someone in Mumbai searches for a service, our clients' videos appear as the top 'Suggested Answer' every single time.</p>`,
     keywords: "Video SEO 2026, TikTok Search Ranking, YouTube SEO Mumbai, Digital Media Bombay SEO, Search Engine Optimization India"
@@ -272,7 +272,7 @@ const blogPosts = [
 
     author: "Digital Media Bombay",
 
-    img: "3d.png",
+    img: "/3d.png",
 
     excerpt: "Flat websites are a relic of 2023. In 2026, immersive 3D experiences are the only way to hold attention.",
 
@@ -294,7 +294,7 @@ const blogPosts = [
 
     author: "Social Squad",
 
-    img: "instagram.png",
+    img: "/instagram.png",
 
     excerpt: "Reels are no longer enough. The 2026 algorithm rewards 'Community Depth' and 'AI Interaction'.",
 
@@ -322,7 +322,7 @@ const blogPosts = [
 
     author: "Kaleem Shaikh",
 
-    img: "geoseo.png",
+    img: "/geoseo.png",
 
     excerpt: "Generative Engine Optimization (GEO) is the new SEO. If you aren't cited by AI, you don't exist.",
 
@@ -366,7 +366,7 @@ const blogPosts = [
 
     author: "Kaleem Shaikh",
 
-    img: "2d.png",
+    img: "/2d.png",
 
     excerpt: "Why 2026 is the year of 'Try-Before-You-Buy' using WebXR and AR directly in the browser.",
 
@@ -410,7 +410,7 @@ const blogPosts = [
 
     author: "Digital Media Bombay",
 
-    img: "aiads.png",
+    img: "/aiads.png",
 
     excerpt: "Stop reacting to data. Start predicting it. How we use neural networks to optimize ad spend in 2026.",
 
@@ -476,7 +476,7 @@ const blogPosts = [
 
     author: "Social Squad",
 
-    img: "tiktok.png",
+    img: "/tiktok.png",
 
     excerpt: "Gen Z has abandoned the search bar for the video feed. Here is how to rank your videos in 2026.",
 
@@ -498,7 +498,7 @@ const blogPosts = [
 
     author: "Kaleem Shaikh",
 
-    img: "linkedin.png",
+    img: "/linkedin.png",
 
     excerpt: "Stop cold calling. Start 'Warm Mapping' using AI and LinkedIn's 2026 Professional Graph.",
 
@@ -542,7 +542,7 @@ const blogPosts = [
 
     author: "Kaleem Shaikh",
 
-    img: "web.png",
+    img: "/web.png",
 
     excerpt: "Your website should change its look for every visitor. Learn how we use AI to create dynamic UI.",
 
@@ -674,7 +674,7 @@ const blogPosts = [
 
     author: "Kaleem Shaikh",
 
-    img: "untrack.png",
+    img: "/untrack.png",
 
     excerpt: "80% of sharing happens in private DMs and WhatsApp groups. Here is how Digital Media Bombay tracks it.",
 
@@ -740,7 +740,7 @@ const blogPosts = [
 
     author: "Social Squad",
 
-    img: "influ.png",
+    img: "/influ.png",
 
     excerpt: "Follower counts are a vanity metric. In 2026, we only care about 'Conversion-to-Cash'.",
 
@@ -784,7 +784,7 @@ const blogPosts = [
 
     author: "Digital Media Bombay",
 
-    img: "meta.png",
+    img: "/meta.png",
 
     excerpt: "Apple Vision Pro and Meta Quest 4 have changed everything. Is your brand visible in the Spatial Web?",
 
@@ -806,7 +806,7 @@ const blogPosts = [
 
     author: "Kaleem Shaikh",
 
-    img: "seoai.png",
+    img: "/seoai.png",
 
     excerpt: "Don't follow the trend. Be the trend. How we use AI data to predict next month's search volume.",
 
