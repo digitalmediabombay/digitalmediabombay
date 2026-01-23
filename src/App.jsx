@@ -868,8 +868,7 @@ const App = () => {
 
 
 
-  // 1. Logic to read the URL path when page loads
-  // Helper to find the blog post data from the URL
+  // 1. Logic to find blog data and page name from the URL
   const getPostFromUrl = () => {
     const path = window.location.pathname;
     if (path.startsWith('/blog/')) {
@@ -879,7 +878,6 @@ const App = () => {
     return null;
   };
 
-  // Helper to tell the app which page to show
   const getInitialPage = () => {
     const path = window.location.pathname;
     if (path.startsWith('/blog/')) return 'blog-detail';
@@ -887,23 +885,15 @@ const App = () => {
     return cleanPath || 'home';
   };
 
-  // Setup the starting data
+  // 2. Initialize all states ONLY ONCE
   const [selectedPost, setSelectedPost] = useState(getPostFromUrl());
   const [activePage, setActivePage] = useState(getInitialPage()); 
-
   const [pricingMode, setPricingMode] = useState('india'); 
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const [isLocationLocked, setIsLocationLocked] = useState(true);
-
   const [currencySymbol, setCurrencySymbol] = useState('₹');
-
   const [selectedTier, setSelectedTier] = useState('tier1');
-
-  const [selectedPost, setSelectedPost] = useState(null);
-
-
+  const [selectedWebType, setSelectedWebType] = useState(null);
 
   // 2. Dynamic SEO & Scroll Logic
 
@@ -994,17 +984,15 @@ const App = () => {
 
 
   // 3. Listen for the Browser "Back" and "Forward" buttons
-
-  // This makes sure the page content changes when you click Back/Forward
   useEffect(() => {
     const handleLocationChange = () => {
-      setActivePage(getInitialPage());
-      setSelectedPost(getPostFromUrl());
+      const page = getInitialPage();
+      const post = getPostFromUrl();
+      setActivePage(page);
+      setSelectedPost(post);
     };
     window.addEventListener('popstate', handleLocationChange);
     return () => window.removeEventListener('popstate', handleLocationChange);
-  }, []);
-
   }, []);
 
 // 4. Detect User Location (Updated with your Specific Territory List)
