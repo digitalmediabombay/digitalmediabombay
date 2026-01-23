@@ -1,12 +1,14 @@
 {
-  "redirects": [
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/blog/:id",
+      "destination": "/"
+    },
     {
       "source": "/(.*)",
-      "destination": "https://www.digitalmediabombay.com/$1",
-      "permanent": true
+      "destination": "/"
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
   ]
 }
