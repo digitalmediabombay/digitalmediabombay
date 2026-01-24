@@ -1,6 +1,17 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content: https://ssl.gstatic.com; script-src * 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://vapi.ai; connect-src * 'self' 'unsafe-inline' 'unsafe-eval' wss://*.vapi.ai https://vapi.ai; img-src * 'self' data: content:; style-src * 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src * 'self' https://fonts.gstatic.com; frame-src * 'self' vapi.ai *.vapi.ai;"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
