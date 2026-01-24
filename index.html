@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content: https://ssl.gstatic.com; script-src * 'self' 'unsafe-inline' 'unsafe-eval'; connect-src * 'self' 'unsafe-inline' 'unsafe-eval' wss:; img-src * 'self' data: content:; style-src * 'self' 'unsafe-inline'; frame-src * 'self' vapi.ai *.vapi.ai;">  
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: content: https://ssl.gstatic.com; script-src * 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://vapi.ai; connect-src * 'self' 'unsafe-inline' 'unsafe-eval' wss://*.vapi.ai https://vapi.ai; img-src * 'self' data: content:; style-src * 'self' 'unsafe-inline'; frame-src * 'self' vapi.ai *.vapi.ai;">
   
   <title>Digital Media Bombay | #1 AI-Powered Digital Agency in Mumbai, India & Worldwide</title>
   <meta name="description" content="Mumbai's premier AI-powered agency. Specializing in 3D Web Development, Performance Ads, SEO, and Viral Social Media. We serve clients in Mumbai, Maharashtra, India, and globally with 10x ROI strategies.">
@@ -50,7 +50,7 @@
     ></vapi-widget>
 
     <style>
-      /* FORCES AISHA to the front layer over your videos and 3D ring */
+      /* FORCES AISHA to the absolute front layer over your 3D assets */
       vapi-widget {
         z-index: 2147483647 !important; 
         position: fixed !important;
