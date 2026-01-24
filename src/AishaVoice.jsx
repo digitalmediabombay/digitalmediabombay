@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const AishaVoice = () => {
   useEffect(() => {
     // These values connect AISHA to your Vapi account
-    const publicKey = "814f8112-bb6f-42dd-985a-7e22304cc5ab"; // 👈 Get this from Vapi -> API Keys
+    const publicKey = "pub-814f8112-bb6f-42dd-985a-7e22304cc5ab"; // 👈 Get this from Vapi -> API Keys
     const assistantId = "ae6658ac-df0d-4a70-a9ac-f6db869fba7f"; // 👈 Your Aisha ID from the dashboard
 
     // This creates and configures the floating voice button
