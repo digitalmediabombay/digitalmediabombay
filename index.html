@@ -50,12 +50,13 @@
     ></vapi-widget>
 
     <style>
-      /* This FORCES Aisha to be the top-most layer on the screen */
+      /* FORCES visibility over all 3D layers */
       vapi-widget {
-        z-index: 2147483647 !important; /* Max possible Z-index */
+        z-index: 2147483647 !important; 
         position: fixed !important;
         display: block !important;
         visibility: visible !important;
       }
     </style>
   </body>
+</html>
