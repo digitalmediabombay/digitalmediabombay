@@ -107,7 +107,7 @@ import {
 
 } from 'lucide-react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-
+import AishaVoice from './AishaVoice'; //
 
 
 // --- COMPLETE 30-POST SEO INTELLIGENCE ENGINE ---
@@ -4902,6 +4902,7 @@ const AIStrategyPage = () => {
       </main>
 
       <CookieBanner />
+      <AishaVoice />
       <Footer />
       </div>
   );
