@@ -36,28 +36,24 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <script>
-      window.addEventListener('load', function() {
-        const vapiWidget = document.createElement('vapi-widget');
-        
-        // Configuration
-        vapiWidget.setAttribute('public-key', 'pub-814f8112-bb6f-42dd-985a-7e22304cc5ab');
-        vapiWidget.setAttribute('assistant-id', 'ae6658ac-df0d-4a70-a9ac-f6db869fba7f');
-        vapiWidget.setAttribute('mode', 'voice');
-        vapiWidget.setAttribute('size', 'compact');
-        vapiWidget.setAttribute('theme', 'dark');
-        vapiWidget.setAttribute('base-color', '#0a192f');
-        vapiWidget.setAttribute('accent-color', '#22d3ee');
-        
-        // Styling to force visibility over 3D layers
-        vapiWidget.style.position = 'fixed';
-        vapiWidget.style.bottom = '20px';
-        vapiWidget.style.left = '20px';
-        vapiWidget.style.zIndex = '999999';
-        
-        document.body.appendChild(vapiWidget);
-        console.log("DMB System: AISHA has been force-injected into the viewport.");
-      });
-    </script>
+    <vapi-widget
+      public-key="pub-814f8112-bb6f-42dd-985a-7e22304cc5ab"
+      assistant-id="ae6658ac-df0d-4a70-a9ac-f6db869fba7f"
+      mode="voice"
+      size="compact"
+      theme="dark"
+      base-color="#0a192f"
+      accent-color="#22d3ee"
+      position="bottom-left"
+    ></vapi-widget>
+
+    <style>
+      /* This FORCES Aisha to be the top-most layer on the screen */
+      vapi-widget {
+        z-index: 2147483647 !important; /* Max possible Z-index */
+        position: fixed !important;
+        display: block !important;
+        visibility: visible !important;
+      }
+    </style>
   </body>
-</html>
