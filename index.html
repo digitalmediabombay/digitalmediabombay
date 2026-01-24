@@ -33,7 +33,26 @@
   <script src="https://cdn.jsdelivr.net/gh/vapi-ai/browser-sdk@latest/dist/vapi-browser-sdk.js"></script>
 </head>
   <body>
-    <div id="root"></div>
+    <div idroot"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <vapi-widget
+      public-key="pub-814f8112-bb6f-42dd-985a-7e22304cc5ab"
+      assistant-id="ae6658ac-df0d-4a70-a9ac-f6db869fba7f"
+      mode="voice"
+      size="compact"
+      theme="dark"
+      base-color="#0a192f"
+      accent-color="#22d3ee"
+      position="bottom-left"
+    ></vapi-widget>
+
+    <style>
+      /* This ensures AISHA stays on top of your videos */
+      vapi-widget {
+        z-index: 99999 !important;
+        position: fixed !important;
+      }
+    </style>
   </body>
 </html>
