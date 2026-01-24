@@ -50,6 +50,14 @@
     ></vapi-widget>
 
     <style>
+      /* FORCES visibility over all 3D layers and videos */
+      vapi-widget {
+        z-index: 2147483647 !important; 
+        position: fixed !important;
+        display: block !important;
+        visibility: visible !important;
+      }
+    </style>
       /* FORCES AISHA to the absolute front layer over your 3D assets */
       vapi-widget {
         z-index: 2147483647 !important; 
