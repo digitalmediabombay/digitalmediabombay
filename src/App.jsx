@@ -135,7 +135,7 @@ const blogPosts = [
     date: "January 26, 2026",
     category: "AI Strategy",
     author: "Digital Media Bombay",
-    img: "mar.png",
+    img: "mark.png",
     excerpt: "Why Indian brands are winning globally in 2026. Digital Media Bombay decodes the power of the 'Bharat' Brand.",
     content: `<h3>The Rise of the Global Indian Brand</h3><p>This Republic Day, we analyze a massive trend: 'Bharat Pride Commerce.' In 2026, consumers worldwide are seeking out Indian-made products for their quality and soul. Digital Media Bombay is the engine behind this shift, taking local Mumbai artisans and SaaS giants to the global stage using AI-powered distribution.</p><h3>AI for Social Good</h3><p>We are using our 2026 'Vernacular-AI' engine to help Indian rural enterprises create high-end cinematic ads in 15+ regional languages. By democratizing premium marketing, we are fulfilling the Republic's promise of equal opportunity for every entrepreneur, from Bandra to Bihar.</p><h3>Empowering the Future</h3><p>Our gift to the nation this January 26th is a free AI-Strategy audit for any 'Made in India' startup. Let’s make this the year where Indian tech defines the global standard. Happy Republic Day to all our partners and clients!</p>`,
     keywords: "Republic Day India 2026, Made in India AI, Digital Media Bombay Strategy, Bharat Marketing Trends, Indian Agency Excellence"
