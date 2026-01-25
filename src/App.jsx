@@ -124,7 +124,7 @@ const blogPosts = [
     date: "January 26, 2026",
     category: "Agency News",
     author: "Kaleem Shaikh",
-    img: "rep.png",
+    img: "/rep.png",
     excerpt: "On India's 77th Republic Day, Digital Media Bombay celebrates the spirit of 'Atmanirbhar Bharat' by leading the AI revolution from the heart of Mumbai.",
     content: `<h3>A Nation of Innovation</h3><p>Today, January 26, 2026, as the tricolor unfurls across the Kartavya Path and every street in Mumbai, Digital Media Bombay joins the nation in celebrating the 77th Republic Day. For us, this day is a reminder that the spirit of 'Swaraj' now extends into 'Digital Sovereignty.' We are proud to be a 100% Indian-founded agency, proving to the world that Mumbai is the global capital of creative intelligence.</p><h3>Vande Mataram: 150 Years of an Anthem</h3><p>This year is even more special as it marks the 150th Anniversary of our National Song, 'Vande Mataram.' To honor this, Digital Media Bombay has launched a commemorative AI-driven video tribute, showcasing the technological progress of our great nation. We believe that true patriotism in 2026 is building world-class tech that empowers local businesses to compete globally.</p><h3>Wishing You a Happy Republic Day</h3><p>Kaleem Shaikh and the entire Digital Media Bombay squad wish you a day filled with pride and progress. Let's build a smarter, stronger India together. Jai Hind!</p>`,
     keywords: "Happy Republic Day 2026, Digital Media Bombay Republic Day, Atmanirbhar Bharat AI, Kaleem Shaikh Republic Day, Mumbai Agency Celebration"
@@ -135,7 +135,7 @@ const blogPosts = [
     date: "January 26, 2026",
     category: "AI Strategy",
     author: "Digital Media Bombay",
-    img: "mark.png",
+    img: "/mark.png",
     excerpt: "Why Indian brands are winning globally in 2026. Digital Media Bombay decodes the power of the 'Bharat' Brand.",
     content: `<h3>The Rise of the Global Indian Brand</h3><p>This Republic Day, we analyze a massive trend: 'Bharat Pride Commerce.' In 2026, consumers worldwide are seeking out Indian-made products for their quality and soul. Digital Media Bombay is the engine behind this shift, taking local Mumbai artisans and SaaS giants to the global stage using AI-powered distribution.</p><h3>AI for Social Good</h3><p>We are using our 2026 'Vernacular-AI' engine to help Indian rural enterprises create high-end cinematic ads in 15+ regional languages. By democratizing premium marketing, we are fulfilling the Republic's promise of equal opportunity for every entrepreneur, from Bandra to Bihar.</p><h3>Empowering the Future</h3><p>Our gift to the nation this January 26th is a free AI-Strategy audit for any 'Made in India' startup. Let’s make this the year where Indian tech defines the global standard. Happy Republic Day to all our partners and clients!</p>`,
     keywords: "Republic Day India 2026, Made in India AI, Digital Media Bombay Strategy, Bharat Marketing Trends, Indian Agency Excellence"
@@ -146,7 +146,7 @@ const blogPosts = [
     date: "January 25, 2026",
     category: "Agency News",
     author: "Kaleem Shaikh",
-    img: "cs.png",
+    img: "/cs.png",
     excerpt: "Digital Media Bombay is no longer just using AI tools; we have transitioned to a fully autonomous Agentic Workflow. See how it saves you 60% in costs.",
     content: `<h3>The End of Human-Only Agencies</h3><p>On January 25, 2026, Digital Media Bombay officially completed its transition to an 'Agent-First' operating model. While other Mumbai agencies are still hiring project managers to send emails, we have deployed autonomous AI agents that handle everything from task routing to server-side optimization.</p><h3>The 'Cloud Squad' Evolution</h3><p>Kaleem Shaikh’s vision for the Cloud Squad has evolved. Every human expert in our network is now augmented by a personalized AI agent. This allows a single specialist at Digital Media Bombay to execute the work of a 10-person department with zero errors. For our clients, this means faster delivery, better accuracy, and significantly lower pricing than any traditional agency in India.</p><h3>Your ROI, Automated</h3><p>We don't wait for humans to check your ad performance. Our AI 'Guardians' monitor your ROI 24/7/365, making micro-adjustments to your bidding strategy in real-time. We are the first agency in Maharashtra to offer 'Guaranteed Uptime' for your marketing performance.</p>`,
     keywords: "Autonomous AI Agency, Digital Media Bombay Operations, Kaleem Shaikh AI Vision, Best Digital Agency Mumbai 2026, Agentic Workflow Marketing"
@@ -157,7 +157,7 @@ const blogPosts = [
     date: "January 24, 2026",
     category: "Agency News",
     author: "Digital Media Bombay",
-    img: "q1.png",
+    img: "/q1.png",
     excerpt: "Data doesn't lie. Our Q1 performance metrics are out, and Digital Media Bombay is officially the fastest-growing AI agency in the region.",
     content: `<h3>The Numbers Behind the Hustle</h3><p>Today, January 24, 2026, we are releasing our mid-Q1 performance data. Digital Media Bombay has achieved a staggering 400% increase in international B2B lead generation for our Mumbai-based clients. By leveraging our proprietary 'LinkedIn-Agent' tech, we've bypassed the noise of traditional social selling.</p><h3>Why We Are Winning</h3><p>The secret is our 'Semantic Ad Stack.' We don't target people based on what they *did*; we target them based on what they are *about to do.* Our AI models predict intent with 89% accuracy, allowing us to capture leads before our competitors even know they exist. This quarter alone, we've helped three Mumbai startups secure multi-million dollar contracts in the US and Europe.</p><h3>Join the Winning Side</h3><p>We aren't just an agency; we are a growth engine. If you aren't seeing these numbers from your current marketing partner, it's time to switch to the Digital Media Bombay standard. Our goal for 2026 is clear: To be the #1 agency for Indian brands going global.</p>`,
     keywords: "Digital Media Bombay Growth, B2B Lead Generation Mumbai, Best ROI Marketing Agency, Kaleem Shaikh Results, International Digital Agency India"
