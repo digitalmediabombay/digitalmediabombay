@@ -1527,7 +1527,7 @@ const GoogleTrustCard = () => {
           <img src="dmbgooglereviewqr.png" alt="Google QR" className="w-32 h-32" />
         </div>
         <p className="text-slate-300 text-xs font-medium leading-relaxed">
-          Scan to Review <br/> Digital Media Bombay.
+          Scan to Review <br/> Digital Media <span className="text-amber-400">Bombay
         </p>
       </div>
     </div>
