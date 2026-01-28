@@ -2177,20 +2177,35 @@ const Footer = () => (
         </div>
 
         <div className="md:pl-10">
-          <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Locations</h3>
-          <ul className="space-y-3 text-slate-400 text-sm">
-            <li className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-400 rounded-full"></div> Mumbai (HQ)</li>
-            <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> New York (Sales)</li>
-            <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> London (Support)</li>
-          </ul>
-          <div className="border border-slate-700 p-3 rounded-xl bg-slate-900/50 flex items-center gap-3 hover:border-cyan-500 transition-all mt-4">
-  <img src="dmbongoogle.png" className="w-12 h-12 rounded bg-white p-1" alt="QR" />
-  <div>
-     <p className="text-[10px] font-bold text-white">Google Verified</p>
-     <p className="text-[9px] text-slate-500">Scan to view profile</p>
+  <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Locations</h3>
+  <ul className="space-y-3 text-slate-400 text-sm">
+    <li className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-400 rounded-full"></div> Mumbai (HQ)</li>
+    <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> New York (Sales)</li>
+    <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> London (Support)</li>
+  </ul>
+
+  {/* --- NEW ENLARGED & ANIMATED VERIFIED BADGE --- */}
+  <div className="group border border-slate-700 p-4 rounded-2xl bg-slate-900/80 flex flex-col items-center gap-4 hover:border-green-500/50 transition-all mt-6 shadow-2xl">
+    <div className="bg-white p-2 rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-inner">
+      <img 
+        src="dmbongoogle.png" 
+        className="w-24 h-24 object-contain" 
+        alt="Digital Media Bombay Google QR" 
+      />
+    </div>
+    
+    <div className="text-center">
+       <div className="flex items-center justify-center gap-1.5 mb-1">
+          <p className="text-xs font-black text-white tracking-tight uppercase">Google Verified</p>
+          <div className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <CheckCircle size={14} className="relative inline-flex text-green-500 fill-green-500/20" />
+          </div>
+       </div>
+       <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Scan to View Profile</p>
+    </div>
   </div>
 </div>
-        </div>
 
         <div className="md:pl-10">
           <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Company</h3>
