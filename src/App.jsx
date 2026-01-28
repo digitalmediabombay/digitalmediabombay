@@ -2454,8 +2454,8 @@ const ReviewSection = () => {
         <img 
           src={logos[platform] || "google-icon.png"} 
           alt={platform} 
-          /* Changed w-6 h-6 to w-10 h-10 to fill the space */
-          className="w-10 h-10 object-contain"
+          /* Changed w-6 h-6 to w-20 h-20 to fill the space */
+          className="w-20 h-20 object-contain"
           onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} 
         />
       </div>
