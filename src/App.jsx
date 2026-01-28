@@ -2447,12 +2447,15 @@ const ReviewSection = () => {
       trustpilot: "trustpilot-icon.png",
       clutch: "clutch-icon.png"
     };
+
     return (
-      <div className="bg-white/10 backdrop-blur-md p-1.5 rounded-lg border border-white/20 shadow-lg group-hover:border-cyan-500/50 transition-all">
+      /* Changed p-1.5 to p-0.5 and increased container w/h slightly for better fit */
+      <div className="bg-white/10 backdrop-blur-md p-0.5 rounded-lg border border-white/20 shadow-lg group-hover:border-cyan-500/50 transition-all w-12 h-12 flex items-center justify-center overflow-hidden">
         <img 
           src={logos[platform] || "google-icon.png"} 
           alt={platform} 
-          className="w-6 h-6 object-contain"
+          /* Changed w-6 h-6 to w-10 h-10 to fill the space */
+          className="w-10 h-10 object-contain"
           onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} 
         />
       </div>
