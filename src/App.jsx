@@ -1510,7 +1510,27 @@ const App = () => {
 
   // --- SUB-COMPONENTS ---
 
+const GoogleTrustCard = ({ type = 'review' }) => {
+  const googleReviewUrl = "https://g.page/r/YOUR_GOOGLE_REVIEW_ID/review"; 
 
+  return (
+    <div className={`relative overflow-hidden rounded-2xl border-2 border-slate-700 bg-slate-900/80 p-6 transition-all hover:border-cyan-400 group ${type === 'scroller' ? 'w-[350px] flex-shrink-0' : 'w-full'}`}>
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="mb-4 flex items-center gap-2">
+          <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.67-.35-1.39-.35-2.09s.13-1.42.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          <span className="font-bold text-white text-sm">Verified Business</span>
+        </div>
+        <h4 className="text-lg font-black text-white mb-2">{type === 'review' ? 'LEAVE A 5-STAR REVIEW' : 'VIEW US ON GOOGLE'}</h4>
+        <div className="bg-white p-2 rounded-xl mb-4 group-hover:scale-105 transition-transform">
+          <img src="https://i.ibb.co/v4K6fXp/google-qr.png" alt="Google QR" className="w-32 h-32" />
+        </div>
+        <p className="text-slate-400 text-xs mb-4">Scan to verify our digital <br/> footprint on Google[cite: 5].</p>
+      </div>
+    </div>
+  );
+};
 
   // --- NEW CHAT WIDGET COMPONENT ---
 
@@ -2161,6 +2181,13 @@ const Footer = () => (
             <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> New York (Sales)</li>
             <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> London (Support)</li>
           </ul>
+          <div className="border border-slate-700 p-3 rounded-xl bg-slate-900/50 flex items-center gap-3 hover:border-cyan-500 transition-all mt-4">
+  <img src="https://i.ibb.co/v4K6fXp/google-qr.png" className="w-12 h-12 rounded bg-white p-1" alt="QR" />
+  <div>
+     <p className="text-[10px] font-bold text-white">Google Verified</p>
+     <p className="text-[9px] text-slate-500">Scan to view profile</p>
+  </div>
+</div>
         </div>
 
         <div className="md:pl-10">
@@ -2375,45 +2402,25 @@ const ReviewSection = () => {
     const reviews = [
 
       { name: "Aarav Sharma", loc: "Mumbai, India", text: "Best ROI we've seen. Our leads doubled in 3 weeks using their Performance Ads strategy.", gender: "male" },
-
       { name: "Sarah Jenkins", loc: "London, UK", text: "The 3D Parallax website they built is world-class. Absolute game changer for my personal brand.", gender: "female" },
-
       { name: "Vikram Singh", loc: "Bangalore, India", text: "Digital Media Bombay is the only agency that actually understands AI automation. Saved us 40 hours/week.", gender: "male" },
-
       { name: "David Miller", loc: "New York, USA", text: "Top 1% talent for half the price of US agencies. Fast, professional, and highly creative.", gender: "male" },
-
       { name: "Priya Patel", loc: "Ahmedabad, India", text: "Their Viral Reels strategy got us 1M+ views in the first month. Simply incredible work!", gender: "female" },
-
       { name: "Emily Chen", loc: "Singapore", text: "Technical SEO experts. We moved from page 10 to page 1 on Google for our core keywords.", gender: "female" },
-
       { name: "Rohan Mehra", loc: "Delhi, India", text: "The Cloud Squad model is genius. I got a high-end web app delivered in record time.", gender: "male" },
-
       { name: "Michael Brown", loc: "Sydney, Australia", text: "Very impressed with the GA4 and tracking setup. Finally, we have accurate marketing data.", gender: "male" },
-
       { name: "Sneha Rao", loc: "Hyderabad, India", text: "Professional, hungry, and talented. They treat your business like it's their own.", gender: "female" },
-
       { name: "Sofia Rodriguez", loc: "Madrid, Spain", text: "Elegant UI/UX design. Our conversion rate jumped from 2% to 7% after the redesign.", gender: "female" },
-
       { name: "Ishaan Gupta", loc: "Pune, India", text: "The AI Chatbot they built handles 80% of our customer queries instantly. Amazing.", gender: "male" },
-
       { name: "Liam Wilson", loc: "Toronto, Canada", text: "Great communication and faster execution than any agency I've worked with in North America.", gender: "male" },
-
       { name: "Neha Sharma", loc: "Mumbai, India", text: "If you want to dominate social media in India, this is the team to hire. Period.", gender: "female" },
-
       { name: "Chloe Dubois", loc: "Paris, France", text: "Their Shopify expertise is unmatched. They fixed all our checkout leaks in 48 hours.", gender: "female" },
-
       { name: "Vinay Kapoor", loc: "Chandigarh, India", text: "Highly recommended for Performance Marketing. Every rupee spent is tracked and optimized.", gender: "male" },
-
       { name: "Hiroshi Tanaka", loc: "Tokyo, Japan", text: "High-speed coding and perfect attention to detail. Silicon Valley standards indeed.", gender: "male" },
-
       { name: "Ananya Iyer", loc: "Chennai, India", text: "The 'Cutting Chai' pack was perfect for my startup. Minimal cost, maximum impact.", gender: "female" },
-
       { name: "Isabella Rossi", loc: "Milan, Italy", text: "Beautiful aesthetic grid planning. My Instagram looks like a luxury magazine now.", gender: "female" },
-
       { name: "Kavita Reddy", loc: "Bangalore, India", text: "Honest, transparent, and results-driven. No fluff, just pure business growth.", gender: "female" },
-
       { name: "Hans Mueller", loc: "Berlin, Germany", text: "Efficient Zapier automations. Our CRM now works on autopilot. Highly skilled team.", gender: "male" }
-
     ];
 
 
@@ -2475,6 +2482,7 @@ const ReviewSection = () => {
           <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#050c18] to-transparent z-10"></div>
 
           <div className="animate-scroll gap-6 py-4">
+            <GoogleTrustCard type="scroller" />
 
             {scrollReviews.map((r, i) => (
 
