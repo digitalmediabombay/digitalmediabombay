@@ -135,7 +135,7 @@ const blogPosts = [
     date: "January 28, 2026",
     category: "Web Development",
     author: "Digital Media Bombay",
-    img: "/3D.png",
+    img: "/3d.png",
     excerpt: "Static websites are relics of the past. Digital Media Bombay is building the future with 3D immersive designs and native mobile app ecosystems.",
     content: `<h3>Websites You Can Feel</h3><p>The standard for 'good' web design shifted on January 28, 2026. At Digital Media Bombay, we are pioneering <strong>3D & Parallax Web Dev</strong>. Using Wix Studio, Shopify, and WordPress, we create next-gen sites with immersive motion design that holds attention 4x longer than traditional layouts. Our <strong>UI/UX & Branding</strong> team ensures that these visual identities aren't just pretty—they are high-converting digital real estate built in Figma.</p><h3>Seamless Mobile Integration</h3><p>Your brand needs to live in your customer's pocket. Our <strong>Mobile-First Ecosystems</strong> division builds native iOS and Android apps using React Native and Flutter. These aren't just 'apps'; they are high-performance extensions of your web presence, complete with App Store Optimization (ASO) and push notification strategies that drive 24/7 engagement.</p><h3>The Tech Squad Support</h3><p>To ensure your digital assets never falter, our <strong>On-Demand Tech Squad</strong> provides 24/7 security monitoring and emergency bug fixes. We handle the hosting and the performance tweaks so you can focus on running your business. From 3D portfolios to native mobile empires, we build the infrastructure of 2026.</p>`,
     keywords: "3D Web Design Mumbai, React Native Developers India, UI UX Design Agency, Parallax Website India, Mobile App Development Mumbai, Digital Media Bombay Tech"
