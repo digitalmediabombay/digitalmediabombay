@@ -2449,13 +2449,12 @@ const ReviewSection = () => {
     };
 
     return (
-      /* Changed p-1.5 to p-0.5 and increased container w/h slightly for better fit */
-      <div className="bg-white/10 backdrop-blur-md p-0.5 rounded-lg border border-white/20 shadow-lg group-hover:border-cyan-500/50 transition-all w-12 h-12 flex items-center justify-center overflow-hidden">
+      <div className="bg-white p-1 rounded-lg shadow-md w-10 h-10 flex items-center justify-center overflow-hidden border border-slate-700">
         <img 
           src={logos[platform] || "google-icon.png"} 
           alt={platform} 
-          /* Changed w-6 h-6 to w-20 h-20 to fill the space */
-          className="w-20 h-20 object-contain"
+          /* This forces the image to fill the white box clearly */
+          className="w-full h-full object-contain"
           onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} 
         />
       </div>
