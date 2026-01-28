@@ -2416,48 +2416,44 @@ const BlogDetailPage = ({ post, onBack }) => {
 
 const ReviewSection = () => {
   const reviews = [
-      { name: "Aarav Sharma", loc: "Mumbai, India", text: "Best ROI we've seen. Our leads doubled in 3 weeks using their Performance Ads strategy.", gender: "male", platform: "google" },
-      { name: "Sarah Jenkins", loc: "London, UK", text: "The 3D Parallax website they built is world-class. Absolute game changer for my personal brand.", gender: "female", platform: "trustpilot" },
-      { name: "Vikram Singh", loc: "Bangalore, India", text: "Digital Media Bombay is the only agency that actually understands AI automation. Saved us 40 hours/week.", gender: "male", platform: "justdial" },
-      { name: "David Miller", loc: "New York, USA", text: "Top 1% talent for half the price of US agencies. Fast, professional, and highly creative.", gender: "male", platform: "clutch" },
-      { name: "Priya Patel", loc: "Ahmedabad, India", text: "Their Viral Reels strategy got us 1M+ views in the first month. Simply incredible work!", gender: "female", platform: "google" },
-      { name: "Emily Chen", loc: "Singapore", text: "Technical SEO experts. We moved from page 10 to page 1 on Google for our core keywords.", gender: "female", platform: "trustpilot" },
-      { name: "Rohan Mehra", loc: "Delhi, India", text: "The Cloud Squad model is genius. I got a high-end web app delivered in record time.", gender: "male", platform: "justdial" },
-      { name: "Michael Brown", loc: "Sydney, Australia", text: "Very impressed with the GA4 and tracking setup. Finally, we have accurate marketing data.", gender: "male", platform: "clutch" },
-      { name: "Sneha Rao", loc: "Hyderabad, India", text: "Professional, hungry, and talented. They treat your business like it's their own.", gender: "female", platform: "google" },
-      { name: "Sofia Rodriguez", loc: "Madrid, Spain", text: "Elegant UI/UX design. Our conversion rate jumped from 2% to 7% after the redesign.", gender: "female", platform: "trustpilot" },
-      // --- 10 NEW EXTRA REVIEWS ---
-      { name: "James Wilson", loc: "Dubai, UAE", text: "The AI Voice agents are revolutionary. Handled all our inbound bookings without a single human error.", gender: "male", platform: "google" },
-      { name: "Ananya Deshmukh", loc: "Mumbai, India", text: "They built our Shopify store in record time. Sales are up 400% since launch.", gender: "female", platform: "justdial" },
-      { name: "Klaus Weber", loc: "Berlin, Germany", text: "Elite coding standards. Their technical SEO audit revealed issues our previous agency missed for years.", gender: "male", platform: "clutch" },
-      { name: "Meera Reddy", loc: "Chennai, India", text: "Digital Media Bombay's Reels production is top-tier. Our engagement is at an all-time high.", gender: "female", platform: "google" },
-      { name: "Robert Fox", loc: "Texas, USA", text: "The most transparent agency I've worked with. Daily reporting and clear ROI tracking.", gender: "male", platform: "trustpilot" },
-      { name: "Zubair Ahmed", loc: "Mumbai, India", text: "Best tech squad in Maharashtra. They fixed our server-side tracking issues in just 24 hours.", gender: "male", platform: "justdial" },
-      { name: "Olivia Thompson", loc: "Toronto, Canada", text: "Incredible 3D web experience. Our customers spend 4x more time on our site now.", gender: "female", platform: "clutch" },
-      { name: "Rahul Kapoor", loc: "Pune, India", text: "The LinkedIn ghostwriting service has positioned me as an industry authority. Highly recommend.", gender: "male", platform: "google" },
-      { name: "Isabella Rossi", loc: "Milan, Italy", text: "Creative, fast, and data-driven. The perfect partner for any luxury brand going global.", gender: "female", platform: "trustpilot" },
-      { name: "Deepak Verma", loc: "Mumbai, India", text: "Switching to DMB was the best business decision of 2026. Absolute SEO dominance.", gender: "male", platform: "justdial" }
-    ];
+    { name: "Aarav Sharma", loc: "Mumbai, India", text: "Best ROI we've seen. Our leads doubled in 3 weeks using their Performance Ads strategy.", gender: "male", platform: "google" },
+    { name: "Sarah Jenkins", loc: "London, UK", text: "The 3D Parallax website they built is world-class. Absolute game changer for my personal brand.", gender: "female", platform: "trustpilot" },
+    { name: "Vikram Singh", loc: "Bangalore, India", text: "Digital Media Bombay is the only agency that actually understands AI automation. Saved us 40 hours/week.", gender: "male", platform: "justdial" },
+    { name: "David Miller", loc: "New York, USA", text: "Top 1% talent for half the price of US agencies. Fast, professional, and highly creative.", gender: "male", platform: "clutch" },
+    { name: "Priya Patel", loc: "Ahmedabad, India", text: "Their Viral Reels strategy got us 1M+ views in the first month. Simply incredible work!", gender: "female", platform: "google" },
+    { name: "Emily Chen", loc: "Singapore", text: "Technical SEO experts. We moved from page 10 to page 1 on Google for our core keywords.", gender: "female", platform: "trustpilot" },
+    { name: "Rohan Mehra", loc: "Delhi, India", text: "The Cloud Squad model is genius. I got a high-end web app delivered in record time.", gender: "male", platform: "justdial" },
+    { name: "Michael Brown", loc: "Sydney, Australia", text: "Very impressed with the GA4 and tracking setup. Finally, we have accurate marketing data.", gender: "male", platform: "clutch" },
+    { name: "Sneha Rao", loc: "Hyderabad, India", text: "Professional, hungry, and talented. They treat your business like it's their own.", gender: "female", platform: "google" },
+    { name: "Sofia Rodriguez", loc: "Madrid, Spain", text: "Elegant UI/UX design. Our conversion rate jumped from 2% to 7% after the redesign.", gender: "female", platform: "trustpilot" },
+    { name: "James Wilson", loc: "Dubai, UAE", text: "The AI Voice agents are revolutionary. Handled all our inbound bookings without a single human error.", gender: "male", platform: "google" },
+    { name: "Ananya Deshmukh", loc: "Mumbai, India", text: "They built our Shopify store in record time. Sales are up 400% since launch.", gender: "female", platform: "justdial" },
+    { name: "Klaus Weber", loc: "Berlin, Germany", text: "Elite coding standards. Their technical SEO audit revealed issues our previous agency missed for years.", gender: "male", platform: "clutch" },
+    { name: "Meera Reddy", loc: "Chennai, India", text: "Digital Media Bombay's Reels production is top-tier. Our engagement is at an all-time high.", gender: "female", platform: "google" },
+    { name: "Robert Fox", loc: "Texas, USA", text: "The most transparent agency I've worked with. Daily reporting and clear ROI tracking.", gender: "male", platform: "trustpilot" },
+    { name: "Zubair Ahmed", loc: "Mumbai, India", text: "Best tech squad in Maharashtra. They fixed our server-side tracking issues in just 24 hours.", gender: "male", platform: "justdial" },
+    { name: "Olivia Thompson", loc: "Toronto, Canada", text: "Incredible 3D web experience. Our customers spend 4x more time on our site now.", gender: "female", platform: "clutch" },
+    { name: "Rahul Kapoor", loc: "Pune, India", text: "The LinkedIn ghostwriting service has positioned me as an industry authority. Highly recommend.", gender: "male", platform: "google" },
+    { name: "Isabella Rossi", loc: "Milan, Italy", text: "Creative, fast, and data-driven. The perfect partner for any luxury brand going global.", gender: "female", platform: "trustpilot" },
+    { name: "Deepak Verma", loc: "Mumbai, India", text: "Switching to DMB was the best business decision of 2026. Absolute SEO dominance.", gender: "male", platform: "justdial" }
+  ];
 
   const scrollReviews = [...reviews, ...reviews];
 
-  // This is the toolbox that picks the right logo
   const getPlatformLogo = (platform) => {
-    // These names should match the image files you download and put in your public folder
     const logos = {
       google: "google-icon.png",
       justdial: "justdial-icon.png",
       trustpilot: "trustpilot-icon.png",
       clutch: "clutch-icon.png"
     };
-
     return (
       <div className="bg-white/10 backdrop-blur-md p-1.5 rounded-lg border border-white/20 shadow-lg group-hover:border-cyan-500/50 transition-all">
         <img 
           src={logos[platform] || "google-icon.png"} 
           alt={platform} 
           className="w-6 h-6 object-contain"
-          onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} // Fallback if image is missing
+          onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} 
         />
       </div>
     );
@@ -2487,33 +2483,18 @@ const ReviewSection = () => {
       </div>
 
       <div className="relative flex flex-col lg:flex-row items-center gap-8 px-4 md:px-10 max-w-[1400px] mx-auto">
-        {/* 1. THE FIXED QR CARD (STAYS STILL) */}
         <div className="flex-shrink-0 z-30">
           <GoogleTrustCard />
         </div>
 
-        {/* 2. THE SCROLLING REVIEWS (GO BEHIND) */}
         <div className="overflow-hidden flex-1 relative w-full">
           <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#050c18] to-transparent z-20 pointer-events-none"></div>
           <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#050c18] to-transparent z-20 pointer-events-none"></div>
           
           <div className="animate-scroll gap-6 py-4">
             {scrollReviews.map((r, i) => (
-              <div key={i} className="w-[350px] bg-slate-900/50 backdrop-blur-sm border border-slate-700 p-6 rounded-2xl flex flex-col gap-4 hover:border-cyan-500/50 transition-colors shadow-xl">
+              <div key={i} className="w-[350px] bg-slate-900/50 backdrop-blur-sm border border-slate-700 p-6 rounded-2xl flex flex-col gap-4 hover:border-cyan-500/50 transition-colors shadow-xl group">
                 <div className="flex items-center gap-4">
-  <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-slate-300 font-bold border border-slate-600">
-    {r.gender === 'male' ? <User size={24} /> : <Heart size={20} />}
-  </div>
-  <div>
-    <h4 className="text-white font-bold text-sm">{r.name}</h4>
-    <p className="text-slate-500 text-xs flex items-center gap-1"><MapPin size={10}/> {r.loc}</p>
-  </div>
-  
-  {/* --- THE NEW LOGO CONTAINER IN TOP RIGHT --- */}
-  <div className="ml-auto">
-    {getPlatformLogo(r.platform)}
-  </div>
-</div>
                   <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-slate-300 font-bold border border-slate-600">
                     {r.gender === 'male' ? <User size={24} /> : <Heart size={20} />}
                   </div>
@@ -2521,8 +2502,10 @@ const ReviewSection = () => {
                     <h4 className="text-white font-bold text-sm">{r.name}</h4>
                     <p className="text-slate-500 text-xs flex items-center gap-1"><MapPin size={10}/> {r.loc}</p>
                   </div>
+                  <div className="ml-auto">
+                    {getPlatformLogo(r.platform)}
+                  </div>
                 </div>
-                <div className="ml-auto flex items-center">{getPlatformLogo(r.platform)}</div>
                 <div className="flex text-amber-400"><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/></div>
                 <p className="text-slate-300 text-sm leading-relaxed italic">"{r.text}"</p>
               </div>
