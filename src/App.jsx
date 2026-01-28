@@ -1524,7 +1524,7 @@ const GoogleTrustCard = () => {
         </div>
         <h4 className="text-xl font-black text-white mb-4">REVIEW US ON GOOGLE</h4>
         <div className="bg-white p-3 rounded-2xl mb-5 shadow-inner">
-          <img src="https://i.ibb.co/v4K6fXp/google-qr.png" alt="Google QR" className="w-32 h-32" />
+          <img src="dmbgooglereviewqr.png" alt="Google QR" className="w-32 h-32" />
         </div>
         <p className="text-slate-300 text-xs font-medium leading-relaxed">
           Scan to Review <br/> Digital Media Bombay.
@@ -2184,7 +2184,7 @@ const Footer = () => (
             <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> London (Support)</li>
           </ul>
           <div className="border border-slate-700 p-3 rounded-xl bg-slate-900/50 flex items-center gap-3 hover:border-cyan-500 transition-all mt-4">
-  <img src="https://i.ibb.co/v4K6fXp/google-qr.png" className="w-12 h-12 rounded bg-white p-1" alt="QR" />
+  <img src="dmbongoogle.png" className="w-12 h-12 rounded bg-white p-1" alt="QR" />
   <div>
      <p className="text-[10px] font-bold text-white">Google Verified</p>
      <p className="text-[9px] text-slate-500">Scan to view profile</p>
