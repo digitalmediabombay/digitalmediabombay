@@ -2449,14 +2449,15 @@ const ReviewSection = () => {
     };
 
     return (
-      /* Container size fixed at w-10 h-10 with p-0 to allow icon to touch edges */
+      /* Container remains w-10 h-10 */
       <div className="bg-white p-0 rounded-lg shadow-md w-10 h-10 flex items-center justify-center overflow-hidden border border-slate-700">
         <img 
           src={logos[platform] || "google-icon.png"} 
           alt={platform} 
-          /* w-full h-full makes the image fill the box. 
-             object-cover ensures no white gaps inside the 10x10 area */
-          className="w-full h-full object-cover"
+          /* w-full h-full fills the container.
+             object-cover removes any white gaps.
+             scale-125 enlarges the icon further by zooming in (removes the small margins). */
+          className="w-full h-full object-cover object-center transform scale-125"
           onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} 
         />
       </div>
