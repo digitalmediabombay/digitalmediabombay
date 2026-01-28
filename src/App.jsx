@@ -2449,7 +2449,7 @@ const ReviewSection = () => {
     };
 
     return (
-      <div className="bg-white p-1 rounded-lg shadow-md w-10 h-10 flex items-center justify-center overflow-hidden border border-slate-700">
+      <div className="bg-white p-1 rounded-lg shadow-md w-30 h-30 flex items-center justify-center overflow-hidden border border-slate-700">
         <img 
           src={logos[platform] || "google-icon.png"} 
           alt={platform} 
