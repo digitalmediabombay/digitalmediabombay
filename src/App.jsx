@@ -1510,23 +1510,25 @@ const App = () => {
 
   // --- SUB-COMPONENTS ---
 
-const GoogleTrustCard = ({ type = 'review' }) => {
+const GoogleTrustCard = () => {
   const googleReviewUrl = "https://g.page/r/YOUR_GOOGLE_REVIEW_ID/review"; 
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl border-2 border-slate-700 bg-slate-900/80 p-6 transition-all hover:border-cyan-400 group ${type === 'scroller' ? 'w-[350px] flex-shrink-0' : 'w-full'}`}>
-      <div className="relative z-10 flex flex-col items-center text-center">
+    <div className="relative z-30 w-[350px] overflow-hidden rounded-3xl border-2 border-amber-400 bg-[#0f2440] p-8 shadow-[0_0_30px_rgba(251,191,36,0.2)]">
+      <div className="flex flex-col items-center text-center">
         <div className="mb-4 flex items-center gap-2">
           <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.67-.35-1.39-.35-2.09s.13-1.42.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
           </svg>
-          <span className="font-bold text-white text-sm">Verified Business</span>
+          <span className="font-black text-white text-xs tracking-tighter uppercase">Official Profile</span>
         </div>
-        <h4 className="text-lg font-black text-white mb-2">{type === 'review' ? 'LEAVE A 5-STAR REVIEW' : 'VIEW US ON GOOGLE'}</h4>
-        <div className="bg-white p-2 rounded-xl mb-4 group-hover:scale-105 transition-transform">
+        <h4 className="text-xl font-black text-white mb-4">REVIEW US ON GOOGLE</h4>
+        <div className="bg-white p-3 rounded-2xl mb-5 shadow-inner">
           <img src="https://i.ibb.co/v4K6fXp/google-qr.png" alt="Google QR" className="w-32 h-32" />
         </div>
-        <p className="text-slate-400 text-xs mb-4">Scan to verify our digital <br/> footprint on Google[cite: 5].</p>
+        <p className="text-slate-300 text-xs font-medium leading-relaxed">
+          Scan to see our 5.0 Rating <br/> and verified details[cite: 5].
+        </p>
       </div>
     </div>
   );
@@ -2473,28 +2475,37 @@ const ReviewSection = () => {
 
         <div className="relative">
 
+<div className="relative flex flex-col lg:flex-row items-center gap-8 px-4 md:px-10">
+  
+  {/* 1. THE FIXED QR CARD (Stays Still) */}
+  <GoogleTrustCard />
 
-
-          {/* Gradient Overlays for Cinematic Effect */}
-
-          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#050c18] to-transparent z-10"></div>
-
-          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#050c18] to-transparent z-10"></div>
-
-          <div className="animate-scroll gap-6 py-4">
-            <GoogleTrustCard type="scroller" />
-
-            {scrollReviews.map((r, i) => (
-
-              <div key={i} className="w-[350px] bg-slate-900/50 backdrop-blur-sm border border-slate-700 p-6 rounded-2xl flex flex-col gap-4 hover:border-cyan-500/50 transition-colors shadow-xl">
-
-                <div className="flex items-center gap-4">
-
-                  <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-slate-300 font-bold border border-slate-600">
-
-                    {r.gender === 'male' ? <User size={24} /> : <Heart size={20} />}
-
-                  </div>
+  {/* 2. THE SCROLLING REVIEWS CONTAINER (Moves) */}
+  <div className="overflow-hidden flex-1 relative w-full">
+    {/* These gradients make the reviews fade away smoothly */}
+    <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#050c18] to-transparent z-20 pointer-events-none"></div>
+    <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#050c18] to-transparent z-20 pointer-events-none"></div>
+    
+    {/* The moving track */}
+    <div className="animate-scroll gap-6 py-4">
+      {scrollReviews.map((r, i) => (
+        <div key={i} className="w-[350px] bg-slate-900/50 backdrop-blur-sm border border-slate-700 p-6 rounded-2xl flex flex-col gap-4 hover:border-cyan-500/50 transition-colors shadow-xl">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-slate-300 font-bold border border-slate-600">
+              {r.gender === 'male' ? <User size={24} /> : <Heart size={20} />}
+            </div>
+            <div>
+              <h4 className="text-white font-bold text-sm">{r.name}</h4>
+              <p className="text-slate-500 text-xs flex items-center gap-1"><MapPin size={10}/> {r.loc}</p>
+            </div>
+          </div>
+          <div className="flex text-amber-400"><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/><Star size={12} fill="currentColor"/></div>
+          <p className="text-slate-300 text-sm leading-relaxed italic">"{r.text}"</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
                   <div>
 
