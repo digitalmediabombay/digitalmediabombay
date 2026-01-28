@@ -2443,18 +2443,24 @@ const ReviewSection = () => {
 
   // This is the toolbox that picks the right logo
   const getPlatformLogo = (platform) => {
-    switch(platform) {
-      case 'google':
-        return <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.67-.35-1.39-.35-2.09s.13-1.42.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>;
-      case 'justdial':
-        return <div className="text-[10px] font-black text-white bg-blue-600 px-1.5 py-0.5 rounded leading-none">Justdial</div>;
-      case 'trustpilot':
-        return <div className="flex items-center text-green-400 font-bold text-[10px]"><Star size={10} fill="currentColor" className="mr-0.5" />Trustpilot</div>;
-      case 'clutch':
-        return <div className="text-[10px] font-black text-white bg-red-600 px-1.5 py-0.5 rounded leading-none italic tracking-tighter">Clutch</div>;
-      default:
-        return null;
-    }
+    // These names should match the image files you download and put in your public folder
+    const logos = {
+      google: "google-icon.png",
+      justdial: "justdial-icon.png",
+      trustpilot: "trustpilot-icon.png",
+      clutch: "clutch-icon.png"
+    };
+
+    return (
+      <div className="bg-white/10 backdrop-blur-md p-1.5 rounded-lg border border-white/20 shadow-lg group-hover:border-cyan-500/50 transition-all">
+        <img 
+          src={logos[platform] || "google-icon.png"} 
+          alt={platform} 
+          className="w-6 h-6 object-contain"
+          onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} // Fallback if image is missing
+        />
+      </div>
+    );
   };
 
   return (
@@ -2495,6 +2501,19 @@ const ReviewSection = () => {
             {scrollReviews.map((r, i) => (
               <div key={i} className="w-[350px] bg-slate-900/50 backdrop-blur-sm border border-slate-700 p-6 rounded-2xl flex flex-col gap-4 hover:border-cyan-500/50 transition-colors shadow-xl">
                 <div className="flex items-center gap-4">
+  <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-slate-300 font-bold border border-slate-600">
+    {r.gender === 'male' ? <User size={24} /> : <Heart size={20} />}
+  </div>
+  <div>
+    <h4 className="text-white font-bold text-sm">{r.name}</h4>
+    <p className="text-slate-500 text-xs flex items-center gap-1"><MapPin size={10}/> {r.loc}</p>
+  </div>
+  
+  {/* --- THE NEW LOGO CONTAINER IN TOP RIGHT --- */}
+  <div className="ml-auto">
+    {getPlatformLogo(r.platform)}
+  </div>
+</div>
                   <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center text-slate-300 font-bold border border-slate-600">
                     {r.gender === 'male' ? <User size={24} /> : <Heart size={20} />}
                   </div>
