@@ -2440,7 +2440,7 @@ const ReviewSection = () => {
 
   const scrollReviews = [...reviews, ...reviews];
 
-  const getPlatformLogo = (platform) => {
+ const getPlatformLogo = (platform) => {
     const logos = {
       google: "google-icon.png",
       justdial: "justdial-icon.png",
@@ -2449,12 +2449,14 @@ const ReviewSection = () => {
     };
 
     return (
-      <div className="bg-white p-1 rounded-lg shadow-md w-15 h-15 flex items-center justify-center overflow-hidden border border-slate-700">
+      /* Container size fixed at w-10 h-10 with p-0 to allow icon to touch edges */
+      <div className="bg-white p-0 rounded-lg shadow-md w-10 h-10 flex items-center justify-center overflow-hidden border border-slate-700">
         <img 
           src={logos[platform] || "google-icon.png"} 
           alt={platform} 
-          /* This forces the image to fill the white box clearly */
-          className="w-full h-full object-contain"
+          /* w-full h-full makes the image fill the box. 
+             object-cover ensures no white gaps inside the 10x10 area */
+          className="w-full h-full object-cover"
           onError={(e) => { e.target.src = "https://www.google.com/favicon.ico" }} 
         />
       </div>
