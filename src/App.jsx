@@ -119,6 +119,39 @@ const blogPosts = [
   // --- AGENCY MILESTONES & PATRIOTIC INTELLIGENCE (JAN 24 - JAN 26, 2026) ---
 
   {
+    id: "dmb-roi-performance-seo-2026",
+    title: "The ROI Engine: How Digital Media Bombay’s SEO Dominance and Performance Ads Are Winning 2026",
+    date: "January 29, 2026",
+    category: "Performance Marketing",
+    author: "Kaleem Shaikh",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1080",
+    excerpt: "In the hyper-competitive market of 2026, clicks are cheap but revenue is expensive. Discover how our SEO and ROI-focused ad strategies secure absolute market share.",
+    content: `<h3>Beyond Clicks: The Science of ROI</h3><p>At Digital Media Bombay, we don't believe in vanity metrics. As of January 29, 2026, the digital space is more crowded than ever. Our <strong>Performance Ads (ROI)</strong> division is built on a single premise: every rupee spent must drive revenue. We specialize in scalable Google Search, Shopping, and PMax campaigns that ignore 'fluff' and focus on CPL, CAC, and ROAS.</p><h3>The SEO & Tracking Powerhouse</h3><p>Ranking #1 isn't luck; it's engineering. Our <strong>SEO Dominance</strong> service handles the 'Near Me' GMB rankings that drive Mumbai's local commerce, while our Technical SEO Audits ensure your site is a fortress. But we don't stop at ranking. With our <strong>Full-Stack Tracking</strong>, we implement GA4, GTM, and Server-Side API conversion tracking. This means you have 100% accurate data—no more 'dark' conversions or guessing where your sales come from.</p><h3>E-comm Growth Ops</h3><p>For our Shopify and WooCommerce partners, we provide <strong>E-comm Growth Ops</strong>. From Conversion Rate Optimization (CRO) to inventory sync solutions, we turn your store into a high-velocity empire. When you combine our SEO authority with precision performance ads, your brand doesn't just grow; it dominates.</p>`,
+    keywords: "SEO Experts Mumbai, Performance Ads Agency India, ROI Marketing 2026, GA4 Tracking Experts, Shopify Growth India, Digital Media Bombay SEO"
+  },
+  {
+    id: "dmb-3d-web-mobile-ecosystems-2026",
+    title: "Immersive Architecture: 3D Parallax Web Dev and Mobile-First Ecosystems",
+    date: "January 28, 2026",
+    category: "Web Development",
+    author: "Digital Media Bombay",
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080",
+    excerpt: "Static websites are relics of the past. Digital Media Bombay is building the future with 3D immersive designs and native mobile app ecosystems.",
+    content: `<h3>Websites You Can Feel</h3><p>The standard for 'good' web design shifted on January 28, 2026. At Digital Media Bombay, we are pioneering <strong>3D & Parallax Web Dev</strong>. Using Wix Studio, Shopify, and WordPress, we create next-gen sites with immersive motion design that holds attention 4x longer than traditional layouts. Our <strong>UI/UX & Branding</strong> team ensures that these visual identities aren't just pretty—they are high-converting digital real estate built in Figma.</p><h3>Seamless Mobile Integration</h3><p>Your brand needs to live in your customer's pocket. Our <strong>Mobile-First Ecosystems</strong> division builds native iOS and Android apps using React Native and Flutter. These aren't just 'apps'; they are high-performance extensions of your web presence, complete with App Store Optimization (ASO) and push notification strategies that drive 24/7 engagement.</p><h3>The Tech Squad Support</h3><p>To ensure your digital assets never falter, our <strong>On-Demand Tech Squad</strong> provides 24/7 security monitoring and emergency bug fixes. We handle the hosting and the performance tweaks so you can focus on running your business. From 3D portfolios to native mobile empires, we build the infrastructure of 2026.</p>`,
+    keywords: "3D Web Design Mumbai, React Native Developers India, UI UX Design Agency, Parallax Website India, Mobile App Development Mumbai, Digital Media Bombay Tech"
+  },
+  {
+    id: "dmb-viral-social-ai-automation-2026",
+    title: "The Automation Revolution: AI Voice Agents and Viral Social Media 2.0",
+    date: "January 27, 2026",
+    category: "AI & Automation",
+    author: "Kaleem Shaikh",
+    img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1080",
+    excerpt: "Stop wasting hours on manual sales and content. Digital Media Bombay’s AI Voice and Viral Social strategies are scaling brands while they sleep.",
+    content: `<h3>Viral Social Media 2.0</h3><p>Social media in 2026 is no longer about posting; it's about culture-hacking. Our <strong>Viral Social Media 2.0</strong> service uses AI Video Cloning and high-engagement growth hacks to build cult brands. We don't just edit Reels; we create <strong>AI Digital Twins</strong> that allow founders to be everywhere at once. Combined with our <strong>Content Production</strong> team—who handle everything from LinkedIn ghostwriting to high-authority SEO blogs—your voice becomes inescapable.</p><h3>AI Voice & Sales Automation</h3><p>Human callers are the bottleneck of 2026. Our <strong>AI Voice & Sales Automation</strong> replaces traditional support with high-intelligence AI calling agents. These bots handle outbound sales and inbound support with multi-language Indian support, syncing perfectly with your CRM. It’s a 24/7 automated appointment-setting machine.</p><h3>Automating the Funnel</h3><p>To tie it all together, our <strong>AI & CRM Automation</strong> team uses Zapier and Make to build workflows that save you 40+ hours weekly. From lead scoring logic to automated email drip campaigns, we ensure no lead is ever dropped. Digital Media Bombay is the engine that lets your business scale without increasing your headcount.</p>`,
+    keywords: "AI Voice Agents India, Viral Reels Strategy, AI Automation Agency Mumbai, CRM Workflows 2026, AI Video Cloning, Digital Media Bombay Social"
+  },
+  {
     id: "republic-day-vande-mataram-ai-2026",
     title: "Happy 77th Republic Day: Celebrating India's Digital Sovereignty with AI",
     date: "January 26, 2026",
