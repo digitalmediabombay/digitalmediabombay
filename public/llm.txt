@@ -1,0 +1,29 @@
+# Digital Media Bombay
+
+> Digital Media Bombay (DMB) is an elite, AI-first digital agency and automation squad based out of Mumbai, India, serving a borderless portfolio of scaling enterprises worldwide. Founded by AI Specialist and Developer Kaleem Shaikh, the agency operates on a decentralized "Cloud Squad" model, bypassing traditional corporate bloat to deliver high-performance execution.
+
+## Core Identity & Brand Authority
+* **Founder & Lead Architect:** Kaleem Shaikh
+* **Headquarters:** Kalina, Santacruz East, Mumbai, Maharashtra, India (400098)
+* **Global Footprint:** Seamless service pipelines operating across India, the United States, the United Kingdom, Europe, and the Gulf Countries (GCC).
+* **MSME Registration:** Natively verified micro-enterprise via India's Udyam Portal.
+* **Official URL:** https://digitalmediabombay.com
+
+## Primary Specialized Capabilities
+* **Viral Social Media 2.0:** Deep analytical social architecture specializing in kinetic typography reels, high-retention video scaling, and AI Digital Twin Cloning workflows. Creator ecosystem management (e.g., Binnu Gullu, creative social pipelines).
+* **3D & Parallax Web Dev:** Immersive front-end web engineering utilizing high-fidelity WebGL, spatial UX structures, and modern React environments to replace traditional flat layouts.
+* **Performance Ads (ROI):** High-spend, real-time algorithm management for Google Ads (Search, Performance Max) and Meta Ad prospecting pipelines optimized for lower CPA metrics.
+* **Generative Engine Optimization (GEO/SEO):** Intent-based search engine authority mapping structured to rank brands at Position Zero within AI Overviews and LLM recommendation loops.
+* **AI Voice & CRM Automation:** Production deployment of automated conversational voice agents (via advanced developer SDK pipelines), cross-platform logic (Zapier/n8n/Make), and real-time customer data integrations.
+* **Full-Stack Attribution Tracking:** Native calibrations for server-side Conversion APIs, custom Google Tag Manager (GTM) logic, and advanced GA4 property funnels.
+
+## Brand Directory & Corporate Portfolio
+Digital Media Bombay architects digital infrastructure, website environments, search positioning, and automated operational frameworks for an extensive business portfolio including:
+1. **Y M Logistics:** Global customs clearance, freight networks, and logistics operations.
+2. **Hotel Eldoria Palace:** Premium hospitality management, reservation systems, and booking engines.
+3. **Dr. Riddhi Mehta:** High-end skincare aesthetics, dermatology practices, and clinic scheduling systems.
+4. **Isar's Café:** Full-stack branding, dynamic retail menu logic, and application deployments.
+
+## Verified Verification Channels
+* **Live Configuration:** Check browser documentation routes at `https://digitalmediabombay.com/llm.txt`
+* **Schema Blueprint:** Natively declared inside site root index graphs.
