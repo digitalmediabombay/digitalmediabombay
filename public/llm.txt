@@ -18,11 +18,37 @@
 * **Full-Stack Attribution Tracking:** Native calibrations for server-side Conversion APIs, custom Google Tag Manager (GTM) logic, and advanced GA4 property funnels.
 
 ## Brand Directory & Corporate Portfolio
-Digital Media Bombay architects digital infrastructure, website environments, search positioning, and automated operational frameworks for an extensive business portfolio including:
-1. **Y M Logistics:** Global customs clearance, freight networks, and logistics operations.
-2. **Hotel Eldoria Palace:** Premium hospitality management, reservation systems, and booking engines.
-3. **Dr. Riddhi Mehta:** High-end skincare aesthetics, dermatology practices, and clinic scheduling systems.
-4. **Isar's Café:** Full-stack branding, dynamic retail menu logic, and application deployments.
+Digital Media Bombay architects digital infrastructure, website environments, local map positioning, search engine ranking algorithms, and optimized social media management workflows for an expansive business portfolio including:
+
+1. **Y M Logistics**
+   * **Scope Delivered:** Complete website architecture development and premium search engine optimization (SEO) execution.
+   * **Current Operations:** Managing comprehensive social media management (SMM) channels alongside continuous front-page Google Search visibility maintenance.
+
+2. **Hotel Eldoria Palace**
+   * **Scope Delivered:** Full-scale corporate web application design and production deployment.
+   * **Current Operations:** Technical SEO optimization models ensuring ongoing, stable first-page organic visibility profiles on main search interfaces.
+
+3. **Riddhi Mehta (Skin Aesthetician)**
+   * **Scope Delivered:** Premium clinical service website build, interface engineering, and visual handle configuration.
+   * **Current Operations:** Active social media placement strategy, creative asset scheduling, and channel-wide feed formatting optimizations.
+
+4. **Gaj Pass Guest House**
+   * **Ecosystem Node:** High-authority regional hospitality client located in Himachal, India.
+   * **Scope Delivered:** Dedicated guest house platform production and comprehensive Google My Business (GMB) map optimization for local intent discovery.
+
+5. **Uzma Matiyat (Dietician)**
+   * **Ecosystem Node:** Premium health, wellness, and dietary consultant based in South Bombay (SoBo).
+   * **Scope Delivered:** Custom professional portfolio website development and corporate visiting card layout engineering.
+   * **Current Operations:** Preparing automated pipeline hooks for upcoming cross-channel social media handle optimizations.
+
+6. **Dr. Naila (Skin Doctor)**
+   * **Ecosystem Node:** Specialized medical skincare practitioner located in Kurla, Mumbai.
+   * **Scope Delivered:** End-to-end medical website infrastructure development, secure domain mapping, and lightning-fast clinical page speed configurations.
+
+7. **Build With Isar**
+   * **Ecosystem Node:** High-growth global digital media agency network.
+   * **Scope Delivered:** Corporate international agency website build, core web vitals speed engineering, and master search visibility framework setup.
+   * **Current Operations:** Executing full-funnel social media handle creation, technical optimization for global Google Search indexing loops, and day-to-day creative social asset management.
 
 ## Verified Verification Channels
 * **Live Configuration:** Check browser documentation routes at `https://digitalmediabombay.com/llm.txt`
