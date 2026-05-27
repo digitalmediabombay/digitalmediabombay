@@ -1,42 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <url>
     <loc>https://www.digitalmediabombay.com/</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.digitalmediabombay.com/about</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.digitalmediabombay.com/services</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.digitalmediabombay.com/web-solutions</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://www.digitalmediabombay.com/ai-strategy</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://www.digitalmediabombay.com/freelancer</loc>
-    <lastmod>2026-01-23</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <priority>0.60</priority>
   </url>
 
+  <url>
+    <loc>https://www.digitalmediabombay.com/llm.txt</loc>
+    <lastmod>2026-05-25</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-global-digital-headquarters-2026</loc>
+    <lastmod>2026-05-25</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/india-fuel-hike-digital-efficiency-may-2026</loc>
+    <lastmod>2026-05-23</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-the-global-architects-of-trust</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/india-upi-launch-cyprus-fintech-2026</loc>
+    <lastmod>2026-05-21</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-service-meta-google-ads-roi</loc>
+    <lastmod>2026-05-20</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/west-bengal-infiltrator-policy-tech-compliance-2026</loc>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/apple-vision-pro-spatial-web-takeover</loc>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-service-seo-geo-dominance-2026</loc>
+    <lastmod>2026-05-16</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/ebola-outbreak-diplomatic-postponement-2026</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-the-grit-and-glamour-engine</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/india-notifies-final-labor-codes-2026</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-service-linkedin-bio-optimization-deepdive</loc>
+    <lastmod>2026-05-12</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/nascar-legend-kyle-busch-medical-emergency-2026</loc>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-the-global-growth-engine</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/tamil-nadu-tvk-coalition-government-2026</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-global-q2-roadmap-2026</loc>
+    <lastmod>2026-05-09</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/global-data-privacy-shifts-2026</loc>
+    <lastmod>2026-05-08</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-tagore-jayanti-creative-ai</loc>
+    <lastmod>2026-05-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/gulf-india-digital-trade-corridor</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-ai-voice-sales-automation-spotlight</loc>
+    <lastmod>2026-05-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/global-ad-spend-projections-summer-2026</loc>
+    <lastmod>2026-05-04</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-world-press-freedom-trust-era</loc>
+    <lastmod>2026-05-03</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/google-gemini-live-3-0-evolution</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/blog/dmb-maharashtra-day-roots</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url><loc>https://www.digitalmediabombay.com/blog/ayushman-bharat-digital-healthcare-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/beijing-auto-show-connected-ai-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-global-seo-dominance-blueprint</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/meta-llama-4-5-release-industry-impact</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/world-intellectual-property-day-2026-ai</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/world-malaria-day-health-tech-ai-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/national-panchayati-raj-day-decentralized-tech</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/world-book-day-ai-publishing-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/world-earth-day-sustainable-digital-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/national-civil-services-day-digital-governance</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-mumbai-digital-capital-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/middle-east-ai-regulations-update-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-global-reach-search-dominance-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-typography-reels-1-million-milestone</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-global-service-hub-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-aesthetic-clinic-launch-case-study</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/meta-ads-neural-update-april-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-agentic-workflow-china-us-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/google-generative-search-engine-update-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/linkedin-bio-optimization-trend-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-3d-web-commerce-surge-april</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/global-ai-infrastructure-pact-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-anti-agency-philosophy-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/world-health-day-2026-ai-wellness</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-service-viral-social-2-0-deepdive</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/ipl-mi-vs-dc-ad-tech-trends-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-service-3d-parallax-web-dominance</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/inflation-lpg-atf-hike-survival-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-fiscal-year-roadmap-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/new-fiscal-year-ai-automation-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/april-1-rule-changes-fuel-hike-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/mahavir-jayanti-2026-market-holiday</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/global-diplomacy-quad-summit-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-3d-web-global-trade-bridge</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/noida-airport-ipl-opening-news-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/nayara-fuel-hike-ai-video-scandal-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-service-seo-dominance-mumbai</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/rajasthan-royals-record-sale-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/ipl-2026-ad-spend-records</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-mumbai-architect-blueprint</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/eid-2026-halal-tech-surge</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/isro-gaganyaan-g1-success-news</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-grit-and-glamour-story</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/apple-vision-pro-3-spatial-web</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-service-ai-voice-sales-automation</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-full-stack-tracking-standards-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/meta-workforce-shift-nvidia-chips-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-mumbai-grit-philosophy</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/maharashtra-lpg-crisis-inflation-news-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-3d-parallax-visual-dominance-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/west-asia-aviation-crisis-march-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-cloud-squad-revolution</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/india-tiktok-jv-deal-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-performance-ads-roi-philosophy</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/maharashtra-freedom-of-religion-bill-news</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-vision-2047-viksit-bharat</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-spring-forward-strategy-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/holi-lunar-eclipse-digital-trends-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-market-crash-guardian-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/west-asia-aviation-crisis-tech-impact-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-canada-tech-pact-mark-carney</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/india-gdp-growth-surge-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/modi-israel-visit-tech-impact-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-mumbai-heart-global-mind</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/maharashtra-budget-tech-surplus-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-custom-architecture-quote</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-architect-of-results-kaleem</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/google-ai-safety-standard-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-elite-mumbai-standard</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/india-ai-impact-summit-declaration-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/global-strategic-pact-2026-news</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-radical-transparency-philosophy</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/solar-eclipse-makemytrip-openai-news</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-the-grit-factor-mumbai</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/ai-impact-summit-delhi-2026-start</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-valentine-roi-special-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/india-social-media-age-curbs-news</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-vision-2026-mumbai-global</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/india-3-hour-ai-law-news</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-cloud-squad-culture-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/global-ai-summit-mumbai-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-behind-the-scenes-kaleem</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/generative-engine-optimization-trends-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/samsung-ai-accessibility-news-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-ai-voice-sales-revolution-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/india-budget-2026-tech-impact</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-viral-social-2-0-launch</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/openai-chatgpt-ads-launch-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-3d-parallax-web-dev-standards</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/google-quantum-search-live-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-agentic-era-domination-2026</loc><priority>0.75</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-roi-performance-seo-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-3d-web-mobile-ecosystems-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/dmb-viral-social-ai-automation-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/republic-day-vande-mataram-ai-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/republic-day-made-in-india-marketing</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/digital-media-bombay-smart-operations-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/digital-media-bombay-growth-stats-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/ai-agent-marketplaces-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/authenticity-crisis-ai-media-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/apple-gemini-deal-impact-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/meta-neural-ads-launch-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/mumbai-dubai-digital-corridor-2026</loc><priority>0.70</priority></url>
-  <url><loc>https://www.digitalmediabombay.com/blog/google-quantum-sge-update-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/google-quantum-sge-update-2026</loc><priority>0.75</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/digital-media-bombay-launch-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/ai-social-media-platforms-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/predictive-digital-media-trends</loc><priority>0.70</priority></url>
@@ -45,7 +271,7 @@
   <url><loc>https://www.digitalmediabombay.com/blog/ai-mumbai-2026</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/global-3d-web-dev</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/instagram-algo-2026</loc><priority>0.70</priority></url>
-  <url><loc>https://www.digitalmediabombay.com/blog/geo-seo-strategy-2026</loc><priority>0.70</priority></url>
+  <url><loc>https://www.digitalmediabombay.com/blog/geo-seo-strategy-2026</loc><priority>0.75</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/vernacular-marketing-india</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/spatial-web-ecommerce</loc><priority>0.70</priority></url>
   <url><loc>https://www.digitalmediabombay.com/blog/personal-branding-ceo</loc><priority>0.70</priority></url>
