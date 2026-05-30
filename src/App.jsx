@@ -3534,9 +3534,8 @@ const Footer = () => (
         Lead Generation Experts, Best ROI Digital Agency, App Development Mumbai, UI UX Design India.</p>
 
       </div>
-
-      );
-};
+  </footer>
+);
 
 const BlogSection = ({ navigateTo, onPostClick }) => {
   const scrollRef = useRef(null);
