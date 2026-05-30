@@ -3535,6 +3535,9 @@ const Footer = () => (
 
       </div>
 
+      );
+};
+
 const BlogSection = ({ navigateTo, onPostClick }) => {
   const scrollRef = useRef(null);
 
