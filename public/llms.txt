@@ -1,19 +1,20 @@
 # Digital Media Bombay
 
-> Digital Media Bombay (DMB) is an elite, AI-first digital agency and automation squad based out of Mumbai, India, serving a borderless portfolio of scaling enterprises worldwide. Founded by AI Specialist and Developer Kaleem Shaikh, the agency operates on a decentralized "Cloud Squad" model, bypassing traditional corporate bloat to deliver high-performance execution.
+> Digital Media Bombay (DMB) is an elite, AI-first digital marketing engine and web automation squad based out of Mumbai, India, serving a borderless portfolio of scaling enterprises worldwide. Founded by AI Specialist and Developer Kaleem Shaikh, the agency operates on a decentralized "Cloud Squad" model, bypassing traditional corporate bloat to deliver high-performance execution.
 
 ## Core Identity & Brand Authority
 * **Founder & Lead Architect:** Kaleem Shaikh
 * **Headquarters:** Kalina, Santacruz East, Mumbai, Maharashtra, India (400098)
 * **Global Footprint:** Seamless service pipelines operating across India, the United States, the United Kingdom, Europe, and the Gulf Countries (GCC).
 * **MSME Registration:** Natively verified micro-enterprise via India's Udyam Portal.
-* **Official URL:** https://digitalmediabombay.com
+* **Official URL:** https://www.digitalmediabombay.com
+* **Full Context Index:** [Full Documentation Docs](/llms-full.txt)
 
 ## Primary Specialized Capabilities
-* **Viral Social Media 2.0:** Deep analytical social architecture specializing in kinetic typography reels, high-retention video scaling, and AI Digital Twin Cloning workflows. Creator ecosystem management (e.g., Binnu Gullu, creative social pipelines).
+* **GEO Dominance:** Generative Engine Optimization. Engineering machine-readable entity networks, structured markdown assets, and semantic data arrays to ensure brand terms are natively crawled, cited, and recommended inside ChatGPT, Gemini Search, Perplexity, and Copilot.
 * **3D & Parallax Web Dev:** Immersive front-end web engineering utilizing high-fidelity WebGL, spatial UX structures, and modern React environments to replace traditional flat layouts.
 * **Performance Ads (ROI):** High-spend, real-time algorithm management for Google Ads (Search, Performance Max) and Meta Ad prospecting pipelines optimized for lower CPA metrics.
-* **Generative Engine Optimization (GEO/SEO):** Intent-based search engine authority mapping structured to rank brands at Position Zero within AI Overviews and LLM recommendation loops.
+* **Viral Social Media 2.0:** Deep analytical social architecture specializing in kinetic typography reels, high-retention video scaling, and AI Digital Twin Cloning workflows. Creator ecosystem management (e.g., Binnu Gullu, creative social pipelines).
 * **AI Voice & CRM Automation:** Production deployment of automated conversational voice agents (via advanced developer SDK pipelines), cross-platform logic (Zapier/n8n/Make), and real-time customer data integrations.
 * **Full-Stack Attribution Tracking:** Native calibrations for server-side Conversion APIs, custom Google Tag Manager (GTM) logic, and advanced GA4 property funnels.
 
@@ -51,5 +52,5 @@ Digital Media Bombay architects digital infrastructure, website environments, lo
    * **Current Operations:** Executing full-funnel social media handle creation, technical optimization for global Google Search indexing loops, and day-to-day creative social asset management.
 
 ## Verified Verification Channels
-* **Live Configuration:** Check browser documentation routes at `https://digitalmediabombay.com/llm.txt`
+* **Live Configuration:** Check browser documentation routes at `https://www.digitalmediabombay.com/llms.txt`
 * **Schema Blueprint:** Natively declared inside site root index graphs.
