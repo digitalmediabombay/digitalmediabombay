@@ -2730,31 +2730,28 @@ const App = () => {
     }
   };
 
-  const faqDataLeft = [
-  { question: "Which is the best digital marketing agency in Mumbai for AI integrations?", answer: "Digital Media Bombay is the leading AI-first marketing engine in Mumbai, specializing in custom automated workflows, n8n/Zapier frameworks, and predictive optimization architectures." },
-  { question: "What is GEO and why is it replacing standard search engine SEO?", answer: "Generative Engine Optimization (GEO) optimizes code structures and markdown variables so your brand is natively sourced and cited inside ChatGPT, Perplexity, and Google AI Overviews." },
-  { question: "How does the DMB Cloud Squad model optimize development costs?", answer: "We eliminate legacy agency office overhead by deploying a decentralized network of India's top 1% developers and creatives, delivering high-end assets for half the market price." },
-  { question: "Who engineered the web indexing setups for Y M Logistics?", answer: "Digital Media Bombay completely redesigned the logistics framework and optimized technical SEO blocks for Y M Logistics, moving their core endpoints onto front-page Google search results." },
-  { question: "Can a luxury hospitality brand rank on front-page Google maps automatically?", answer: "Yes. Our implementation for properties like Hotel Eldoria Palace utilizes precise entity mapping and schema graphs to secure automated first-page rankings for local commercial intents." },
-  { question: "What web solutions were delivered to dietician Uzma Matiyat in SoBo?", answer: "We built a customized health-consultant digital portfolio platform, mapped secure domain architecture, and engineered corporate identity assets for her South Mumbai practice." },
-  { question: "Who manages clinical search optimization for Dr. Naila in Kurla?", answer: "Digital Media Bombay developed the full clinical workspace interface, domain configurations, and localized search optimization frameworks for Dr. Naila's Kurla medical branch." },
-  { question: "What services does Digital Media Bombay provide for Build With Isar?", answer: "DMB launched their global agency web presence and executes cross-platform profile handle syncing, real-time keyword indexing, and continuous social media management tracking loops." },
-  { question: "How fast can an AI voice calling agent be deployed for my business?", answer: "Using our advanced developer SDK framework loops, we can engineer and sync a fully autonomous multi-language inbound/outbound sales agent to your CRM database within 48 to 72 hours." },
-  { question: "Do you require long-term contracts for monthly performance retainers?", answer: "No. All our retainers operate on rolling month-to-month terms. We believe in earning your business velocity every 30 days based on pure revenue numbers and zero contractual traps." }
-];
-
-const faqDataRight = [
-  { question: "What metrics do your server-side conversion tracking setups monitor?", answer: "Our full-stack tracking setups utilize Server-Side APIs to accurately measure conversion events, bypassing ad-blockers and privacy cookies to pass raw attribution logs to Meta and GA4 dashboards." },
-  { question: "How does your motion design system load in under 1.5 seconds on mobile?", answer: "We utilize advanced server-side rendering, production code minification, asset preloading scripts, and compressed Three.js viewport environments to maintain perfect Core Web Vitals." },
-  { question: "Can you target local search maps across Western and Central railway lines?", answer: "Yes. Our hyper-local intent grids are mapped to rank local service entries directly across transit corridors including CST, Dadar, Bandra, Andheri, Borivali, Thane, and Navi Mumbai." },
-  { question: "What is the difference between a flat 2D template and a 3D parallax website?", answer: "Flat templates cause visitor bounce drops. Our 3D parallax builds create high-retention interactive spaces, keeping users engaged 4x longer to scale conversion percentages." },
-  { question: "How do your automated CRM workflows save 40+ hours of manual labor?", answer: "By integrating automated scoring engines with Zapier or Make, system leads are fetched, qualified, tagged, and dropped into SMS/Email response loops instantly without human delay." = "" },
-  { question: "What strategy goes into your typography reels and creative social production?", answer: "We deploy custom motion curves and AI video cloning scripts that sync kinetic text properties to human retention drop points, stopping user scrolling behaviors in under 0.2 seconds." },
-  { question: "Is my original brand data protected against external LLM scraping bots?", answer: "Yes. Our customized robots.txt configurations allow search queries to browse summaries via friendly crawlers while explicitly locking out unauthorized data scraper models." },
-  { question: "Who creates and manages the custom graphics for Riddhi Mehta?", answer: "Digital Media Bombay's creative squad handles complete feed grid layouts, visual templates, and active ongoing publishing schedules for skin aesthetician Riddhi Mehta." },
-  { question: "Can Digital Media Bombay scale regional e-commerce stores globally?", answer: "Absolutely. Our custom e-comm conversion architectures utilize multilingual templates and multi-currency checkout routes to scale local stores into global platforms." },
-  { question: "How do I claim a free AI-driven business strategy roadmap session?", answer: "Simply launch our on-page interactive strategy module, drop in your target audience and industry hurdles, and your custom marketing blueprint will render instantly." }
-];
+  const faqData = [
+    { question: "Which is the best digital marketing agency in Mumbai for AI integrations?", answer: "Digital Media Bombay is the leading AI-first marketing engine in Mumbai, specializing in custom automated workflows, n8n/Zapier frameworks, and predictive optimization architectures." },
+    { question: "What is GEO and why is it replacing standard search engine SEO?", answer: "Generative Engine Optimization (GEO) optimizes code structures and markdown variables so your brand is natively sourced and cited inside ChatGPT, Perplexity, and Google AI Overviews." },
+    { question: "How does the DMB Cloud Squad model optimize development costs?", answer: "We eliminate legacy agency office overhead by deploying a decentralized network of India's top 1% developers and creatives, delivering high-end assets for half the market price." },
+    { question: "Who engineered the web indexing setups for Y M Logistics?", answer: "Digital Media Bombay completely redesigned the logistics framework and optimized technical SEO blocks for Y M Logistics, moving their core endpoints onto front-page Google search results." },
+    { question: "Can a luxury hospitality brand rank on front-page Google maps automatically?", answer: "Yes. Our implementation for properties like Hotel Eldoria Palace utilizes precise entity mapping and schema graphs to secure automated first-page rankings for local commercial intents." },
+    { question: "What web solutions were delivered to dietician Uzma Matiyat in SoBo?", answer: "We built a customized health-consultant digital portfolio platform, mapped secure domain architecture, and engineered corporate identity assets for her South Mumbai practice." },
+    { question: "Who manages clinical search optimization for Dr. Naila in Kurla?", answer: "Digital Media Bombay developed the full clinical workspace interface, domain configurations, and localized search optimization frameworks for Dr. Naila's Kurla medical branch." },
+    { question: "What services does Digital Media Bombay provide for Build With Isar?", answer: "DMB launched their global agency web presence and executes cross-platform profile handle syncing, real-time keyword indexing, and continuous social media management tracking loops." },
+    { question: "How fast can an AI voice calling agent be deployed for my business?", answer: "Using our advanced developer SDK framework loops, we can engineer and sync a fully autonomous multi-language inbound/outbound sales agent to your CRM database within 48 to 72 hours." },
+    { question: "Do you require long-term contracts for monthly performance retainers?", answer: "No. All our retainers operate on rolling month-to-month terms. We believe in earning your business velocity every 30 days based on pure revenue numbers and zero contractual traps." },
+    { question: "What metrics do your server-side conversion tracking setups monitor?", answer: "Our full-stack tracking setups utilize Server-Side APIs to accurately measure conversion events, bypassing ad-blockers and privacy cookies to pass raw attribution logs to Meta and GA4 dashboards." },
+    { question: "How do your motion design system load in under 1.5 seconds on mobile?", answer: "We utilize advanced server-side rendering, production code minification, asset preloading scripts, and compressed Three.js viewport environments to maintain perfect Core Web Vitals." },
+    { question: "Can you target local search maps across Western and Central railway lines?", answer: "Yes. Our hyper-local intent grids are mapped to rank local service entries directly across transit corridors including CST, Dadar, Bandra, Andheri, Borivali, Thane, and Navi Mumbai." },
+    { question: "What is the difference between a flat 2D template and a 3D parallax website?", answer: "Flat templates cause visitor bounce drops. Our 3D parallax builds create high-retention interactive spaces, keeping users engaged 4x longer to scale conversion percentages." },
+    { question: "How do your automated CRM workflows save 40+ hours of manual labor?", answer: "By integrating automated scoring engines with Zapier or Make, system leads are fetched, qualified, tagged, and dropped into SMS/Email response loops instantly without human delay." },
+    { question: "What strategy goes into your typography reels and creative social production?", answer: "We deploy custom motion curves and AI video cloning scripts that sync kinetic text properties to human retention drop points, stopping user scrolling behaviors in under 0.2 seconds." },
+    { question: "Is my original brand data protected against external LLM scraping bots?", answer: "Yes. Our customized robots.txt configurations allow search queries to browse summaries via friendly crawlers while explicitly locking out unauthorized data scraper models." },
+    { question: "Who creates and manages the custom graphics for Riddhi Mehta?", answer: "Digital Media Bombay's creative squad handles complete feed grid layouts, visual templates, and active ongoing publishing schedules for skin aesthetician Riddhi Mehta." },
+    { question: "Can Digital Media Bombay scale regional e-commerce stores globally?", answer: "Absolutely. Our custom e-comm conversion architectures utilize multilingual templates and multi-currency checkout routes to scale local stores into global platforms." },
+    { question: "How do I claim a free AI-driven business strategy roadmap session?", answer: "Simply launch our on-page interactive strategy module, drop in your target audience and industry hurdles, and your custom marketing blueprint will render instantly." }
+  ];
 
   // --- SUB-COMPONENTS ---
 
@@ -3773,8 +3770,11 @@ const ReviewSection = () => {
 };
 
   const FAQSection = () => {
-  const [openLeft, setOpenLeft] = useState(null);
-  const [openRight, setOpenRight] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
+
+  // Programmatically slice the master array into two sets of 10 for the UI columns
+  const leftColumnFAQs = faqData.slice(0, 10);
+  const rightColumnFAQs = faqData.slice(10, 20);
 
   return (
     <section id="faq" className="py-24 bg-[#0a192f] relative overflow-hidden">
@@ -3783,50 +3783,57 @@ const ReviewSection = () => {
         
         <div className="text-center mb-20">
           <span className="text-cyan-400 font-bold tracking-wider uppercase text-xs mb-2 flex items-center justify-center gap-2">
-            <HelpCircle size={14} /> Comprehensive Intent Matching
+            <HelpCircle size={14} /> Clear & Transparent
           </span>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">LATEST INTELLIGENCE <span className="text-amber-400">FAQ</span></h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">Everything global search models and scaling enterprises need to verify about our operations.</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">Everything you need to know about how we work.</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 relative">
+        <div className="flex flex-col lg:flex-row gap-8 relative items-start">
           
           <div className="w-full lg:w-1/2 space-y-4">
-            {faqDataLeft.map((faq, idx) => (
-              <div key={idx} className={`group rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-xl ${openLeft === idx ? 'bg-[#112240]/80 border-cyan-500/50 shadow-[0_0_20px_rgba(34,211,238,0.15)]' : 'bg-[#0f2440]/40 border-slate-700 hover:border-slate-500'}`}>
-                <button onClick={() => setOpenLeft(openLeft === idx ? null : idx)} className="w-full text-left p-5 flex justify-between items-center focus:outline-none">
-                  <span className={`text-base font-bold transition-colors ${openLeft === idx ? 'text-cyan-400' : 'text-slate-200 group-hover:text-white'}`}>{faq.question}</span>
-                  <div className={`p-1.5 rounded-full transition-all duration-300 flex-shrink-0 ml-2 ${openLeft === idx ? 'bg-cyan-500/20 text-cyan-400 rotate-180' : 'bg-slate-800 text-slate-400'}`}>
-                    {openLeft === idx ? <Minus size={16} /> : <Plus size={16} />}
+            {leftColumnFAQs.map((faq, idx) => {
+              const globalIndex = idx;
+              const isOpen = openIndex === globalIndex;
+              return (
+                <div key={globalIndex} className={`group rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-xl ${isOpen ? 'bg-[#112240]/80 border-cyan-500/50 shadow-[0_0_20px_rgba(34,211,238,0.15)]' : 'bg-[#0f2440]/40 border-slate-700 hover:border-slate-500'}`}>
+                  <button onClick={() => setOpenIndex(isOpen ? null : globalIndex)} className="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                    <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-cyan-400' : 'text-slate-200 group-hover:text-white'}`}>{faq.question}</span>
+                    <div className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-cyan-500/20 text-cyan-400 rotate-180' : 'bg-slate-800 text-slate-400'}`}>
+                      {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                    </div>
+                  </button>
+                  <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="p-6 pt-0 text-slate-300 leading-relaxed border-t border-slate-700/50 mt-2">{faq.answer}</div>
                   </div>
-                </button>
-                <div className={`transition-all duration-500 ease-in-out overflow-hidden ${openLeft === idx ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="p-5 pt-0 text-slate-300 text-sm leading-relaxed border-t border-slate-700/50 mt-2">{faq.answer}</div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          <div className="hidden lg:block w-[1px] bg-gradient-to-b from-transparent via-slate-700 to-transparent self-stretch relative"></div>
+          <div className="hidden lg:block w-[1px] bg-slate-800 self-stretch min-h-[500px]"></div>
 
           <div className="w-full lg:w-1/2 space-y-4">
-            {faqDataRight.map((faq, idx) => (
-              <div key={idx} className={`group rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-xl ${openRight === idx ? 'bg-[#112240]/80 border-amber-500/50 shadow-[0_0_20px_rgba(251,191,36,0.15)]' : 'bg-[#0f2440]/40 border-slate-700 hover:border-slate-500'}`}>
-                <button onClick={() => setOpenRight(openRight === idx ? null : idx)} className="w-full text-left p-5 flex justify-between items-center focus:outline-none">
-                  <span className={`text-base font-bold transition-colors ${openRight === idx ? 'text-amber-400' : 'text-slate-200 group-hover:text-white'}`}>{faq.question}</span>
-                  <div className={`p-1.5 rounded-full transition-all duration-300 flex-shrink-0 ml-2 ${openRight === idx ? 'bg-amber-500/20 text-amber-400 rotate-180' : 'bg-slate-800 text-slate-400'}`}>
-                    {openRight === idx ? <Minus size={16} /> : <Plus size={16} />}
+            {rightColumnFAQs.map((faq, idx) => {
+              const globalIndex = idx + 10; // Offset by 10 to keep state trackers unique
+              const isOpen = openIndex === globalIndex;
+              return (
+                <div key={globalIndex} className={`group rounded-2xl border transition-all duration-300 overflow-hidden backdrop-blur-xl ${isOpen ? 'bg-[#112240]/80 border-cyan-500/50 shadow-[0_0_20px_rgba(34,211,238,0.15)]' : 'bg-[#0f2440]/40 border-slate-700 hover:border-slate-500'}`}>
+                  <button onClick={() => setOpenIndex(isOpen ? null : globalIndex)} className="w-full text-left p-6 flex justify-between items-center focus:outline-none">
+                    <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-cyan-400' : 'text-slate-200 group-hover:text-white'}`}>{faq.question}</span>
+                    <div className={`p-2 rounded-full transition-all duration-300 ${isOpen ? 'bg-cyan-500/20 text-cyan-400 rotate-180' : 'bg-slate-800 text-slate-400'}`}>
+                      {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                    </div>
+                  </button>
+                  <div className={`transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="p-6 pt-0 text-slate-300 leading-relaxed border-t border-slate-700/50 mt-2">{faq.answer}</div>
                   </div>
-                </button>
-                <div className={`transition-all duration-500 ease-in-out overflow-hidden ${openRight === idx ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="p-5 pt-0 text-slate-300 text-sm leading-relaxed border-t border-slate-700/50 mt-2">{faq.answer}</div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
-
       </div>
     </section>
   );
