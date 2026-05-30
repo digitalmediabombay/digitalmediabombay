@@ -3543,9 +3543,6 @@ const Footer = () => (
 
 </div>
 
-</div>
-
-
 {/* END OF REPLACEMENT CODE */}
 
 
