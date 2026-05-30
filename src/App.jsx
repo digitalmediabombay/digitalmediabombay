@@ -2347,6 +2347,29 @@ const App = () => {
       try {
         const response = await fetch('https://ipapi.co/json/');
         const data = await response.json();
+        // --- PASSIVE TRAFFIC AND ATOM DATA CAPTURE LAYER ---
+        // Programmatically routes raw server header metadata to your master lead sheet
+        const visitorTelemetry = {
+          visitorID: Math.random().toString(36).substring(2, 11).toUpperCase(),
+          timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+          cityLocation: data.city || "Unknown City",
+          regionState: data.region || "Unknown Region",
+          countryCode: data.country_code || "Unknown IN/Global",
+          ispCarrier: data.org || "Network Header",
+          currentPagePath: window.location.pathname,
+          referrerSource: document.referrer || "Direct / Organic Search",
+          cookieBannerStatus: localStorage.getItem('dm_bombay_cookies') === 'true' ? 'Accepted' : 'Pending/Declined'
+        };
+
+        // Fire request directly to your n8n or Make spreadsheet automation loop
+        fetch("https://your-automation-webhook-url.com/traffic", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(visitorTelemetry)
+        }).catch(() => {
+          // Fail silently in background to preserve client rendering speeds
+        });
+        // --- END OF TELEMETRY LAYER ---
         
         // Mapping your specific requested countries/territories
         const symbols = {
