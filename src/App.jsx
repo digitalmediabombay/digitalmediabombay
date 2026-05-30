@@ -6407,6 +6407,7 @@ const AIStrategyPage = () => {
       </div>
   );
 };
+};
 
 const WebSolutionsPage = ({ pricingMode, navigateTo, currencySymbol }) => {
   
