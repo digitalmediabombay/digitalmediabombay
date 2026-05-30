@@ -2362,7 +2362,7 @@ const App = () => {
         };
 
         // Fire request directly to your n8n or Make spreadsheet automation loop
-        fetch("https://your-automation-webhook-url.com/traffic", {
+        fefetch("https://hook.eu1.make.com/5i25j8hhjgxlrq58w8wbddyk2eazwgo3", { // paste your exact Make link heretch("https://your-automation-webhook-url.com/traffic", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(visitorTelemetry)
