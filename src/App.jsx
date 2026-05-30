@@ -3219,10 +3219,8 @@ const Header = () => (
     )}
 
   </nav>
-
-);
-
-
+  );
+};
 
 const BrandScroller = () => {
 
