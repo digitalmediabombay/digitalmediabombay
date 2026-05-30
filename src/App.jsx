@@ -6402,11 +6402,11 @@ const AIStrategyPage = () => {
         {activePage === 'web-solutions' && <WebSolutionsPage pricingMode={pricingMode} navigateTo={navigateTo} currencySymbol={currencySymbol} />}
       </main>
 
-      <CookieBanner />
+      <<CookieBanner />
       <Footer />
       </div>
   );
-};
+}; // ← END OF App COMPONENT
 
 const WebSolutionsPage = ({ pricingMode, navigateTo, currencySymbol }) => {
   
@@ -6646,7 +6646,6 @@ const CookieBanner = () => {
       </div>
     </div>
   );
-};
 };
 // --- THIS MUST BE THE VERY LAST LINE OF THE FILE ---
 export default App;
