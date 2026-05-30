@@ -33,9 +33,15 @@
   </url>
 
   <url>
-    <loc>https://www.digitalmediabombay.com/llm.txt</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://www.digitalmediabombay.com/llms.txt</loc>
+    <lastmod>2026-05-30</lastmod>
     <priority>1.00</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.digitalmediabombay.com/llms-full.txt</loc>
+    <lastmod>2026-05-30</lastmod>
+    <priority>0.90</priority>
   </url>
 
   <url>
