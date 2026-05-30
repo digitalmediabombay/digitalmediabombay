@@ -6407,7 +6407,6 @@ const AIStrategyPage = () => {
       </div>
   );
 };
-};
 
 const WebSolutionsPage = ({ pricingMode, navigateTo, currencySymbol }) => {
   
@@ -6648,6 +6647,6 @@ const CookieBanner = () => {
     </div>
   );
 };
-
+};
 // --- THIS MUST BE THE VERY LAST LINE OF THE FILE ---
 export default App;
