@@ -2527,7 +2527,15 @@ const App = () => {
 
       },
 
-
+      {
+  id: "geo",
+  title: "GEO Dominance",
+  icon: <Sparkles size={32} className="text-indigo-400" />,
+  desc: "Generative Engine Optimization. We optimize your digital real estate to ensure your brand is cited, sourced, and recommended by ChatGPT, Gemini, Perplexity, and Copilot.",
+  color: "indigo",
+  img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1080",
+  deliverables: ["llm.txt Architecture Deployment", "AI Engine Citation Seeding", "Brand Entity Knowledge Graph Mapping", "Structured JSON-LD Schema Arrays", "LLM Scraping & Visibility Audits"]
+},
 
       {
 
@@ -3068,7 +3076,9 @@ const GoogleTrustCard = () => {
 
                         <option>Web Development</option>
 
-                        <option>SEO Services</option>
+                        <option>Search Engine Optimization (SEO) Services</option>
+                        
+                        <option>Generative Engine Optimization (GEO)</option>
 
                         <option>AI Automation</option>
 
@@ -4345,7 +4355,9 @@ const serviceCategories = [
         { name: "XML Sitemap & Robot.txt", marketPriceIN: 2000, priceIN: 1000, marketPriceGL: 59, priceGL: 29, id: "seo7" },
         { name: "Image Alt Text Opt.", marketPriceIN: 4000, priceIN: 2000, marketPriceGL: 119, priceGL: 59, id: "seo8" },
         { name: "Local SEO Citation", marketPriceIN: 7000, priceIN: 3500, marketPriceGL: 219, priceGL: 109, id: "seo9" },
-        { name: "Monthly SEO Audit", marketPriceIN: 5000, priceIN: 2500, marketPriceGL: 149, priceGL: 75, id: "seo10" }
+        { name: "Monthly SEO Audit", marketPriceIN: 5000, priceIN: 2500, marketPriceGL: 149, priceGL: 75, id: "seo10" },
+        { name: "llm.txt File Setup & Deployment", marketPriceIN: 8000, priceIN: 3999, marketPriceGL: 199, priceGL: 99, id: "geo1" },
+{ name: "AI Overview Visibility Audit", marketPriceIN: 10000, priceIN: 4999, marketPriceGL: 249, priceGL: 149, id: "geo2" }
       ]
     },
     {
