@@ -3454,27 +3454,24 @@ const Footer = () => (
   </ul>
 
   {/* --- NEW ENLARGED & ANIMATED VERIFIED BADGE --- */}
-  <div className="group border border-slate-700 p-4 rounded-2xl bg-slate-900/80 flex flex-col items-center gap-4 hover:border-green-500/50 transition-all mt-6 shadow-2xl">
-    <div className="bg-white p-2 rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-inner">
-      <img 
-        src="dmbongoogle.png" 
-        className="w-24 h-24 object-contain" 
-        alt="Digital Media Bombay Google QR" 
-      />
-    </div>
-    
-    <div className="text-center">
-       <div className="flex items-center justify-center gap-1.5 mb-1">
-          <p className="text-xs font-black text-white tracking-tight uppercase">Google Verified</p>
-          <div className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <CheckCircle size={14} className="relative inline-flex text-green-500 fill-green-500/20" />
-          </div>
-       </div>
-       <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Scan to View Profile</p>
-    </div>
+  {/* REPLACE FROM THE START OF THE QR CARD WRAPPER TO THE END OF THE GOOGLE VERIFIED BUTTON BLOCK */}
+<div className="bg-slate-900/80 p-6 rounded-2xl border border-cyan-500/20 backdrop-blur-sm max-w-[220px] mx-auto lg:mx-0 transition-all duration-300 hover:scale-105 hover:border-cyan-500/40 shadow-lg mt-4">
+  <div className="bg-white p-3 rounded-xl flex items-center justify-center shadow-inner">
+    <img 
+      src="dmbongoogle.png" // Keeps your existing dynamic or static source path
+      alt="Google Profile QR" 
+      className="w-40 h-40 object-contain" 
+    />
+  </div>
+  <div className="mt-4 flex items-center justify-center gap-2 text-xs font-bold tracking-wide uppercase text-emerald-400">
+    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+    Google Verified
+  </div>
+  <div className="text-[10px] text-slate-400 text-center mt-1 uppercase font-semibold tracking-wider">
+    Scan to View Profile
   </div>
 </div>
+{/* END OF REPLACEMENT CODE */}
 
         <div className="md:pl-10">
           <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Company</h3>
