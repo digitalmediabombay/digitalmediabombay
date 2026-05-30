@@ -3394,31 +3394,16 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-x-20">
         
-        {/* Column 1: Logo Section */}
         <div className="col-span-1">
-          <div 
-            onClick={() => navigateTo('home')} 
-            className="flex-shrink-0 cursor-pointer group mb-4"
-          >
-            {/* Logo size increased from h-20 to h-60 (and w-auto for aspect ratio) */}
-            <img 
-              src="/logo.png" 
-              alt="Digital Media Bombay Logo" 
-              className="h-60 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
-            />
+          <div onClick={() => navigateTo('home')} className="flex-shrink-0 cursor-pointer group mb-4">
+            <img src="/logo.png" alt="Digital Media Bombay Logo" className="h-60 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
           </div>
-          
-          <span 
-            onClick={() => navigateTo('home')}
-            className="font-bold text-2xl tracking-tight text-white block whitespace-nowrap cursor-pointer"
-          >
+          <span onClick={() => navigateTo('home')} className="font-bold text-2xl tracking-tight text-white block whitespace-nowrap cursor-pointer">
             DIGITAL MEDIA <span className="text-amber-400">BOMBAY</span>
           </span>
-          
           <p className="mt-4 text-slate-400 text-sm leading-relaxed">
             Mumbai's first AI-Powered Smart Agency. We combine top 1% human talent with advanced automation.
           </p>
-          
           <div className="flex space-x-4 mt-6">
             <Facebook className="text-slate-400 hover:text-blue-600 cursor-pointer transition-colors" onClick={() => window.open('https://facebook.com/digitalmediabombay', '_blank')} />
             <Instagram className="text-slate-400 hover:text-pink-500 cursor-pointer transition-colors" onClick={() => window.open('https://instagram.com/digitalmediabombay', '_blank')} />
@@ -3441,32 +3426,26 @@ const Footer = () => (
         </div>
 
         <div className="md:pl-10">
-  <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Locations</h3>
-  <ul className="space-y-3 text-slate-400 text-sm">
-    <li className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-400 rounded-full"></div> Mumbai (HQ)</li>
-    <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> New York (Sales)</li>
-    <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> London (Support)</li>
-  </ul>
+          <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Locations</h3>
+          <ul className="space-y-3 text-slate-400 text-sm">
+            <li className="flex items-center gap-2"><div className="w-2 h-2 bg-amber-400 rounded-full"></div> Mumbai (HQ)</li>
+            <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> New York (Sales)</li>
+            <li className="flex items-center gap-2"><div className="w-2 h-2 bg-cyan-400 rounded-full"></div> London (Support)</li>
+          </ul>
 
-  {/* --- NEW ENLARGED & ANIMATED VERIFIED BADGE --- */}
-  {/* REPLACE FROM THE START OF THE QR CARD WRAPPER TO THE END OF THE GOOGLE VERIFIED BUTTON BLOCK */}
-<div className="bg-slate-900/80 p-6 rounded-2xl border border-cyan-500/20 backdrop-blur-sm max-w-[220px] mx-auto lg:mx-0 transition-all duration-300 hover:scale-105 hover:border-cyan-500/40 shadow-lg mt-4">
-  <div className="bg-white p-3 rounded-xl flex items-center justify-center shadow-inner">
-    <img 
-      src="dmbongoogle.png" // Keeps your existing dynamic or static source path
-      alt="Google Profile QR" 
-      className="w-40 h-40 object-contain" 
-    />
-  </div>
-  <div className="mt-4 flex items-center justify-center gap-2 text-xs font-bold tracking-wide uppercase text-emerald-400">
-    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-    Google Verified
-  </div>
-  <div className="text-[10px] text-slate-400 text-center mt-1 uppercase font-semibold tracking-wider">
-    Scan to View Profile
-  </div>
-</div>
-{/* END OF REPLACEMENT CODE */}
+          <div className="bg-slate-900/80 p-6 rounded-2xl border border-cyan-500/20 backdrop-blur-sm max-w-[220px] mx-auto lg:mx-0 transition-all duration-300 hover:scale-105 hover:border-cyan-500/40 shadow-lg mt-4">
+            <div className="bg-white p-3 rounded-xl flex items-center justify-center shadow-inner">
+              <img src="dmbongoogle.png" alt="Google Profile QR" className="w-40 h-40 object-contain" />
+            </div>
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs font-bold tracking-wide uppercase text-emerald-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Google Verified
+            </div>
+            <div className="text-[10px] text-slate-400 text-center mt-1 uppercase font-semibold tracking-wider">
+              Scan to View Profile
+            </div>
+          </div>
+        </div>
 
         <div className="md:pl-10">
           <h3 className="text-white font-bold uppercase tracking-wider mb-4 text-sm">Company</h3>
@@ -3483,102 +3462,35 @@ const Footer = () => (
         &copy; {new Date().getFullYear()} Digital Media <span className="text-amber-400">Bombay.</span> All rights reserved.
       </div>
     </div>
-
-
-    {/* MASTER SEO ENGINE - RANKING FOR MUMBAI, INDIA, AND GLOBAL */}
-
-      <div className="sr-only opacity-0 h-0 overflow-hidden" aria-hidden="true">
-
-
-
-        {/* LOCAL MUMBAI DOMINANCE */}
-
-        <h2>Best Digital Marketing Agency in Mumbai, Maharashtra</h2>
-
-        <p>Expert services in Andheri, Bandra, Colaba, Juhu, Powai, Borivali, Malad, Goregaon, Worli, Lower Parel, Dadar, Chembur, and Vile Parle. 
-
-        Top SEO and Web Development in Navi Mumbai, Thane, Kalyan, Dombivli, and Vasai-Virar. 
-
-        Serving all MH regions including Pune, Nagpur, Nashik, and Aurangabad.</p>
-
-
-
-        {/* PAN-INDIA RANKING */}
-
-        <h3>Top Digital Marketing & Web Dev Services in India</h3>
-
-        <p>Ranking across Delhi NCR, Bangalore, Hyderabad, Chennai, Kolkata, Ahmedabad, Surat, Jaipur, Lucknow, and Chandigarh. 
-
-        We serve all Indian states: Maharashtra, Karnataka, Tamil Nadu, Telangana, Gujarat, West Bengal, Uttar Pradesh, Rajasthan, Punjab, Kerala, and Haryana. 
-
-        Hire the best AI Marketing experts in India for 10x ROI.</p>
-
-
-
-        {/* GLOBAL TERRITORY COVERAGE */}
-
-        <h3>Global Digital Transformation Partner</h3>
-
-        <p>International clients served in USA (New York, California, Texas), UK (London, Manchester), Canada (Toronto, Vancouver), Australia (Sydney, Melbourne), UAE (Dubai, Abu Dhabi), Singapore, Germany, France, and Europe. 
-
-        Specialized in Shopify E-commerce for global brands, 3D Web Experiences, and Performance Ads (Google/Meta) for worldwide growth.</p>
-
-
-
-        {/* KEYWORD STACK */}
-
-        <p>Keywords: 3D Website Design, AI Automation Agency, SEO Expert Mumbai, Performance Marketing India, Viral Reels Editing, 
-
-        Shopify Developer India, WordPress Studio, Digital Media Bombay, Kaleem Shaikh Portfolio, SaaS Web Development, 
-
-        Lead Generation Experts, Best ROI Digital Agency, App Development Mumbai, UI UX Design India.</p>
-
-      </div>
   </footer>
 );
-    };
 
 const BlogSection = ({ navigateTo, onPostClick }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
     if (scrollRef.current) {
-      // Use scrollBy for much smoother movement
       const scrollAmount = direction === 'left' ? -400 : 400;
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
   return (
-    // Added id="blog-section" here
     <section id="blog-section" className="py-24 bg-[#0a192f] border-t border-slate-800 relative overflow-hidden">
-
-      {/* HEADER SECTION */}
       <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
-          <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-3 block">Insights & Intelligence</span>
-          <h2 className="text-4xl md:text-6xl font-black text-white">LATEST FROM THE <span className="text-amber-400">LAB</span></h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mt-6 rounded-full"></div>
+        <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-3 block">Insights & Intelligence</span>
+        <h2 className="text-4xl md:text-6xl font-black text-white">LATEST FROM THE <span className="text-amber-400">LAB</span></h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mt-6 rounded-full"></div>
       </div>
-
-      {/* CARD SCROLLER */}
-      <div 
-        ref={scrollRef}
-        className="flex gap-8 overflow-x-auto px-[5%] pb-12 hide-scrollbar snap-x scroll-smooth"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
+      <div ref={scrollRef} className="flex gap-8 overflow-x-auto px-[5%] pb-12 hide-scrollbar snap-x scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {blogPosts.map((post) => (
-          <div 
-            key={post.id}
-            onClick={() => onPostClick(post)}
-            className="min-w-[320px] md:min-w-[450px] snap-center group cursor-pointer"
-          >
+          <div key={post.id} onClick={() => onPostClick(post)} className="min-w-[320px] md:min-w-[450px] snap-center group cursor-pointer">
             <div className="relative bg-[#0f2440]/40 backdrop-blur-xl border border-slate-700 rounded-3xl overflow-hidden transition-all duration-500 group-hover:border-cyan-500/50 group-hover:shadow-[0_0_40px_rgba(34,211,238,0.2)]">
               <div className="relative h-64 overflow-hidden">
                 <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60 group-hover:opacity-100" />
                 <div className="absolute top-4 left-4 z-20">
                   <span className="px-4 py-1 bg-cyan-500 text-black text-[10px] font-black uppercase rounded-full shadow-lg">{post.category}</span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f2440] via-transparent to-transparent"></div>
               </div>
               <div className="p-8">
                 <p className="text-slate-500 text-xs font-mono mb-3 uppercase tracking-tighter">{post.date} • {post.author}</p>
@@ -3592,6 +3504,13 @@ const BlogSection = ({ navigateTo, onPostClick }) => {
           </div>
         ))}
       </div>
+      <div className="flex justify-center gap-6 mt-12">
+        <button onClick={() => scroll('left')} className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center justify-center shadow-xl"><ChevronLeft size={28}/></button>
+        <button onClick={() => scroll('right')} className="w-14 h-14 rounded-full bg-slate-800 border-2 border-slate-700 text-white hover:border-cyan-400 hover:text-cyan-400 transition-all flex items-center justify-center shadow-xl"><ChevronRight size={28}/></button>
+      </div>
+    </section>
+  );
+};
 
       {/* NAVIGATION BUTTONS */}
       <div className="flex justify-center gap-6 mt-12">
