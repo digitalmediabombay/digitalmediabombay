@@ -1096,7 +1096,7 @@ const App = () => {
     return cleanPath || 'home';
   };
 
-  // 2. Initialize ALL states (Defined ONLY ONCE here)
+  // 2. Initialize ALL states
   const [selectedPost, setSelectedPost] = useState(getPostFromUrl());
   const [activePage, setActivePage] = useState(getInitialPage()); 
   const [pricingMode, setPricingMode] = useState('india'); 
@@ -1107,92 +1107,48 @@ const App = () => {
   const [selectedWebType, setSelectedWebType] = useState(null);
 
   // 2. Dynamic SEO & Scroll Logic
-
   useEffect(() => {
-
     window.scrollTo(0, 0);
-
     
-
-    // SEO CONFIGURATION PER PAGE
-
     const seoData = {
-
       home: {
-
         title: "Digital Media Bombay | AI-Powered Digital Agency Mumbai & Worldwide",
-
         desc: "Mumbai's first AI-powered agency. 3D Web Dev, SEO, and ROI Ads for India and Global brands."
-
       },
-
       about: {
-
         title: "About Us | Digital Media Bombay | Born in Mumbai, Built for the World",
-
         desc: "Learn how we combine Mumbai's hustle with Silicon Valley's precision to deliver elite digital assets."
-
       },
-
       services: {
-
-        title: "Digital Services | Web Dev, SEO, Ads & AI | Digital Media Bombay",
-
+        title: "Services | Web Dev, SEO, Ads & AI | Digital Media Bombay",
         desc: "Professional SEO, Performance Marketing, 3D Parallax Web Development, and AI Automation services."
-
       },
-
+      pricing: {
+        title: "Pricing | Digital Media Bombay Plans",
+        desc: "Affordable direct-response bundles and custom marketing tasks for global business operators."
+      },
       'web-solutions': {
-
         title: "Website Master-Catalogue | Build Any Website | Digital Media Bombay",
-
         desc: "Choose from 30+ website types. E-commerce, SaaS, 3D Experiences, and Corporate sites at the best price."
-
       },
-
       'ai-strategy': {
-
         title: "Free AI Marketing Blueprint | Digital Media Bombay Strategy",
-
         desc: "Get an instant, AI-generated marketing roadmap for your business growth."
-
       },
-
       freelancer: {
-
         title: "Join the Cloud Squad | Freelancer Portal | Digital Media Bombay",
-
         desc: "Are you in the top 1%? Join Mumbai's most elite network of digital creators and developers."
-
       }
-
     };
 
-
-
     const currentPageData = seoData[activePage] || seoData.home;
-
-    
-
-    // Apply the Title
-
     document.title = currentPageData.title;
-
     
-
-    // Apply the Description to the Meta Tag
-
     const metaDesc = document.querySelector('meta[name="description"]');
-
     if (metaDesc) {
-
       metaDesc.setAttribute('content', currentPageData.desc);
-
     }
-
   }, [activePage]);
-
-
 
   // 3. Listen for the Browser "Back" and "Forward" buttons
   useEffect(() => {
@@ -1203,6 +1159,16 @@ const App = () => {
     window.addEventListener('popstate', handleLocationChange);
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
+
+  // 5. Explicit URL Page Router
+  const navigateTo = (page) => {
+    setSelectedPost(null);
+    const path = page === 'home' ? '/' : `/${page}`;
+    window.history.pushState({}, '', path);
+    setActivePage(page);
+    setIsMobileMenuOpen(false);
+    window.scrollTo(0, 0);
+  };
 
 // 4. Detect User Location (Updated with your Specific Territory List)
   useEffect(() => {
@@ -1594,68 +1560,503 @@ const App = () => {
 ];
 
   const bundlesData = {
-    india: {
-      tier1: {
-        title: "The Essentials (Maintenance Tier)",
-        subtitle: "Cost-effective solutions to keep your brand active and present.",
-        packages: [
-          { name: "The 'Mumbai Meri Jaan' Pack", marketPrice: "₹20,000", price: "₹12,999", duration: "/mo", desc: "A brand that just wants to say 'We exist'.", features: ["8 Static Posts", "2 Basic Reels (Templates)", "10 Stories"] },
-          { name: "The 'Cutting Chai' Starter", marketPrice: "₹25,000", price: "₹14,999", duration: "/mo", desc: "Small shops needing customer service help.", features: ["12 Static Posts", "Reply Management", "Google Map Setup"] },
-          { name: "The 'Local Train' Daily", marketPrice: "₹28,000", price: "₹16,999", duration: "/mo", desc: "Brands that want high frequency but low design quality.", features: ["Daily Stories (Timepass content)", "4 Posts", "2 Reels"] },
-          { name: "The 'Gully Boy' Promo", marketPrice: "₹30,000", price: "₹18,999", duration: "/mo", desc: "Shops that run lots of discounts/sales.", features: ["10 'Offer/Discount' Posts", "1 Boost Post Setup (Basic Ad)"] }
-        ]
-      },
-      tier2: {
-        title: "The Growth Club (Scaling Tier)",
-        subtitle: "The Sweet Spot. Ads and Reels included for real business results.",
-        packages: [
-          { name: "The 'Dabbawala' Consistency", marketPrice: "₹45,000", price: "₹29,999", duration: "/mo", desc: "Businesses needing consistent leads.", features: ["12 Posts + 4 Edited Reels", "Meta Ads Management", "Dashboard Access"] },
-          { name: "The 'Bandra Buzz' Viral", marketPrice: "₹50,000", price: "₹32,999", duration: "/mo", desc: "Fashion, Cafes, and Lifestyle brands wanting views.", features: ["8 Trending Reels (Audio focus)", "4 Carousels", "Viral Hashtag Research"] },
-          { name: "The 'Juhu Wave' Aesthetic", marketPrice: "₹55,000", price: "₹35,999", duration: "/mo", desc: "Premium Salons or Boutiques where 'looks matter'.", features: ["Grid Planning (Aesthetic)", "12 Posts + 4 Reels", "Retargeting Ads"] },
-          { name: "The 'BSE Bull Run' (ROI)", marketPrice: "₹65,000", price: "₹39,999", duration: "/mo", desc: "B2B, Finance, Real Estate.", features: ["Google Search Ads", "LinkedIn Ads Management", "Weekly Excel Reports"] }
-        ]
-      },
-      tier3: {
-        title: "The Elite Circle (Dominance Tier)",
-        subtitle: "High Ticket. Shoots, Automation, and VIP treatment for market leaders.",
-        packages: [
-          { name: "The 'SoBo Elite' Luxury", marketPrice: "₹90,000", price: "₹60,000", duration: "/mo", desc: "Restaurants or Jewelers needing real product photos.", features: ["Daily Posting", "1 Professional Shoot Day (Photographer visits)"] },
-          { name: "The 'Film City' Production", marketPrice: "₹1,10,000", price: "₹75,000", duration: "/mo", desc: "Personal Brands wanting TV-quality content.", features: ["12 High-End Reels (Premiere Pro)", "YouTube Shorts Management", "Scriptwriting"] },
-          { name: "The 'Taj Experience' Omni", marketPrice: "₹1,40,000", price: "₹90,000", duration: "/mo", desc: "Large Hotel Chains or Hospitals.", features: ["Management of IG, FB, LinkedIn, Twitter, GMB", "ORM (Review Management)"] },
-          { name: "The 'Queen's Necklace' Royale", marketPrice: "₹1,80,000", price: "₹1,20,000", duration: "/mo", desc: "Market Leaders who want zero headache.", features: ["2 Shoot Visits", "Unlimited Design Requests", "Influencer Collaboration", "AI Avatar Clone"] }
-        ]
-      }
+  india: {
+    tier1: {
+      title: "The Simple Launch (Budget Retainers)",
+      subtitle: "Unbeatable low prices to clean up your digital footprints effortlessly.",
+      packages: [
+        { 
+          name: "The 'Chai-Paani' Startup Pack", 
+          marketPrice: "₹18,000", 
+          price: "₹4,999", 
+          duration: "/mo", 
+          desc: "Super simple local growth assets for startup owners.", 
+          features: [
+            "1. Simple Website Design Audit",
+            "2. Clear Social Bio Profile Tweaks",
+            "3. 6 Simple Static Post Images",
+            "4. Basic Google Maps Listing Sync",
+            "5. WhatsApp Quick Business Auto-Reply",
+            "6. Standard Local Search Keyword Tagging",
+            "7. Basic Text Descriptions For Profiles",
+            "8. Monthly Progress Update Checklist",
+            "9. 1 Mobile Video Editing Layout",
+            "10. High-Speed Code Diagnostics Check"
+          ] 
+        },
+        { 
+          name: "The 'Gully' Street Hero Plan", 
+          marketPrice: "₹24,000", 
+          price: "₹7,999", 
+          duration: "/mo", 
+          desc: "Perfect for neighborhood shops needing simple customer flow.", 
+          features: [
+            "1. Google Map Local Business Optimization",
+            "2. 8 Simple Social Media Feed Images",
+            "3. 2 Mobile Phone Video Clip Edits",
+            "4. Review Sourcing Link Setup",
+            "5. Customer Inquiry Text Templates",
+            "6. Simple Logo Variation Tweaks",
+            "7. High-Speed Landing Frame Audit",
+            "8. Basic Local Keyword Indexing",
+            "9. Automated Form Field Error Check",
+            "10. Quick Monthly Lead Data Tracking Sheet"
+          ] 
+        },
+        { 
+          name: "The 'Local Train' Traffic Builder", 
+          marketPrice: "₹32,000", 
+          price: "₹11,999", 
+          duration: "/mo", 
+          desc: "High frequency local asset drops to stay active everywhere online.", 
+          features: [
+            "1. 12 Simple Social Grid Graphics",
+            "2. 4 Mobile Short Video Audio Mixes",
+            "3. Basic Google Search Map Citations",
+            "4. Customer Comment Reply Scripts",
+            "5. Simple Website Header Image Updates",
+            "6. Title Tag Optimizations For Google",
+            "7. Business WhatsApp Funnel Link Setup",
+            "8. Basic Article Draft Using Simple Words",
+            "9. Profile Banner Layout Design Updates",
+            "10. Clear Traffic Metrics Dashboard Access"
+          ] 
+        },
+        { 
+          name: "The 'Dada' Market Dominator Pack", 
+          marketPrice: "₹45,000", 
+          price: "₹14,999", 
+          duration: "/mo", 
+          desc: "The most affordable full-spectrum package for retail operators.", 
+          features: [
+            "1. Basic Ad Account Setup Guardrails",
+            "2. 15 Structured Social Media Images",
+            "3. 5 Mobile Video Pacing Cuts",
+            "4. Clean Google Map Location Check-In",
+            "5. Automated Lead-Capture Greeting Script",
+            "6. Basic Meta Advertising Pixel Linking",
+            "7. Plain Text Product Description Tweaks",
+            "8. 2 Simple Problem-Solving Blog Drafts",
+            "9. Customer Review Sourcing Reminders",
+            "10. Monthly Data Ledger Revenue Reports"
+          ] 
+        }
+      ]
     },
-    global: {
-      tier1: {
-        title: "The Essentials (Entry Level)",
-        subtitle: "Replace their need for a part-time marketing assistant.",
-        packages: [
-          { name: "The 'Digital Handshake'", marketPrice: "$800", price: "$499", duration: "/mo", desc: "It's cheaper than hiring a college student.", features: ["10 High-Quality Static Posts", "Community Management", "Basic GMB Optimization"] },
-          { name: "The 'SEO Foundation'", marketPrice: "$1,100", price: "$699", duration: "/mo", desc: "I want to show up on Maps when people search.", features: ["Local SEO (Ranking for keywords)", "Reputation Mgmt (Reviews)", "4 SEO Blogs"] },
-          { name: "The 'Content Spark'", marketPrice: "$1,400", price: "$899", duration: "/mo", desc: "I need my Instagram to look pretty.", features: ["12 Creative Posts + 4 Basic Reels", "Story Management (3x/week)", "Monthly Newsletter Design"] }
-        ]
-      },
-      tier2: {
-        title: "The Growth (Scale Level)",
-        subtitle: "The 'Sweet Spot.' You run ads and manage content.",
-        packages: [
-          { name: "The '24/7 Growth' Engine", marketPrice: "$2,000", price: "$1,299", duration: "/mo", desc: "Full social team AND an ad manager.", features: ["15 Posts + 4 Edited Reels", "Ads Management (FB & Insta)", "Competitor Spy Report"] },
-          { name: "The 'Traffic Surge'", marketPrice: "$2,400", price: "$1,599", duration: "/mo", desc: "I don't care about likes; I just want sales.", features: ["Google Search Ads (PPC)", "Meta Retargeting Ads", "Landing Page A/B Testing"] },
-          { name: "The 'Video Velocity'", marketPrice: "$2,800", price: "$1,899", duration: "/mo", desc: "I want to go viral but I don't know how to edit.", features: ["8 High-End Reels (Hormozi style)", "AI Assisted Scriptwriting", "Distribution to IG, TikTok, Shorts"] }
-        ]
-      },
-      tier3: {
-        title: "The Elite (Dominance Level)",
-        subtitle: "Automation, AI, and Full 'CMO' Service.",
-        packages: [
-          { name: "The 'Silicon Valley' AI Pack", marketPrice: "$4,000", price: "$2,500", duration: "/mo", desc: "This is cutting-edge tech. I save 20 hours a week.", features: ["AI Video Clone (Digital Avatar)", "12 AI-Generated Reels", "LinkedIn Ghostwriting", "AI Chatbot Setup"] },
-          { name: "The 'Brand Dominator'", marketPrice: "$5,500", price: "$3,500", duration: "/mo", desc: "I want to be everywhere.", features: ["Management of 5 Platforms", "Email Marketing Automation", "Podcast Editing", "Dedicated Account Manager"] },
-          { name: "The 'CMO-in-a-Box'", marketPrice: "$7,500", price: "$4,999", duration: "/mo", desc: "Hiring a Marketing Director costs $10k.", features: ["Everything in Tier 2 & 3", "Quarterly Strategy Roadmap", "Unlimited Landing Pages", "PR Outreach"] }
-        ]
-      }
+    tier2: {
+      title: "The Business Growth Retainers (Mid-Tier)",
+      subtitle: "The sweet spot tracking engine to capture inbound leads and rank higher.",
+      packages: [
+        { 
+          name: "The 'Dabbawala' Precision Engine", 
+          marketPrice: "₹60,000", 
+          price: "₹24,999", 
+          duration: "/mo", 
+          desc: "Consistent lead tracking and technical support frameworks daily.", 
+          features: [
+            "1. Active Meta Lead Form Advertising Runs",
+            "2. 18 Premium Social Grid Asset Drops",
+            "3. 6 High-Engagement Video Clip Cuts",
+            "4. Advanced Google Business Map Domination",
+            "5. Zapier Auto Data-Logging Automations",
+            "6. ChatGPT AI Overview Text Optimizations",
+            "7. Server-Side Data Conversion API Linking",
+            "8. 4 High-Ranking Problem-Solving Articles",
+            "9. Custom Lead Pipeline CRM Dashboard",
+            "10. Weekly Transparent Progress Metrics Check"
+          ] 
+        },
+        { 
+          name: "The 'Bandra Buzz' Video Multiplier", 
+          marketPrice: "₹75,000", 
+          price: "₹32,000", 
+          duration: "/mo", 
+          desc: "Focused purely on mobile short video views and viewer actions.", 
+          features: [
+            "1. 10 Elite Mobile Video Pacing Edits",
+            "2. Viral Audio Sound Track Matching Strategy",
+            "3. Kinetic Subtitle Title Video Overlays",
+            "4. 12 Branded Social Grid Layout Posts",
+            "5. Video Comment To Direct Message Auto-Loops",
+            "6. Dynamic Profile Link Tree Setup",
+            "7. Visual Hook Script Writing Frameworks",
+            "8. YouTube Short Distribution Adapters",
+            "9. Competitor Video Trend Monitoring Systems",
+            "10. Clear Video Views Conversion Reports"
+          ] 
+        },
+        { 
+          name: "The 'Juhu Wave' Lifestyle Aesthetic", 
+          marketPrice: "₹85,000", 
+          price: "₹39,999", 
+          duration: "/mo", 
+          desc: "Designed for premium boutique layouts where appearance drives luxury sales.", 
+          features: [
+            "1. Cohesive Visual Feed Grid Layout Plans",
+            "2. 16 Custom High-End Commercial Images",
+            "3. 6 Lifestyle Video Clip Story Layouts",
+            "4. Target Consumer Ad Placement Tuning",
+            "5. Premium Corporate Messaging Adaptation",
+            "6. Instagram Store Layout Integration Check",
+            "7. Website Style Color Remodeling Audit",
+            "8. Luxury Client Inbound Inquiry Forms",
+            "9. Interactive Email Newsletter Visual Header",
+            "10. Monthly Aesthetic Brand Performance Logs"
+          ] 
+        },
+        { 
+          name: "The 'BSE Bull' Performance Engine", 
+          marketPrice: "₹1,10,000", 
+          price: "₹49,999", 
+          duration: "/mo", 
+          desc: "Built for finance, real estate, and enterprise lead pipelines.", 
+          features: [
+            "1. Intent-Driven Google Paid Search Clicks",
+            "2. Meta Retargeting Ad Audience Funnels",
+            "3. Custom Single-Focus Landing Page Setup",
+            "4. Full Server Analytics Attribution Logs",
+            "5. Automated Lead Scoring Workflow Actions",
+            "6. LinkedIn Executive Profile Bio Rewriting",
+            "7. 5 High-Authority Search Index Blogs",
+            "8. Competitor Ad Spend Strategy Auditing",
+            "9. Cookie-less Browser Data Pass Filters",
+            "10. Detailed Weekly Excel Inbound Lead Logs"
+          ] 
+        }
+      ]
+    },
+    tier3: {
+      title: "The Ultimate Domination Retainers (High-Tier)",
+      subtitle: "VIP execution squad for market leaders wanting complete market capture.",
+      packages: [
+        { 
+          name: "The 'SoBo Elite' Luxury Storefront", 
+          marketPrice: "₹1,80,000", 
+          price: "₹75,000", 
+          duration: "/mo", 
+          desc: "Full-scale content curation with localized asset development.", 
+          features: [
+            "1. 1 Dedicated On-Location Media Shoot Day",
+            "2. Full Month Social Media Asset Publishing",
+            "3. 12 High-Definition Video Production Cuts",
+            "4. Google Local Map Dominance Grid Blueprint",
+            "5. Custom Graphics Catalog Presentation Set",
+            "6. AI Engine Structured Data Code Embeds",
+            "7. Media Press Release Draft Publications",
+            "8. Micro-Creator Outreach Product Pitching",
+            "9. Automated Customer Review Filtering Bots",
+            "10. Direct Account Strategy Lead Group Sync"
+          ] 
+        },
+        { 
+          name: "The 'Film City' AI Avatar Engine", 
+          marketPrice: "₹2,20,000", 
+          price: "₹99,999", 
+          duration: "/mo", 
+          desc: "Cutting-edge digital avatar cloning and multi-channel content drops.", 
+          features: [
+            "1. Custom AI Video Clone Training Setup",
+            "2. 15 AI-Generated Voice Script Video Shorts",
+            "3. 15 Human Designer Social Grid Graphics",
+            "4. Multi-Channel Cross-Publishing System Sync",
+            "5. Automated Video Script Translation Vectors",
+            "6. Voice Assistant Spoken Answer Targetings",
+            "7. YouTube Channel Growth Layout Packaging",
+            "8. High-Retention Text Caption Automation",
+            "9. Personal Brand Authority Index Seeding",
+            "10. Monthly Audience Retention Analytics Log"
+          ] 
+        },
+        { 
+          name: "The 'Taj Experience' Omni-Channel Hub", 
+          marketPrice: "₹2,80,000", 
+          price: "₹1,45,000", 
+          duration: "/mo", 
+          desc: "Absolute multi-platform management for corporations and medical clinics.", 
+          features: [
+            "1. Unified Handle Management across 5 Platforms",
+            "2. Full Online Reputation Review Cleanups",
+            "3. 24/7 Live Automated CRM Calendar Booking",
+            "4. 8 Authority Content Learning Hub Blogs",
+            "5. Multi-Currency Global Google Search SEO",
+            "6. Continuous Landing Page Dynamic Scaling",
+            "7. High-Volume Email Database Marketing Loops",
+            "8. Secure Secure Server Document Vault Links",
+            "9. Interactive Form Response Routing Triggers",
+            "10. Multi-Department Lead Attribution Map"
+          ] 
+        },
+        { 
+          name: "The 'Royale Necklace' Ultimate Moat", 
+          marketPrice: "₹4,00,000", 
+          price: "₹1,99,999", 
+          duration: "/mo", 
+          desc: "Your complete external marketing director department with zero corporate bloat.", 
+          features: [
+            "1. 2 Monthly On-Location Visual Content Shoots",
+            "2. Unlimited Human Graphic Design Requests",
+            "3. Full Month AI Voice Agent Sales Integration",
+            "4. Comprehensive Global GEO Brand Citation Seeding",
+            "5. Cross-Border International Ad Run Management",
+            "6. VIP Private Slack Strategy Channel Access",
+            "7. Complete Automated Customer Intake Systems",
+            "8. Premium News Network Press Media Releases",
+            "9. Multi-Regional Server Speed Delivery Network",
+            "10. Dedicated Senior Full Stack Squad Head"
+          ] 
+        }
+      ]
     }
-  };
+  },
+  global: {
+    tier1: {
+      title: "The Simple Launch (Global Entry-Level)",
+      subtitle: "Unbeatable remote marketing prices to maintain absolute professional authority.",
+      packages: [
+        { 
+          name: "The 'Digital Handshake' Basic", 
+          marketPrice: "$600", 
+          price: "$199", 
+          duration: "/mo", 
+          desc: "Cheaper than hiring any part-time college helper.", 
+          features: [
+            "1. Professional Profile Style Layout Audit",
+            "2. Clear Profile Bio Statement Tweaks",
+            "3. 6 Simple Social Media Feed Banners",
+            "4. Local Map Business Citation Verification",
+            "5. Quick Form Entry Auto-Reply Sequence",
+            "6. Standard Target Search Terms Inventory",
+            "7. High-Speed Frontend Load Diagnostic Check",
+            "8. Profile Image Asset Resizing Blocks",
+            "9. Monthly Progress Checklist Delivery",
+            "10. 1 Mobile Phone Video Frame Pacing Edit"
+          ] 
+        },
+        { 
+          name: "The 'Local SEO' Map Starter", 
+          marketPrice: "$850", 
+          price: "$349", 
+          duration: "/mo", 
+          desc: "Rank on maps when nearby consumers look for immediate fixes.", 
+          features: [
+            "1. Google Map Listing Directory Verification",
+            "2. Local City Search Maps Optimization",
+            "3. 8 Structured Social Feed Grid Images",
+            "4. Review Gathering Text Shortcut Templates",
+            "5. 2 Mobile Phone Video Format Edits",
+            "6. Customer Inquiry Email Layout Forms",
+            "7. Basic Search Visibility Metadata Adjusts",
+            "8. Local Competitor Profile Ranking Review",
+            "9. Clear Monthly Leads Collected Log Sheet",
+            "10. Standard Local Structured Data Code Injects"
+          ] 
+        },
+        { 
+          name: "The 'Content Spark' Active Retainer", 
+          marketPrice: "$1,200", 
+          price: "$499", 
+          duration: "/mo", 
+          desc: "Keep your channels active with high consistency for half the cost.", 
+          features: [
+            "1. 12 Creative Social Platform Images",
+            "2. 4 Mobile Reels Video Assembly Cuts",
+            "3. Standard Google Map Review Auto-Prompts",
+            "4. Inbound Profile Message Response Templates",
+            "5. Basic Website Image Banner Layout Fresh",
+            "6. 1 Helpful Problem-Solving Article Block",
+            "7. Profile Link-In-Bio Optimization Tree",
+            "8. Social Algorithm Trend Mapping Reviews",
+            "9. Monthly Web Analytics Data Overview Log",
+            "10. Direct Remote Team Communication Route"
+          ] 
+        },
+        { 
+          name: "The 'Remote Squad' Growth Builder", 
+          marketPrice: "$1,600", 
+          price: "$649", 
+          duration: "/mo", 
+          desc: "The perfect affordable framework for independent global operators.", 
+          features: [
+            "1. Basic Ad Account Setup Diagnostics",
+            "2. 15 Custom Social Post Graphic Sets",
+            "3. 5 Mobile Video Pacing Clip Adjustments",
+            "4. Google Map Local Citation Cleanups",
+            "5. Inbound Customer Form Validation Syncs",
+            "6. Standard Meta Advertising Pixel Embedding",
+            "7. 2 Simple Plain-Language Business Blogs",
+            "8. Competitor Search Terms Discovery Logs",
+            "9. Customer Review Management Strategy Kit",
+            "10. Clear Monthly Return-On-Ad-Spend Matrix"
+          ] 
+        }
+      ]
+    },
+    tier2: {
+      title: "The Business Growth Retainers (Global Scale)",
+      subtitle: "Aggressive lead tracking models designed to find cross-border buyers safely.",
+      packages: [
+        { 
+          name: "The '24/7 Growth' Marketing Box", 
+          marketPrice: "$2,200", 
+          price: "$999", 
+          duration: "/mo", 
+          desc: "Full social content posting paired with active lead-gen ads.", 
+          features: [
+            "1. Meta Active Lead Form Advertising Setups",
+            "2. 18 Premium Social Media Image Outputs",
+            "3. 6 High-Engagement Video Clip Cuts",
+            "4. Google My Business Map Territory Dominance",
+            "5. Zapier Lead Notification System Linking",
+            "6. ChatGPT AI Search Sourcing Enhancements",
+            "7. Server-to-Server Tracking API Integrations",
+            "8. 4 Helpful Problem-Solving Article Uploads",
+            "9. Central Lead Tracking CRM Pipeline Dashboard",
+            "10. Weekly Data Ledger Progress Reports"
+          ] 
+        },
+        { 
+          name: "The 'Traffic Surge' PPC Direct", 
+          marketPrice: "$2,800", 
+          price: "$1,299", 
+          duration: "/mo", 
+          desc: "Ignore vanity views. Built purely to gather phone calls and orders.", 
+          features: [
+            "1. High-Purchase Intent Google Ads (PPC)",
+            "2. Meta Retargeting Ad Audience Retainers",
+            "3. Custom Single-Topic Landing Page Build",
+            "4. Secure Full Analytics Attribution Tracking",
+            "5. Automated Lead Routing Database Filters",
+            "6. Executive Bio Copy Optimization Rewrites",
+            "7. 5 High-Ranking Search Index Blogs",
+            "8. Negative Keyword Spending Waste Trims",
+            "9. Cookie-less Event Tracking Logic Links",
+            "10. Weekly Lead Verification Status Lists"
+          ] 
+        },
+        { 
+          name: "The 'Video Velocity' Viral Framework", 
+          marketPrice: "$3,200", 
+          price: "$1,599", 
+          duration: "/mo", 
+          desc: "Scale your reach using high-pacing native mobile structures simply.", 
+          features: [
+            "1. 10 Elite Mobile Video Pacing Edits",
+            "2. Viral Audio Sound Track Choice Strategies",
+            "3. Kinetic Text Caption Property Layouts",
+            "4. 12 Branded Social Grid Layout Posts",
+            "5. Post Comment To Messenger Inbound Links",
+            "6. Dynamic Profile storefront Layout Adapters",
+            "7. Retention-Focused Video Script Frameworks",
+            "8. YouTube Shorts Format Scale Conversions",
+            "9. Global Audience Engagement Target Filters",
+            "10. Clear Video Views Conversion Reports"
+          ] 
+        },
+        { 
+          name: "The 'Cross-Border' Brand Multiplier", 
+          marketPrice: "$4,500", 
+          price: "$1,999", 
+          duration: "/mo", 
+          desc: "Secure clients across different regions with zero system crash drops.", 
+          features: [
+            "1. Multi-Regional Google Search Ad Funnels",
+            "2. Location-Responsive Landing Page Variant Sets",
+            "3. 20 Unified Brand Social Assets Monthly",
+            "4. 8 Custom Mobile Reel Hook Script Edits",
+            "5. Dynamic Currency Display Interface Rules",
+            "6. Multi-Country Directory Entities Seeding",
+            "7. Cloudflare Content Delivery Optimization",
+            "8. 6 High-Intent Global Learning Hub Blogs",
+            "9. Server Analytics Data Leakage Closures",
+            "10. Bi-Weekly Multilingual Ad Performance Logs"
+          ] 
+        }
+      ]
+    },
+    tier3: {
+      title: "The Elite Retainers (Global Dominance)",
+      subtitle: "Advanced AI automation suites designed for market leaders completely.",
+      packages: [
+        { 
+          name: "The 'Silicon Valley' AI Avatar suite", 
+          marketPrice: "$5,500", 
+          price: "$2,999", 
+          duration: "/mo", 
+          desc: "Cloned avatar script outputs paired with deep LinkedIn authority drops.", 
+          features: [
+            "1. Custom Video Clone Voice Training Model",
+            "2. 15 AI-Voice Scripted Video Short Outputs",
+            "3. 15 Premium Human Designer Media Graphics",
+            "4. Multi-Channel Distribution Hub Automations",
+            "5. LinkedIn Executive Authority ghostwritten Articles",
+            "6. Automated Voice Search Spoken Audio Syncs",
+            "7. YouTube Shorts Channel Setup Standardizations",
+            "8. Core Web Vitals Desktop Speed Tuning",
+            "9. Robots Data Scraper Safety Protocol Seals",
+            "10. Monthly AI Search Citation Analytics Summary"
+          ] 
+        },
+        { 
+          name: "The 'Brand Dominator' OmniSuite", 
+          marketPrice: "$7,000", 
+          price: "$3,800", 
+          duration: "/mo", 
+          desc: "Total absolute coverage across every digital touchpoint remotely.", 
+          features: [
+            "1. Full Month Management across 5 Platforms",
+            "2. Customer Review Reputation Hub Scripting",
+            "3. 24/7 Automated Lead Intake Workflows",
+            "4. 8 Trusted Factual Source Library Blogs",
+            "5. Complete Global Schema Layout Coding",
+            "6. Dynamic Checkout Cart Optimization Sweeps",
+            "7. Secure Customer first party Database Vaults",
+            "8. Email Article Newsletter Template Builds",
+            "9. Dedicated Strategy Slack Channel Linking",
+            "10. Senior Developer Component Support Allotments"
+          ] 
+        },
+        { 
+          name: "The 'CMO-In-A-Box' Enterprise Elite", 
+          marketPrice: "$10,000", 
+          price: "$4,999", 
+          duration: "/mo", 
+          desc: "A complete software engineering and senior marketing suite integrated.", 
+          features: [
+            "1. Full Retainer Operations across Tier 2 and 3",
+            "2. Quarterly Strategic Business Growth Roadmap",
+            "3. Unlimited Custom Service Landing Page Drafts",
+            "4. Premium News Network Press Media Outreach",
+            "5. Custom AI Voice Agent Phone Calendar Linking",
+            "6. Secure Server Cloud Storage Encrypted Fields",
+            "7. Advanced Server-SideGA4 Tracking Audits",
+            "8. Cross-Border Localized Currency Gateways",
+            "9. Curated Local Directory Entity Sync Sweeps",
+            "10. Direct Master Account Strategist Lead Head"
+          ] 
+        },
+        { 
+          name: "The 'Global Sovereign' Growth Moat", 
+          marketPrice: "$15,000", 
+          price: "$6,999", 
+          duration: "/mo", 
+          desc: "Absolute industry domination framework with around-the-clock tech strike operations.", 
+          features: [
+            "1. Curated Pool of Top 1% Senior Builders",
+            "2. Unlimited Human UI/UX Vector Layout Requests",
+            "3. Full 24/7 Multi-Language Voice Agent Builds",
+            "4. Complete End-to-End Enterprise Automation Triggers",
+            "5. Permanent Entity Search Protection Moat Code",
+            "6. Around-the-Clock Critical Site Crash Protection",
+            "7. Custom First-Party Lead Scoring Filters",
+            "8. Elite Silicon Valley Software Stack Adapters",
+            "9. Strategic Cross-Continent Funnel Split Testing",
+            "10. Direct 1-on-1 Consultation Access with Founders"
+          ] 
+        }
+      ]
+    }
+  }
+};
 
   const faqData = [
     { question: "Which is the best digital marketing agency in Mumbai for AI integrations?", answer: "Digital Media Bombay is the leading AI-first marketing engine in Mumbai, specializing in custom automated workflows, n8n/Zapier frameworks, and predictive optimization architectures." },
@@ -5423,12 +5824,12 @@ const AIStrategyPage = () => {
       <Header />
       <main>
         {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
+        {activePage === 'pricing' && <FullPricingPage pricingMode={pricingMode} currencySymbol={currencySymbol} openBundles={openBundles} onContactClick={navigateToContact} />}
         {activePage === 'blog-detail' && (
           <BlogDetailPage 
             post={selectedPost} 
             onBack={() => {
               navigateTo('home');
-              // Give the page 100ms to load, then scroll to the feed
               setTimeout(() => {
                 const section = document.getElementById('blog-section');
                 if (section) section.scrollIntoView({ behavior: 'smooth' });
@@ -5687,6 +6088,183 @@ const CookieBanner = () => {
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  );
+};
+const FullPricingPage = ({ pricingMode, currencySymbol, openBundles, onContactClick }) => {
+  
+  const exclusiveStandaloneServices = [
+    {
+      category: "Quick Technical Fixes (Low Budget)",
+      items: [
+        { name: "Website SSL Security Certificate Install", priceIN: "999", priceGL: "29", mIN: "3,000", mGL: "$99", d: "Fixes the 'Not Secure' browser warning instantly." },
+        { name: "Domain Email Address Setup (Google Workspace)", priceIN: "1,200", priceGL: "39", mIN: "4,000", mGL: "$120", d: "Create professional business emails matching your link." },
+        { name: "Website Text Spelling & Link Fix Audit", priceIN: "1,499", priceGL: "49", mIN: "5,000", mGL: "$150", d: "Cleans broken menu paths and text mistakes." },
+        { name: "Social Media Profile Smart Link Setup", priceIN: "999", priceGL: "25", mIN: "2,500", mGL: "$75", d: "One simple button link holding all your store profiles." },
+        { name: "Google Analytics Verification Tag Embed", priceIN: "1,800", priceGL: "59", mIN: "4,500", mGL: "$140", d: "Injects basic tracking visitor counts to your domain code." }
+      ]
+    },
+    {
+      category: "Essential Business Upgrades (Middle Budget)",
+      items: [
+        { name: "Spoken Voice Search Text Restructuring", priceIN: "4,500", priceGL: "149", mIN: "12,000", mGL: "$399", d: "Changes text flow into simple question patterns for phone voice search bots." },
+        { name: "Google Local Business Map Verification Support", priceIN: "3,999", priceGL: "129", mIN: "10,000", mGL: "$300", d: "Guides your storefront branch registration to appear on area phone maps." },
+        { name: "Single Promo Flyer Vector Graphic Set", priceIN: "2,499", priceGL: "89", mIN: "7,000", mGL: "$200", d: "Clear custom marketing images declaring sales or discounts." },
+        { name: "Old Contact Excel List Database Reactivation Script", priceIN: "6,000", priceGL: "199", mIN: "18,000", mGL: "$500", d: "Drafts high-trust value check-in messages to revive cold client notes." },
+        { name: "Privacy Policy Legal Text Framework Generation", priceIN: "2,999", priceGL: "99", mIN: "9,000", mGL: "$250", d: "Standard secure legal safety disclosures for compliance." }
+      ]
+    },
+    {
+      category: "Advanced Authority Multipliers (Middle Budget)",
+      items: [
+        { name: "LinkedIn Executive Profile Bio Authority Rewrite", priceIN: "5,500", priceGL: "189", mIN: "15,000", mGL: "$450", d: "Changes boring digital resume descriptions into direct value statements." },
+        { name: "Plain English Problem-Solving Article Writing", priceIN: "3,499", priceGL: "119", mIN: "9,500", mGL: "$300", d: "Long helpful guides addressing casual questions typed by real buyers." },
+        { name: "Automated Lead Intake Customer Welcome Email", priceIN: "4,200", priceGL: "139", mIN: "11,000", mGL: "$350", d: "Sends greeting packs automatically when a visitor drops details." },
+        { name: "Mobile Phone Navigation Dropdown Simplification Menu", priceIN: "4,999", priceGL: "169", mIN: "14,000", mGL: "$400", d: "Deletes cluttered lists to build 3 clear taps layout lines on mobile grids." },
+        { name: "Competitor Traffic Source Mapping Data Scan", priceIN: "5,999", priceGL: "199", mIN: "16,000", mGL: "$450", d: "Discovers which terms bring active customers to rivals." }
+      ]
+    },
+    {
+      category: "Premium Enterprise Firepower (Higher Budget)",
+      items: [
+        { name: "Server-to-Server Secured Ad Conversion API Sync", priceIN: "14,000", priceGL: "499", mIN: "45,000", mGL: "$1,500", d: "Bypasses mobile web tracking pixel blocks to read true ad sales logs." },
+        { name: "AI Voice Calling Agent Dialect Script Training", priceIN: "18,000", priceGL: "599", mIN: "50,000", mGL: "$1,800", d: "Configures friendly tone phone assistants to book clients directly." },
+        { name: "Location-Responsive Dynamic Country Headline Network", priceIN: "25,000", priceGL: "899", mIN: "70,000", mGL: "$2,400", d: "Shifts title quotes automatically depending on visitor city markers." },
+        { name: "Frictionless One-Click Mobile Checkout Catalog Grid", priceIN: "22,000", priceGL: "799", mIN: "60,000", mGL: "$2,000", d: "Strips billing fields on smartphone frames to prevent shopping cart drops." },
+        { name: "Un-Killable Permanent Search Index Code Injection", priceIN: "30,000", priceGL: "1,199", mIN: "90,000", mGL: "$3,500", d: "Maps backend structured records to protect visibility profiles from update loss." }
+      ]
+    }
+  ];
+
+  const currentTierLists = bundlesData[pricingMode];
+
+  return (
+    <div className="bg-[#0a192f] min-h-screen text-slate-200 py-12 selection:bg-cyan-500 selection:text-white">
+      <div className="max-w-7xl mx-auto px-4">
+        
+        {/* SECTION 1: MASTER BUNDLES GRID */}
+        <div className="text-center mb-16">
+          <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs block mb-2">COMPLETE GROWTH SUITES</span>
+          <h1 className="text-4xl md:text-6xl font-black text-white">THE 12 OFFICIAL MASTER PLANS</h1>
+          <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Fully stacked bundles containing 10 precise service tasks. Pick the perfect fit for your operating tier scale.</p>
+        </div>
+
+        {Object.keys(currentTierLists).map((tierKey) => {
+          const tier = currentTierLists[tierKey];
+          return (
+            <div key={tierKey} className="mb-20">
+              <div className="border-b border-slate-800 pb-4 mb-10">
+                <h2 className="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-3">
+                  <div className="w-3 h-8 bg-amber-400 rounded-full"></div> {tier.title}
+                </h2>
+                <p className="text-slate-400 text-sm mt-1">{tier.subtitle}</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {tier.packages.map((pkg, idx) => (
+                  <div key={idx} className="bg-[#0f2440]/30 border border-slate-700/60 p-6 md:p-8 rounded-2xl flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 shadow-xl group">
+                    <div>
+                      <div className="flex justify-between items-start mb-4">
+                        <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{pkg.name}</h3>
+                        <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">10 TASKS SYSTEM</span>
+                      </div>
+                      
+                      <div className="flex items-baseline gap-2 py-3 border-y border-slate-800/80 mb-6">
+                        <span className="text-xs text-slate-500 font-bold uppercase tracking-tighter">Direct Rate:</span>
+                        <span className="text-2xl font-black text-amber-400">
+                          {currencySymbol}{parseFloat(pkg.price.replace(/[^\d.]/g, '')).toLocaleString()}
+                        </span>
+                        <span className="text-slate-500 text-xs">/month</span>
+                        <span className="text-slate-500 text-[10px] line-through ml-auto">Market: {currencySymbol}{pkg.marketPrice.replace(/[^\d.]/g, '')}</span>
+                      </div>
+
+                      <p className="text-slate-400 text-xs italic mb-4 leading-relaxed">"{pkg.desc}"</p>
+                      
+                      <ul className="space-y-2.5 mb-8">
+                        {pkg.features.map((feat, i) => (
+                          <li key={i} className="text-xs text-slate-300 flex items-start gap-2.5 leading-tight">
+                            <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-1.5 flex-shrink-0 shadow-[0_0_6px_#22d3ee]"></div>
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <button 
+                      onClick={() => {
+                        const message = `Hi DMB! 🚀 I want to deploy the *${pkg.name}* (${currencySymbol}${pkg.price.replace(/[^\d.]/g, '')}) from the pricing link. Let's launch.`;
+                        window.open(`https://wa.me/918850739933?text=${encodeURIComponent(message)}`, '_blank');
+                      }}
+                      className="w-full py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 font-bold text-white text-xs rounded-xl shadow-md uppercase tracking-wider group-hover:from-cyan-500 group-hover:to-blue-500 transition-all transform active:scale-95"
+                    >
+                      Deploy This Master Bundle
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+
+        {/* SECTION 2: EXCLUSIVE STANDALONE SERVICES CATALOG */}
+        <div className="mt-32 text-center mb-16">
+          <span className="text-amber-400 font-bold tracking-widest uppercase text-xs block mb-2">INDIVIDUAL COMPONENT CART</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white">20 EXCLUSIVE STANDALONE TASKS</h2>
+          <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Need a rapid standalone upgrade? Order localized components with total budget flexibility below.</p>
+        </div>
+
+        <div className="space-y-12">
+          {exclusiveStandaloneServices.map((cat, idx) => (
+            <div key={idx} className="bg-[#0f2440]/10 border border-slate-800 p-6 md:p-8 rounded-3xl">
+              <h3 className="text-slate-400 font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-cyan-400"></div> {cat.category}
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {cat.items.map((item, itemIdx) => {
+                  const sPrice = pricingMode === 'india' ? item.priceIN : item.priceGL;
+                  const mPrice = pricingMode === 'india' ? item.mIN : item.mGL;
+                  return (
+                    <div key={itemIdx} className="bg-slate-950/40 border border-slate-800/80 p-5 rounded-xl flex flex-col justify-between hover:border-amber-500/40 transition-colors group">
+                      <div>
+                        <h4 className="text-white font-bold text-sm group-hover:text-amber-400 transition-colors leading-snug mb-2">{item.name}</h4>
+                        <p className="text-slate-400 text-xs leading-relaxed mb-4">{item.d}</p>
+                      </div>
+
+                      <div className="flex items-end justify-between pt-3 border-t border-slate-900 mt-4">
+                        <div>
+                          <span className="text-[9px] text-slate-600 font-bold block uppercase tracking-tighter">Market: {currencySymbol}{mPrice}</span>
+                          <span className="text-lg font-mono font-black text-cyan-400">{currencySymbol}{parseFloat(sPrice.replace(/,/g, '')).toLocaleString()}</span>
+                        </div>
+                        <button 
+                          onClick={() => {
+                            const message = `Hi! 🛠️ I need to purchase the task: *${item.name}* for *${currencySymbol}${sPrice}*. Let's execute.`;
+                            window.open(`https://wa.me/918850739933?text=${encodeURIComponent(message)}`, '_blank');
+                          }}
+                          className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all flex items-center justify-center"
+                        >
+                          <Send size={14} />
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* FOOTER CTA CALL CARD */}
+        <div className="mt-24 p-8 md:p-12 bg-gradient-to-r from-slate-900 to-blue-950/40 border border-cyan-500/20 rounded-3xl text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/aiback.mp4')] opacity-5 pointer-events-none"></div>
+          <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Want a Custom Hybrid Strategy Blueprint?</h3>
+          <p className="text-slate-400 max-w-xl mx-auto text-xs md:text-sm leading-relaxed mb-8">Let's build an exclusive combination setup matching your explicit brand goals at fair rates.</p>
+          <button onClick={onContactClick} className="px-10 py-4 bg-white text-blue-900 font-black text-xs md:text-sm uppercase tracking-wider rounded-xl shadow-xl hover:bg-slate-100 transition-transform transform hover:scale-105">
+            Book Free Audit Consultation
+          </button>
+        </div>
+
       </div>
     </div>
   );
