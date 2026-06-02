@@ -132,7 +132,7 @@ const blogPosts = [
     title: "Meet Kaleem Shaikh: The Founder Making Digital Business Simple for Everyone",
     category: "About the Founder",
     author: "Digital Media Bombay",
-    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1080",
+    img: "kaleem.png",
     excerpt: "Discover the story of Kaleem Shaikh, the founder of Digital Media Bombay, and his mission to fix broken online marketing systems.",
     content: `<h3>A Leader with a Clear Vision</h3><p>Behind <strong>Digital Media Bombay</strong> is our founder, <strong>Kaleem Shaikh</strong>. He noticed that business owners all over the world—from London to Dubai to New York—were losing thousands of dollars on agencies that delivered nothing but empty promises. Kaleem built DMB on a simple rule: no confusing words, no useless reports, just real business growth that shows up in your bank account.</p><h3>The Strategy of Direct Results</h3><p>Kaleem Shaikh did away with the traditional corporate agency model to create an on-demand technical team. This setup brings the best digital minds together to fix business problems instantly. When you work with Digital Media Bombay, you are working directly with an engine designed by Kaleem to give your company an unfair advantage over your competitors using simple, clean, and highly visible online setups.</p>
     <div class="faq-section">
