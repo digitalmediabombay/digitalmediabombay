@@ -3367,20 +3367,50 @@ const serviceCategories = [
       ]
     },
     {
-      category: "SEO & Google Ranking",
+      category: "Google Ranking Only",
       items: [
-        { name: "GMB Setup", marketPriceIN: 6000, priceIN: 3000, marketPriceGL: 179, priceGL: 89, id: "seo1" },
-        { name: "On-Page SEO (Per Page)", marketPriceIN: 3000, priceIN: 1500, marketPriceGL: 89, priceGL: 45, id: "seo2" },
-        { name: "Keyword Strategy Report", marketPriceIN: 5000, priceIN: 2500, marketPriceGL: 149, priceGL: 75, id: "seo3" },
-        { name: "Backlink Setup (5 High DA)", marketPriceIN: 8000, priceIN: 4000, marketPriceGL: 249, priceGL: 125, id: "seo4" },
-        { name: "Google Console Setup", marketPriceIN: 3000, priceIN: 1500, marketPriceGL: 89, priceGL: 45, id: "seo5" },
-        { name: "Competitor SEO Analysis", marketPriceIN: 4000, priceIN: 2000, marketPriceGL: 129, priceGL: 65, id: "seo6" },
-        { name: "XML Sitemap & Robot.txt", marketPriceIN: 2000, priceIN: 1000, marketPriceGL: 59, priceGL: 29, id: "seo7" },
-        { name: "Image Alt Text Opt.", marketPriceIN: 4000, priceIN: 2000, marketPriceGL: 119, priceGL: 59, id: "seo8" },
-        { name: "Local SEO Citation", marketPriceIN: 7000, priceIN: 3500, marketPriceGL: 219, priceGL: 109, id: "seo9" },
-        { name: "Monthly SEO Audit", marketPriceIN: 5000, priceIN: 2500, marketPriceGL: 149, priceGL: 75, id: "seo10" },
-        { name: "llm.txt File Setup & Deployment", marketPriceIN: 8000, priceIN: 3999, marketPriceGL: 199, priceGL: 99, id: "geo1" },
-{ name: "AI Overview Visibility Audit", marketPriceIN: 10000, priceIN: 4999, marketPriceGL: 249, priceGL: 149, id: "geo2" }
+        { name: "GMB / Maps Profile Setup", marketPriceIN: 6000, priceIN: 2999, marketPriceGL: 179, priceGL: 89, id: "gr1" },
+        { name: "Local Citations (Transit Corridors)", marketPriceIN: 7000, priceIN: 3499, marketPriceGL: 219, priceGL: 109, id: "gr2" },
+        { name: "Google Map Intent Grid Ranking", marketPriceIN: 8000, priceIN: 3999, marketPriceGL: 249, priceGL: 119, id: "gr3" },
+        { name: "Review Automation Hub Linkage", marketPriceIN: 5000, priceIN: 2499, marketPriceGL: 149, priceGL: 79, id: "gr4" },
+        { name: "Google Search Console Calibration", marketPriceIN: 3000, priceIN: 1499, marketPriceGL: 89, priceGL: 45, id: "gr5" },
+        { name: "On-Page Schema Injection", marketPriceIN: 4000, priceIN: 1999, marketPriceGL: 119, priceGL: 59, id: "gr6" },
+        { name: "XML Sitemap & Robots Engine Config", marketPriceIN: 2000, priceIN: 999, marketPriceGL: 59, priceGL: 29, id: "gr7" },
+        { name: "Local GMB Keyword Audit", marketPriceIN: 4000, priceIN: 1999, marketPriceGL: 129, priceGL: 59, id: "gr8" },
+        { name: "Duplicate Listing Cleanup", marketPriceIN: 5000, priceIN: 2200, marketPriceGL: 139, priceGL: 69, id: "gr9" },
+        { name: "Monthly Map Position Audit Reports", marketPriceIN: 4000, priceIN: 1799, marketPriceGL: 119, priceGL: 49, id: "gr10" }
+      ]
+    },
+    {
+      category: "SEO, GEO & AEO Dominance",
+      items: [
+        { name: "Technical Deep SEO Architecture Audit", marketPriceIN: 10000, priceIN: 4499, marketPriceGL: 299, priceGL: 139, id: "sga1" },
+        { name: "Programmatic Long-Tail Intent Framework", marketPriceIN: 8000, priceIN: 3999, marketPriceGL: 249, priceGL: 119, id: "sga2" },
+        { name: "High-Authority Semantic Context Links", marketPriceIN: 12000, priceIN: 5499, marketPriceGL: 399, priceGL: 179, id: "sga3" },
+        { name: "llm.txt Manifest File Deployment", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 199, priceGL: 79, id: "sga4" },
+        { name: "AI Overview Answer Seeding Structure", marketPriceIN: 14000, priceIN: 5999, marketPriceGL: 449, priceGL: 199, id: "sga5" },
+        { name: "Brand Entity Knowledge Graph Syncing", marketPriceIN: 15000, priceIN: 6499, marketPriceGL: 499, priceGL: 219, id: "sga6" },
+        { name: "Structured JSON-LD Array Frameworks", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 219, priceGL: 99, id: "sga7" },
+        { name: "ChatGPT & Perplexity Citation Sourcing", marketPriceIN: 16000, priceIN: 6999, marketPriceGL: 549, priceGL: 249, id: "sga8" },
+        { name: "Conversational Spoken Voice Schema Maps", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 279, priceGL: 129, id: "sga9" },
+        { name: "Speakable Meta Property Code Blocks", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 69, id: "sga10" },
+        { name: "Assistant Recommendation Inbound Maps", marketPriceIN: 11000, priceIN: 4999, marketPriceGL: 349, priceGL: 159, id: "sga11" },
+        { name: "Neural Scraper Crawl-Validation Logs", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 109, id: "sga12" }
+      ]
+    },
+    {
+      category: "Magic Prompt Engineering",
+      items: [
+        { name: "Master System Brand Archetype Prompts", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 219, priceGL: 99, id: "mp1" },
+        { name: "Instagram Viral Reels Script Generators", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 69, id: "mp2" },
+        { name: "LinkedIn Executive Bio/Post Matrix Docs", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 189, priceGL: 79, id: "mp3" },
+        { name: "High-Ticket Ads Copy Hook Frameworks", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 119, id: "mp4" },
+        { name: "Automated Bulk Blog Markdown Builders", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 279, priceGL: 129, id: "mp5" },
+        { name: "Context Window Guardrail Tuner Instructions", marketPriceIN: 12000, priceIN: 4999, marketPriceGL: 399, priceGL: 169, id: "mp6" },
+        { name: "E-commerce Product Copy Multipliers", marketPriceIN: 7500, priceIN: 3200, marketPriceGL: 229, priceGL: 109, id: "mp7" },
+        { name: "Email Customer Nurture Drip Logic Prompts", marketPriceIN: 6500, priceIN: 2799, marketPriceGL: 199, priceGL: 89, id: "mp8" },
+        { name: "Zero-Shot Social Grid Visual Asset Scripts", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 169, priceGL: 75, id: "mp9" },
+        { name: "Custom Database Interaction System Prompts", marketPriceIN: 14000, priceIN: 5999, marketPriceGL: 449, priceGL: 199, id: "mp10" }
       ]
     },
     {
