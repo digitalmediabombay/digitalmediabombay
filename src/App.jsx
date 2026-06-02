@@ -5814,12 +5814,13 @@ const AIStrategyPage = () => {
       <main>
   {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
   {activePage === 'pricing-page' && (
-  <FullPricingPage
-    pricingMode={pricingMode}
-    currencySymbol={currencySymbol}
-    openBundles={openBundles}
-    onContactClick={navigateToContact}
-  />
+  <FullPricingPage
+    bundlesData={bundlesData} // <-- ADD THIS LINE RIGHT HERE
+    pricingMode={pricingMode}
+    currencySymbol={currencySymbol}
+    openBundles={openBundles}
+    onContactClick={navigateToContact}
+  />
 )}
         {activePage === 'blog-detail' && (
           <BlogDetailPage 
@@ -6088,7 +6089,7 @@ const CookieBanner = () => {
     </div>
   );
 };
-function FullPricingPage({ pricingMode, currencySymbol, openBundles, onContactClick }) {
+function FullPricingPage({ prifunction FullPricingPage({ bundlesData, pricingMode, currencySymbol, openBundles, onContactClick }) {
   
   const exclusiveStandaloneServices = [
     {
