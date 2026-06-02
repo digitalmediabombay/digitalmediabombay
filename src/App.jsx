@@ -1413,15 +1413,32 @@ const App = () => {
       },
 
       {
-  id: "geo",
-  title: "GEO Dominance",
-  icon: <Sparkles size={32} className="text-indigo-400" />,
-  desc: "Generative Engine Optimization. We optimize your digital real estate to ensure your brand is cited, sourced, and recommended by ChatGPT, Gemini, Perplexity, and Copilot.",
-  color: "indigo",
-  img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1080",
-  deliverables: ["llm.txt Architecture Deployment", "AI Engine Citation Seeding", "Brand Entity Knowledge Graph Mapping", "Structured JSON-LD Schema Arrays", "LLM Scraping & Visibility Audits"]
-},
-
+        id: "geo",
+        title: "GEO Dominance",
+        icon: <Sparkles size={32} className="text-indigo-400" />,
+        desc: "Generative Engine Optimization. We optimize your digital real estate to ensure your brand is cited, sourced, and recommended by ChatGPT, Gemini, Perplexity, and Copilot.",
+        color: "indigo",
+        img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1080",
+        deliverables: ["llm.txt Architecture Deployment", "AI Engine Citation Seeding", "Brand Entity Knowledge Graph Mapping", "Structured JSON-LD Schema Arrays", "LLM Scraping & Visibility Audits"]
+      },
+      {
+        id: "aeo",
+        title: "AEO Voice Optimization",
+        icon: <MessageSquare size={32} className="text-purple-400" />,
+        desc: "Answer Engine Optimization. We format your data modules so conversational voice assistants like Alexa, Siri, and Google Home read out your brand as the single definitive solution.",
+        color: "purple",
+        img: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=1080",
+        deliverables: ["Conversational Q&A Schema Maps", "Speakable Meta Property Injection", "Voice Search Intent Mapping", "Natural Human Dialect Scripting", "Assistant Recommendation Audit"]
+      },
+      {
+        id: "magic-prompts",
+        title: "Magic Prompt Engineering",
+        icon: <Zap size={32} className="text-amber-400" />,
+        desc: "We build tailored master system prompts for your specific brand workflows, allowing you to generate pixel-perfect posts, sales copy, templates, and content assets instantly.",
+        color: "amber",
+        img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1080",
+        deliverables: ["Custom Master Brand Prompts", "Multi-Platform Content Frameworks", "Automated Bulk Copy Scripting", "Context Window Guardrail Tuners", "Zero-Shot Asset Generators"]
+      },
       {
 
         id: "tracking",
