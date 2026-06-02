@@ -1094,7 +1094,7 @@ const App = () => {
 
   if (path.startsWith('/blog/')) return 'blog-detail';
 
-  if (path === '/pricing') return pricing-page;
+  if (path === '/pricing') return 'pricing-page';
 
   const cleanPath = path.replace('/', '');
   return cleanPath || 'home';
@@ -1127,7 +1127,7 @@ const App = () => {
         title: "Services | Web Dev, SEO, Ads & AI | Digital Media Bombay",
         desc: "Professional SEO, Performance Marketing, 3D Parallax Web Development, and AI Automation services."
       },
-      pricing-page: {
+      'pricing-page': {
         title: "Pricing | Digital Media Bombay Plans",
         desc: "Affordable direct-response bundles and custom marketing tasks for global business operators."
       },
@@ -5813,7 +5813,14 @@ const AIStrategyPage = () => {
       <Header />
       <main>
   {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
-  {activePage === pricing-page && <FullPricingPage pricingMode={pricingMode} currencySymbol={currencySymbol} openBundles={openBundles} onContactClick={navigateToContact} />}
+  {activePage === 'pricing-page' && (
+  <FullPricingPage
+    pricingMode={pricingMode}
+    currencySymbol={currencySymbol}
+    openBundles={openBundles}
+    onContactClick={navigateToContact}
+  />
+)}
         {activePage === 'blog-detail' && (
           <BlogDetailPage 
             post={selectedPost} 
