@@ -3711,11 +3711,11 @@ function Service3DRing({ services }) {
 
     return (
 
-      <div
+    <div
 
-        className="relative w-full h-[600px] flex justify-center items-center overflow-hidden perspective-[2000px] group"
+      className="relative w-full h-[680px] flex justify-center items-center overflow-hidden perspective-[2000px] group"
 
-        onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={() => setIsHovered(true)}
 
         onMouseLeave={() => setIsHovered(false)}
 
