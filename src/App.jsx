@@ -1945,10 +1945,9 @@ const GoogleTrustCard = () => {
 
                         <option>Web Development</option>
 
-                        <option>Search Engine Optimization (SEO) Services</option>
-                        
-                        <option>Generative Engine Optimization (GEO)</option>
-
+                        <option>Google Ranking Only</option>
+                        <option>SEO, GEO &amp; AEO Dominance</option>
+                        <option>Magic Prompt Engineering</option>
                         <option>AI Automation</option>
 
                         <option>Other</option>
