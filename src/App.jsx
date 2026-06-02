@@ -3606,7 +3606,8 @@ const serviceCategories = [
             </button>
 
             {openCategory === idx && (
-              <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-3 bg-slate-950/50 border-t border-slate-800 animate-in slide-in-from-top-2 duration-300">
+              /* Expanded from 2 columns to a spacious 3-column setup to hold labels on a single line */
+              <div className="p-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 bg-slate-950/50 border-t border-slate-800 animate-in slide-in-from-top-2 duration-300 w-full">
                 {cat.items.map(item => {
                   const mPrice = mode === 'india' ? item.marketPriceIN : item.marketPriceGL;
                   const sPrice = mode === 'india' ? item.priceIN : item.priceGL;
