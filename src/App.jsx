@@ -3590,8 +3590,8 @@ const serviceCategories = [
         <button onClick={() => setSelected([])} className="text-xs font-bold text-slate-500 hover:text-red-400 flex items-center gap-1 uppercase tracking-widest transition-colors"><X size={14}/> Reset Selection</button>
       </div>
 
-      {/* Upgraded grid columns from grid-cols-2 to grid-cols-1 for a wider layout footprint */}
-      <div className="grid grid-cols-1 gap-5 items-start w-full">
+      {/* Container modified to take full horizontal space matching the parent row width elements layout lines */}
+      <div className="grid grid-cols-1 gap-4 items-start w-full">
         {serviceCategories.map((cat, idx) => (
           <div key={idx} className="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/40 w-full">
             <button 
