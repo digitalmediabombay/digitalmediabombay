@@ -4961,7 +4961,7 @@ const AIStrategyPage = () => {
 
                 <div className="relative h-96 bg-gradient-to-br from-blue-900/40 to-slate-900 rounded-2xl border-2 border-slate-700 overflow-hidden group hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all duration-300">
 
-                      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566552881560-0be862a7c445?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center opacity-40 group-hover:opacity-50 transition-opacity duration-700 transform group-hover:scale-105"></div>
+                      <div className="absolute inset-0 bg-[url('officeinside.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-50 transition-opacity duration-700 transform group-hover:scale-105"></div>
 
                       <div className="absolute bottom-0 left-0 p-8 bg-gradient-to-t from-[#0f2440] via-[#0f2440]/80 to-transparent w-full"><p className="text-cyan-400 font-bold tracking-wider uppercase text-sm">The Vision</p><p className="text-white text-xl font-bold mt-1">Global Quality. Local Heart.</p></div>
 
