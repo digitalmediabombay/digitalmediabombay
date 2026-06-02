@@ -114,7 +114,7 @@ const blogPosts = [
     title: "Digital Media Bombay Launch: Simple Solutions for Big Digital Problems Worldwide",
     category: "Agency Launch",
     author: "Digital Media Bombay",
-    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1080",
+    img: "dmblaunch.png",
     excerpt: "The wait is over. Digital Media Bombay officially launches its global services to solve online business problems simply and effectively.",
     content: `<h3>Why Digital Media Bombay was Started</h3><p>Many business owners in the United States, the United Kingdom, the Middle East, and Asian countries face the same big headache: online marketing has become too complicated. Agencies talk about confusing tech terms, but business owners just want more sales. That is exactly why <strong>Digital Media Bombay (DMB)</strong> was launched by our founder, <strong>Kaleem Shaikh</strong>. We are a team built to clear the confusion and help businesses grow using simple, powerful online systems.</p><h3>Solving the Real World Online Problems</h3><p>If you are a business owner anywhere in the world, you know how hard it is to get noticed on the internet today. Traditional marketing plans are slow and expensive. Digital Media Bombay fixes this problem by building direct growth setups. Whether you want a website that brings in clients or ads that actually make money, our launch brings world-class digital help right to your business storefront without any confusing talk.</p>
     <div class="faq-section">
