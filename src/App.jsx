@@ -1207,86 +1207,162 @@ const App = () => {
 // 4. Detect User Location (Updated with your Specific Territory List)
   useEffect(() => {
     const detectLocation = async () => {
-      try {
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
-        // --- PASSIVE TRAFFIC AND ATOM DATA CAPTURE LAYER ---
-        // Programmatically routes raw server header metadata to your master lead sheet
-        const visitorTelemetry = {
-          visitorID: Math.random().toString(36).substring(2, 11).toUpperCase(),
-          timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-          cityLocation: data.city || "Unknown City",
-          regionState: data.region || "Unknown Region",
-          countryCode: data.country_code || "Unknown IN/Global",
-          ispCarrier: data.org || "Network Header",
-          currentPagePath: window.location.pathname,
-          referrerSource: document.referrer || "Direct / Organic Search",
-          cookieBannerStatus: localStorage.getItem('dm_bombay_cookies') === 'true' ? 'Accepted' : 'Pending/Declined'
-        };
+  try {
+    const response = await fetch('https://ipapi.co/json/');
+    const data = await response.json();
 
-        // Fire request directly to your n8n or Make spreadsheet automation loop
-          fetch("https://hook.eu1.make.com/5i25j8hhjgxlrq58w8wbddyk2eazwgo3", {          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(visitorTelemetry)
-        }).catch(() => {
-          // Fail silently in background to preserve client rendering speeds
-        });
-        // --- END OF TELEMETRY LAYER ---
-        
-        // Mapping your specific requested countries/territories
-        const symbols = {
-          'INR': '₹',      // India
-          'KWD': 'KD ',    // Kuwait
-          'BHD': 'BD ',    // Bahrain
-          'OMR': 'RO ',    // Oman
-          'JOD': 'JD ',    // Jordan
-          'GBP': '£',      // UK
-          'GIP': '£',      // Gibraltar
-          'KYD': '$',      // Cayman Islands
-          'CHF': 'CHF ',   // Switzerland
-          'EUR': '€',      // Europe
-          'USD': '$'       // United States
-        };
-
-        if (data.country_code === 'IN') {
-          // Keep India pricing and symbol for Indian visitors
-          setPricingMode('india');
-          setCurrencySymbol('₹');
-        } else {
-          // Set Global pricing for everyone else
-          setPricingMode('global');
-
-          // Check if their local currency is in your "Special List"
-          // If NOT in the list (e.g. Dubai, Saudi, Africa, etc.), default to '$'
-          //  REPLACE WITH THIS COMPREHENSIVE IP DIALECT LOOKUP FALLBACK ARRAY:
-const detectedCurrency = data.currency || "USD";
-const country = data.country_code || "US";
-
-// Exhaustive dictionary verifying requested regional territory tags matches
-const symbolDictionary = {
-  'INR': '₹', 'KWD': 'KD ', 'BHD': 'BD ', 'OMR': 'RO ', 'JOD': 'JD ',
-  'GBP': '£', 'GIP': '£', 'KYD': '$', 'CHF': 'CHF ', 'EUR': '€', 'USD': '$'
-};
-
-if (symbolDictionary[detectedCurrency]) {
-  setCurrencySymbol(symbolDictionary[detectedCurrency]);
-} else {
-  // If country utilizes Sterling traits globally but falls outside standard lists
-  if (['UK', 'GB', 'GI'].includes(country)) {
-    setCurrencySymbol('£');
-  } else if (['AT', 'BE', 'CY', 'EE', 'FI', 'FR', 'DE', 'GR', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PT', 'SK', 'SI', 'ES'].includes(country)) {
-    setCurrencySymbol('€');
-  } else {
-    setCurrencySymbol('$'); // Universal global commerce baseline fallback
-  }
-}
-        }
-      } catch (error) {
-        // Fallback in case of API error
-        setPricingMode('global');
-        setCurrencySymbol('$');
-      }
+    // Telemetry (keep your existing code here unchanged)
+    const visitorTelemetry = {
+      visitorID: Math.random().toString(36).substring(2, 11).toUpperCase(),
+      timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+      cityLocation: data.city || "Unknown City",
+      regionState: data.region || "Unknown Region",
+      countryCode: data.country_code || "Unknown",
+      ispCarrier: data.org || "Network Header",
+      currentPagePath: window.location.pathname,
+      referrerSource: document.referrer || "Direct / Organic Search",
+      cookieBannerStatus: localStorage.getItem('dm_bombay_cookies') === 'true' ? 'Accepted' : 'Pending/Declined'
     };
+    fetch("https://hook.eu1.make.com/5i25j8hhjgxlrq58w8wbddyk2eazwgo3", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(visitorTelemetry)
+    }).catch(() => {});
+
+    const country = data.country_code || "US";
+
+    // India check first
+    if (country === 'IN') {
+      setPricingMode('india');
+      setCurrencySymbol('₹');
+      return;
+    }
+
+    // For everyone else, set global pricing
+    setPricingMode('global');
+
+    // Explicit country-to-symbol map (covers your requested list + common currencies)
+    const countryToCurrency = {
+      // Your specifically requested countries
+      'KW': 'KD ',   // Kuwait
+      'BH': 'BD ',   // Bahrain
+      'OM': 'RO ',   // Oman
+      'JO': 'JD ',   // Jordan
+      'GB': '£',     // United Kingdom
+      'GI': '£',     // Gibraltar
+      'KY': 'KY$',   // Cayman Islands
+      'CH': 'CHF ',  // Switzerland
+
+      // Eurozone countries
+      'AT': '€', 'BE': '€', 'CY': '€', 'EE': '€',
+      'FI': '€', 'FR': '€', 'DE': '€', 'GR': '€',
+      'IE': '€', 'IT': '€', 'LV': '€', 'LT': '€',
+      'LU': '€', 'MT': '€', 'NL': '€', 'PT': '€',
+      'SK': '€', 'SI': '€', 'ES': '€', 'HR': '€',
+      'MC': '€', 'SM': '€', 'VA': '€', 'AD': '€',
+      'ME': '€', 'XK': '€',
+
+      // United States + territories
+      'US': '$', 'PR': '$', 'GU': '$', 'VI': '$',
+      'AS': '$', 'MP': '$',
+
+      // Other pound-using countries
+      'IM': '£',  // Isle of Man
+      'JE': '£',  // Jersey
+      'GG': '£',  // Guernsey
+      'FK': '£',  // Falkland Islands
+      'SH': '£',  // Saint Helena
+      'GS': '£',  // South Georgia
+
+      // Gulf / Middle East (non-listed, default to $)
+      'AE': '$',  // UAE (Dirham, but showing $ for simplicity)
+      'SA': '$',  // Saudi Arabia
+      'QA': '$',  // Qatar
+      'IQ': '$',  // Iraq
+      'YE': '$',  // Yemen
+
+      // Major Asian economies
+      'JP': '¥',   // Japan
+      'CN': '¥',   // China
+      'KR': '₩',   // South Korea
+      'SG': 'S$',  // Singapore
+      'HK': 'HK$', // Hong Kong
+      'AU': 'A$',  // Australia
+      'NZ': 'NZ$', // New Zealand
+      'CA': 'CA$', // Canada
+
+      // South/Southeast Asia
+      'PK': '₨',   // Pakistan
+      'BD': '৳',   // Bangladesh
+      'LK': 'Rs',  // Sri Lanka
+      'NP': 'रू',  // Nepal
+      'MM': 'K',   // Myanmar
+      'TH': '฿',   // Thailand
+      'MY': 'RM',  // Malaysia
+      'ID': 'Rp',  // Indonesia
+      'PH': '₱',   // Philippines
+      'VN': '₫',   // Vietnam
+
+      // Africa
+      'ZA': 'R',   // South Africa
+      'NG': '₦',   // Nigeria
+      'KE': 'KSh', // Kenya
+      'EG': 'E£',  // Egypt
+      'GH': '₵',   // Ghana
+      'ET': 'Br',  // Ethiopia
+      'TZ': 'TSh', // Tanzania
+      'UG': 'USh', // Uganda
+
+      // Americas
+      'MX': 'MX$', // Mexico
+      'BR': 'R$',  // Brazil
+      'AR': '$',   // Argentina
+      'CL': 'CL$', // Chile
+      'CO': 'CO$', // Colombia
+      'PE': 'S/',  // Peru
+
+      // Eastern Europe
+      'RU': '₽',   // Russia
+      'UA': '₴',   // Ukraine
+      'PL': 'zł',  // Poland
+      'CZ': 'Kč',  // Czech Republic
+      'HU': 'Ft',  // Hungary
+      'RO': 'lei', // Romania
+      'RS': 'din', // Serbia
+      'TR': '₺',   // Turkey
+
+      // Nordic
+      'SE': 'kr',  // Sweden
+      'NO': 'kr',  // Norway
+      'DK': 'kr',  // Denmark
+      'IS': 'kr',  // Iceland
+
+      // Others
+      'IL': '₪',   // Israel
+      'ZW': 'ZW$', // Zimbabwe
+    };
+
+    if (countryToCurrency[country]) {
+      setCurrencySymbol(countryToCurrency[country]);
+    } else {
+      // Fallback: try the currency field from API if available
+      const detectedCurrency = data.currency || "USD";
+      const apiCurrencyMap = {
+        'INR': '₹', 'KWD': 'KD ', 'BHD': 'BD ', 'OMR': 'RO ',
+        'JOD': 'JD ', 'GBP': '£', 'GIP': '£', 'KYD': 'KY$',
+        'CHF': 'CHF ', 'EUR': '€', 'USD': '$', 'JPY': '¥',
+        'CNY': '¥', 'KRW': '₩', 'SGD': 'S$', 'HKD': 'HK$',
+        'AUD': 'A$', 'NZD': 'NZ$', 'CAD': 'CA$'
+      };
+      setCurrencySymbol(apiCurrencyMap[detectedCurrency] || '$');
+    }
+
+  } catch (error) {
+    // Fallback if API fails entirely
+    setPricingMode('global');
+    setCurrencySymbol('$');
+  }
+};
     detectLocation();
   }, []);
 
