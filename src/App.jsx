@@ -3713,7 +3713,7 @@ function Service3DRing({ services }) {
 
     <div
 
-      className="relative w-full h-[720px] flex justify-center items-center overflow-hidden perspective-[2000px] group"
+      className="relative w-full h-[780px] flex justify-center items-center overflow-hidden perspective-[2000px] group"
 
       onMouseEnter={() => setIsHovered(true)}
 
