@@ -3581,7 +3581,8 @@ const serviceCategories = [
   };
 
   return (
-    <div className="mt-20 p-6 md:p-10 rounded-3xl bg-slate-900/60 border border-slate-700 backdrop-blur-xl shadow-2xl">
+    return (
+    <div className="mt-20 w-full max-w-7xl mx-auto p-6 md:p-10 rounded-3xl bg-slate-900/60 border border-slate-700 backdrop-blur-xl shadow-2xl">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
         <div>
           <h3 className="text-3xl font-extrabold text-white">Build Your Custom Bundle</h3>
@@ -3590,10 +3591,10 @@ const serviceCategories = [
         <button onClick={() => setSelected([])} className="text-xs font-bold text-slate-500 hover:text-red-400 flex items-center gap-1 uppercase tracking-widest transition-colors"><X size={14}/> Reset Selection</button>
       </div>
 
-      {/* Container modified to take full horizontal space matching the parent row width elements layout lines */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-  {serviceCategories.map((cat, idx) => (
-    <div key={idx} className="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/40 flex flex-col">
+      {/* Main categories container scaled to match layout bounds */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch w-full">
+        {serviceCategories.map((cat, idx) => (
+          <div key={idx} className="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/40 flex flex-col w-full">
             <button 
               onClick={() => setOpenCategory(openCategory === idx ? null : idx)}
               className="w-full p-5 flex justify-between items-center hover:bg-slate-800/50 transition-colors"
@@ -3606,8 +3607,8 @@ const serviceCategories = [
             </button>
 
             {openCategory === idx && (
-              /* Expanded from 2 columns to a spacious 3-column setup to hold labels on a single line */
-              <div className="p-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 bg-slate-950/50 border-t border-slate-800 animate-in slide-in-from-top-2 duration-300 w-full">
+              /* Upgraded to fully responsive grid so items have maximum breathing room */
+              <div className="p-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 bg-slate-950/50 border-t border-slate-800 animate-in slide-in-from-top-2 duration-300 w-full">
                 {cat.items.map(item => {
                   const mPrice = mode === 'india' ? item.marketPriceIN : item.marketPriceGL;
                   const sPrice = mode === 'india' ? item.priceIN : item.priceGL;
@@ -3618,15 +3619,15 @@ const serviceCategories = [
                       onClick={() => toggleService(item.id)}
                       className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex justify-between items-center ${selected.includes(item.id) ? 'border-cyan-400 bg-cyan-400/10' : 'border-slate-800 bg-slate-900/80 hover:border-slate-600'}`}
                     >
-                      <div className="flex-1">
-                        <div className="text-white font-bold text-sm leading-tight mb-1">{item.name}</div>
-                        <div className="flex flex-col">
-                           <span className="text-[10px] text-slate-500 line-through decoration-red-500/50">
-                             Market: {currencySymbol}{mPrice.toLocaleString()}
-                           </span>
-                           <span className="text-cyan-400 font-mono text-xs font-bold">
-                             Rate: {currencySymbol}{sPrice.toLocaleString()}
-                           </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-white font-bold text-sm leading-tight mb-2 break-words">{item.name}</div>
+                        <div className="flex flex-col gap-0.5">
+                          <span className="text-[10px] text-slate-500 line-through decoration-red-500/50">
+                            Market: {currencySymbol}{mPrice.toLocaleString()}
+                          </span>
+                          <span className="text-cyan-400 font-mono text-xs font-bold">
+                            Rate: {currencySymbol}{sPrice.toLocaleString()}
+                          </span>
                         </div>
                       </div>
                       <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ml-2 flex-shrink-0 ${selected.includes(item.id) ? 'bg-cyan-500 border-cyan-500' : 'border-slate-600'}`}>
@@ -3641,7 +3642,7 @@ const serviceCategories = [
         ))}
       </div>
 
-      <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-900/30 border border-cyan-500/30 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-900/30 border border-cyan-500/30 flex flex-col md:flex-row justify-between items-center gap-8 w-full">
         <div className="text-center md:text-left">
           <div className="text-cyan-400 text-sm font-bold uppercase tracking-widest mb-1">Your Custom Selection</div>
           <div className="text-5xl font-black text-white">{currencySymbol}{calculateTotal().toLocaleString()}</div>
