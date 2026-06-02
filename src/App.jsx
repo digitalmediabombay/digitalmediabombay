@@ -6088,7 +6088,7 @@ const CookieBanner = () => {
     </div>
   );
 };
-const FullPricingPage = ({ pricingMode, currencySymbol, openBundles, onContactClick }) => {
+const FullPricingPage = ({ pricinfunction FullPricingPage({ pricingMode, currencySymbol, openBundles, onContactClick }) {gMode, currencySymbol, openBundles, onContactClick }) => {
   
   const exclusiveStandaloneServices = [
     {
