@@ -1123,7 +1123,7 @@ const App = () => {
         title: "Services | Web Dev, SEO, Ads & AI | Digital Media Bombay",
         desc: "Professional SEO, Performance Marketing, 3D Parallax Web Development, and AI Automation services."
       },
-      pricing: {
+      'pricing-page': {
         title: "Pricing | Digital Media Bombay Plans",
         desc: "Affordable direct-response bundles and custom marketing tasks for global business operators."
       },
@@ -1329,13 +1329,11 @@ const App = () => {
   setIsMobileMenuOpen(false);
   
   if (page === 'pricing') {
-    // If the user wants to go to the dedicated pricing sub-page route
     const path = '/pricing';
     window.history.pushState({}, '', path);
-    setActivePage('pricing');
+    setActivePage('pricing-page'); // <-- Changed from 'pricing' to 'pricing-page'
     window.scrollTo(0, 0);
   } else {
-    // Standard page routing parameters
     const path = page === 'home' ? '/' : `/${page}`;
     window.history.pushState({}, '', path);
     setActivePage(page);
@@ -5810,8 +5808,8 @@ const AIStrategyPage = () => {
       <SpeedInsights />
       <Header />
       <main>
-        {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
-        {activePage === 'pricing' && <FullPricingPage pricingMode={pricingMode} currencySymbol={currencySymbol} openBundles={openBundles} onContactClick={navigateToContact} />}
+  {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
+  {activePage === 'pricing-page' && <FullPricingPage pricingMode={pricingMode} currencySymbol={currencySymbol} openBundles={openBundles} onContactClick={navigateToContact} />}
         {activePage === 'blog-detail' && (
           <BlogDetailPage 
             post={selectedPost} 
