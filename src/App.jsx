@@ -6402,7 +6402,7 @@ const AIStrategyPage = () => {
         {activePage === 'web-solutions' && <WebSolutionsPage pricingMode={pricingMode} navigateTo={navigateTo} currencySymbol={currencySymbol} />}
       </main>
 
-      <<CookieBanner />
+      <CookieBanner />
       <Footer />
       </div>
   );
