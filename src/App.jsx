@@ -3269,7 +3269,7 @@ const serviceCategories = [
       { name: "Interactive Community Hub", marketPriceIN: 40000, priceIN: 15000, marketPriceGL: 899, priceGL: 399, id: "wb_item11" },
       { name: "Landing Page Lead Capture", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 299, priceGL: 129, id: "wb_item12" }
     ]
-  },,
+  },
   {
     category: "AI Automations",
     items: [
