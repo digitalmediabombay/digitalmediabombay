@@ -3591,9 +3591,9 @@ const serviceCategories = [
       </div>
 
       {/* Container modified to take full horizontal space matching the parent row width elements layout lines */}
-      <div className="grid grid-cols-1 gap-4 items-start w-full">
-        {serviceCategories.map((cat, idx) => (
-          <div key={idx} className="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/40 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
+  {serviceCategories.map((cat, idx) => (
+    <div key={idx} className="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/40 flex flex-col">
             <button 
               onClick={() => setOpenCategory(openCategory === idx ? null : idx)}
               className="w-full p-5 flex justify-between items-center hover:bg-slate-800/50 transition-colors"
