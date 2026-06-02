@@ -4333,16 +4333,13 @@ const HomePage = ({ onContactClick, currencySymbol }) => (
                 </div>
             ))}
           </div>
+      </div>
 
-        </div>
+      <div className="max-w-7xl mx-auto px-4 pb-20">
+          <CustomServiceSelector mode={pricingMode} navigateToContact={onContactClick} currencySymbol={currencySymbol} />
+      </div>
 
-        <div className="max-w-5xl mx-auto px-4 pb-20">
-
-            <CustomServiceSelector mode={pricingMode} navigateToContact={onContactClick} currencySymbol={currencySymbol} />
-
-        </div>
-
-      </section>
+    </section>
 
 
 
