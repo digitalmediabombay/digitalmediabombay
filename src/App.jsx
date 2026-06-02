@@ -3545,7 +3545,7 @@ const Footer = () => (
 
 {/* END OF REPLACEMENT CODE */}
 
-
+</div>
 
         <div className="md:pl-10">
 
