@@ -3579,8 +3579,7 @@ const serviceCategories = [
     });
     return total;
   };
-
-  return (
+  
     return (
     <div className="mt-20 w-full max-w-7xl mx-auto p-6 md:p-10 rounded-3xl bg-slate-900/60 border border-slate-700 backdrop-blur-xl shadow-2xl">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
