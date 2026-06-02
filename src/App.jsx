@@ -1160,16 +1160,6 @@ const App = () => {
     return () => window.removeEventListener('popstate', handleLocationChange);
   }, []);
 
-  // 5. Explicit URL Page Router
-  const navigateTo = (page) => {
-    setSelectedPost(null);
-    const path = page === 'home' ? '/' : `/${page}`;
-    window.history.pushState({}, '', path);
-    setActivePage(page);
-    setIsMobileMenuOpen(false);
-    window.scrollTo(0, 0);
-  };
-
 // 4. Detect User Location (Updated with your Specific Territory List)
   useEffect(() => {
     const detectLocation = async () => {
@@ -1335,26 +1325,23 @@ const App = () => {
   // 5. Navigation Function that updates the URL in the address bar
 
   const navigateTo = (page) => {
-    setSelectedPost(null);
-    let path = page === 'home' ? '/' : `/${page}`;
-    
-    // Special handling for pricing section
-    if (page === 'pricing') {
-      path = '/#pricing';
-      setActivePage('home');
-      window.history.pushState({}, '', path);
-      setTimeout(() => {
-        const sect = document.getElementById('pricing');
-        if (sect) sect.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-      return;
-    }
-
+  setSelectedPost(null);
+  setIsMobileMenuOpen(false);
+  
+  if (page === 'pricing') {
+    // If the user wants to go to the dedicated pricing sub-page route
+    const path = '/pricing';
+    window.history.pushState({}, '', path);
+    setActivePage('pricing');
+    window.scrollTo(0, 0);
+  } else {
+    // Standard page routing parameters
+    const path = page === 'home' ? '/' : `/${page}`;
     window.history.pushState({}, '', path);
     setActivePage(page);
-    setIsMobileMenuOpen(false);
     window.scrollTo(0, 0);
-  };
+  }
+};
 
   const openBundles = (tier) => {
 
