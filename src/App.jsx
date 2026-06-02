@@ -3673,7 +3673,7 @@ function Service3DRing({ services }) {
 
     const count = services.length;
 
-    const radius = Math.round((cardWidth / 2) / Math.tan(Math.PI / count)) + 300;
+    const radius = Math.round((cardWidth / 2) / Math.tan(Math.PI / count)) + 220;
 
 
 
@@ -3753,7 +3753,7 @@ function Service3DRing({ services }) {
 
                 key={i}
 
-                className="absolute w-[400px] h-[520px] rounded-3xl border-2 border-slate-700 bg-slate-900/40 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col group/card hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all duration-300"
+                className="absolute w-[400px] h-[550px] rounded-3xl border-2 border-slate-700 bg-slate-900/40 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col group/card hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all duration-300"
 
                 style={{
 
