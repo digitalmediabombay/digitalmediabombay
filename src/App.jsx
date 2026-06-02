@@ -1258,12 +1258,28 @@ const App = () => {
 
           // Check if their local currency is in your "Special List"
           // If NOT in the list (e.g. Dubai, Saudi, Africa, etc.), default to '$'
-          const detectedCurrency = data.currency;
-          if (symbols[detectedCurrency]) {
-            setCurrencySymbol(symbols[detectedCurrency]);
-          } else {
-            setCurrencySymbol('$');
-          }
+          //  REPLACE WITH THIS COMPREHENSIVE IP DIALECT LOOKUP FALLBACK ARRAY:
+const detectedCurrency = data.currency || "USD";
+const country = data.country_code || "US";
+
+// Exhaustive dictionary verifying requested regional territory tags matches
+const symbolDictionary = {
+  'INR': '₹', 'KWD': 'KD ', 'BHD': 'BD ', 'OMR': 'RO ', 'JOD': 'JD ',
+  'GBP': '£', 'GIP': '£', 'KYD': '$', 'CHF': 'CHF ', 'EUR': '€', 'USD': '$'
+};
+
+if (symbolDictionary[detectedCurrency]) {
+  setCurrencySymbol(symbolDictionary[detectedCurrency]);
+} else {
+  // If country utilizes Sterling traits globally but falls outside standard lists
+  if (['UK', 'GB', 'GI'].includes(country)) {
+    setCurrencySymbol('£');
+  } else if (['AT', 'BE', 'CY', 'EE', 'FI', 'FR', 'DE', 'GR', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PT', 'SK', 'SI', 'ES'].includes(country)) {
+    setCurrencySymbol('€');
+  } else {
+    setCurrencySymbol('$'); // Universal global commerce baseline fallback
+  }
+}
         }
       } catch (error) {
         // Fallback in case of API error
@@ -4266,8 +4282,8 @@ const HomePage = ({ onContactClick, currencySymbol }) => (
 
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
-            {(pricingMode === 'india' ? [
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
+              {(pricingMode === 'india' ? [
                 { tier: "tier1", tag: "Starter", title: "The 'Cutting Chai' Starter", desc: "Best for: New Startups & Home Businesses", marketPrice: "₹25,000", price: "₹14,999", features: ["12 Creative Static Posts", "Story Management (Daily)", "1 Festival Greeting Design", "Basic Google Map (GMB) Setup"], promise: "Keep your brand active online.", highlight: false, btn: "Get Started", img: "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1080" },
                 { tier: "tier2", tag: "Growth", title: "The 'Local Fast' Growth", desc: "Best for: Restaurants, Salons, Brokers", marketPrice: "₹50,000", price: "₹29,999", features: ["12 Posts + 4 Professional Reels", "Ads Management (FB & Insta)", "Local SEO (Ranking 'Near Me')", "2 AI-Written SEO Blogs"], promise: "Get leads and real customers.", highlight: true, btn: "Choose Growth", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1080" },
                 { tier: "tier3", tag: "Royale", title: "The 'Queen's Necklace' Royale", desc: "Best for: Luxury Brands & Established Players", marketPrice: "₹1,50,000", price: "₹79,999", features: ["Daily Posting (20 Posts + 8 Reels)", "1 Professional Shoot (On-Location)", "Influencer Outreach (2 Micro)", "24/7 Priority Support"], promise: "Dominate the market with luxury content.", highlight: false, btn: "Contact Sales", img: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?q=80&w=1080" }
@@ -4300,11 +4316,14 @@ const HomePage = ({ onContactClick, currencySymbol }) => (
                           </span>
                         </div>
                         
-                        {/* AGENCY PRICE SECTION */}
-                        <div className="flex items-baseline">
-                            <span className={`text-4xl font-extrabold ${pkg.highlight ? 'text-amber-400' : 'text-white'}`}>{currencySymbol}{pkg.price.replace('₹', '').replace('$', '')}</span>
-                            <span className="text-slate-500 ml-2">/month</span>
-                        </div>
+                        
+                          {/* AGENCY PRICE SECTION */}
+                          <div className="flex items-baseline">
+                          <span className={`text-4xl font-extrabold ${pkg.highlight ? 'text-amber-400' : 'text-white'}`}>
+                          {currencySymbol}{parseFloat(pkg.price.replace(/[^\d.]/g, '')).toLocaleString()}
+                          </span>
+                          <span className="text-slate-500 ml-2">/month</span>
+                          </div>
                         <p className={`text-xs mt-3 italic ${pkg.highlight ? 'text-amber-400/80' : 'text-cyan-400/80'}`}>"{pkg.promise}"</p>
                       </div>
 
