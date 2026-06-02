@@ -3685,7 +3685,7 @@ function Service3DRing({ services }) {
 
         if (!isHovered) {
 
-          setRotation(prev => prev - 0.2);
+          setRotation(prev => prev - 0.5);
 
         }
 
