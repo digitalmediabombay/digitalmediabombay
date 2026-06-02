@@ -1090,11 +1090,15 @@ const App = () => {
   };
 
   const getInitialPage = () => {
-    const path = window.location.pathname;
-    if (path.startsWith('/blog/')) return 'blog-detail';
-    const cleanPath = path.replace('/', '');
-    return cleanPath || 'home';
-  };
+  const path = window.location.pathname;
+
+  if (path.startsWith('/blog/')) return 'blog-detail';
+
+  if (path === '/pricing') return 'pricing-page';
+
+  const cleanPath = path.replace('/', '');
+  return cleanPath || 'home';
+};;
 
   // 2. Initialize ALL states
   const [selectedPost, setSelectedPost] = useState(getPostFromUrl());
