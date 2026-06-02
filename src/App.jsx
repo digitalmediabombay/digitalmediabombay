@@ -3256,20 +3256,20 @@ const serviceCategories = [
   {
     category: "Website Building / Development",
     items: [
-      { name: "Business / Corporate Page", marketPriceIN: 25000, priceIN: 12000, marketPriceGL: 699, priceGL: 349, id: "wb_item1" },
-      { name: "E-commerce Shopping Setup", marketPriceIN: 40000, priceIN: 19999, marketPriceGL: 999, priceGL: 599, id: "wb_item2" },
-      { name: "Portfolio Identity Website", marketPriceIN: 12000, priceIN: 5999, marketPriceGL: 299, priceGL: 179, id: "wb_item3" },
-      { name: "Personal Hub / Blog Site", marketPriceIN: 10000, priceIN: 4999, marketPriceGL: 249, priceGL: 149, id: "wb_item4" },
-      { name: "Landing Page Lead Capture", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 199, priceGL: 99, id: "wb_item5" },
-      { name: "Booking / Reservation Engine", marketPriceIN: 25000, priceIN: 11500, marketPriceGL: 599, priceGL: 329, id: "wb_item6" },
-      { name: "Shopify Theme Custom Design", marketPriceIN: 20000, priceIN: 9500, marketPriceGL: 499, priceGL: 279, id: "wb_item7" },
-      { name: "WordPress Custom Setup", marketPriceIN: 15000, priceIN: 6999, marketPriceGL: 399, priceGL: 199, id: "wb_item8" },
-      { name: "Wix Studio Corporate Build", marketPriceIN: 18000, priceIN: 8499, marketPriceGL: 450, priceGL: 239, id: "wb_item9" },
-      { name: "Mobile Phone Optimization Fix", marketPriceIN: 6000, priceIN: 2999, marketPriceGL: 150, priceGL: 89, id: "wb_item10" },
-      { name: "Core Load-Speed Optimization", marketPriceIN: 7000, priceIN: 3200, marketPriceGL: 180, priceGL: 99, id: "wb_item11" },
-      { name: "Contact Forms & Database Link", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 120, priceGL: 59, id: "wb_item12" }
+      { name: "Static Website Setup", marketPriceIN: 10000, priceIN: 4999, marketPriceGL: 299, priceGL: 149, id: "wb_item1" },
+      { name: "Dynamic Website Engine", marketPriceIN: 25000, priceIN: 12000, marketPriceGL: 699, priceGL: 349, id: "wb_item2" },
+      { name: "Business / Corporate Page", marketPriceIN: 35000, priceIN: 15000, marketPriceGL: 899, priceGL: 449, id: "wb_item3" },
+      { name: "E-commerce Shopping Setup", marketPriceIN: 60000, priceIN: 25000, marketPriceGL: 1499, priceGL: 699, id: "wb_item4" },
+      { name: "Portfolio Identity Website", marketPriceIN: 15000, priceIN: 7000, marketPriceGL: 399, priceGL: 199, id: "wb_item5" },
+      { name: "Personal Hub / Blog Site", marketPriceIN: 12000, priceIN: 6000, marketPriceGL: 349, priceGL: 179, id: "wb_item6" },
+      { name: "News / Media Platform", marketPriceIN: 40000, priceIN: 18000, marketPriceGL: 999, priceGL: 499, id: "wb_item7" },
+      { name: "Educational / LMS Build", marketPriceIN: 80000, priceIN: 35000, marketPriceGL: 1800, priceGL: 899, id: "wb_item8" },
+      { name: "Sleek Custom Web Application", marketPriceIN: 120000, priceIN: 45000, marketPriceGL: 2500, priceGL: 1200, id: "wb_item9" },
+      { name: "Social Networking Platform", marketPriceIN: 250000, priceIN: 80000, marketPriceGL: 4500, priceGL: 1999, id: "wb_item10" },
+      { name: "Interactive Community Hub", marketPriceIN: 40000, priceIN: 15000, marketPriceGL: 899, priceGL: 399, id: "wb_item11" },
+      { name: "Landing Page Lead Capture", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 299, priceGL: 129, id: "wb_item12" }
     ]
-  },
+  },,
   {
     category: "AI Automations",
     items: [
