@@ -6401,7 +6401,15 @@ function FullPricingPage({ pricingMode, currencySymbol, onContactClick }) {
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Need a rapid standalone upgrade? Order localized components with total budget flexibility below.</p>
         </div>
 
-        <CustomServiceSelector mode={pricingMode} currencySymbol={currencySymbol} />
+        <div className="mt-16 p-8 bg-slate-900/40 border border-slate-700 rounded-2xl text-center">
+  <p className="text-slate-400 text-sm">Use the Individual Component Builder on the homepage pricing section.</p>
+  <button 
+    onClick={onContactClick}
+    className="mt-4 px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition-all"
+  >
+    Contact Us for Custom Bundle
+  </button>
+</div>
 
         {/* FOOTER CTA CONSULTATION CARD */}
         <div className="mt-28 p-8 md:p-12 bg-gradient-to-r from-slate-950 to-blue-950/40 border border-cyan-500/20 rounded-3xl text-center relative overflow-hidden">
