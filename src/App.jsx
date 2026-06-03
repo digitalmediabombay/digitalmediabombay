@@ -1422,7 +1422,7 @@ const App = () => {
     icon: <Phone size={32} className="text-red-400" />,
     desc: "Smart telephone calling systems that automatically take support calls, talk politely, and secure client bookings 24/7.",
     color: "red",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1080",
+    img: "https://i.pinimg.com/736x/d3/1f/9f/d31f9f2b585286598c194f66e9d9de80.jpg",
     deliverables: ["Automatic Client Answering", "Phone Booking Reminders", "Customer Intake Voice Logs", "24/7 Support Setup", "CRM Booking Sync"]
   },
   {
