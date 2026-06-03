@@ -1080,6 +1080,7 @@ const App = () => {
 
 
   // 1. Logic to find blog data and page name from the URL
+  // 1. Logic to find blog data and page name from the URL
   const getPostFromUrl = () => {
     const path = window.location.pathname;
     if (path.startsWith('/blog/')) {
@@ -1090,19 +1091,28 @@ const App = () => {
   };
 
   const getInitialPage = () => {
-  const path = window.location.pathname;
+    const path = window.location.pathname;
+    if (path.startsWith('/blog/')) return 'blog-detail';
+    if (path === '/pricing') return 'pricing-page';
+    if (path === '/starterbundles') return 'bundles';
+    if (path === '/growthbundles') return 'bundles';
+    if (path === '/royalebundles') return 'bundles';
+    const cleanPath = path.replace('/', '');
+    return cleanPath || 'home';
+  };
 
-  if (path.startsWith('/blog/')) return 'blog-detail';
-
-  if (path === '/pricing') return 'pricing-page';
-
-  const cleanPath = path.replace('/', '');
-  return cleanPath || 'home';
-};;
+  const getInitialTier = () => {
+    const path = window.location.pathname;
+    if (path === '/starterbundles') return 'tier1';
+    if (path === '/growthbundles') return 'tier2';
+    if (path === '/royalebundles') return 'tier3';
+    return 'tier1';
+  };
 
   // 2. Initialize ALL states
   const [selectedPost, setSelectedPost] = useState(getPostFromUrl());
-  const [activePage, setActivePage] = useState(getInitialPage()); 
+  const [activePage, setActivePage] = useState(getInitialPage());
+  const [selectedTier, setSelectedTier] = useState(getInitialTier()); 
   const [pricingMode, setPricingMode] = useState('india'); 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLocationLocked, setIsLocationLocked] = useState(true);
@@ -1139,11 +1149,15 @@ const App = () => {
         title: "Free AI Marketing Blueprint | Digital Media Bombay Strategy",
         desc: "Get an instant, AI-generated marketing roadmap for your business growth."
       },
+      bundles: {
+        title: "Master Bundles Selection | Digital Media Bombay",
+        desc: "Explore specialized execution workflows engineered for global digital market performance."
+      },
       freelancer: {
         title: "Join the Cloud Squad | Freelancer Portal | Digital Media Bombay",
         desc: "Are you in the top 1%? Join Mumbai's most elite network of digital creators and developers."
       }
-    };
+    };;
 
     const currentPageData = seoData[activePage] || seoData.home;
     document.title = currentPageData.title;
@@ -1346,11 +1360,13 @@ const App = () => {
 };
 
   const openBundles = (tier) => {
-
     setSelectedTier(tier);
-
     setActivePage('bundles');
-
+    let targetPath = '/starterbundles';
+    if (tier === 'tier2') targetPath = '/growthbundles';
+    if (tier === 'tier3') targetPath = '/royalebundles';
+    window.history.pushState({}, '', targetPath);
+    window.scrollTo(0, 0);
   };
 
   const openBlogPost = (post) => {
@@ -3732,413 +3748,416 @@ className="w-full bg-[#0a192f] border border-slate-600 rounded-lg p-3 text-white
 
   };
 
-const CustomServiceSelector = ({ mode, navigateToContact, currencySymbol }) => {
+const CustomServiceSelector = ({ mode, currencySymbol }) => {
+  const [selectedServices, setSelectedServices] = useState([]);
+  const containerRef = useRef(null);
 
-const serviceCategories = [
-  {
-    category: "Website Building / Development",
-    items: [
-      { name: "Static Website Setup", marketPriceIN: 10000, priceIN: 4999, marketPriceGL: 299, priceGL: 149, id: "wb_item1" },
-      { name: "Dynamic Website Engine", marketPriceIN: 25000, priceIN: 12000, marketPriceGL: 699, priceGL: 349, id: "wb_item2" },
-      { name: "Business / Corporate Page", marketPriceIN: 35000, priceIN: 15000, marketPriceGL: 899, priceGL: 449, id: "wb_item3" },
-      { name: "E-commerce Shopping Setup", marketPriceIN: 60000, priceIN: 25000, marketPriceGL: 1499, priceGL: 699, id: "wb_item4" },
-      { name: "Portfolio Identity Website", marketPriceIN: 15000, priceIN: 7000, marketPriceGL: 399, priceGL: 199, id: "wb_item5" },
-      { name: "Personal Hub / Blog Site", marketPriceIN: 12000, priceIN: 6000, marketPriceGL: 349, priceGL: 179, id: "wb_item6" },
-      { name: "News / Media Platform", marketPriceIN: 40000, priceIN: 18000, marketPriceGL: 999, priceGL: 499, id: "wb_item7" },
-      { name: "Educational / LMS Build", marketPriceIN: 80000, priceIN: 35000, marketPriceGL: 1800, priceGL: 899, id: "wb_item8" },
-      { name: "Sleek Custom Web Application", marketPriceIN: 120000, priceIN: 45000, marketPriceGL: 2500, priceGL: 1200, id: "wb_item9" },
-      { name: "Social Networking Platform", marketPriceIN: 250000, priceIN: 80000, marketPriceGL: 4500, priceGL: 1999, id: "wb_item10" },
-      { name: "Interactive Community Hub", marketPriceIN: 40000, priceIN: 15000, marketPriceGL: 899, priceGL: 399, id: "wb_item11" },
-      { name: "Landing Page Lead Capture", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 299, priceGL: 129, id: "wb_item12" }
-    ]
-  },
-  {
-    category: "AI Automations",
-    items: [
-      { name: "Zapier / Make Workspace Linking", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 239, priceGL: 109, id: "auto_item1" },
-      { name: "Instant Lead Auto-Reply Loop", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 180, priceGL: 79, id: "auto_item2" },
-      { name: "Google Sheets Auto Data-Logging", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 140, priceGL: 65, id: "auto_item3" },
-      { name: "WhatsApp Business Automation Setup", marketPriceIN: 10000, priceIN: 4499, marketPriceGL: 299, priceGL: 139, id: "auto_item4" },
-      { name: "Automated Email Drip Sequences", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 259, priceGL: 119, id: "auto_item5" },
-      { name: "CRM Contact Sync & Pipeline Tags", marketPriceIN: 12000, priceIN: 4999, marketPriceGL: 359, priceGL: 169, id: "auto_item6" },
-      { name: "Automated Task Reminders Bot", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 110, priceGL: 49, id: "auto_item7" },
-      { name: "Inquiry Sorting & Lead Scoring", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "auto_item8" },
-      { name: "Invoice Generation Automation", marketPriceIN: 5000, priceIN: 1800, marketPriceGL: 130, priceGL: 55, id: "auto_item9" },
-      { name: "Social Post Scheduler Linking", marketPriceIN: 6000, priceIN: 2200, marketPriceGL: 150, priceGL: 69, id: "auto_item10" },
-      { name: "Customer Intake Form Auto-Flow", marketPriceIN: 5500, priceIN: 1999, marketPriceGL: 145, priceGL: 59, id: "auto_item11" },
-      { name: "AI Document Archive Organizers", marketPriceIN: 8500, priceIN: 3800, marketPriceGL: 240, priceGL: 115, id: "auto_item12" }
-    ]
-  },
-  {
-    category: "AI Voice Agents & Sales",
-    items: [
-      { name: "Inbound Call Automated Support", marketPriceIN: 25000, priceIN: 11999, marketPriceGL: 699, priceGL: 349, id: "voice_item1" },
-      { name: "24/7 Outbound Scheduling Agent", marketPriceIN: 12000, priceIN: 5999, marketPriceGL: 349, priceGL: 179, id: "voice_item2" },
-      { name: "Calendar Booking Voice Integration", marketPriceIN: 8000, priceIN: 3999, marketPriceGL: 249, priceGL: 119, id: "voice_item3" },
-      { name: "Multi-Language Voice Setups", marketPriceIN: 15000, priceIN: 6999, marketPriceGL: 450, priceGL: 199, id: "voice_item4" },
-      { name: "Natural Dialect Call Scripting", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 180, priceGL: 79, id: "voice_item5" },
-      { name: "Real-Time CRM Audio Data Logs", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "voice_item6" },
-      { name: "Missed Call Auto-Callback Setup", marketPriceIN: 9000, priceIN: 3800, marketPriceGL: 260, priceGL: 115, id: "voice_item7" },
-      { name: "Customer Qualification Bot Paths", marketPriceIN: 11000, priceIN: 4499, marketPriceGL: 320, priceGL: 139, id: "voice_item8" },
-      { name: "Voice Pricing-Query AI Assistant", marketPriceIN: 10000, priceIN: 4200, marketPriceGL: 290, priceGL: 125, id: "voice_item9" },
-      { name: "Autonomous Event Registration Bot", marketPriceIN: 8500, priceIN: 3499, marketPriceGL: 240, priceGL: 109, id: "voice_item10" },
-      { name: "Interactive Voice Response Hubs", marketPriceIN: 13000, priceIN: 5200, marketPriceGL: 380, priceGL: 159, id: "voice_item11" },
-      { name: "Emergency Alert Call Automator", marketPriceIN: 14000, priceIN: 5500, marketPriceGL: 400, priceGL: 169, id: "voice_item12" }
-    ]
-  },
-  {
-    category: "Performance Marketing",
-    items: [
-      { name: "High-Ticket Client Inbound Funnels", marketPriceIN: 15000, priceIN: 6999, marketPriceGL: 450, priceGL: 199, id: "perf_item1" },
-      { name: "B2B Professional Lead Sourcing", marketPriceIN: 14000, priceIN: 6499, marketPriceGL: 399, priceGL: 189, id: "perf_item2" },
-      { name: "Google Server-Side Conversion APIs", marketPriceIN: 12000, priceIN: 5499, marketPriceGL: 350, priceGL: 169, id: "perf_item3" },
-      { name: "Custom Sales Tracking Dashboards", marketPriceIN: 10000, priceIN: 4499, marketPriceGL: 299, priceGL: 139, id: "perf_item4" },
-      { name: "Database Reactivation Ad Drips", marketPriceIN: 11000, priceIN: 4999, marketPriceGL: 320, priceGL: 149, id: "perf_item5" },
-      { name: "Advanced ROI Ledger Integration", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 240, priceGL: 109, id: "perf_item6" },
-      { name: "Cross-Border Market Expansion Funnel", marketPriceIN: 16000, priceIN: 7499, marketPriceGL: 499, priceGL: 229, id: "perf_item7" },
-      { name: "Landing Page A/B Variant Testing", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "perf_item8" },
-      { name: "Cookie-less Attribution Auditing", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 260, priceGL: 119, id: "perf_item9" },
-      { name: "Customer Acquisition Cost Audits", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 150, priceGL: 59, id: "perf_item10" },
-      { name: "Lifetime Value Retention Strategy", marketPriceIN: 6000, priceIN: 2200, marketPriceGL: 170, priceGL: 69, id: "perf_item11" },
-      { name: "Weekly Ad Performance Metrics Log", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 120, priceGL: 49, id: "perf_item12" }
-    ]
-  },
-  {
-    category: "Generative Engine Optimization (GEO)",
-    items: [
-      { name: "ChatGPT Visibility Code Injection", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 199, priceGL: 99, id: "geo_item1" },
-      { name: "AI Directory Entity Seeding", marketPriceIN: 10000, priceIN: 4499, marketPriceGL: 249, priceGL: 129, id: "geo_item2" },
-      { name: "llm.txt Architecture Manifest Setup", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 199, priceGL: 79, id: "geo_item3" },
-      { name: "Perplexity Engine Cite Sourcing", marketPriceIN: 12000, priceIN: 5200, marketPriceGL: 350, priceGL: 149, id: "geo_item4" },
-      { name: "Claude & Gemini Data Mapping", marketPriceIN: 11000, priceIN: 4800, marketPriceGL: 320, priceGL: 139, id: "geo_item5" },
-      { name: "AI Overview Snippet Restructuring", marketPriceIN: 14000, priceIN: 5999, marketPriceGL: 449, priceGL: 189, id: "geo_item6" },
-      { name: "Neural Network Crawl-Validation", marketPriceIN: 9000, priceIN: 3800, marketPriceGL: 270, priceGL: 115, id: "geo_item7" },
-      { name: "Structured JSON-LD Data Arrays", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 219, priceGL: 89, id: "geo_item8" },
-      { name: "AI Scraper Bot Blocking (Robots)", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 59, id: "geo_item9" },
-      { name: "Brand Mention Entity Verification", marketPriceIN: 13000, priceIN: 5499, marketPriceGL: 380, priceGL: 169, id: "geo_item10" },
-      { name: "AI Summary Recommendation Audits", marketPriceIN: 15000, priceIN: 6200, marketPriceGL: 480, priceGL: 199, id: "geo_item11" },
-      { name: "Semantic Term Relevance Audit", marketPriceIN: 6500, priceIN: 2700, marketPriceGL: 180, priceGL: 79, id: "geo_item12" }
-    ]
-  },
-  {
-    category: "Search Engine Optimization (SEO)",
-    items: [
-      { name: "Google Page 1 Ranking Optimization", marketPriceIN: 12000, priceIN: 4999, marketPriceGL: 349, priceGL: 169, id: "seo_item1" },
-      { name: "Website Code-Error Cleanups", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 119, id: "seo_item2" },
-      { name: "Front-Page Featured Snippet Setup", marketPriceIN: 10000, priceIN: 4200, marketPriceGL: 299, priceGL: 139, id: "seo_item3" },
-      { name: "Trusted Website Backlink Building", marketPriceIN: 15000, priceIN: 6500, marketPriceGL: 450, priceGL: 199, id: "seo_item4" },
-      { name: "Competitor Traffic Source Mapping", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 180, priceGL: 79, id: "seo_item5" },
-      { name: "Organic Search Trend Analysis", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 150, priceGL: 65, id: "seo_item6" },
-      { name: "Content Pillar Spacing Plans", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "seo_item7" },
-      { name: "Algorithm Drop Protection Clean", marketPriceIN: 11000, priceIN: 4500, marketPriceGL: 320, priceGL: 149, id: "seo_item8" },
-      { name: "Broken Web URL Redirection Fixes", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 110, priceGL: 49, id: "seo_item9" },
-      { name: "Image Compression Alt Text Updates", marketPriceIN: 3000, priceIN: 999, marketPriceGL: 89, priceGL: 35, id: "seo_item10" },
-      { name: "Meta Descriptions Styling Logs", marketPriceIN: 3500, priceIN: 1200, marketPriceGL: 95, priceGL: 39, id: "seo_item11" },
-      { name: "Monthly Search Analytics Reporting", marketPriceIN: 5500, priceIN: 1800, marketPriceGL: 140, priceGL: 55, id: "seo_item12" }
-    ]
-  },
-  {
-    category: "Answer Engine Optimization (AEO)",
-    items: [
-      { name: "Mobile Voice Search Formatting", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 279, priceGL: 129, id: "aeo_item1" },
-      { name: "Conversational FAQ Schema Maps", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 219, priceGL: 99, id: "aeo_item2" },
-      { name: "Speakable Property Code Blocks", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 69, id: "aeo_item3" },
-      { name: "Alexa Spoken Recommendation Links", marketPriceIN: 11000, priceIN: 4500, marketPriceGL: 320, priceGL: 149, id: "aeo_item4" },
-      { name: "Siri Definitve Answer Matching", marketPriceIN: 10000, priceIN: 4200, marketPriceGL: 299, priceGL: 139, id: "aeo_item5" },
-      { name: "Google Assistant Phrase Syncing", marketPriceIN: 8500, priceIN: 3500, marketPriceGL: 250, priceGL: 115, id: "aeo_item6" },
-      { name: "Natural Dialect Text Alignments", marketPriceIN: 6000, priceIN: 2200, marketPriceGL: 170, priceGL: 75, id: "aeo_item7" },
-      { name: "Direct Q&A Block Layout Updates", marketPriceIN: 4500, priceIN: 1800, marketPriceGL: 135, priceGL: 59, id: "aeo_item8" },
-      { name: "Home Speaker Audio Index Audits", marketPriceIN: 13000, priceIN: 5499, marketPriceGL: 380, priceGL: 169, id: "aeo_item9" },
-      { name: "Voice Intent Query Seeding Plans", marketPriceIN: 8000, priceIN: 3200, marketPriceGL: 230, priceGL: 99, id: "aeo_item10" },
-      { name: "Structured Database Answer Keys", marketPriceIN: 9500, priceIN: 3800, marketPriceGL: 280, priceGL: 119, id: "aeo_item11" },
-      { name: "Audio Snippet Verification Logs", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 110, priceGL: 45, id: "aeo_item12" }
-    ]
-  },
-  {
-    category: "Influencer Marketing & PR",
-    items: [
-      { name: "Local Creator Campaign Outreach", marketPriceIN: 12000, priceIN: 5499, marketPriceGL: 350, priceGL: 169, id: "inf_item1" },
-      { name: "News Media Article Distribution", marketPriceIN: 15000, priceIN: 6999, marketPriceGL: 450, priceGL: 199, id: "inf_item2" },
-      { name: "Brand Trust Sourcing Profiles", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 109, id: "inf_item3" },
-      { name: "Product Placement Coordination", marketPriceIN: 10000, priceIN: 4500, marketPriceGL: 299, priceGL: 139, id: "inf_item4" },
-      { name: "Micro-Influencer Pack Retainers", marketPriceIN: 11000, priceIN: 4999, marketPriceGL: 320, priceGL: 149, id: "inf_item5" },
-      { name: "Public Press Release Drafts", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "inf_item6" },
-      { name: "Media Pitch Kit Publications", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 260, priceGL: 119, id: "inf_item7" },
-      { name: "Social Review Gathering Tracks", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 150, priceGL: 59, id: "inf_item8" },
-      { name: "Creator Agreement Term Audits", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 120, priceGL: 49, id: "inf_item9" },
-      { name: "Influencer Content Multipliers", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 180, priceGL: 79, id: "inf_item10" },
-      { name: "Brand Ambassador Network Plan", marketPriceIN: 13000, priceIN: 5200, marketPriceGL: 380, priceGL: 159, id: "inf_item11" },
-      { name: "Campaign Reach Analytics Tracker", marketPriceIN: 4500, priceIN: 1799, marketPriceGL: 130, priceGL: 55, id: "inf_item12" }
-    ]
-  },
-  {
-    category: "Social Media Marketing",
-    items: [
-      { name: "Feed Page Custom Upload Schedule", marketPriceIN: 8000, priceIN: 3999, marketPriceGL: 249, priceGL: 119, id: "smm_item1" },
-      { name: "Audience Comments Auto-Reply", marketPriceIN: 5000, priceIN: 2200, marketPriceGL: 149, priceGL: 69, id: "smm_item2" },
-      { name: "Viral Hashtag Research Sweeps", marketPriceIN: 3000, priceIN: 1200, marketPriceGL: 89, priceGL: 39, id: "smm_item3" },
-      { name: "Instagram Bio Layout Makeovers", marketPriceIN: 4000, priceIN: 1500, marketPriceGL: 99, priceGL: 45, id: "smm_item4" },
-      { name: "Monthly Feed Grid Visual Plans", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 179, priceGL: 79, id: "smm_item5" },
-      { name: "Facebook Community Updates", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "smm_item6" },
-      { name: "Profile Link Optimization Tree", marketPriceIN: 3500, priceIN: 1400, marketPriceGL: 95, priceGL: 45, id: "smm_item7" },
-      { name: "Story Interaction Poll Packs", marketPriceIN: 4500, priceIN: 1800, marketPriceGL: 129, priceGL: 55, id: "smm_item8" },
-      { name: "Competitor Handle Monitoring Logs", marketPriceIN: 5500, priceIN: 1999, marketPriceGL: 150, priceGL: 65, id: "smm_item9" },
-      { name: "Social Content Performance Audit", marketPriceIN: 5000, priceIN: 1799, marketPriceGL: 139, priceGL: 59, id: "smm_item10" },
-      { name: "Multi-Platform Asset Synchronization", marketPriceIN: 7500, priceIN: 3200, marketPriceGL: 220, priceGL: 99, id: "smm_item11" },
-      { name: "Weekly Engagement Activity Reports", marketPriceIN: 2500, priceIN: 999, marketPriceGL: 79, priceGL: 29, id: "smm_item12" }
-    ]
-  },
-  {
-    category: "Google / Meta Ads",
-    items: [
-      { name: "Facebook Lead Capture Setup", marketPriceIN: 10000, priceIN: 4499, marketPriceGL: 299, priceGL: 139, id: "gma_item1" },
-      { name: "Instagram Feed Ad Placements", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 239, priceGL: 119, id: "gma_item2" },
-      { name: "Google Paid Search Clicks Campaign", marketPriceIN: 12000, priceIN: 5499, marketPriceGL: 349, priceGL: 169, id: "gma_item3" },
-      { name: "Meta Pixel Integration Verification", marketPriceIN: 4000, priceIN: 1800, marketPriceGL: 119, priceGL: 55, id: "gma_item4" },
-      { name: "Ad Spend Protection Safe Guardrails", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "gma_item5" },
-      { name: "Google Performance Max Syncs", marketPriceIN: 13000, priceIN: 5999, marketPriceGL: 380, priceGL: 179, id: "gma_item6" },
-      { name: "Retargeting Past Visitor Ad Setups", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 260, priceGL: 115, id: "gma_item7" },
-      { name: "Ad Variant Performance Frameworks", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 180, priceGL: 79, id: "gma_item8" },
-      { name: "Target Buyer Location Adjustments", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 150, priceGL: 65, id: "gma_item9" },
-      { name: "Negative Keyword Filter Updates", marketPriceIN: 4500, priceIN: 1499, marketPriceGL: 130, priceGL: 49, id: "gma_item10" },
-      { name: "Ad Account Diagnostics Health Review", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 160, priceGL: 69, id: "gma_item11" },
-      { name: "Monthly Ad Budget Allocation Logs", marketPriceIN: 3000, priceIN: 999, marketPriceGL: 90, priceGL: 35, id: "gma_item12" }
-    ]
-  },
-  {
-    category: "Google My Business",
-    items: [
-      { name: "Google Map Profile Setup", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 179, priceGL: 79, id: "gmb_item1" },
-      { name: "Local Street Ranking Optimization", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 219, priceGL: 99, id: "gmb_item2" },
-      { name: "Review Sourcing Automation Loops", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 69, id: "gmb_item3" },
-      { name: "Branch Address Location Verification", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 120, priceGL: 49, id: "gmb_item4" },
-      { name: "Transit Corridor Regional Syncing", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 115, id: "gmb_item5" },
-      { name: "Local Maps Intent Keyword Audits", marketPriceIN: 4500, priceIN: 1800, marketPriceGL: 129, priceGL: 59, id: "gmb_item6" },
-      { name: "Duplicate Profile Merge/Cleanups", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 139, priceGL: 69, id: "gmb_item7" },
-      { name: "Profile Image Tagging Geocodes", marketPriceIN: 3500, priceIN: 1200, marketPriceGL: 99, priceGL: 39, id: "gmb_item8" },
-      { name: "Local Listing Citations Bundles", marketPriceIN: 7500, priceIN: 3200, marketPriceGL: 230, priceGL: 105, id: "gmb_item9" },
-      { name: "Business Hours & Event Updates", marketPriceIN: 2000, priceIN: 799, marketPriceGL: 59, priceGL: 25, id: "gmb_item10" },
-      { name: "Map View Search Metrics Log", marketPriceIN: 3000, priceIN: 999, marketPriceGL: 89, priceGL: 35, id: "gmb_item11" },
-      { name: "Q&A Field Content Preloading", marketPriceIN: 2500, priceIN: 899, marketPriceGL: 75, priceGL: 29, id: "gmb_item12" }
-    ]
-  },
-  {
-    category: "Brand Building & Identity",
-    items: [
-      { name: "Corporate Style Guide Blueprints", marketPriceIN: 12000, priceIN: 5499, marketPriceGL: 399, priceGL: 179, id: "bbi_item1" },
-      { name: "Brand Voice Messaging Guidelines", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 179, priceGL: 79, id: "bbi_item2" },
-      { name: "Customer Trust Building Signals", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 65, id: "bbi_item3" },
-      { name: "Unified Brand Asset Blueprints", marketPriceIN: 10000, priceIN: 4500, marketPriceGL: 299, priceGL: 149, id: "bbi_item4" },
-      { name: "Market Value Positioning Strategy", marketPriceIN: 14000, priceIN: 5999, marketPriceGL: 450, priceGL: 199, id: "bbi_item5" },
-      { name: "Company Motto & Tagline Matrices", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 110, priceGL: 45, id: "bbi_item6" },
-      { name: "Digital Storefront Layout Uniformity", marketPriceIN: 8500, priceIN: 3800, marketPriceGL: 250, priceGL: 119, id: "bbi_item7" },
-      { name: "Credibility Case Study Structures", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 260, priceGL: 125, id: "bbi_item8" },
-      { name: "Social Handles Aesthetic Matching", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 219, priceGL: 89, id: "bbi_item9" },
-      { name: "Executive Profile Authority Sync", marketPriceIN: 11000, priceIN: 4800, marketPriceGL: 320, priceGL: 139, id: "bbi_item10" },
-      { name: "Brand Presentation Templates Set", marketPriceIN: 6500, priceIN: 2700, marketPriceGL: 180, priceGL: 85, id: "bbi_item11" },
-      { name: "Logo Variations Usage Rule Sheets", marketPriceIN: 3000, priceIN: 999, marketPriceGL: 85, priceGL: 29, id: "bbi_item12" }
-    ]
-  },
-  {
-    category: "Video Editing & Motion Graphics",
-    items: [
-      { name: "Mobile Short-Reels Video Clipping", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 279, priceGL: 129, id: "vem_item1" },
-      { name: "Dynamic Captions Subtitle Overlays", marketPriceIN: 3000, priceIN: 1200, marketPriceGL: 99, priceGL: 45, id: "vem_item2" },
-      { name: "Visual Scroll-Stopper Graphic Hooks", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 65, id: "vem_item3" },
-      { name: "Kinetic Video Title Animations", marketPriceIN: 4000, priceIN: 1500, marketPriceGL: 129, priceGL: 49, id: "vem_item4" },
-      { name: "YouTube Shorts Production Assembly", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 180, priceGL: 79, id: "vem_item5" },
-      { name: "Cinematic Product Color Grading", marketPriceIN: 4500, priceIN: 1800, marketPriceGL: 120, priceGL: 59, id: "vem_item6" },
-      { name: "Audio Sound Effect Track Mixes", marketPriceIN: 3500, priceIN: 1400, marketPriceGL: 90, priceGL: 39, id: "vem_item7" },
-      { name: "Green Screen Background Replacements", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "vem_item8" },
-      { name: "Animated Social Lower-Third Badges", marketPriceIN: 2500, priceIN: 999, marketPriceGL: 69, priceGL: 29, id: "vem_item9" },
-      { name: "Video Logo Intro Animation Loops", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 160, priceGL: 69, id: "vem_item10" },
-      { name: "Multi-Clip Social Promo Montages", marketPriceIN: 10000, priceIN: 4500, marketPriceGL: 299, priceGL: 139, id: "vem_item11" },
-      { name: "Video Format Screen Scaling Fixes", marketPriceIN: 2000, priceIN: 799, marketPriceGL: 50, priceGL: 19, id: "vem_item12" }
-    ]
-  },
-  {
-    category: "Graphic Design",
-    items: [
-      { name: "Social Feed Visual Grid Templates", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 179, priceGL: 79, id: "gd_item1" },
-      { name: "Commercial Paid Ad Image Layouts", marketPriceIN: 4000, priceIN: 1800, marketPriceGL: 119, priceGL: 55, id: "gd_item2" },
-      { name: "Marketing Banner Creative Graphics", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 65, id: "gd_item3" },
-      { name: "Custom Deck Presentation Slides", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 95, id: "gd_item4" },
-      { name: "Print Flyer Layout Asset Files", marketPriceIN: 3500, priceIN: 1400, marketPriceGL: 95, priceGL: 45, id: "gd_item5" },
-      { name: "Logo Concept Vector Rendering", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 119, id: "gd_item6" },
-      { name: "Business Card Stationery Designs", marketPriceIN: 2000, priceIN: 899, marketPriceGL: 59, priceGL: 25, id: "gd_item7" },
-      { name: "YouTube Channel Cover Artworks", marketPriceIN: 3000, priceIN: 1200, marketPriceGL: 89, priceGL: 39, id: "gd_item8" },
-      { name: "Digital Coupon Voucher Graphics", marketPriceIN: 2500, priceIN: 999, marketPriceGL: 79, priceGL: 29, id: "gd_item9" },
-      { name: "Infographic Informative Charts", marketPriceIN: 7500, priceIN: 3200, marketPriceGL: 220, priceGL: 99, id: "gd_item10" },
-      { name: "Email Newsletter Layout Header Art", marketPriceIN: 4500, priceIN: 1500, marketPriceGL: 130, priceGL: 49, id: "gd_item11" },
-      { name: "E-commerce Banner Display Slides", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 160, priceGL: 69, id: "gd_item12" }
-    ]
-  },
-  {
-    category: "Content Marketing",
-    items: [
-      { name: "Informative Problem-Solving Blogs", marketPriceIN: 3000, priceIN: 1499, marketPriceGL: 89, priceGL: 45, id: "cm_item1" },
-      { name: "Customer Learning Resource Hubs", marketPriceIN: 10000, priceIN: 4500, marketPriceGL: 299, priceGL: 139, id: "cm_item2" },
-      { name: "Downloadable PDF Lead Magnets", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 65, id: "cm_item3" },
-      { name: "Email Article Newsletter Campaigns", marketPriceIN: 4000, priceIN: 1500, marketPriceGL: 119, priceGL: 49, id: "cm_item4" },
-      { name: "Organic View Attraction Roadmap", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "cm_item5" },
-      { name: "LinkedIn ghostwritten Article Blocks", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 179, priceGL: 79, id: "cm_item6" },
-      { name: "Helpful Advice Column Libraries", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 109, id: "cm_item7" },
-      { name: "Product Application Guide Modules", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 160, priceGL: 69, id: "cm_item8" },
-      { name: "Case Study Story Configurations", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 260, priceGL: 125, id: "cm_item9" },
-      { name: "Content Cluster Keyword Groupings", marketPriceIN: 6500, priceIN: 2700, marketPriceGL: 180, priceGL: 79, id: "cm_item10" },
-      { name: "Social Content Caption Scripting", marketPriceIN: 3500, priceIN: 1200, marketPriceGL: 95, priceGL: 39, id: "cm_item11" },
-      { name: "Quarterly Publishing Flow Charts", marketPriceIN: 2000, priceIN: 799, marketPriceGL: 59, priceGL: 25, id: "cm_item12" }
-    ]
-  },
-  {
-    category: "Copywriting",
-    items: [
-      { name: "Landing Page Core Description Copy", marketPriceIN: 6000, priceIN: 2999, marketPriceGL: 179, priceGL: 89, id: "cw_item1" },
-      { name: "High-Converting Paid Ad Captions", marketPriceIN: 4000, priceIN: 1800, marketPriceGL: 119, priceGL: 55, id: "cw_item2" },
-      { name: "Sales Page Headline Title Drafts", marketPriceIN: 3000, priceIN: 1200, marketPriceGL: 89, priceGL: 39, id: "cw_item3" },
-      { name: "Promotional Sales Email Sequences", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 65, id: "cw_item4" },
-      { name: "Clear Problem-Focused Copy Lines", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "cw_item5" },
-      { name: "Product Feature Benefit Explanations", marketPriceIN: 4500, priceIN: 1500, marketPriceGL: 130, priceGL: 49, id: "cw_item6" },
-      { name: "Customer Hesitation Clearing Texts", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 160, priceGL: 69, id: "cw_item7" },
-      { name: "Frictionless Checkout Cart Prompts", marketPriceIN: 3500, priceIN: 1400, marketPriceGL: 95, priceGL: 45, id: "cw_item8" },
-      { name: "SMS Update Short Notification Lines", marketPriceIN: 2000, priceIN: 799, marketPriceGL: 59, priceGL: 25, id: "cw_item9" },
-      { name: "Call To Action Booking Copy Hooks", marketPriceIN: 2500, priceIN: 999, marketPriceGL: 79, priceGL: 29, id: "cw_item10" },
-      { name: "Executive Profile Authority Messaging", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 119, id: "cw_item11" },
-      { name: "Brand Voice Conversion Optimization", marketPriceIN: 7500, priceIN: 3200, marketPriceGL: 220, priceGL: 99, id: "cw_item12" }
-    ]
-  },
-  {
-    category: "Website Designing & Custom Architecture",
-    items: [
-      { name: "Figma Page Vector Screen Drafts", marketPriceIN: 16000, priceIN: 7999, marketPriceGL: 499, priceGL: 249, id: "wda_item1" },
-      { name: "User Journey Screen Spacing Maps", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 249, priceGL: 119, id: "wda_item2" },
-      { name: "High-Retention Visual Flow Outlines", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 95, id: "wda_item3" },
-      { name: "Frictionless Click Button Placements", marketPriceIN: 4000, priceIN: 1800, marketPriceGL: 119, priceGL: 59, id: "wda_item4" },
-      { name: "Phone App System Interface Kit", marketPriceIN: 15000, priceIN: 6999, marketPriceGL: 450, priceGL: 199, id: "wda_item5" },
-      { name: "Interactive Wireframe Mockup Sets", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 179, priceGL: 79, id: "wda_item6" },
-      { name: "Typography Scale Font Readability Fix", marketPriceIN: 3000, priceIN: 1200, marketPriceGL: 89, priceGL: 39, id: "wda_item7" },
-      { name: "Brand Color Scheme Spacing Rules", marketPriceIN: 2500, priceIN: 999, marketPriceGL: 79, priceGL: 29, id: "wda_item8" },
-      { name: "Navigation Menu Layout Redesigns", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 69, id: "wda_item9" },
-      { name: "Creative Icon Elements Deployments", marketPriceIN: 3500, priceIN: 1400, marketPriceGL: 95, priceGL: 45, id: "wda_item10" },
-      { name: "Conversion Rate Interface Auditing", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 280, priceGL: 129, id: "wda_item11" },
-      { name: "Desktop vs Mobile Frame Rescaling", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 160, priceGL: 69, id: "wda_item12" }
-    ]
-  },
-  {
-    category: "Digital Strategy Consulting",
-    items: [
-      { name: "Structural Online Business Audit", marketPriceIN: 10000, priceIN: 4499, marketPriceGL: 299, priceGL: 139, id: "dsc_item1" },
-      { name: "Competitor Action Matrix Report", marketPriceIN: 8000, priceIN: 3499, marketPriceGL: 239, priceGL: 119, id: "dsc_item2" },
-      { name: "Marketing Budget Waste Reduction Plan", marketPriceIN: 6000, priceIN: 2499, marketPriceGL: 179, priceGL: 79, id: "dsc_item3" },
-      { name: "30-Day Launch Operational Blueprints", marketPriceIN: 11000, priceIN: 4999, marketPriceGL: 320, priceGL: 149, id: "dsc_item4" },
-      { name: "1-on-1 Strategic Progress Coaching", marketPriceIN: 12000, priceIN: 5499, marketPriceGL: 359, priceGL: 169, id: "dsc_item5" },
-      { name: "Customer Acquisition Track Analysis", marketPriceIN: 7000, priceIN: 2999, marketPriceGL: 199, priceGL: 89, id: "dsc_item6" },
-      { name: "Funnel Drop-off Diagnostic Report", marketPriceIN: 9000, priceIN: 3999, marketPriceGL: 260, priceGL: 125, id: "dsc_item7" },
-      { name: "Target Audience Intent Profiling", marketPriceIN: 5000, priceIN: 1999, marketPriceGL: 149, priceGL: 65, id: "dsc_item8" },
-      { name: "Brand Message Relevance Audit", marketPriceIN: 5500, priceIN: 2200, marketPriceGL: 160, priceGL: 69, id: "dsc_item9" },
-      { name: "Multi-Location Scaling Strategy Sheet", marketPriceIN: 13000, priceIN: 5200, marketPriceGL: 380, priceGL: 159, id: "dsc_item10" },
-      { name: "Tech Stack Efficiency Assessment", marketPriceIN: 7500, priceIN: 2800, marketPriceGL: 220, priceGL: 99, id: "dsc_item11" },
-      { name: "Lead Follow-up Timing Correction Logs", marketPriceIN: 4000, priceIN: 1499, marketPriceGL: 110, priceGL: 49, id: "dsc_item12" }
-    ]
-  }
-];
+  const customServiceData = [
+    {
+      id: "cat_web",
+      title: "Website Building & Coding",
+      items: [
+        { name: "5-Page Basic Landing Showcase", rateIN: 3999, rateGL: 149, marketIN: 12000, marketGL: 399 },
+        { name: "Sleek Startup Domain Setup", rateIN: 5999, rateGL: 199, marketIN: 15000, marketGL: 499 },
+        { name: "Portfolio Identity Hub", rateIN: 4999, rateGL: 179, marketIN: 14000, marketGL: 450 },
+        { name: "Personal Blogs Storefront Layout", rateIN: 4499, rateGL: 169, marketIN: 13000, marketGL: 399 },
+        { name: "Secure SSL File Data Lock", rateIN: 1499, rateGL: 49, marketIN: 4000, marketGL: 120 },
+        { name: "Clean Domain Names Redirection Routing", rateIN: 1999, rateGL: 69, marketIN: 5000, marketGL: 150 },
+        { name: "Broken Web URL Link Cleanups", rateIN: 2499, rateGL: 79, marketIN: 6000, marketGL: 180 },
+        { name: "Basic Web Grid Template Integration", rateIN: 3499, rateGL: 129, marketIN: 10000, marketGL: 300 },
+        { name: "Header Banner Image Frame Optimization", rateIN: 1200, rateGL: 39, marketIN: 3500, marketGL: 99 },
+        { name: "Footer Copyright Links Adjustments", rateIN: 999, rateGL: 29, marketIN: 2500, marketGL: 75 }
+      ]
+    },
+    {
+      id: "cat_ecom",
+      title: "E-Commerce Shopping Setups",
+      items: [
+        { name: "Shopify Store Configuration Build", rateIN: 14999, rateGL: 499, marketIN: 45000, marketGL: 1200 },
+        { name: "Product Upload & Grid Categorization", rateIN: 4999, rateGL: 179, marketIN: 15000, marketGL: 450 },
+        { name: "Secure Local Checkout Gateways Integration", rateIN: 3999, rateGL: 149, marketIN: 12000, marketGL: 399 },
+        { name: "Shopping Cart Drops Recovery Email Setup", rateIN: 4500, rateGL: 169, marketIN: 13000, marketGL: 400 },
+        { name: "Discount Coupons Coupon Code Matrix", rateIN: 1999, rateGL: 69, marketIN: 5000, marketGL: 150 },
+        { name: "Store Product Reviews Import Pipeline", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 200 },
+        { name: "Shipping Locations Pricing Rule Matrix", rateIN: 2999, rateGL: 99, marketIN: 8000, marketGL: 250 },
+        { name: "Product Inventory Alert Notification Sync", rateIN: 3499, rateGL: 119, marketIN: 9000, marketGL: 300 },
+        { name: "Tax Invoice PDF Layout Auto-Generator", rateIN: 2200, rateGL: 79, marketIN: 6000, marketGL: 180 },
+        { name: "Multi-Variant Selection Filter Options Check", rateIN: 3100, rateGL: 109, marketIN: 9500, marketGL: 299 }
+      ]
+    },
+    {
+      id: "cat_auto",
+      title: "AI Workflows & Automations",
+      items: [
+        { name: "Zapier App Data Bridge Sync", rateIN: 3499, rateGL: 129, marketIN: 10000, marketGL: 350 },
+        { name: "Inquiry Leads Forms Auto-Reply Drips", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 299 },
+        { name: "Google Spreadsheets Auto Data-Logging", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 199 },
+        { name: "Automated Customer Support Escalation Tags", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Instant Workspace Slack Notification Router", rateIN: 1800, rateGL: 59, marketIN: 5000, marketGL: 150 },
+        { name: "AI Files Folder Organizer Automation", rateIN: 2700, rateGL: 89, marketIN: 8000, marketGL: 240 },
+        { name: "Client Appointment Scheduling Calendar Hooks", rateIN: 3200, rateGL: 119, marketIN: 9500, marketGL: 300 },
+        { name: "Customer Intake Web-Forms Routing", rateIN: 2100, rateGL: 79, marketIN: 6500, marketGL: 200 },
+        { name: "Daily Marketing Data Clean Reporting Bot", rateIN: 3999, rateGL: 139, marketIN: 12000, marketGL: 400 },
+        { name: "Automated Team Task Checklist Dispatcher", rateIN: 1500, rateGL: 49, marketIN: 4500, marketGL: 130 }
+      ]
+    },
+    {
+      id: "cat_voice",
+      title: "AI Voice Agents & Calling",
+      items: [
+        { name: "Autonomous Inbound Support Audio Assistant", rateIN: 11999, rateGL: 399, marketIN: 35000, marketGL: 1200 },
+        { name: "Outbound Scheduling Appointment Calling Script", rateIN: 5999, rateGL: 199, marketIN: 18000, marketGL: 600 },
+        { name: "Voice AI Calendar Direct Database Reservation", rateIN: 4500, rateGL: 149, marketIN: 13000, marketGL: 450 },
+        { name: "Missed Call Customer Callback Trigger System", rateIN: 3800, rateGL: 129, marketIN: 11000, marketGL: 350 },
+        { name: "Audio Qualification Forms Routing Prompts", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 300 },
+        { name: "Multi-Language Voice Dialect Translation Sync", rateIN: 6999, rateGL: 229, marketIN: 20000, marketGL: 700 },
+        { name: "Real-Time CRM Audio Phone Call Logs", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Voice Pricing Inquiry Flow Routing", rateIN: 4200, rateGL: 139, marketIN: 12500, marketGL: 400 },
+        { name: "Spoken IVR Interactive Menu Tree Configuration", rateIN: 5200, rateGL: 179, marketIN: 15000, marketGL: 500 },
+        { name: "Emergency Alert Broadcast Call Routing Engine", rateIN: 5500, rateGL: 189, marketIN: 16000, marketGL: 550 }
+      ]
+    },
+    {
+      id: "cat_perf",
+      title: "Performance Optimization Ads",
+      items: [
+        { name: "High-Ticket Client Inbound Lead Capture", rateIN: 7999, rateGL: 249, marketIN: 24000, marketGL: 800 },
+        { name: "B2B Executive Corporate Audience Targetings", rateIN: 6499, rateGL: 219, marketIN: 20000, marketGL: 650 },
+        { name: "Server-Side GA4 Tracking Framework Integration", rateIN: 5499, rateGL: 189, marketIN: 16000, marketGL: 550 },
+        { name: "Custom Interactive Marketing Metrics Dashboards", rateIN: 4499, rateGL: 149, marketIN: 13500, marketGL: 400 },
+        { name: "Database Reactivation Value Ad Sequences", rateIN: 4999, rateGL: 169, marketIN: 15000, marketGL: 450 },
+        { name: "Ad Clicks Attribution Leakage Audit Sweeps", rateIN: 3499, rateGL: 119, marketIN: 10000, marketGL: 350 },
+        { name: "Landing Page A/B Content Variations Scaling", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 300 },
+        { name: "Customer Acquisition Cost Trimming Audits", rateIN: 3999, rateGL: 139, marketIN: 11500, marketGL: 380 },
+        { name: "Negative Clicks Expense Budget Protection", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 199 },
+        { name: "Weekly Ad Platform Performance Ledger Delivery", rateIN: 1499, rateGL: 49, marketIN: 4500, marketGL: 150 }
+      ]
+    },
+    {
+      id: "cat_geo",
+      title: "Generative Engine (GEO) Sync",
+      items: [
+        { name: "ChatGPT Semantic Data Citation Injections", rateIN: 3999, rateGL: 149, marketIN: 12000, marketGL: 400 },
+        { name: "AI Web Crawlers Profile Data Seeding", rateIN: 4499, rateGL: 169, marketIN: 14000, marketGL: 450 },
+        { name: "llm.txt Markdown Information Manifest Setup", rateIN: 2499, rateGL: 89, marketIN: 8000, marketGL: 250 },
+        { name: "Perplexity Engine Answer Sourcing Optimizations", rateIN: 5200, rateGL: 189, marketIN: 16000, marketGL: 500 },
+        { name: "Claude & Gemini Conversational Query Mappings", rateIN: 4800, rateGL: 159, marketIN: 15000, marketGL: 480 },
+        { name: "AI Overviews Highlight Snippet Structures", rateIN: 5999, rateGL: 199, marketIN: 18000, marketGL: 600 },
+        { name: "Neural Network Database Entity Verifications", rateIN: 3800, rateGL: 129, marketIN: 11000, marketGL: 350 },
+        { name: "Structured JSON-LD Context Rich Data Arrays", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 299 },
+        { name: "Scraper Bots Unauthorized Access Blocks", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 199 },
+        { name: "AI Summary Citations Brand Visibility Tracking", rateIN: 2700, rateGL: 89, marketIN: 8500, marketGL: 250 }
+      ]
+    },
+    {
+      id: "cat_seo",
+      title: "Search Engine Optimization (SEO)",
+      items: [
+        { name: "Google Front Page Organic Keyword Ranking", rateIN: 4999, rateGL: 169, marketIN: 15000, marketGL: 500 },
+        { name: "Technical Website Search Error Exclusions", rateIN: 3499, rateGL: 119, marketIN: 10000, marketGL: 350 },
+        { name: "Google Snippet Position Zero Answer Setup", rateIN: 4200, rateGL: 139, marketIN: 13000, marketGL: 400 },
+        { name: "High-Trust Authority Directories Linking", rateIN: 6500, rateGL: 219, marketIN: 20000, marketGL: 650 },
+        { name: "Rival Traffic Volume Keywords Analysis Maps", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Organic Domain Content Matrix Expansion", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 300 },
+        { name: "Algorithm Shock Drop Data Traffic Recoveries", rateIN: 4500, rateGL: 149, marketIN: 14000, marketGL: 450 },
+        { name: "Broken Permalinks Permanent Redirect Routing", rateIN: 1499, rateGL: 49, marketIN: 4500, marketGL: 150 },
+        { name: "Media Assets Alt-Text Schema Enhancements", rateIN: 999, rateGL: 35, marketIN: 3000, marketGL: 99 },
+        { name: "Meta Category Title Tag Spacing Logs", rateIN: 1200, rateGL: 39, marketIN: 3500, marketGL: 120 }
+      ]
+    },
+    {
+      id: "cat_aeo",
+      title: "Voice Search Optimization (AEO)",
+      items: [
+        { name: "Mobile Phone Voice Query Content Alignment", rateIN: 3999, rateGL: 139, marketIN: 12000, marketGL: 400 },
+        { name: "Conversational FAQ Accordion Structured Schemas", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 300 },
+        { name: "Speakable Markup Property Core Code Integration", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 199 },
+        { name: "Amazon Alexa Spoken Answers Optimization", rateIN: 4500, rateGL: 149, marketIN: 14000, marketGL: 450 },
+        { name: "Apple Siri Spoken Identity Matches", rateIN: 4200, rateGL: 139, marketIN: 13000, marketGL: 400 },
+        { name: "Google Assistant Prompt Sentence Syncing", rateIN: 3500, rateGL: 119, marketIN: 11000, marketGL: 350 },
+        { name: "Natural Dialect Semantic Text Adaptations", rateIN: 2200, rateGL: 75, marketIN: 7000, marketGL: 220 },
+        { name: "Direct Question-Answer Content Grid Framing", rateIN: 1800, rateGL: 59, marketIN: 5500, marketGL: 180 },
+        { name: "Smart Speaker Intent Discovery Diagnostics", rateIN: 5499, rateGL: 179, marketIN: 16000, marketGL: 550 },
+        { name: "Voice Interface Audio Response Mapping Logs", rateIN: 1499, rateGL: 45, marketIN: 4500, marketGL: 150 }
+      ]
+    },
+    {
+      id: "cat_pr",
+      title: "Influencer Marketing & PR",
+      items: [
+        { name: "Local Area Video Creators Selection Pitching", rateIN: 5499, rateGL: 179, marketIN: 16000, marketGL: 550 },
+        { name: "Digital News Articles Strategic Distribution", rateIN: 6999, rateGL: 229, marketIN: 22000, marketGL: 700 },
+        { name: "Corporate Authority Digital Identity Verification", rateIN: 3499, rateGL: 119, marketIN: 10000, marketGL: 350 },
+        { name: "Creator Content Sponsorship Tracking Plans", rateIN: 4500, rateGL: 149, marketIN: 13500, marketGL: 450 },
+        { name: "Micro-Influencer Brand Review Pipeline Sourcing", rateIN: 4999, rateGL: 159, marketIN: 15000, marketGL: 499 },
+        { name: "Public Press Release Copywriting Distribution", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 300 },
+        { name: "Newsroom Media Pitch Deck Visual Layouts", rateIN: 3999, rateGL: 129, marketIN: 12000, marketGL: 400 },
+        { name: "Social Validation Reviews Accumulation Trackers", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 200 },
+        { name: "Creator Partnerships Non-Disclosure Terms Check", rateIN: 1499, rateGL: 49, marketIN: 4500, marketGL: 150 },
+        { name: "Campaign Public Engagement Metrics Analytics Logs", rateIN: 1799, rateGL: 59, marketIN: 5500, marketGL: 180 }
+      ]
+    },
+    {
+      id: "cat_smm",
+      title: "Social Media Strategy (SMM)",
+      items: [
+        { name: "Profile Post Distribution Calendar Routing", rateIN: 3999, rateGL: 129, marketIN: 12000, marketGL: 400 },
+        { name: "Audience Feed Comments Reply Scripting", rateIN: 2200, rateGL: 79, marketIN: 6500, marketGL: 220 },
+        { name: "Trending Hashtag Cluster Set Assembly", rateIN: 1200, rateGL: 39, marketIN: 3500, marketGL: 100 },
+        { name: "Social Bio Storefront Links Modernization", rateIN: 1500, rateGL: 45, marketIN: 4500, marketGL: 120 },
+        { name: "Feed Board Structural Color Grid Layouts", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Facebook Community Updates Management Feed", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 300 },
+        { name: "Profile Tree Content Navigation Connectors", rateIN: 1400, rateGL: 45, marketIN: 4000, marketGL: 130 },
+        { name: "Interactive Audience Story Poll Framework Sets", rateIN: 1800, rateGL: 59, marketIN: 5000, marketGL: 170 },
+        { name: "Competitor Handle Trends Tracking Sweeps", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 199 },
+        { name: "Profile Interaction Progress Health Evaluation Logs", rateIN: 1799, rateGL: 59, marketIN: 5500, marketGL: 180 }
+      ]
+    },
+    {
+      id: "cat_ads",
+      title: "Paid Ads (Google & Meta)",
+      items: [
+        { name: "Meta Direct Lead Inquiries Generation", rateIN: 4499, rateGL: 149, marketIN: 14000, marketGL: 450 },
+        { name: "Instagram Feeds Commercial Creative Campaigns", rateIN: 3499, rateGL: 129, marketIN: 11000, marketGL: 350 },
+        { name: "Google Paid Search Conversion Clicks Engine", rateIN: 5499, rateGL: 179, marketIN: 16000, marketGL: 550 },
+        { name: "Meta Tracking Pixel Code Setup Verifications", rateIN: 1800, rateGL: 59, marketIN: 5000, marketGL: 150 },
+        { name: "Ad Budget Spend Overrun Safe Guardrails", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 299 },
+        { name: "Google Performance Max Asset Synchronization", rateIN: 5999, rateGL: 189, marketIN: 18500, marketGL: 600 },
+        { name: "Past Domain Visitors Custom Retargeting Ads", rateIN: 3999, rateGL: 129, marketIN: 12000, marketGL: 400 },
+        { name: "Ad Variants Split Testing Analytical Matrix", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Target Buyer Location Geometry Filters Setup", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 200 },
+        { name: "Negative Words Ad Waste Filter Logs", rateIN: 1499, rateGL: 49, marketIN: 4500, marketGL: 150 }
+      ]
+    },
+    {
+      id: "cat_gmb",
+      title: "Google Local Maps (GMB)",
+      items: [
+        { name: "Google My Business Map Profile Initialization", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Local Neighborhood Search Map Position Multipliers", rateIN: 2999, rateGL: 109, marketIN: 9000, marketGL: 300 },
+        { name: "Review Sourcing SMS Direct Message Quick Links", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 200 },
+        { name: "Branch Physical Geolocation Address Pins Verification", rateIN: 1499, rateGL: 49, marketIN: 4500, marketGL: 150 },
+        { name: "Transit Corridor Local Directory Citations Sync", rateIN: 3499, rateGL: 119, marketIN: 11000, marketGL: 350 },
+        { name: "Maps Intent Search Keywords Inventory Optimization", rateIN: 1800, rateGL: 59, marketIN: 5500, marketGL: 180 },
+        { name: "Conflicting Duplicate Business Listing Merge Cleanups", rateIN: 2200, rateGL: 79, marketIN: 6500, marketGL: 220 },
+        { name: "Map Media Uploads Metadata Location Tagging", rateIN: 1200, rateGL: 39, marketIN: 3500, marketGL: 100 },
+        { name: "Verified Citations Submission Directory Packs", rateIN: 3200, rateGL: 115, marketIN: 9500, marketGL: 320 },
+        { name: "Operating Hours Calendar Event Description Logs", rateIN: 799, rateGL: 29, marketIN: 2500, marketGL: 75 }
+      ]
+    },
+    {
+      id: "cat_brand",
+      title: "Brand Strategy & Identity",
+      items: [
+        { name: "Corporate Brand Book Typography Style Guides", rateIN: 5499, rateGL: 189, marketIN: 16500, marketGL: 550 },
+        { name: "Brand Communications Core Pitch Voice Guides", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Consumer Visual Confidence Signal Alignments", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 200 },
+        { name: "Unified Marketing Asset Deployment Blueprints", rateIN: 4500, rateGL: 149, marketIN: 13500, marketGL: 450 },
+        { name: "Premium Market Authority Placement Architecture", rateIN: 5999, rateGL: 199, marketIN: 18000, marketGL: 600 },
+        { name: "Company Mottos Slogans Linguistic Evaluation Matrices", rateIN: 1499, rateGL: 45, marketIN: 4500, marketGL: 150 },
+        { name: "Digital Handle Layout Cross-Channel Uniformities", rateIN: 3800, rateGL: 129, marketIN: 11500, marketGL: 380 },
+        { name: "Verifiable Result Case Studies Framework Layout", rateIN: 3999, rateGL: 139, marketIN: 12000, marketGL: 400 },
+        { name: "Social Asset Grid Vector Elements Tuning", rateIN: 2999, rateGL: 99, marketIN: 9000, marketGL: 300 },
+        { name: "Logo Structural Layout File Variants System Sheets", rateIN: 999, rateGL: 35, marketIN: 3000, marketGL: 99 }
+      ]
+    },
+    {
+      id: "cat_video",
+      title: "Reels & Video Production",
+      items: [
+        { name: "Mobile Phone Reels Fast Clip Sequencing", rateIN: 3999, rateGL: 139, marketIN: 12000, marketGL: 400 },
+        { name: "Kinetic Text Word Overlays Sound Alignment", rateIN: 1200, rateGL: 45, marketIN: 4000, marketGL: 120 },
+        { name: "Visual Scroll-Stopper Intro Graphic Hooks", rateIN: 1999, rateGL: 65, marketIN: 6000, marketGL: 200 },
+        { name: "Dynamic Kinetic Title Screen Multi-Layer Animations", rateIN: 1500, rateGL: 49, marketIN: 4500, marketGL: 150 },
+        { name: "YouTube Shorts Multi-Platform Layout Adaptation", rateIN: 2499, rateGL: 79, marketIN: 7500, marketGL: 250 },
+        { name: "Cinematic Product Footage Color Tone Gradings", rateIN: 1800, rateGL: 59, marketIN: 5500, marketGL: 180 },
+        { name: "Audio Ambient Tracks Multi-Layer SFX Mixes", rateIN: 1400, rateGL: 39, marketIN: 4500, marketGL: 120 },
+        { name: "Green Screen Background Digital Canvas Replacement", rateIN: 2999, rateGL: 89, marketIN: 9000, marketGL: 300 },
+        { name: "Lower-Third Branded Banner Overlay Graphics", rateIN: 999, rateGL: 29, marketIN: 3000, marketGL: 90 },
+        { name: "Animated Social Logo Video End-Screen Loops", rateIN: 2200, rateGL: 69, marketIN: 6500, marketGL: 220 }
+      ]
+    },
+    {
+      id: "cat_design",
+      title: "Creative Graphic Design",
+      items: [
+        { name: "Custom Profile Feed Grid Vector Masterboards", rateIN: 2499, rateGL: 89, marketIN: 7500, marketGL: 250 },
+        { name: "Commercial Paid Digital Advertising Creative Banners", rateIN: 1800, rateGL: 55, marketIN: 5500, marketGL: 180 },
+        { name: "Marketing Multi-Size Scale Promotional Graphic Assets", rateIN: 1999, rateGL: 65, marketIN: 6000, marketGL: 200 },
+        { name: "Corporate Keynote Presentation Master Slide Layouts", rateIN: 2999, rateGL: 95, marketIN: 9000, marketGL: 300 },
+        { name: "Print-Ready Marketing Brochure Vector Elements", rateIN: 1400, rateGL: 45, marketIN: 4500, marketGL: 150 },
+        { name: "Original Core Logo Concept Vector Renderings", rateIN: 3499, rateGL: 119, marketIN: 10500, marketGL: 350 },
+        { name: "Stationery Branding Layout Patterns Build", rateIN: 899, rateGL: 25, marketIN: 3000, marketGL: 90 },
+        { name: "YouTube Channel Streaming Visual Cover Arts", rateIN: 1200, rateGL: 39, marketIN: 4000, marketGL: 120 },
+        { name: "Promotional Offer Discount Voucher Layout Cards", rateIN: 999, rateGL: 29, marketIN: 3000, marketGL: 99 },
+        { name: "Newsletter Communications Creative Canvas Graphics", rateIN: 1500, rateGL: 49, marketIN: 4500, marketGL: 150 }
+      ]
+    },
+    {
+      id: "cat_content",
+      title: "Content Marketing Labs",
+      items: [
+        { name: "Plain English Helpful Consumer Problem-Solving Articles", rateIN: 1499, rateGL: 45, marketIN: 4500, marketGL: 150 },
+        { name: "Informational Resource Learning Center Nested Hubs", rateIN: 4500, rateGL: 139, marketIN: 13500, marketGL: 450 },
+        { name: "Downloadable Practical Strategy Guides (PDF Format)", rateIN: 1999, rateGL: 65, marketIN: 6000, marketGL: 200 },
+        { name: "Regular Email Communications Article Newsletter Dispatches", rateIN: 1500, rateGL: 49, marketIN: 4500, marketGL: 150 },
+        { name: "Inbound Search Web Identity Strategic Maps", rateIN: 2999, rateGL: 89, marketIN: 9000, marketGL: 300 },
+        { name: "LinkedIn Professional Brand Ghostwritten Authority Posts", rateIN: 2499, rateGL: 79, marketIN: 7500, marketGL: 250 },
+        { name: "Corporate Operations Help-Column Text Libraries", rateIN: 3499, rateGL: 109, marketIN: 11000, marketGL: 350 },
+        { name: "Product Case Story Configurations Content Layouts", rateIN: 3999, rateGL: 125, marketIN: 12000, marketGL: 400 },
+        { name: "Organic Search Topic Keyword Intent Node Structuring", rateIN: 2700, rateGL: 79, marketIN: 8000, marketGL: 250 },
+        { name: "Creative Platform Captions Paragraph Structuring Sheets", rateIN: 1200, rateGL: 39, marketIN: 3500, marketGL: 120 }
+      ]
+    },
+    {
+      id: "cat_copy",
+      title: "Persuasive Copywriting",
+      items: [
+        { name: "Landing Page High-Converting Content Descriptions", rateIN: 2999, rateGL: 89, marketIN: 9000, marketGL: 300 },
+        { name: "Paid Social Media Ad Visual Description Scripts", rateIN: 1800, rateGL: 55, marketIN: 5500, marketGL: 180 },
+        { name: "Sales Landing Frame Hero Header Title Drafts", rateIN: 1200, rateGL: 39, marketIN: 4000, marketGL: 120 },
+        { name: "Direct Response Marketing Email Sequence Outlines", rateIN: 1999, rateGL: 65, marketIN: 6000, marketGL: 200 },
+        { name: "Frictionless Checkout Cart Exit Preventing Prompts", rateIN: 1400, rateGL: 45, marketIN: 4500, marketGL: 140 },
+        { name: "Product Commercial Core Benefit Statements Framing", rateIN: 1500, rateGL: 49, marketIN: 4500, marketGL: 150 },
+        { name: "Consumer Doubt Removal Strategy Text Snippets", rateIN: 2200, rateGL: 69, marketIN: 6500, marketGL: 220 },
+        { name: "Direct Booking Callback Form Copywriting Elements", rateIN: 999, rateGL: 29, marketIN: 3000, marketGL: 90 },
+        { name: "SMS Broadcast Campaign Short Text Hook Layouts", rateIN: 799, rateGL: 25, marketIN: 2500, marketGL: 75 },
+        { name: "Executive Network Authority Communication Text Synchronization", rateIN: 3499, rateGL: 119, marketIN: 10500, marketGL: 350 }
+      ]
+    },
+    {
+      id: "cat_arch",
+      title: "UI/UX Custom Architectures",
+      items: [
+        { name: "Figma Digital Interface Layout Vector Screen Templates", rateIN: 7999, rateGL: 249, marketIN: 24000, marketGL: 750 },
+        { name: "User Spacing Grid Navigation Wireframe Mappings", rateIN: 3499, rateGL: 119, marketIN: 10500, marketGL: 350 },
+        { name: "High-Retention Interactive Digital Screen Flow Paths", rateIN: 2999, rateGL: 95, marketIN: 9000, marketGL: 300 },
+        { name: "Frictionless Navigation Action Button Spacing Arrays", rateIN: 1800, rateGL: 59, marketIN: 5500, marketGL: 180 },
+        { name: "Mobile App Wireframe Conceptual Layout Blocks", rateIN: 6999, rateGL: 199, marketIN: 20000, marketGL: 650 },
+        { name: "Interactive Prototyping Element Flow Syncing Documentation", rateIN: 2499, rateGL: 79, marketIN: 7500, marketGL: 240 },
+        { name: "Typography Scale Font Sizing Density Adjustments", rateIN: 1200, rateGL: 39, marketIN: 3500, marketGL: 120 },
+        { name: "Brand Color Uniform Spacing Matrix Optimization Rules", rateIN: 999, rateGL: 29, marketIN: 3000, marketGL: 99 },
+        { name: "Navigation Menu Layout Responsive Dropdown Rescaling", rateIN: 1999, rateGL: 69, marketIN: 6000, marketGL: 200 },
+        { name: "Conversion Rate Driven Screen Asset Architecture Auditing", rateIN: 3999, rateGL: 129, marketIN: 12000, marketGL: 399 }
+      ]
+    }
+  ];
 
-  const [selected, setSelected] = useState([]);
-  const [openCategory, setOpenCategory] = useState(null);
-
-  const toggleService = (id) => {
-    setSelected(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
+  const handleToggle = (item, catTitle) => {
+    const serviceKey = `${catTitle} - ${item.name}`;
+    setSelectedServices(prev =>
+      prev.includes(serviceKey) ? prev.filter(s => s !== serviceKey) : [...prev, serviceKey]
+    );
   };
 
   const calculateTotal = () => {
-    let total = 0;
-    serviceCategories.forEach(cat => {
+    let priceSum = 0;
+    customServiceData.forEach(cat => {
       cat.items.forEach(item => {
-        if (selected.includes(item.id)) {
-          total += (mode === 'india' ? item.priceIN : item.priceGL);
+        const serviceKey = `${cat.title} - ${item.name}`;
+        if (selectedServices.includes(serviceKey)) {
+          priceSum += mode === 'india' ? item.rateIN : item.rateGL;
         }
       });
     });
-    return total;
+    return priceSum;
   };
-  
-    return (
-    <div className="mt-20 w-full max-w-7xl mx-auto p-6 md:p-10 rounded-3xl bg-slate-900/60 border border-slate-700 backdrop-blur-xl shadow-2xl">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-        <div>
-          <h3 className="text-3xl font-extrabold text-white">Build Your Custom Bundle</h3>
-          <p className="text-slate-400">Click a category to expand and select specific tasks.</p>
-        </div>
-        <button onClick={() => setSelected([])} className="text-xs font-bold text-slate-500 hover:text-red-400 flex items-center gap-1 uppercase tracking-widest transition-colors"><X size={14}/> Reset Selection</button>
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
+  const handleSendInquiry = () => {
+    const sum = calculateTotal();
+    const phone = "918850739933";
+    const textBody = `*Custom Component List Request* 🚀\n\n*Selected Services:* \n${selectedServices.map((s, idx) => `${idx + 1}. ${s}`).join("\n")}\n\n*Estimated Quote:* ${currencySymbol}${sum.toLocaleString()}`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(textBody)}`, '_blank');
+  };
+
+  return (
+    <div className="w-full bg-[#050c18] border border-slate-800 rounded-3xl p-4 md:p-8 shadow-2xl mt-16 font-sans">
+      <div className="text-center md:text-left mb-10 border-b border-slate-800 pb-6">
+        <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">Individual Component Builder</h3>
+        <p className="text-slate-400 text-sm mt-1">Select standalone tasks below. Enjoy total round-the-clock budget flexibility with zero commitment.</p>
       </div>
 
-      {/* Main categories container scaled to match layout bounds */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch w-full">
-        {serviceCategories.map((cat, idx) => (
-          <div key={idx} className="border border-slate-800 rounded-2xl overflow-hidden bg-slate-900/40 flex flex-col w-full">
-            <button 
-              onClick={() => setOpenCategory(openCategory === idx ? null : idx)}
-              className="w-full p-5 flex justify-between items-center hover:bg-slate-800/50 transition-colors"
+      <div ref={containerRef} className="flex flex-col lg:flex-row gap-8 relative items-start">
+        {/* LEFT COLUMN STICKY MAP ROUTER NAVIGATION BAR */}
+        <div className="w-full lg:w-[320px] bg-[#0f2440]/60 backdrop-blur-md border border-slate-700/60 p-4 rounded-2xl lg:sticky lg:top-28 z-30 space-y-1">
+          <p className="text-[10px] uppercase font-black tracking-widest text-cyan-400 px-3 mb-3">Jump To Categories</p>
+          {customServiceData.map((cat, i) => (
+            <button
+              key={i}
+              onClick={() => scrollToSection(cat.id)}
+              className="w-full text-left text-xs md:text-sm font-bold text-slate-400 hover:text-cyan-400 hover:bg-slate-800/40 px-3 py-2.5 rounded-xl transition-all truncate block"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold">{idx + 1}</div>
-                <span className="text-xl font-bold text-white">{cat.category}</span>
-              </div>
-              {openCategory === idx ? <Minus className="text-slate-500" /> : <Plus className="text-cyan-400" />}
+              &bull; {cat.title}
             </button>
+          ))}
+        </div>
 
-            {openCategory === idx && (
-              /* Upgraded to fully responsive grid so items have maximum breathing room */
-              <div className="p-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 bg-slate-950/50 border-t border-slate-800 animate-in slide-in-from-top-2 duration-300 w-full">
-                {cat.items.map(item => {
-                  const mPrice = mode === 'india' ? item.marketPriceIN : item.marketPriceGL;
-                  const sPrice = mode === 'india' ? item.priceIN : item.priceGL;
+        {/* RIGHT COLUMN INDIVIDUAL SERVICE DETAIL GRID SCROLLS */}
+        <div className="flex-1 w-full space-y-12">
+          {customServiceData.map((cat, i) => (
+            <div id={cat.id} key={i} className="bg-[#0f2440]/20 border border-slate-800 p-6 rounded-2xl scroll-mt-36">
+              <h4 className="text-lg font-extrabold text-white mb-6 flex items-center gap-3 border-b border-slate-800/60 pb-3">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></span>
+                {cat.title}
+              </h4>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4">
+                {cat.items.map((item, idx) => {
+                  const serviceKey = `${cat.title} - ${item.name}`;
+                  const isChecked = selectedServices.includes(serviceKey);
+                  const mPrice = mode === 'india' ? item.marketIN : item.marketGL;
+                  const sPrice = mode === 'india' ? item.rateIN : item.rateGL;
 
                   return (
-                    <div 
-                      key={item.id}
-                      onClick={() => toggleService(item.id)}
-                      className={`p-4 rounded-xl border-2 cursor-pointer transition-all flex justify-between items-center ${selected.includes(item.id) ? 'border-cyan-400 bg-cyan-400/10' : 'border-slate-800 bg-slate-900/80 hover:border-slate-600'}`}
+                    <div
+                      key={idx}
+                      onClick={() => handleToggle(item, cat.title)}
+                      className={`p-4 rounded-xl border-2 transition-all cursor-pointer flex flex-col justify-between ${isChecked ? 'border-cyan-400 bg-cyan-400/5 shadow-[0_0_15px_rgba(34,211,238,0.1)]' : 'border-slate-800 bg-slate-900/40 hover:border-slate-700'}`}
                     >
-                      <div className="flex-1 min-w-0">
-                        <div className="text-white font-bold text-sm leading-tight mb-2 break-words">{item.name}</div>
-                        <div className="flex flex-col gap-0.5">
-                          <span className="text-[10px] text-slate-500 line-through decoration-red-500/50">
-                            Market: {currencySymbol}{mPrice.toLocaleString()}
-                          </span>
-                          <span className="text-cyan-400 font-mono text-xs font-bold">
-                            Rate: {currencySymbol}{sPrice.toLocaleString()}
-                          </span>
+                      <div className="flex justify-between items-start gap-2 mb-4">
+                        <span className="text-white font-bold text-xs md:text-sm leading-snug">{item.name}</span>
+                        <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border ${isChecked ? 'bg-cyan-500 border-cyan-500' : 'border-slate-600'}`}>
+                          {isChecked && <Check size={10} className="text-white" strokeWidth={4} />}
                         </div>
                       </div>
-                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ml-2 flex-shrink-0 ${selected.includes(item.id) ? 'bg-cyan-500 border-cyan-500' : 'border-slate-600'}`}>
-                        {selected.includes(item.id) && <Check size={12} className="text-white" strokeWidth={4} />}
+
+                      <div className="flex items-baseline justify-between mt-auto pt-2 border-t border-slate-900">
+                        <span className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">
+                          Market: {currencySymbol}{mPrice.toLocaleString()}
+                        </span>
+                        <span className="text-cyan-400 font-mono font-black text-sm">
+                          {currencySymbol}{sPrice.toLocaleString()}
+                        </span>
                       </div>
                     </div>
                   );
                 })}
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-slate-900 to-blue-900/30 border border-cyan-500/30 flex flex-col md:flex-row justify-between items-center gap-8 w-full">
+      {/* STICKY ACCUMULATOR TOTAL CHECKOUT FLOATING FOOTER BANNER CARDS */}
+      <div className="mt-12 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-slate-950 to-blue-950/40 border border-cyan-500/30 flex flex-col md:flex-row justify-between items-center gap-6 w-full relative z-40">
         <div className="text-center md:text-left">
-          <div className="text-cyan-400 text-sm font-bold uppercase tracking-widest mb-1">Your Custom Selection</div>
-          <div className="text-5xl font-black text-white">{currencySymbol}{calculateTotal().toLocaleString()}</div>
-          <div className="text-slate-400 text-sm mt-2">{selected.length} services selected</div>
+          <span className="text-[10px] uppercase font-black text-cyan-400 tracking-widest block mb-1">Accumulated Selection Portfolio</span>
+          <div className="text-3xl md:text-5xl font-black text-white">{currencySymbol}{calculateTotal().toLocaleString()}</div>
+          <span className="text-slate-400 text-xs mt-1 block font-medium">{selectedServices.length} direct components checked</span>
         </div>
-        <button 
-          onClick={() => {
-            const total = calculateTotal();
-            const serviceCount = selected.length;
-            const message = `Hi Digital Media Bombay! 🛠️ I've built a *Custom Bundle* with ${serviceCount} services. \n\n*Total Estimated Price:* ${currencySymbol}${total.toLocaleString()}\n\nI'd like to discuss the execution!`;
-            window.open(`https://wa.me/918850739933?text=${encodeURIComponent(message)}`, '_blank');
-          }}
-          className="w-full md:w-auto px-12 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl font-black text-white shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:scale-105 transition-transform flex items-center justify-center gap-3"
+        <button
+          disabled={selectedServices.length === 0}
+          onClick={handleSendInquiry}
+          className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-lg disabled:opacity-20 transition-all hover:scale-105 flex items-center justify-center gap-2"
         >
-          Confirm & Get Quote <ArrowRight size={20} />
+          Confirm Operations Request <Send size={14} />
         </button>
       </div>
     </div>
@@ -6089,174 +6108,141 @@ const CookieBanner = () => {
     </div>
   );
 };
-function FullPricingPage({ bundlesData, pricingMode, currencySymbol, openBundles, onContactClick }) {
+function FullPricingPage({ pricingMode, currencySymbol, onContactClick }) {
   
-  const exclusiveStandaloneServices = [
-    {
-      category: "Quick Technical Fixes (Low Budget)",
-      items: [
-        { name: "Website SSL Security Certificate Install", priceIN: "999", priceGL: "29", mIN: "3,000", mGL: "$99", d: "Fixes the 'Not Secure' browser warning instantly." },
-        { name: "Domain Email Address Setup (Google Workspace)", priceIN: "1,200", priceGL: "39", mIN: "4,000", mGL: "$120", d: "Create professional business emails matching your link." },
-        { name: "Website Text Spelling & Link Fix Audit", priceIN: "1,499", priceGL: "49", mIN: "5,000", mGL: "$150", d: "Cleans broken menu paths and text mistakes." },
-        { name: "Social Media Profile Smart Link Setup", priceIN: "999", priceGL: "25", mIN: "2,500", mGL: "$75", d: "One simple button link holding all your store profiles." },
-        { name: "Google Analytics Verification Tag Embed", priceIN: "1,800", priceGL: "59", mIN: "4,500", mGL: "$140", d: "Injects basic tracking visitor counts to your domain code." }
-      ]
-    },
-    {
-      category: "Essential Business Upgrades (Middle Budget)",
-      items: [
-        { name: "Spoken Voice Search Text Restructuring", priceIN: "4,500", priceGL: "149", mIN: "12,000", mGL: "$399", d: "Changes text flow into simple question patterns for phone voice search bots." },
-        { name: "Google Local Business Map Verification Support", priceIN: "3,999", priceGL: "129", mIN: "10,000", mGL: "$300", d: "Guides your storefront branch registration to appear on area phone maps." },
-        { name: "Single Promo Flyer Vector Graphic Set", priceIN: "2,499", priceGL: "89", mIN: "7,000", mGL: "$200", d: "Clear custom marketing images declaring sales or discounts." },
-        { name: "Old Contact Excel List Database Reactivation Script", priceIN: "6,000", priceGL: "199", mIN: "18,000", mGL: "$500", d: "Drafts high-trust value check-in messages to revive cold client notes." },
-        { name: "Privacy Policy Legal Text Framework Generation", priceIN: "2,999", priceGL: "99", mIN: "9,000", mGL: "$250", d: "Standard secure legal safety disclosures for compliance." }
-      ]
-    },
-    {
-      category: "Advanced Authority Multipliers (Middle Budget)",
-      items: [
-        { name: "LinkedIn Executive Profile Bio Authority Rewrite", priceIN: "5,500", priceGL: "189", mIN: "15,000", mGL: "$450", d: "Changes boring digital resume descriptions into direct value statements." },
-        { name: "Plain English Problem-Solving Article Writing", priceIN: "3,499", priceGL: "119", mIN: "9,500", mGL: "$300", d: "Long helpful guides addressing casual questions typed by real buyers." },
-        { name: "Automated Lead Intake Customer Welcome Email", priceIN: "4,200", priceGL: "139", mIN: "11,000", mGL: "$350", d: "Sends greeting packs automatically when a visitor drops details." },
-        { name: "Mobile Phone Navigation Dropdown Simplification Menu", priceIN: "4,999", priceGL: "169", mIN: "14,000", mGL: "$400", d: "Deletes cluttered lists to build 3 clear taps layout lines on mobile grids." },
-        { name: "Competitor Traffic Source Mapping Data Scan", priceIN: "5,999", priceGL: "199", mIN: "16,000", mGL: "$450", d: "Discovers which terms bring active customers to rivals." }
-      ]
-    },
-    {
-      category: "Premium Enterprise Firepower (Higher Budget)",
-      items: [
-        { name: "Server-to-Server Secured Ad Conversion API Sync", priceIN: "14,000", priceGL: "499", mIN: "45,000", mGL: "$1,500", d: "Bypasses mobile web tracking pixel blocks to read true ad sales logs." },
-        { name: "AI Voice Calling Agent Dialect Script Training", priceIN: "18,000", priceGL: "599", mIN: "50,000", mGL: "$1,800", d: "Configures friendly tone phone assistants to book clients directly." },
-        { name: "Location-Responsive Dynamic Country Headline Network", priceIN: "25,000", priceGL: "899", mIN: "70,000", mGL: "$2,400", d: "Shifts title quotes automatically depending on visitor city markers." },
-        { name: "Frictionless One-Click Mobile Checkout Catalog Grid", priceIN: "22,000", priceGL: "799", mIN: "60,000", mGL: "$2,000", d: "Strips billing fields on smartphone frames to prevent shopping cart drops." },
-        { name: "Un-Killable Permanent Search Index Code Injection", priceIN: "30,000", priceGL: "1,199", mIN: "90,000", mGL: "$3,500", d: "Maps backend structured records to protect visibility profiles from update loss." }
-      ]
-    }
-  ];
+  const masterTwelveBundles = {
+    india: [
+      // ROW 1: LOW BUDGET SYSTEMS
+      { name: "Local Listing Standard Suite", budget: "low", market: "20,000", price: "9,999", p: "Establish a flawless local area footprint.", f: ["1. Complete GMB Map Setups", "2. Localized Citations Data Entry", "3. Area Intent Keyword Injections", "4. Reviews Quick Automation Links", "5. 5 Simple Image Grid Uploads", "6. Working Hours Map Verifications", "7. Local Competitors Traffic Maps", "8. Basic Description Copy Tweaks", "9. Monthly Map Activity Data Sheets"] },
+      { name: "Startup Launch Framework", budget: "low", market: "25,000", price: "12,499", p: "Launch your business storefront fast.", f: ["1. 1-Page Static Landing Layout", "2. SSL Security Canvas Locks", "3. Domain Redirection Routing", "4. Quick Email Address Configuration", "5. Profile Handle Sync Check", "6. Footer Copyright Adjustments", "7. Simple Contact Data Routing", "8. 3 Social Asset Banner Images", "9. Speed Diagnostics Code Run"] },
+      { name: "Social Activity Kickstart", budget: "low", market: "30,000", price: "14,999", p: "Keep social grids active daily.", f: ["1. 10 Creative Feed Static Images", "2. Target Audio Sound Matchings", "3. Viral Trend Discovery Audits", "4. Profile Bio Statement Cleanups", "5. Grid Styling Uniform Design", "6. Image Alt-Text Optimization", "7. Comments Auto-Replies Templates", "8. Quick Tag Research Packs", "9. Weekly Flow Performance Sheets"] },
+      { name: "Database Reactivation Pack", budget: "low", market: "35,000", price: "16,500", p: "Revive historic cold client lists.", f: ["1. Old Excel Contacts Audit Scan", "2. Clean Value Text Message Scripts", "3. WhatsApp Business Basic Linking", "4. Email Sequence Delivery Setup", "5. Frictionless Contact Tag Entries", "6. Special Offer Coupon Design", "7. Drop-off Lead Filter Sortings", "8. Call to Action Response Hooks", "9. Inbound Inquiries Verification Sheets"] },
 
-  const currentTierLists = bundlesData[pricingMode];
+      // ROW 2: MID BUDGET SYSTEMS
+      { name: "Dynamic Brand Expansion Hub", budget: "mid", market: "60,000", price: "24,999", p: "Establish industry trust lines online.", f: ["1. Multi-Page Dynamic Web Engine", "2. Corporate Brand Visual Guideline", "3. UI/UX Interface Spacing Reviews", "4. Dynamic Accordion FAQ Sheets", "5. Blog Framework Template Builds", "6. Broken Code Error Exclusions", "7. Navigation Menu Clutter Cleanup", "8. 5 Custom Icons Vector Design", "9. Central Data Traffic Analytics Setup"] },
+      { name: "Organic Traffic Authority Lab", budget: "mid", market: "70,000", price: "29,999", p: "Rank naturally on top search blocks.", f: ["1. Google Front Page SEO Mappings", "2. 4 Plain English Help Articles", "3. Position Zero Featured Snippets", "4. High-Trust Website Backlinks", "5. Semantic Search Terms Syncing", "6. Core Web Vitals Loading Sweeps", "7. Image Alt Schema Code Embeds", "8. Content Pillar Architecture Plans", "9. Monthly Search Progress Ledger"] },
+      { name: "Direct Response Lead Inbound", budget: "mid", market: "80,000", price: "34,999", p: "Inbound client inquiries tracking.", f: ["1. Meta Direct Response Ad Runs", "2. High-Converting Sales Form Blocks", "3. Meta Pixel Tracking Verification", "4. Ad Spend Overrun Guardrails", "5. Target Location Geometry Filters", "6. Retargeting Ad Audience Bundles", "7. Ad Creative Variants Split Testing", "8. Negative Search Clicks Waste Trims", "9. Daily Lead Logging Automation Systems"] },
+      { name: "Video Hook Growth Machine", budget: "mid", market: "90,000", price: "39,999", p: "Scale attention via phone short cuts.", f: ["1. 8 Mobile Reels Video Assemblies", "2. Scroll-Stopper Intro Visual Hooks", "3. Kinetic Text Overlay Scripting", "4. SFX Multi-Layer Audio Mixes", "5. YouTube Shorts适配 Adaptation", "6. Color Grading Tone Enhancements", "7. Video End-Screen Logo Loops", "8. Caption Writing Layout Formats", "9. Video Clicks Engagement Data Sheet"] },
+
+      // ROW 3: HIGH BUDGET ENTERPRISE SYSTEMS
+      { name: "E-Commerce Commerce Empire Setup", budget: "high", market: "1,50,000", price: "64,999", p: "Scale international retail store grids.", f: ["1. Full Shopify Store Grid Building", "2. Product Grid Filter Reorganization", "3. Secure Multi-Currency Gateway Sync", "4. Abandoned Carts Email Sequences", "5. Automated Order Invoicing PDFs", "6. Real-Time Inventory Database Links", "7. Product Description Benefit Writes", "8. Storefront Review Import Setup", "9. Frictionless One-Click Mobile Checkout"] },
+      { name: "Voice Search & AI Seeding Moat", budget: "high", market: "1,80,000", price: "79,999", p: "Win spoken assistant visibility lines.", f: ["1. ChatGPT Semantic Citation Injection", "2. Alexa Spoken Answer Optimizations", "3. Siri Conversational Phrase Sync", "4. Speakable Properties JSON Code Maps", "5. llm.txt Markdown Information Manifests", "6. Perplexity Cite Source Data Matching", "7. AI Scraper Bot Security Blocking", "8. Multi-Regional Directory Entity Setup", "9. AI Summary Mentions Tracking Ledger"] },
+      { name: "AI Telephone Calling Strike Suite", budget: "high", market: "2,20,000", price: "99,999", p: "Autonomous voice assistant operations.", f: ["1. Inbound Call Automation Assistants", "2. Outbound Scheduling Calling Engines", "3. Direct Calendar Database Hooks", "4. Missed Call Auto-Callback Routing", "5. Multi-Language Voice Dialect Models", "6. Natural Tone Dialogue Adaptations", "7. Real-Time CRM Telephone Audio Logs", "8. IVR Interactive Menu Tree Mapping", "9. Automated Support Qualification Paths"] },
+      { name: "Full-Stack Conversational Enterprise", budget: "high", market: "3,00,000", price: "1,49,999", p: "Absolute omni-channel system control.", f: ["1. Server-Side Conversion API Integrations", "2. Secure Customer Database Encryption Vaults", "3. Location-Responsive Dynamic Page Networks", "4. Multi-Platform Handles Synchronization Loops", "5. Automated Welcome Intake Document Sheets", "6. Custom Interactive KPI Tracking Portals", "7. Executive Authority Bio Optimization Reviews", "8. Digital News Media Press Release Kits", "9. 1-on-1 Direct Master Architect Consultation"] }
+    ],
+    global: [
+      // ROW 1: LOW BUDGET SYSTEMS (GLOBAL)
+      { name: "Local Map Entry Essentials", budget: "low", market: "500", price: "249", p: "Dominate neighborhood map lists.", f: ["1. GMB Map Profile Initialization", "2. City Meta Citations Submissions", "3. Area Intent Keywords Inventory", "4. Map Directory Record Alignments", "5. Operating Hours Verification Check", "6. 5 Clean Grid Location Images", "7. Customer Review Response Templates", "8. Geocoded Media Metadata Uploads", "9. Monthly Location View Ledger Logs"] },
+      { name: "Sleek Domain Launch Layout", budget: "low", market: "700", price: "349", p: "Launch clean responsive links fast.", f: ["1. 1-Page Static Landing Build", "2. SSL Server Security Canvas Locks", "3. Custom Business Email Setup Workspace", "4. Broken Menu Path Error Corrections", "5. Core Redirect URL Redirection Rules", "6. Profile Link Bio Tree Mapping", "7. Touch Screen Layout Sizing Checks", "8. Baseline Typography Scale Alignments", "9. Front-End Loading Diagnostic Code Trims"] },
+      { name: "Social Feeds Quick Kickstart", budget: "low", market: "850", price: "399", p: "Maintain highly consistent grid content.", f: ["1. 10 Custom Social Static Graphics", "2. Grid Visual Canvas Spacing Rules", "3. Platform Trend Adaptations Analytics", "4. Profile Bio Message Adjustments", "5. Social Feed Posting Scheduler Links", "6. Image Compression Web Processing", "7. Hashtag Metrics Cluster Inventory", "8. Interactive Story Frame Post Sets", "9. Weekly Engagement Summary Sheets"] },
+      { name: "Database Reactivation Blueprint", budget: "low", market: "999", price: "449", p: "Revive past cold prospect records.", f: ["1. Contacts Excel List Database Sweeps", "2. Value-First Direct Text Message Scripts", "3. Email Sequence Sequence Automation Set", "4. Call to Action Response Hooks", "5. Coupon Offer Banner Graphical Cards", "6. Leads Validation Filter Tags Entries", "7. Client Intake Validation Code Forms", "8. Inbound Follow-up Delay Timing Checks", "9. Restored Contacts Revenue Ledger Sheets"] },
+
+      // ROW 2: MID BUDGET SYSTEMS (GLOBAL)
+      { name: "Authority Platform Developer Base", budget: "mid", market: "1,500", price: "699", p: "Establish world-class corporate spaces.", f: ["1. Multi-Page Dynamic Engine Build", "2. Figma User Spacing Layout Blueprints", "3. Brand Voice Communication Guidelines", "4. Accordion FAQ Schema Code Embeds", "5. Technical Code Error Rectifications", "6. Unified Media Library Compression", "7. Multi-Device Layout Fluid Scaling", "8. Desktop vs Mobile Rescaling Sweeps", "9. Central Workspace Traffic Dashboard Setup"] },
+      { name: "Organic Search Authority Vault", budget: "mid", market: "1,800", price: "799", p: "Own premier front page link rankings.", f: ["1. Google Page 1 SEO Structure Maps", "2. 4 Plain English Help Article Writes", "3. Highlighted Snippets Position Zero Setup", "4. Trusted High-Authority Directory Links", "5. Search Term Relevance Index Auditing", "6. Website Architecture Content Spacing", "7. Robots.txt Crawl Validation Controls", "8. Metadata Property Description Tuning", "9. Monthly Domain Traffic Statistics Logs"] },
+      { name: "Direct Response Conversion Engine", budget: "mid", market: "2,200", price: "999", p: "Generate verified customer pipeline inquiries.", f: ["1. Meta Direct Response Form Campaigns", "2. Ad Creatives High Focus Form Blocks", "3. Meta Pixels Setup Code Auditing", "4. Advertising Expense Safe Guardrails Setup", "5. Behavioral Retargeting Audience Pools", "6. Target Audience Location Geometry Mapping", "7. Ad Creative Text Variation Split Tests", "8. Negative Spending Waste Keyword Filters", "9. Real-Time Lead Logs Inbound Dashboards"] },
+      { name: "Viral Short Video Machine", budget: "mid", market: "2,500", price: "1,199", p: "Arrest attention on modern phone scrolls.", f: ["1. 8 Mobile Reels Video Assembly Cuts", "2. Kinetic Subtitle Words Text Overlays", "3. Scroll-Stopper Kinetic Hook Frameworks", "4. Sound Effects Sound Design Tracks Mix", "5. YouTube Shorts Format Rescale Outputs", "6. Corporate Identity Logo Outros Animation", "7. Cinematic Footage Grading Color Curves", "8. High Focus Caption Writing Formats", "9. Video Engagement Retention Analytics Logs"] },
+
+      // ROW 3: HIGH BUDGET ENTERPRISE SYSTEMS (GLOBAL)
+      { name: "Global E-Comm Catalog Empire", budget: "high", market: "4,000", price: "1,899", p: "Zero friction cross border retail checkouts.", f: ["1. Shopify Complex Catalog Framework Setup", "2. Responsive Product Grids Nesting Cleanup", "3. Multilingual Multi-Currency Gateway Sync", "4. Shopping Cart Abandonments Email Loops", "5. Invoice Generation Automation API Links", "6. Real-Time Stock Database Synchronization", "7. Product Benefits Description Text Tuning", "8. Customer Review Import Automation Nodes", "9. Frictionless One-Click Mobile Checkout Layouts"] },
+      { name: "Universal AI Overviews GEO Moat", budget: "high", market: "4,500", price: "1,999", p: "Secure high-value ChatGPT entity citations.", f: ["1. ChatGPT Semantic Identity Citation Seeding", "2. Amazon Alexa Spoken Answers Formats", "3. Apple Siri Definitive Intent Matching Codes", "4. Speakable Properties Schema Code Injection", "5. llm.txt Markdown Data Manifest Setup", "6. Perplexity Engine Sourcing Citation Mapping", "7. Neural Network Crawl Entity Verification", "8. Rich JSON-LD Micro-Data Structured Arrays", "9. Data Scraper Bot Unauthorized Crawl Access Blocks"] },
+      { name: "AI Voice Agent Calling Pipeline", budget: "high", market: "5,500", price: "2,499", p: "24/7 calendar database bookings support.", f: ["1. Inbound Call Automated Support Receptionists", "2. Outbound Scheduling Appointment Calling Agents", "3. CRM Calendar Direct Integration Bridges", "4. Missed Call Auto-Callback Phone Triggers", "5. Conversational Voice Natural Tone Training", "6. Multi-Language Audio Dialect Vectors Setup", "7. Real-Time CRM Telephone Call Logs Data", "8. Spoken IVR Interactive Menu Tree Builders", "9. Autonomous Customer Intake Qualification Paths"] },
+      { name: "Sovereign Omni-Channel Enterprise", budget: "high", market: "8,000", price: "3,999", p: "The ultimate outsourced tech strike directorate.", f: ["1. Server-to-Server GA4 Attribution Logs APIs", "2. Secure Database Files Encryption Vault Fields", "3. Location-Responsive Dynamic Landing Page Variant Setups", "4. Cross-Channel Profile Handles Sync Tracking Loops", "5. Zero Touch Automated Client Intake System Sheets", "6. Multi-Regional Server Speed Delivery Cloud Networks", "7. News Media Press Release Networks Distribution", "8. Master Strategy Slack Channel Direct Linking Access", "9. 1-on-1 Consultation Access with Primary Founders"] }
+    ]
+  };
+
+  const activeBundleArray = masterTwelveBundles[pricingMode] || masterTwelveBundles.india;
 
   return (
     <div className="bg-[#0a192f] min-h-screen text-slate-200 py-12 selection:bg-cyan-500 selection:text-white">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8">
         
         {/* SECTION 1: MASTER BUNDLES GRID */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs block mb-2">COMPLETE GROWTH SUITES</span>
           <h1 className="text-4xl md:text-6xl font-black text-white">THE 12 OFFICIAL MASTER PLANS</h1>
-          <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Fully stacked bundles containing 10 precise service tasks. Pick the perfect fit for your operating tier scale.</p>
+          <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Fully stacked bundles containing 9 precise service tasks. Pick the perfect fit for your operating tier scale.</p>
         </div>
 
-        {Object.keys(currentTierLists).map((tierKey) => {
-          const tier = currentTierLists[tierKey];
-          return (
-            <div key={tierKey} className="mb-20">
-              <div className="border-b border-slate-800 pb-4 mb-10">
-                <h2 className="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-3">
-                  <div className="w-3 h-8 bg-amber-400 rounded-full"></div> {tier.title}
-                </h2>
-                <p className="text-slate-400 text-sm mt-1">{tier.subtitle}</p>
-              </div>
+        {/* 4 COLUMNS FULLY RESPONSIVE ULTRA PLATINUM PRICING LAYOUT GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch w-full">
+          {activeBundleArray.map((pkg, idx) => (
+            <div 
+              key={idx} 
+              className={`bg-[#0f2440]/30 border p-5 md:p-6 rounded-2xl flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 shadow-xl group relative ${
+                pkg.budget === 'low' ? 'border-slate-800' : pkg.budget === 'mid' ? 'border-slate-700/80 shadow-[0_0_15px_rgba(6,182,212,0.05)]' : 'border-amber-500/40 shadow-[0_0_20px_rgba(251,191,36,0.1)]'
+              }`}
+            >
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <span className={`text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded ${
+                    pkg.budget === 'low' ? 'bg-slate-800 text-slate-400' : pkg.budget === 'mid' ? 'bg-cyan-500/10 text-cyan-400' : 'bg-amber-400/10 text-amber-400'
+                  }`}>
+                    {pkg.budget} tier
+                  </span>
+                  <span className="text-[9px] font-mono text-slate-500">SYSTEM {idx + 1}</span>
+                </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {tier.packages.map((pkg, idx) => (
-                  <div key={idx} className="bg-[#0f2440]/30 border border-slate-700/60 p-6 md:p-8 rounded-2xl flex flex-col justify-between hover:border-cyan-400/50 transition-all duration-300 shadow-xl group">
-                    <div>
-                      <div className="flex justify-between items-start mb-4">
-                        <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{pkg.name}</h3>
-                        <span className="text-[10px] font-mono bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">10 TASKS SYSTEM</span>
-                      </div>
-                      
-                      <div className="flex items-baseline gap-2 py-3 border-y border-slate-800/80 mb-6">
-                        <span className="text-xs text-slate-500 font-bold uppercase tracking-tighter">Direct Rate:</span>
-                        <span className="text-2xl font-black text-amber-400">
-                          {currencySymbol}{parseFloat(pkg.price.replace(/[^\d.]/g, '')).toLocaleString()}
-                        </span>
-                        <span className="text-slate-500 text-xs">/month</span>
-                        <span className="text-slate-500 text-[10px] line-through ml-auto">Market: {currencySymbol}{pkg.marketPrice.replace(/[^\d.]/g, '')}</span>
-                      </div>
-
-                      <p className="text-slate-400 text-xs italic mb-4 leading-relaxed">"{pkg.desc}"</p>
-                      
-                      <ul className="space-y-2.5 mb-8">
-                        {pkg.features.map((feat, i) => (
-                          <li key={i} className="text-xs text-slate-300 flex items-start gap-2.5 leading-tight">
-                            <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full mt-1.5 flex-shrink-0 shadow-[0_0_6px_#22d3ee]"></div>
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <button 
-                      onClick={() => {
-                        const message = `Hi DMB! 🚀 I want to deploy the *${pkg.name}* (${currencySymbol}${pkg.price.replace(/[^\d.]/g, '')}) from the pricing link. Let's launch.`;
-                        window.open(`https://wa.me/918850739933?text=${encodeURIComponent(message)}`, '_blank');
-                      }}
-                      className="w-full py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 font-bold text-white text-xs rounded-xl shadow-md uppercase tracking-wider group-hover:from-cyan-500 group-hover:to-blue-500 transition-all transform active:scale-95"
-                    >
-                      Deploy This Master Bundle
-                    </button>
+                <h3 className="text-lg font-black text-white group-hover:text-cyan-400 transition-colors leading-tight mb-3 break-words min-h-[48px] flex items-center">
+                  {pkg.name}
+                </h3>
+                
+                <div className="flex flex-col gap-0.5 py-2.5 border-y border-slate-800/80 mb-4 bg-slate-950/20 px-3 rounded-xl">
+                  <div className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter flex justify-between">
+                    <span>Market Rate:</span>
+                    <span className="line-through decoration-red-500/50">{currencySymbol}{pkg.market}</span>
                   </div>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-
-        {/* SECTION 2: EXCLUSIVE STANDALONE SERVICES CATALOG */}
-        <div className="mt-32 text-center mb-16">
-          <span className="text-amber-400 font-bold tracking-widest uppercase text-xs block mb-2">INDIVIDUAL COMPONENT CART</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white">20 EXCLUSIVE STANDALONE TASKS</h2>
-          <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Need a rapid standalone upgrade? Order localized components with total budget flexibility below.</p>
-        </div>
-
-        <div className="space-y-12">
-          {exclusiveStandaloneServices.map((cat, idx) => (
-            <div key={idx} className="bg-[#0f2440]/10 border border-slate-800 p-6 md:p-8 rounded-3xl">
-              <h3 className="text-slate-400 font-black text-xs uppercase tracking-widest mb-6 flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-cyan-400"></div> {cat.category}
-              </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {cat.items.map((item, itemIdx) => {
-                  const sPrice = pricingMode === 'india' ? item.priceIN : item.priceGL;
-                  const mPrice = pricingMode === 'india' ? item.mIN : item.mGL;
-                  return (
-                    <div key={itemIdx} className="bg-slate-950/40 border border-slate-800/80 p-5 rounded-xl flex flex-col justify-between hover:border-amber-500/40 transition-colors group">
-                      <div>
-                        <h4 className="text-white font-bold text-sm group-hover:text-amber-400 transition-colors leading-snug mb-2">{item.name}</h4>
-                        <p className="text-slate-400 text-xs leading-relaxed mb-4">{item.d}</p>
-                      </div>
-
-                      <div className="flex items-end justify-between pt-3 border-t border-slate-900 mt-4">
-                        <div>
-                          <span className="text-[9px] text-slate-600 font-bold block uppercase tracking-tighter">Market: {currencySymbol}{mPrice}</span>
-                          <span className="text-lg font-mono font-black text-cyan-400">{currencySymbol}{parseFloat(sPrice.replace(/,/g, '')).toLocaleString()}</span>
-                        </div>
-                        <button 
-                          onClick={() => {
-                            const message = `Hi! 🛠️ I need to purchase the task: *${item.name}* for *${currencySymbol}${sPrice}*. Let's execute.`;
-                            window.open(`https://wa.me/918850739933?text=${encodeURIComponent(message)}`, '_blank');
-                          }}
-                          className="p-2 rounded-lg bg-slate-800 border border-slate-700 text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all flex items-center justify-center"
-                        >
-                          <Send size={14} />
-                        </button>
-                      </div>
+                  <div className="flex items-baseline justify-between mt-0.5">
+                    <span className="text-[10px] text-cyan-400 font-bold uppercase tracking-tighter">DMB Rate:</span>
+                    <div>
+                      <span className="text-2xl font-black text-white font-mono">{currencySymbol}{pkg.price}</span>
+                      <span className="text-slate-500 text-[10px] ml-0.5">/mo</span>
                     </div>
-                  );
-                })}
+                  </div>
+                </div>
+
+                <p className="text-slate-400 text-[11px] italic mb-4 leading-relaxed min-h-[36px]">
+                  "{pkg.p}"
+                </p>
+                
+                <ul className="space-y-2 mb-6 border-t border-slate-900/60 pt-4">
+                  {pkg.f.map((feat, i) => (
+                    <li key={i} className="text-xs text-slate-300 flex items-start gap-2 leading-tight">
+                      <div className="w-1 h-1 bg-cyan-400 rounded-full mt-1.5 flex-shrink-0 shadow-[0_0_4px_#22d3ee]"></div>
+                      <span className="truncate block" title={feat}>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
+
+              <button 
+                onClick={() => {
+                  const message = `Hi DMB! 🚀 I want to deploy the *${pkg.name}* (${currencySymbol}${pkg.price}) master bundle from your network link. Let's initialize execution tasks.`;
+                  window.open(`https://wa.me/918850739933?text=${encodeURIComponent(message)}`, '_blank');
+                }}
+                className={`w-full py-3 font-bold text-center text-xs rounded-xl shadow-md uppercase tracking-wider transition-all transform active:scale-95 ${
+                  pkg.budget === 'high' ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black font-black' : 'bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 hover:text-white'
+                }`}
+              >
+                Deploy Master Suite
+              </button>
             </div>
           ))}
         </div>
 
-        {/* FOOTER CTA CALL CARD */}
-        <div className="mt-24 p-8 md:p-12 bg-gradient-to-r from-slate-900 to-blue-950/40 border border-cyan-500/20 rounded-3xl text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/aiback.mp4')] opacity-5 pointer-events-none"></div>
-          <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Want a Custom Hybrid Strategy Blueprint?</h3>
-          <p className="text-slate-400 max-w-xl mx-auto text-xs md:text-sm leading-relaxed mb-8">Let's build an exclusive combination setup matching your explicit brand goals at fair rates.</p>
+        {/* SECTION 2: EXCLUSIVE STANDALONE INDIVIDUAL COMPONENT SELECTOR MOUNT */}
+        <div className="mt-32 text-center mb-8">
+          <span className="text-amber-400 font-bold tracking-widest uppercase text-xs block mb-2">INDIVIDUAL COMPONENT CART</span>
+          <h2 className="text-4xl md:text-5xl font-black text-white">180 EXCLUSIVE STANDALONE TASKS</h2>
+          <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Need a rapid standalone upgrade? Order localized components with total budget flexibility below.</p>
+        </div>
+
+        <CustomServiceSelector mode={pricingMode} currencySymbol={currencySymbol} />
+
+        {/* FOOTER CTA CONSULTATION CARD */}
+        <div className="mt-28 p-8 md:p-12 bg-gradient-to-r from-slate-950 to-blue-950/40 border border-cyan-500/20 rounded-3xl text-center relative overflow-hidden">
+          <h3 className="text-2xl md:text-3xl font-black text-white mb-2">Want a Custom Hybrid Strategy Blueprint?</h3>
+          <p className="text-slate-400 max-w-xl mx-auto text-xs md:text-sm leading-relaxed mb-6">Let's build an exclusive combination setup matching your explicit brand goals at fair rates.</p>
           <button onClick={onContactClick} className="px-10 py-4 bg-white text-blue-900 font-black text-xs md:text-sm uppercase tracking-wider rounded-xl shadow-xl hover:bg-slate-100 transition-transform transform hover:scale-105">
             Book Free Audit Consultation
           </button>
@@ -6265,6 +6251,6 @@ function FullPricingPage({ bundlesData, pricingMode, currencySymbol, openBundles
       </div>
     </div>
   );
-};
+}
 // --- THIS MUST BE THE VERY LAST LINE OF THE FILE ---
 export default App;
