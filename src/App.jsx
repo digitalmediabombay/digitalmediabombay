@@ -1413,7 +1413,7 @@ const App = () => {
     icon: <Cpu size={32} className="text-purple-400" />,
     desc: "We set up automated tools that sync your customer lists, fill up files, and handle boring everyday paperwork instantly.",
     color: "purple",
-    img: "https://in.pinterest.com/f3160eb2-92a0-4c6f-be49-147a6a165745",
+    img: "blob:https://in.pinterest.com/f3160eb2-92a0-4c6f-be49-147a6a165745",
     deliverables: ["Automated File Tracking", "Zapier & Make System Linking", "Instant Customer Form Replies", "Data Sorting Automation", "Time-Saving App Syncs"]
   },
   {
