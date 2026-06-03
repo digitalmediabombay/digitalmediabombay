@@ -1404,7 +1404,7 @@ const App = () => {
     icon: <Monitor size={32} className="text-cyan-400" />,
     desc: "We build fast, clean, and reliable business websites and online stores that look professional on mobile phones and desktops.",
     color: "cyan",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1080",
+    img: "https://in.pinterest.com/pin/612419249404452940/",
     deliverables: ["Business Website Setup", "Shopify Online Stores", "WordPress Page Building", "Mobile Phone Screen Styling", "Fast Page Loading Updates"]
   },
   {
