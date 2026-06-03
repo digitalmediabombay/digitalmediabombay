@@ -1112,12 +1112,10 @@ const App = () => {
   // 2. Initialize ALL states
   const [selectedPost, setSelectedPost] = useState(getPostFromUrl());
   const [activePage, setActivePage] = useState(getInitialPage());
-  const [selectedTier, setSelectedTier] = useState(getInitialTier()); 
   const [pricingMode, setPricingMode] = useState('india'); 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLocationLocked, setIsLocationLocked] = useState(true);
   const [currencySymbol, setCurrencySymbol] = useState('₹');
-  const [selectedTier, setSelectedTier] = useState('tier1');
   const [selectedWebType, setSelectedWebType] = useState(null);
 
   // 2. Dynamic SEO & Scroll Logic
@@ -1157,7 +1155,7 @@ const App = () => {
         title: "Join the Cloud Squad | Freelancer Portal | Digital Media Bombay",
         desc: "Are you in the top 1%? Join Mumbai's most elite network of digital creators and developers."
       }
-    };;
+    };
 
     const currentPageData = seoData[activePage] || seoData.home;
     document.title = currentPageData.title;
@@ -5831,16 +5829,14 @@ const AIStrategyPage = () => {
       <SpeedInsights />
       <Header />
       <main>
-  {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
-  {activePage === 'pricing-page' && (
-  <FullPricingPage
-    bundlesData={bundlesData} // <-- ADD THIS LINE RIGHT HERE
-    pricingMode={pricingMode}
-    currencySymbol={currencySymbol}
-    openBundles={openBundles}
-    onContactClick={navigateToContact}
-  />
-)}
+        {activePage === 'home' && <HomePage onContactClick={navigateToContact} currencySymbol={currencySymbol} />}
+        {activePage === 'pricing-page' && (
+          <FullPricingPage
+            pricingMode={pricingMode}
+            currencySymbol={currencySymbol}
+            onContactClick={navigateToContact}
+          />
+        )}
         {activePage === 'blog-detail' && (
           <BlogDetailPage 
             post={selectedPost} 
