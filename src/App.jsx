@@ -6104,6 +6104,411 @@ const CookieBanner = () => {
     </div>
   );
 };
+
+const alaCarteServices = [
+  {
+    title: "Website Building / Development",
+    items: [
+      { name: "Single Page Fast Website Build", market: 8000, price: 3999 },
+      { name: "Contact Form With Auto Email Reply", market: 4000, price: 1499 },
+      { name: "Google Map Embed On Website", market: 2000, price: 799 },
+      { name: "WhatsApp Chat Button Integration", market: 1500, price: 599 },
+      { name: "Website Speed Boost Optimization", market: 5000, price: 2499 },
+      { name: "Mobile Screen Layout Fixing", market: 3500, price: 1799 },
+      { name: "Photo Gallery Section Build", market: 3000, price: 1299 },
+      { name: "Blog Section Add On Website", market: 4500, price: 2199 },
+      { name: "Custom 404 Error Page Design", market: 1500, price: 699 },
+      { name: "SSL Security Certificate Setup", market: 2000, price: 899 },
+    ]
+  },
+  {
+    title: "AI Automations",
+    items: [
+      { name: "Auto Reply Bot For Missed Calls", market: 6000, price: 2999 },
+      { name: "Google Sheet Auto Data Collector", market: 4000, price: 1799 },
+      { name: "New Lead Email Alert System", market: 3500, price: 1499 },
+      { name: "Birthday Wishes Auto Message Setup", market: 2500, price: 999 },
+      { name: "Invoice Auto Generator Tool", market: 5000, price: 2499 },
+      { name: "Payment Reminder Auto Text Sender", market: 3000, price: 1299 },
+      { name: "Social Media Auto Post Scheduler", market: 4500, price: 1999 },
+      { name: "Customer Feedback Auto Collection", market: 3500, price: 1499 },
+      { name: "Stock Alert Auto Notification Setup", market: 4000, price: 1799 },
+      { name: "Daily Sales Report Auto Generator", market: 3000, price: 1299 },
+    ]
+  },
+  {
+    title: "AI Voice Agents & Sales",
+    items: [
+      { name: "Welcome Call Auto Greeting Bot", market: 8000, price: 3999 },
+      { name: "Appointment Booking Voice System", market: 10000, price: 4999 },
+      { name: "Order Status Update Call Bot", market: 7000, price: 3499 },
+      { name: "After Hours Call Handler Setup", market: 9000, price: 4499 },
+      { name: "Product Inquiry Voice Answering Bot", market: 8500, price: 4299 },
+      { name: "Customer Complaint Recording System", market: 7500, price: 3799 },
+      { name: "Payment Due Reminder Calling Bot", market: 6500, price: 3199 },
+      { name: "New Lead Welcome Call Automation", market: 8000, price: 3999 },
+      { name: "Event Registration Voice Confirmation", market: 7000, price: 3499 },
+      { name: "Delivery Confirmation Call System", market: 6000, price: 2999 },
+    ]
+  },
+  {
+    title: "Performance Marketing",
+    items: [
+      { name: "Ad Account Health Check Report", market: 4000, price: 1799 },
+      { name: "Audience Targeting Research Setup", market: 5000, price: 2499 },
+      { name: "Ad Copy Writing For One Campaign", market: 3500, price: 1599 },
+      { name: "Conversion Tracking Pixel Fix", market: 4500, price: 1999 },
+      { name: "Lookalike Audience Creation", market: 3000, price: 1299 },
+      { name: "Ad Creative Testing Plan Setup", market: 5500, price: 2799 },
+      { name: "Weekly Ad Performance Report", market: 3000, price: 1199 },
+      { name: "Retargeting Campaign Basic Setup", market: 6000, price: 2999 },
+      { name: "Budget Allocation Plan For Ads", market: 3500, price: 1499 },
+      { name: "Landing Page Review For Ad Traffic", market: 4000, price: 1799 },
+    ]
+  },
+  {
+    title: "Generative Engine Optimization (GEO)",
+    items: [
+      { name: "ChatGPT Brand Visibility Check", market: 5000, price: 2499 },
+      { name: "AI Answer Friendly Content Rewrite", market: 6000, price: 2999 },
+      { name: "Perplexity Search Presence Audit", market: 5500, price: 2799 },
+      { name: "FAQ Page Optimized For AI Search", market: 4000, price: 1999 },
+      { name: "Schema Markup For AI Readability", market: 5000, price: 2499 },
+      { name: "Brand Entity Verification Setup", market: 6500, price: 3299 },
+      { name: "AI Crawl Friendly Site Structure Fix", market: 5000, price: 2499 },
+      { name: "Gemini Search Visibility Report", market: 4500, price: 2199 },
+      { name: "Conversational Keyword Map Build", market: 4000, price: 1999 },
+      { name: "AI Tool Citation Monitoring Report", market: 3500, price: 1799 },
+    ]
+  },
+  {
+    title: "Search Engine Optimization (SEO)",
+    items: [
+      { name: "Website SEO Health Audit Report", market: 6000, price: 2999 },
+      { name: "5 Target Keywords Research Plan", market: 3500, price: 1599 },
+      { name: "Title And Meta Description Fix", market: 3000, price: 1299 },
+      { name: "Internal Linking Structure Fix", market: 4000, price: 1799 },
+      { name: "Image Alt Text SEO Fix", market: 2500, price: 999 },
+      { name: "Broken Links Detection And Fix", market: 3000, price: 1299 },
+      { name: "Local SEO Map Pack Setup", market: 5000, price: 2499 },
+      { name: "One Authority Backlink Placement", market: 5500, price: 2799 },
+      { name: "Competitor Keyword Gap Report", market: 4500, price: 2199 },
+      { name: "Monthly Organic Traffic Report", market: 3000, price: 1299 },
+    ]
+  },
+  {
+    title: "Answer Engine Optimization (AEO)",
+    items: [
+      { name: "Voice Search Friendly Content Write", market: 5000, price: 2499 },
+      { name: "Siri And Alexa Answer Setup", market: 6000, price: 2999 },
+      { name: "Featured Snippet Targeting Setup", market: 5500, price: 2799 },
+      { name: "FAQ Schema Code Add On Website", market: 4000, price: 1999 },
+      { name: "Conversational Page Content Rewrite", market: 4500, price: 2199 },
+      { name: "How To Schema Markup Setup", market: 3500, price: 1799 },
+      { name: "Local Voice Search Optimization", market: 5000, price: 2499 },
+      { name: "Question And Answer Blog Post Write", market: 4000, price: 1999 },
+      { name: "Speakable Content Tag Setup", market: 3500, price: 1799 },
+      { name: "Voice Query Keyword Research Plan", market: 3000, price: 1499 },
+    ]
+  },
+  {
+    title: "Influencer Marketing & PR",
+    items: [
+      { name: "Local Micro Influencer Search List", market: 5000, price: 2499 },
+      { name: "Influencer Outreach Message Writing", market: 3000, price: 1299 },
+      { name: "One Instagram Story Collaboration", market: 8000, price: 3999 },
+      { name: "Press Release Write And Publish", market: 7000, price: 3499 },
+      { name: "Product Review Video Arrangement", market: 9000, price: 4499 },
+      { name: "Brand Mention Monitoring Report", market: 3500, price: 1599 },
+      { name: "Blog Feature Write Up About Brand", market: 5000, price: 2499 },
+      { name: "Podcast Guest Booking For Brand", market: 6000, price: 2999 },
+      { name: "Influencer Rate Card Negotiation", market: 4000, price: 1799 },
+      { name: "UGC Content Brief Writing", market: 3000, price: 1299 },
+    ]
+  },
+  {
+    title: "Social Media Marketing",
+    items: [
+      { name: "Social Media Profile Complete Setup", market: 3500, price: 1499 },
+      { name: "10 Days Content Calendar Plan", market: 4000, price: 1799 },
+      { name: "5 Hashtag Research Sets Per Niche", market: 2500, price: 999 },
+      { name: "Instagram Bio Optimization Write", market: 2000, price: 799 },
+      { name: "Story Highlight Cover Design Set", market: 2500, price: 999 },
+      { name: "Comment Reply Management Weekly", market: 5000, price: 2499 },
+      { name: "Audience Growth Strategy Report", market: 4500, price: 1999 },
+      { name: "Social Media Analytics Report Monthly", market: 3500, price: 1499 },
+      { name: "Competitor Social Media Analysis", market: 4000, price: 1799 },
+      { name: "Platform Content Repurposing Plan", market: 3000, price: 1299 },
+    ]
+  },
+  {
+    title: "Google / Meta Ads",
+    items: [
+      { name: "New Google Ads Account Setup", market: 5000, price: 2499 },
+      { name: "One Facebook Ad Campaign Launch", market: 6000, price: 2999 },
+      { name: "Google Shopping Feed Setup", market: 7000, price: 3499 },
+      { name: "Instagram Ads Creative Design", market: 4000, price: 1799 },
+      { name: "Ad Account Audit And Fix Report", market: 4500, price: 1999 },
+      { name: "Smart Campaign Setup For Google", market: 5500, price: 2799 },
+      { name: "Meta Business Manager Account Setup", market: 3000, price: 1299 },
+      { name: "Dynamic Ad Template Setup", market: 5000, price: 2499 },
+      { name: "Ad Scheduling And Budget Plan", market: 3500, price: 1499 },
+      { name: "Conversion Goal Setup In Ad Manager", market: 4000, price: 1799 },
+    ]
+  },
+  {
+    title: "Google My Business",
+    items: [
+      { name: "GMB Profile Full Setup And Verify", market: 4000, price: 1799 },
+      { name: "GMB Photo Upload And Optimization", market: 2500, price: 999 },
+      { name: "GMB Post Writing Weekly Plan", market: 3500, price: 1499 },
+      { name: "GMB Review Response Writing", market: 3000, price: 1299 },
+      { name: "GMB Category And Attribute Fix", market: 2000, price: 799 },
+      { name: "GMB Product Or Service Add On", market: 2500, price: 999 },
+      { name: "GMB Q And A Section Setup", market: 2000, price: 799 },
+      { name: "GMB Booking Button Setup", market: 3000, price: 1299 },
+      { name: "Local Citation Building 10 Sites", market: 5000, price: 2499 },
+      { name: "GMB Insights Report Monthly", market: 2500, price: 999 },
+    ]
+  },
+  {
+    title: "Brand Building & Identity",
+    items: [
+      { name: "Brand Color Palette Selection", market: 2500, price: 999 },
+      { name: "Font Pairing And Typography Guide", market: 2000, price: 799 },
+      { name: "Brand Voice And Tone Document", market: 4000, price: 1799 },
+      { name: "Business Card Design Both Sides", market: 3000, price: 1299 },
+      { name: "Email Signature Design And Setup", market: 2000, price: 799 },
+      { name: "Brand Story Write For Website", market: 4500, price: 1999 },
+      { name: "Competitor Brand Analysis Report", market: 4000, price: 1799 },
+      { name: "Brand Mood Board Creation", market: 3000, price: 1299 },
+      { name: "Tagline And Slogan Writing", market: 3500, price: 1499 },
+      { name: "Brand Positioning Statement Write", market: 4000, price: 1799 },
+    ]
+  },
+  {
+    title: "Video Editing & Motion Graphics",
+    items: [
+      { name: "60 Second Reel Edit With Captions", market: 3500, price: 1499 },
+      { name: "YouTube Video Thumbnail Design", market: 1500, price: 599 },
+      { name: "Intro And Outro Animation For Videos", market: 4000, price: 1799 },
+      { name: "Subtitle File Add To Any Video", market: 2000, price: 799 },
+      { name: "Color Correction For 5 Minute Video", market: 3000, price: 1299 },
+      { name: "Audiogram Creation From Podcast", market: 2500, price: 999 },
+      { name: "Product Demo Video Short Edit", market: 4500, price: 1999 },
+      { name: "Testimonial Video Clean Edit", market: 3000, price: 1299 },
+      { name: "Screen Recording Tutorial Edit", market: 3500, price: 1499 },
+      { name: "Background Music Add To Video", market: 1500, price: 599 },
+    ]
+  },
+  {
+    title: "Graphic Design",
+    items: [
+      { name: "5 Social Media Post Designs", market: 4000, price: 1799 },
+      { name: "Festival Greeting Post Design", market: 1500, price: 599 },
+      { name: "One Digital Banner Ad Design", market: 2500, price: 999 },
+      { name: "Product Catalogue 4 Page Design", market: 5000, price: 2499 },
+      { name: "Infographic Design One Topic", market: 4500, price: 1999 },
+      { name: "Presentation Slide Deck 10 Slides", market: 5000, price: 2499 },
+      { name: "Menu Card Design For Restaurant", market: 3500, price: 1499 },
+      { name: "Poster Design For Event Promotion", market: 3000, price: 1299 },
+      { name: "Whatsapp Broadcast Message Design", market: 1500, price: 599 },
+      { name: "Email Newsletter Template Design", market: 4000, price: 1799 },
+    ]
+  },
+  {
+    title: "Content Marketing",
+    items: [
+      { name: "One 1000 Word SEO Blog Article", market: 4000, price: 1799 },
+      { name: "Lead Magnet PDF One Topic Write", market: 5000, price: 2499 },
+      { name: "Email Newsletter Write One Issue", market: 3000, price: 1299 },
+      { name: "Product Description Write 5 Items", market: 3500, price: 1499 },
+      { name: "10 Social Media Caption Writes", market: 3000, price: 1299 },
+      { name: "Content Calendar Plan One Month", market: 4000, price: 1799 },
+      { name: "Case Study Write For One Client", market: 5500, price: 2799 },
+      { name: "Video Script Write 2 Minutes", market: 3500, price: 1499 },
+      { name: "LinkedIn Article Write One Post", market: 3000, price: 1299 },
+      { name: "Website About Us Page Write", market: 4000, price: 1799 },
+    ]
+  },
+  {
+    title: "Copywriting",
+    items: [
+      { name: "Homepage Headline And Subheadline", market: 4000, price: 1799 },
+      { name: "Sales Page Full Write One Product", market: 7000, price: 3499 },
+      { name: "3 Email Sequence Write For Leads", market: 5000, price: 2499 },
+      { name: "Ad Copy Write For 3 Ad Versions", market: 3500, price: 1499 },
+      { name: "Call To Action Button Text Set", market: 1500, price: 599 },
+      { name: "One Push Notification Text Write", market: 1000, price: 399 },
+      { name: "Whatsapp Broadcast Message Write", market: 1500, price: 599 },
+      { name: "One Page Flyer Copy Write", market: 2500, price: 999 },
+      { name: "Brand Story Short Version Write", market: 3500, price: 1499 },
+      { name: "One YouTube Video Description Write", market: 2000, price: 799 },
+    ]
+  },
+  {
+    title: "Website Designing & Custom Architecture",
+    items: [
+      { name: "Wireframe Design For 3 Pages", market: 5000, price: 2499 },
+      { name: "Color Theme Update On Website", market: 3000, price: 1299 },
+      { name: "Navigation Menu Redesign", market: 3500, price: 1499 },
+      { name: "Homepage Hero Section Redesign", market: 5000, price: 2499 },
+      { name: "Footer Section Clean Redesign", market: 2500, price: 999 },
+      { name: "Pricing Section Layout Design", market: 3500, price: 1499 },
+      { name: "Testimonials Section Design", market: 3000, price: 1299 },
+      { name: "Services Grid Section Design", market: 4000, price: 1799 },
+      { name: "Dark Mode Version Design", market: 5500, price: 2799 },
+      { name: "One Custom Icon Set Design", market: 4000, price: 1799 },
+    ]
+  },
+  {
+    title: "Digital Strategy Consulting",
+    items: [
+      { name: "30 Minute Strategy Call Booking", market: 5000, price: 1999 },
+      { name: "Digital Presence Audit Report", market: 6000, price: 2999 },
+      { name: "3 Month Growth Roadmap Document", market: 8000, price: 3999 },
+      { name: "Competitor Analysis Report 3 Rivals", market: 5500, price: 2799 },
+      { name: "Customer Journey Mapping Document", market: 6000, price: 2999 },
+      { name: "Marketing Budget Plan For Month", market: 4500, price: 1999 },
+      { name: "Target Audience Research Document", market: 5000, price: 2499 },
+      { name: "KPI Setting And Tracking Plan", market: 4000, price: 1799 },
+      { name: "Platform Selection Guide For Brand", market: 3500, price: 1499 },
+      { name: "One Hour Training Session Recording", market: 6000, price: 2999 },
+    ]
+  },
+];
+
+function AlaCarteSection({ currencySymbol, onContactClick }) {
+  const [activeService, setActiveService] = React.useState(alaCarteServices[0].title);
+  const [selectedItems, setSelectedItems] = React.useState([]);
+  const containerRef = React.useRef(null);
+
+  const activeData = alaCarteServices.find(s => s.title === activeService);
+
+  const toggleItem = (item) => {
+    setSelectedItems(prev => {
+      const exists = prev.find(i => i.name === item.name && i.service === activeService);
+      if (exists) {
+        return prev.filter(i => !(i.name === item.name && i.service === activeService));
+      }
+      return [...prev, { ...item, service: activeService }];
+    });
+  };
+
+  const isSelected = (item) => {
+    return !!selectedItems.find(i => i.name === item.name && i.service === activeService);
+  };
+
+  const totalPrice = selectedItems.reduce((sum, i) => sum + i.price, 0);
+
+  const handleSendInquiry = () => {
+    const phone = "918850739933";
+    const itemList = selectedItems.map((s, idx) => `${idx + 1}. ${s.service} - ${s.name}: ${currencySymbol}${s.price.toLocaleString()}`).join('\n');
+    const message = `*A-La-Carte Service Request* 🎯\n\n*Selected Services:*\n${itemList}\n\n*Total Estimated:* ${currencySymbol}${totalPrice.toLocaleString()}\n\n_Sent via DMB Pricing Page_`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
+  const scrollToService = (title) => {
+    setActiveService(title);
+    if (containerRef.current) {
+      containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="w-full bg-[#050c18] border border-slate-800 rounded-3xl p-4 md:p-8 shadow-2xl font-sans">
+      <div className="text-center mb-10 border-b border-slate-800 pb-6">
+        <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">A-La-Carte Services Directory</h3>
+        <p className="text-slate-400 text-sm mt-1">Pick individual services. Mix and match as per your exact need and budget.</p>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-6 relative">
+        {/* LEFT SIDE - SERVICE LIST */}
+        <div className="w-full lg:w-[300px] bg-[#0f2440]/60 backdrop-blur-md border border-slate-700/60 p-4 rounded-2xl lg:sticky lg:top-28 z-30 space-y-1 h-max">
+          <p className="text-[10px] uppercase font-black tracking-widest text-cyan-400 px-3 mb-3">Jump To Service</p>
+          {alaCarteServices.map((cat) => (
+            <button
+              key={cat.title}
+              onClick={() => scrollToService(cat.title)}
+              className={`w-full text-left text-xs font-bold px-3 py-2.5 rounded-xl transition-all truncate block ${
+                activeService === cat.title
+                  ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                  : 'text-slate-400 hover:text-cyan-400 hover:bg-slate-800/40 border border-transparent'
+              }`}
+            >
+              &bull; {cat.title}
+            </button>
+          ))}
+        </div>
+
+        {/* RIGHT SIDE - ITEMS */}
+        <div ref={containerRef} className="flex-1 w-full">
+          {activeData && (
+            <div className="bg-[#0f2440]/20 border border-slate-800 p-6 rounded-2xl">
+              <h4 className="text-lg font-extrabold text-white mb-6 flex items-center gap-3 border-b border-slate-800/60 pb-3">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></span>
+                {activeData.title}
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {activeData.items.map((item, idx) => {
+                  const selected = isSelected(item);
+                  return (
+                    <div
+                      key={idx}
+                      onClick={() => toggleItem(item)}
+                      className={`p-4 rounded-xl border-2 transition-all cursor-pointer flex flex-col justify-between ${
+                        selected
+                          ? 'border-cyan-400 bg-cyan-400/5 shadow-[0_0_15px_rgba(34,211,238,0.1)]'
+                          : 'border-slate-800 bg-slate-900/40 hover:border-slate-700'
+                      }`}
+                    >
+                      <div className="flex justify-between items-start gap-2 mb-4">
+                        <span className="text-white font-bold text-sm leading-snug">{item.name}</span>
+                        <div className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border ${selected ? 'bg-cyan-500 border-cyan-500' : 'border-slate-600'}`}>
+                          {selected && (
+                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                              <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex items-baseline justify-between mt-auto pt-2 border-t border-slate-900">
+                        <span className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">
+                          Market: {currencySymbol}{item.market.toLocaleString()}
+                        </span>
+                        <span className="text-cyan-400 font-mono font-black text-sm">
+                          {currencySymbol}{item.price.toLocaleString()}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* BOTTOM TOTAL BAR */}
+      <div className="mt-8 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-slate-950 to-blue-950/40 border border-cyan-500/30 flex flex-col md:flex-row justify-between items-center gap-6 w-full">
+        <div className="text-center md:text-left">
+          <span className="text-[10px] uppercase font-black text-cyan-400 tracking-widest block mb-1">Your Selected Services Total</span>
+          <div className="text-3xl md:text-5xl font-black text-white">{currencySymbol}{totalPrice.toLocaleString()}</div>
+          <span className="text-slate-400 text-xs mt-1 block font-medium">{selectedItems.length} services selected across all categories</span>
+        </div>
+        <button
+          disabled={selectedItems.length === 0}
+          onClick={handleSendInquiry}
+          className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-lg disabled:opacity-20 transition-all hover:scale-105 flex items-center justify-center gap-2"
+        >
+          Send Service Request
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function FullPricingPage({ pricingMode, currencySymbol, onContactClick }) {
   
   const masterTwelveBundles = {
@@ -6401,15 +6806,9 @@ function FullPricingPage({ pricingMode, currencySymbol, onContactClick }) {
           <p className="text-slate-400 mt-3 max-w-2xl mx-auto text-sm md:text-base">Need a rapid standalone upgrade? Order localized components with total budget flexibility below.</p>
         </div>
 
-        <div className="mt-16 p-8 bg-slate-900/40 border border-slate-700 rounded-2xl text-center">
-  <p className="text-slate-400 text-sm">Use the Individual Component Builder on the homepage pricing section.</p>
-  <button 
-    onClick={onContactClick}
-    className="mt-4 px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition-all"
-  >
-    Contact Us for Custom Bundle
-  </button>
-</div>
+        <div className="mt-16">
+          <AlaCarteSection currencySymbol={currencySymbol} onContactClick={onContactClick} />
+        </div>
 
         {/* FOOTER CTA CONSULTATION CARD */}
         <div className="mt-28 p-8 md:p-12 bg-gradient-to-r from-slate-950 to-blue-950/40 border border-cyan-500/20 rounded-3xl text-center relative overflow-hidden">
