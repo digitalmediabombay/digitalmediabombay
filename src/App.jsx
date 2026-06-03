@@ -6089,7 +6089,7 @@ const CookieBanner = () => {
     </div>
   );
 };
-function FullPricingPage({ prifunction FullPricingPage({ bundlesData, pricingMode, currencySymbol, openBundles, onContactClick }) {
+function FullPricingPage({ bundlesData, pricingMode, currencySymbol, openBundles, onContactClick }) {
   
   const exclusiveStandaloneServices = [
     {
