@@ -6108,42 +6108,210 @@ function FullPricingPage({ pricingMode, currencySymbol, onContactClick }) {
   
   const masterTwelveBundles = {
     india: [
-      // ROW 1: LOW BUDGET SYSTEMS
-      { name: "Local Listing Standard Suite", budget: "low", market: "20,000", price: "9,999", p: "Establish a flawless local area footprint.", f: ["1. Complete GMB Map Setups", "2. Localized Citations Data Entry", "3. Area Intent Keyword Injections", "4. Reviews Quick Automation Links", "5. 5 Simple Image Grid Uploads", "6. Working Hours Map Verifications", "7. Local Competitors Traffic Maps", "8. Basic Description Copy Tweaks", "9. Monthly Map Activity Data Sheets"] },
-      { name: "Startup Launch Framework", budget: "low", market: "25,000", price: "12,499", p: "Launch your business storefront fast.", f: ["1. 1-Page Static Landing Layout", "2. SSL Security Canvas Locks", "3. Domain Redirection Routing", "4. Quick Email Address Configuration", "5. Profile Handle Sync Check", "6. Footer Copyright Adjustments", "7. Simple Contact Data Routing", "8. 3 Social Asset Banner Images", "9. Speed Diagnostics Code Run"] },
-      { name: "Social Activity Kickstart", budget: "low", market: "30,000", price: "14,999", p: "Keep social grids active daily.", f: ["1. 10 Creative Feed Static Images", "2. Target Audio Sound Matchings", "3. Viral Trend Discovery Audits", "4. Profile Bio Statement Cleanups", "5. Grid Styling Uniform Design", "6. Image Alt-Text Optimization", "7. Comments Auto-Replies Templates", "8. Quick Tag Research Packs", "9. Weekly Flow Performance Sheets"] },
-      { name: "Database Reactivation Pack", budget: "low", market: "35,000", price: "16,500", p: "Revive historic cold client lists.", f: ["1. Old Excel Contacts Audit Scan", "2. Clean Value Text Message Scripts", "3. WhatsApp Business Basic Linking", "4. Email Sequence Delivery Setup", "5. Frictionless Contact Tag Entries", "6. Special Offer Coupon Design", "7. Drop-off Lead Filter Sortings", "8. Call to Action Response Hooks", "9. Inbound Inquiries Verification Sheets"] },
+      // ROW 1: LOW BUDGET SYSTEMS (4 PACKAGES)
+      { 
+        name: "Local Presence Starter Engine", 
+        budget: "low", 
+        market: "20,000", 
+        price: "9,999", 
+        p: "Flawless optimization setups for regional storefront entries.", 
+        f: ["1. Google Business Profile Map Syncing", "2. Neighborhood Keyword Intensity Maps", "3. Directory Profile Setup Management", "4. Customer Review Messaging Automation", "5. Profile Images Geo-Location Tagging", "6. Active Operating Hours Matrix Verification", "7. Local Competitor Traffic Source Auditing", "8. Clear Everyday Business Description Copy", "9. Weekly Map Performance Metric Dispatches"] 
+      },
+      { 
+        name: "Sleek Domain Launch Framework", 
+        budget: "low", 
+        market: "25,000", 
+        price: "12,499", 
+        p: "Fast frontend deployments for brand testing operations.", 
+        f: ["1. Single-Page Static Landing Layout Build", "2. Core SSL Server Security Certificate", "3. Primary Custom Domain Routing Setup", "4. Google Workspace Business Email Links", "5. Cross-Channel Profile Handles Syncing", "6. Clean Navigation Footer Links Assembly", "7. Inbound Contact Form Field Validation", "8. 3 Tailored Marketing Graphic Backgrounds", "9. Mobile Phone Display Scale Diagnostic Checks"] 
+      },
+      { 
+        name: "Social Engagement Ignition Kit", 
+        budget: "low", 
+        market: "30,000", 
+        price: "14,999", 
+        p: "Maintain active audience visibility tracks effortlessly.", 
+        f: ["1. 10 Customized Feed Static Graphics Build", "2. Social Media Handle Styling Alignments", "3. High-Pacing Content Trend Adaptations", "4. Profile Bio Conversion-Friendly Rewrites", "5. Cohesive Grid Layout Visual Blueprints", "6. Image Compression Alt-Text Injection", "7. Inbound Comments Auto-Replies Sequences", "8. Universal Platform Keyword Tag Repositories", "9. Weekly Content Activity Reports Delivery"] 
+      },
+      { 
+        name: "Cold Database Reactivation Suite", 
+        budget: "low", 
+        market: "35,000", 
+        price: "16,500", 
+        p: "Breathe short-term revenue rows back into past archives.", 
+        f: ["1. Historic Excel Client Sheets Sorter Sweeps", "2. Value-First Text Message Script Writing", "3. WhatsApp Business Interaction Connector", "4. Promotional Offer Coupon Graphical Layout", "5. Automated Response Routing Database Filters", "6. Email Client Follow-up Timing Corrections", "7. Drop-off Consumer Filter Segmentations", "8. Inbound Call To Action Engagement Prompts", "9. Restored Customer Activation Progress Reports"] 
+      },
 
-      // ROW 2: MID BUDGET SYSTEMS
-      { name: "Dynamic Brand Expansion Hub", budget: "mid", market: "60,000", price: "24,999", p: "Establish industry trust lines online.", f: ["1. Multi-Page Dynamic Web Engine", "2. Corporate Brand Visual Guideline", "3. UI/UX Interface Spacing Reviews", "4. Dynamic Accordion FAQ Sheets", "5. Blog Framework Template Builds", "6. Broken Code Error Exclusions", "7. Navigation Menu Clutter Cleanup", "8. 5 Custom Icons Vector Design", "9. Central Data Traffic Analytics Setup"] },
-      { name: "Organic Traffic Authority Lab", budget: "mid", market: "70,000", price: "29,999", p: "Rank naturally on top search blocks.", f: ["1. Google Front Page SEO Mappings", "2. 4 Plain English Help Articles", "3. Position Zero Featured Snippets", "4. High-Trust Website Backlinks", "5. Semantic Search Terms Syncing", "6. Core Web Vitals Loading Sweeps", "7. Image Alt Schema Code Embeds", "8. Content Pillar Architecture Plans", "9. Monthly Search Progress Ledger"] },
-      { name: "Direct Response Lead Inbound", budget: "mid", market: "80,000", price: "34,999", p: "Inbound client inquiries tracking.", f: ["1. Meta Direct Response Ad Runs", "2. High-Converting Sales Form Blocks", "3. Meta Pixel Tracking Verification", "4. Ad Spend Overrun Guardrails", "5. Target Location Geometry Filters", "6. Retargeting Ad Audience Bundles", "7. Ad Creative Variants Split Testing", "8. Negative Search Clicks Waste Trims", "9. Daily Lead Logging Automation Systems"] },
-      { name: "Video Hook Growth Machine", budget: "mid", market: "90,000", price: "39,999", p: "Scale attention via phone short cuts.", f: ["1. 8 Mobile Reels Video Assemblies", "2. Scroll-Stopper Intro Visual Hooks", "3. Kinetic Text Overlay Scripting", "4. SFX Multi-Layer Audio Mixes", "5. YouTube Shorts适配 Adaptation", "6. Color Grading Tone Enhancements", "7. Video End-Screen Logo Loops", "8. Caption Writing Layout Formats", "9. Video Clicks Engagement Data Sheet"] },
+      // ROW 2: MID BUDGET SYSTEMS (4 PACKAGES)
+      { 
+        name: "Dynamic Authority Platform Setup", 
+        budget: "mid", 
+        market: "60,000", 
+        price: "24,999", 
+        p: "Establish clean interlocking data matrices across your portal.", 
+        f: ["1. Multi-Page Functional Dynamic Web Engine", "2. Figma User Experience Vector Screen Assets", "3. Brand Voice Communication Blueprint Manuals", "4. Dynamic Accordion FAQ Structured Schemas", "5. Blog Content Architecture Layout Frameworks", "6. Broken Code Technical Error Exclusions", "7. Sticky Navigation Header Layout Remodeling", "8. 5 Custom Interface Vector Icons Drops", "9. Centralized Traffic Collection Dashboard Linking"] 
+      },
+      { 
+        name: "Organic Search Domination Lab", 
+        budget: "mid", 
+        market: "70,000", 
+        price: "29,999", 
+        p: "Claim permanent organic real estate on search grids naturally.", 
+        f: ["1. Google Page 1 SEO Structure Optimizations", "2. 4 Plain Language Problem-Solving Articles", "3. Highlighted Search Snippets Position Zero Targets", "4. Authentic Trusted Directory Backlink Inbound", "5. Search Term Relevance Value Auditing Blocks", "6. Content Clusters Keyword Hierarchy Frameworks", "7. Robots Crawler Access Instruction Deployments", "8. Technical Meta Content Description Adjustments", "9. Monthly Organic Search Rank Momentum Sheets"] 
+      },
+      { 
+        name: "Direct Inbound Lead Generator", 
+        budget: "mid", 
+        market: "80,000", 
+        price: "34,999", 
+        p: "Run precise campaigns designed strictly for conversion velocity.", 
+        f: ["1. Meta Direct Response Form Advertising Placements", "2. High-Converting Landing Destination Canvas Optimization", "3. Meta Pixel Tracking API Configuration Review", "4. Advertising Expense Safe Budget Overrun Guardrails", "5. Behavioral Retargeting Audience Pool Inbound Setup", "6. Geometry Location Target Audience Group Tuning", "7. Copywriting Creative Variation Variants Split Tests", "8. Negative Keywords Budget Waste Prevention Trims", "9. Daily Lead Logging Automation Pipeline Triggers"] 
+      },
+      { 
+        name: "Video Retention Attractor Engine", 
+        budget: "mid", 
+        market: "90,000", 
+        price: "39,999", 
+        p: "Stop scrolling actions inside a fraction of a second flat.", 
+        f: ["1. 8 Mobile Reels Video Assembly Cuts", "2. Kinetic Text Caption Property Synchronization", "3. Scroll-Stopper Verbal Hook Framework Scripts", "4. Sound Effects Sound Design Tracks Mixes", "5. YouTube Shorts Format Scale Adaptations", "6. Corporate Identity Logo Outro Loop Animations", "7. Cinematic Footage Grading Color Curve Adjustments", "8. Benefit-Focused Long Video Description Formats", "9. Video Viewer Drop Point Retention Logs"] 
+      },
 
-      // ROW 3: HIGH BUDGET ENTERPRISE SYSTEMS
-      { name: "E-Commerce Commerce Empire Setup", budget: "high", market: "1,50,000", price: "64,999", p: "Scale international retail store grids.", f: ["1. Full Shopify Store Grid Building", "2. Product Grid Filter Reorganization", "3. Secure Multi-Currency Gateway Sync", "4. Abandoned Carts Email Sequences", "5. Automated Order Invoicing PDFs", "6. Real-Time Inventory Database Links", "7. Product Description Benefit Writes", "8. Storefront Review Import Setup", "9. Frictionless One-Click Mobile Checkout"] },
-      { name: "Voice Search & AI Seeding Moat", budget: "high", market: "1,80,000", price: "79,999", p: "Win spoken assistant visibility lines.", f: ["1. ChatGPT Semantic Citation Injection", "2. Alexa Spoken Answer Optimizations", "3. Siri Conversational Phrase Sync", "4. Speakable Properties JSON Code Maps", "5. llm.txt Markdown Information Manifests", "6. Perplexity Cite Source Data Matching", "7. AI Scraper Bot Security Blocking", "8. Multi-Regional Directory Entity Setup", "9. AI Summary Mentions Tracking Ledger"] },
-      { name: "AI Telephone Calling Strike Suite", budget: "high", market: "2,20,000", price: "99,999", p: "Autonomous voice assistant operations.", f: ["1. Inbound Call Automation Assistants", "2. Outbound Scheduling Calling Engines", "3. Direct Calendar Database Hooks", "4. Missed Call Auto-Callback Routing", "5. Multi-Language Voice Dialect Models", "6. Natural Tone Dialogue Adaptations", "7. Real-Time CRM Telephone Audio Logs", "8. IVR Interactive Menu Tree Mapping", "9. Automated Support Qualification Paths"] },
-      { name: "Full-Stack Conversational Enterprise", budget: "high", market: "3,00,000", price: "1,49,999", p: "Absolute omni-channel system control.", f: ["1. Server-Side Conversion API Integrations", "2. Secure Customer Database Encryption Vaults", "3. Location-Responsive Dynamic Page Networks", "4. Multi-Platform Handles Synchronization Loops", "5. Automated Welcome Intake Document Sheets", "6. Custom Interactive KPI Tracking Portals", "7. Executive Authority Bio Optimization Reviews", "8. Digital News Media Press Release Kits", "9. 1-on-1 Direct Master Architect Consultation"] }
+      // ROW 3: HIGH BUDGET ENTERPRISE SYSTEMS (4 PACKAGES)
+      { 
+        name: "Cross-Border Retail Architecture", 
+        budget: "high", 
+        market: "1,50,000", 
+        price: "64,999", 
+        p: "Scale shopping catalog frameworks across global regions safely.", 
+        f: ["1. Full Shopify Retail Store Architecture Build", "2. Product Grid Filter Hierarchy Cleanups", "3. Multi-Currency Checkout Gateway System Sync", "4. Cart Abandonments Automatic Long-Term Sequences", "5. Tax Invoice PDF Layout Auto-Generators", "6. Live Stock Catalog Database Integration Routing", "7. Plain Words Item Benefit Specification Sets", "8. Store Review Import API Pipeline Sourcing", "9. Frictionless One-Click Mobile Checkout Layouts"] 
+      },
+      { 
+        name: "Generative AI Citation Moat", 
+        budget: "high", 
+        market: "1,80,000", 
+        price: "79,999", 
+        p: "Secure high-value identity citations across LLM response graphs.", 
+        f: ["1. ChatGPT Semantic Identity Sourcing Injections", "2. Amazon Alexa Spoken Answers Data Optimization", "3. Apple Siri Definitive Intent Matching Codes", "4. Speakable Properties Schema Code Embed Blocks", "5. llm.txt Markdown Information Manifest Configuration", "6. Perplexity Engine Sourcing Citation Mapping Filters", "7. Neural Network Crawl Entity Verification Audits", "8. Rich JSON-LD Micro-Data Structured Arrays", "9. Scraper Bots Unauthorized Search Data Blocks"] 
+      },
+      { 
+        name: "Autonomous AI Telephone Suite", 
+        budget: "high", 
+        market: "2,20,000", 
+        price: "99,999", 
+        p: "Secure automatic calendar client bookings 24 hours a day.", 
+        f: ["1. Inbound Call Automated Support Receptionist Deployment", "2. Outbound Scheduling Appointment Calling Agents Setup", "3. CRM Calendar Direct Integration Data Bridges", "4. Missed Call Auto-Callback Audio Phone Triggers", "5. Conversational Voice Natural Tone Dialect Training", "6. Multi-Language Audio Dialect Vectors Mapping Hooks", "7. Real-Time CRM Telephone Call Logs Data Sync", "8. Spoken IVR Interactive Menu Tree Builders", "9. Autonomous Customer Intake Qualification Paths Check"] 
+      },
+      { 
+        name: "Sovereign Omni-Channel Directorate", 
+        budget: "high", 
+        market: "3,00,000", 
+        price: "1,49,999", 
+        p: "Complete digital transformation systems infrastructure integration.", 
+        f: ["1. Server-to-Server GA4 Attribution Logs API Framework", "2. Secure Database Files Encryption Vault Field Portals", "3. Location-Responsive Dynamic Landing Variant Deployments", "4. Cross-Continent Advertising Funnel Split Performance Tests", "5. Zero Touch Automated Client Welcome Pack Sheets", "6. Multi-Regional Server Speed Delivery Cloud Setup", "7. Premium Global News Media Press Releases Packages", "8. Master Strategy Slack Channel Direct Account Link", "9. 1-on-1 Direct Consultation Rounds with Primary Founders"] 
+      }
     ],
     global: [
-      // ROW 1: LOW BUDGET SYSTEMS (GLOBAL)
-      { name: "Local Map Entry Essentials", budget: "low", market: "500", price: "249", p: "Dominate neighborhood map lists.", f: ["1. GMB Map Profile Initialization", "2. City Meta Citations Submissions", "3. Area Intent Keywords Inventory", "4. Map Directory Record Alignments", "5. Operating Hours Verification Check", "6. 5 Clean Grid Location Images", "7. Customer Review Response Templates", "8. Geocoded Media Metadata Uploads", "9. Monthly Location View Ledger Logs"] },
-      { name: "Sleek Domain Launch Layout", budget: "low", market: "700", price: "349", p: "Launch clean responsive links fast.", f: ["1. 1-Page Static Landing Build", "2. SSL Server Security Canvas Locks", "3. Custom Business Email Setup Workspace", "4. Broken Menu Path Error Corrections", "5. Core Redirect URL Redirection Rules", "6. Profile Link Bio Tree Mapping", "7. Touch Screen Layout Sizing Checks", "8. Baseline Typography Scale Alignments", "9. Front-End Loading Diagnostic Code Trims"] },
-      { name: "Social Feeds Quick Kickstart", budget: "low", market: "850", price: "399", p: "Maintain highly consistent grid content.", f: ["1. 10 Custom Social Static Graphics", "2. Grid Visual Canvas Spacing Rules", "3. Platform Trend Adaptations Analytics", "4. Profile Bio Message Adjustments", "5. Social Feed Posting Scheduler Links", "6. Image Compression Web Processing", "7. Hashtag Metrics Cluster Inventory", "8. Interactive Story Frame Post Sets", "9. Weekly Engagement Summary Sheets"] },
-      { name: "Database Reactivation Blueprint", budget: "low", market: "999", price: "449", p: "Revive past cold prospect records.", f: ["1. Contacts Excel List Database Sweeps", "2. Value-First Direct Text Message Scripts", "3. Email Sequence Sequence Automation Set", "4. Call to Action Response Hooks", "5. Coupon Offer Banner Graphical Cards", "6. Leads Validation Filter Tags Entries", "7. Client Intake Validation Code Forms", "8. Inbound Follow-up Delay Timing Checks", "9. Restored Contacts Revenue Ledger Sheets"] },
+      // ROW 1: LOW BUDGET SYSTEMS (GLOBAL 4 PACKAGES)
+      { 
+        name: "Global Map Entry Essentials", 
+        budget: "low", 
+        market: "500", 
+        price: "249", 
+        p: "Dominate neighborhood map lists.", 
+        f: ["1. GMB Map Profile Initialization", "2. City Meta Citations Submissions", "3. Area Intent Keywords Inventory", "4. Map Directory Record Alignments", "5. Operating Hours Verification Check", "6. 5 Clean Grid Location Images", "7. Customer Review Response Templates", "8. Geocoded Media Metadata Uploads", "9. Monthly Location View Ledger Logs"] 
+      },
+      { 
+        name: "Sleek Domain Launch Layout", 
+        budget: "low", 
+        market: "700", 
+        price: "349", 
+        p: "Launch clean responsive links fast.", 
+        f: ["1. 1-Page Static Landing Build", "2. SSL Server Security Canvas Locks", "3. Custom Business Email Setup Workspace", "4. Broken Menu Path Error Corrections", "5. Core Redirect URL Redirection Rules", "6. Profile Link Bio Tree Mapping", "7. Touch Screen Layout Sizing Checks", "8. Baseline Typography Scale Alignments", "9. Front-End Loading Diagnostic Code Trims"] 
+      },
+      { 
+        name: "Social Feeds Quick Kickstart", 
+        budget: "low", 
+        market: "850", 
+        price: "399", 
+        p: "Maintain highly consistent grid content.", 
+        f: ["1. 10 Custom Social Static Graphics", "2. Grid Visual Canvas Spacing Rules", "3. Platform Trend Adaptations Analytics", "4. Profile Bio Message Adjustments", "5. Social Feed Posting Scheduler Links", "6. Image Compression Web Processing", "7. Hashtag Metrics Cluster Inventory", "8. Interactive Story Frame Post Sets", "9. Weekly Engagement Summary Sheets"] 
+      },
+      { 
+        name: "Database Reactivation Blueprint", 
+        budget: "low", 
+        market: "999", 
+        price: "449", 
+        p: "Revive past cold prospect records.", 
+        f: ["1. Contacts Excel List Database Sweeps", "2. Value-First Direct Text Message Scripts", "3. Email Sequence Sequence Automation Set", "4. Call to Action Response Hooks", "5. Coupon Offer Banner Graphical Cards", "6. Leads Validation Filter Tags Entries", "7. Client Intake Validation Code Forms", "8. Inbound Follow-up Delay Timing Checks", "9. Restored Contacts Revenue Ledger Sheets"] 
+      },
 
-      // ROW 2: MID BUDGET SYSTEMS (GLOBAL)
-      { name: "Authority Platform Developer Base", budget: "mid", market: "1,500", price: "699", p: "Establish world-class corporate spaces.", f: ["1. Multi-Page Dynamic Engine Build", "2. Figma User Spacing Layout Blueprints", "3. Brand Voice Communication Guidelines", "4. Accordion FAQ Schema Code Embeds", "5. Technical Code Error Rectifications", "6. Unified Media Library Compression", "7. Multi-Device Layout Fluid Scaling", "8. Desktop vs Mobile Rescaling Sweeps", "9. Central Workspace Traffic Dashboard Setup"] },
-      { name: "Organic Search Authority Vault", budget: "mid", market: "1,800", price: "799", p: "Own premier front page link rankings.", f: ["1. Google Page 1 SEO Structure Maps", "2. 4 Plain English Help Article Writes", "3. Highlighted Snippets Position Zero Setup", "4. Trusted High-Authority Directory Links", "5. Search Term Relevance Index Auditing", "6. Website Architecture Content Spacing", "7. Robots.txt Crawl Validation Controls", "8. Metadata Property Description Tuning", "9. Monthly Domain Traffic Statistics Logs"] },
-      { name: "Direct Response Conversion Engine", budget: "mid", market: "2,200", price: "999", p: "Generate verified customer pipeline inquiries.", f: ["1. Meta Direct Response Form Campaigns", "2. Ad Creatives High Focus Form Blocks", "3. Meta Pixels Setup Code Auditing", "4. Advertising Expense Safe Guardrails Setup", "5. Behavioral Retargeting Audience Pools", "6. Target Audience Location Geometry Mapping", "7. Ad Creative Text Variation Split Tests", "8. Negative Spending Waste Keyword Filters", "9. Real-Time Lead Logs Inbound Dashboards"] },
-      { name: "Viral Short Video Machine", budget: "mid", market: "2,500", price: "1,199", p: "Arrest attention on modern phone scrolls.", f: ["1. 8 Mobile Reels Video Assembly Cuts", "2. Kinetic Subtitle Words Text Overlays", "3. Scroll-Stopper Kinetic Hook Frameworks", "4. Sound Effects Sound Design Tracks Mix", "5. YouTube Shorts Format Rescale Outputs", "6. Corporate Identity Logo Outros Animation", "7. Cinematic Footage Grading Color Curves", "8. High Focus Caption Writing Formats", "9. Video Engagement Retention Analytics Logs"] },
+      // ROW 2: MID BUDGET SYSTEMS (GLOBAL 4 PACKAGES)
+      { 
+        name: "Authority Platform Developer Base", 
+        budget: "mid", 
+        market: "1,500", 
+        price: "699", 
+        p: "Establish world-class corporate spaces.", 
+        f: ["1. Multi-Page Dynamic Engine Build", "2. Figma User Spacing Layout Blueprints", "3. Brand Voice Communication Guidelines", "4. Accordion FAQ Schema Code Embeds", "5. Technical Code Error Rectifications", "6. Unified Media Library Compression", "7. Multi-Device Layout Fluid Scaling", "8. Desktop vs Mobile Rescaling Sweeps", "9. Central Workspace Traffic Dashboard Setup"] 
+      },
+      { 
+        name: "Organic Search Authority Vault", 
+        budget: "mid", 
+        market: "1,800", 
+        price: "799", 
+        p: "Own premier front page link rankings.", 
+        f: ["1. Google Page 1 SEO Structure Maps", "2. 4 Plain English Help Article Writes", "3. Highlighted Snippets Position Zero Setup", "4. Trusted High-Authority Directory Links", "5. Search Term Relevance Index Auditing", "6. Website Architecture Content Spacing", "7. Robots.txt Crawl Validation Controls", "8. Metadata Property Description Tuning", "9. Monthly Domain Traffic Statistics Logs"] 
+      },
+      { 
+        name: "Direct Response Conversion Engine", 
+        budget: "mid", 
+        market: "2,200", 
+        price: "999", 
+        p: "Generate verified customer pipeline inquiries.", 
+        f: ["1. Meta Direct Response Form Campaigns", "2. Ad Creatives High Focus Form Blocks", "3. Meta Pixels Setup Code Auditing", "4. Advertising Expense Safe Guardrails Setup", "5. Behavioral Retargeting Audience Pools", "6. Target Audience Location Geometry Mapping", "7. Ad Creative Text Variation Split Tests", "8. Negative Spending Waste Keyword Filters", "9. Real-Time Lead Logs Inbound Dashboards"] 
+      },
+      { 
+        name: "Traffic Surge PPC Direct Machine", 
+        budget: "mid", 
+        market: "2,500", 
+        price: "1,199", 
+        p: "Arrest attention on modern phone scrolls.", 
+        f: ["1. 8 Mobile Reels Video Assembly Cuts", "2. Kinetic Subtitle Words Text Overlays", "3. Scroll-Stopper Kinetic Hook Frameworks", "4. Sound Effects Sound Design Tracks Mix", "5. YouTube Shorts Format Rescale Outputs", "6. Corporate Identity Logo Outros Animation", "7. Cinematic Footage Grading Color Curves", "8. High Focus Caption Writing Formats", "9. Video Engagement Retention Analytics Logs"] 
+      },
 
-      // ROW 3: HIGH BUDGET ENTERPRISE SYSTEMS (GLOBAL)
-      { name: "Global E-Comm Catalog Empire", budget: "high", market: "4,000", price: "1,899", p: "Zero friction cross border retail checkouts.", f: ["1. Shopify Complex Catalog Framework Setup", "2. Responsive Product Grids Nesting Cleanup", "3. Multilingual Multi-Currency Gateway Sync", "4. Shopping Cart Abandonments Email Loops", "5. Invoice Generation Automation API Links", "6. Real-Time Stock Database Synchronization", "7. Product Benefits Description Text Tuning", "8. Customer Review Import Automation Nodes", "9. Frictionless One-Click Mobile Checkout Layouts"] },
-      { name: "Universal AI Overviews GEO Moat", budget: "high", market: "4,500", price: "1,999", p: "Secure high-value ChatGPT entity citations.", f: ["1. ChatGPT Semantic Identity Citation Seeding", "2. Amazon Alexa Spoken Answers Formats", "3. Apple Siri Definitive Intent Matching Codes", "4. Speakable Properties Schema Code Injection", "5. llm.txt Markdown Data Manifest Setup", "6. Perplexity Engine Sourcing Citation Mapping", "7. Neural Network Crawl Entity Verification", "8. Rich JSON-LD Micro-Data Structured Arrays", "9. Data Scraper Bot Unauthorized Crawl Access Blocks"] },
-      { name: "AI Voice Agent Calling Pipeline", budget: "high", market: "5,500", price: "2,499", p: "24/7 calendar database bookings support.", f: ["1. Inbound Call Automated Support Receptionists", "2. Outbound Scheduling Appointment Calling Agents", "3. CRM Calendar Direct Integration Bridges", "4. Missed Call Auto-Callback Phone Triggers", "5. Conversational Voice Natural Tone Training", "6. Multi-Language Audio Dialect Vectors Setup", "7. Real-Time CRM Telephone Call Logs Data", "8. Spoken IVR Interactive Menu Tree Builders", "9. Autonomous Customer Intake Qualification Paths"] },
-      { name: "Sovereign Omni-Channel Enterprise", budget: "high", market: "8,000", price: "3,999", p: "The ultimate outsourced tech strike directorate.", f: ["1. Server-to-Server GA4 Attribution Logs APIs", "2. Secure Database Files Encryption Vault Fields", "3. Location-Responsive Dynamic Landing Page Variant Setups", "4. Cross-Channel Profile Handles Sync Tracking Loops", "5. Zero Touch Automated Client Intake System Sheets", "6. Multi-Regional Server Speed Delivery Cloud Networks", "7. News Media Press Release Networks Distribution", "8. Master Strategy Slack Channel Direct Linking Access", "9. 1-on-1 Consultation Access with Primary Founders"] }
+      // ROW 3: HIGH BUDGET ENTERPRISE SYSTEMS (GLOBAL 4 PACKAGES)
+      { 
+        name: "Global E-Comm Catalog Empire", 
+        budget: "high", 
+        market: "4,000", 
+        price: "1,899", 
+        p: "Zero friction cross border retail checkouts.", 
+        f: ["1. Shopify Complex Catalog Framework Setup", "2. Responsive Product Grids Nesting Cleanup", "3. Multilingual Multi-Currency Gateway Sync", "4. Shopping Cart Abandonments Email Loops", "5. Invoice Generation Automation API Links", "6. Real-Time Stock Database Synchronization", "7. Product Benefits Description Text Tuning", "8. Customer Review Import Automation Nodes", "9. Frictionless One-Click Mobile Checkout Layouts"] 
+      },
+      { 
+        name: "Universal AI Overviews GEO Moat", 
+        budget: "high", 
+        market: "4,500", 
+        price: "1,999", 
+        p: "Secure high-value ChatGPT entity citations.", 
+        f: ["1. ChatGPT Semantic Identity Citation Seeding", "2. Amazon Alexa Spoken Answers Formats", "3. Apple Siri Definitive Intent Matching Codes", "4. Speakable Properties Schema Code Injection", "5. llm.txt Markdown Data Manifest Setup", "6. Perplexity Engine Sourcing Citation Mapping", "7. Neural Network Crawl Entity Verification", "8. Rich JSON-LD Micro-Data Structured Arrays", "9. Data Scraper Bot Unauthorized Crawl Access Blocks"] 
+      },
+      { 
+        name: "AI Voice Agent Calling Pipeline", 
+        budget: "high", 
+        market: "5,500", 
+        price: "2,499", 
+        p: "24/7 calendar database bookings support.", 
+        f: ["1. Inbound Call Automated Support Receptionists", "2. Outbound Scheduling Appointment Calling Agents", "3. CRM Calendar Direct Integration Bridges", "4. Missed Call Auto-Callback Phone Triggers", "5. Conversational Voice Natural Tone Training", "6. Multi-Language Audio Audio Vectors Setup", "7. Real-Time CRM Telephone Call Logs Data", "8. Spoken IVR Interactive Menu Tree Builders", "9. Autonomous Customer Intake Qualification Paths"] 
+      },
+      { 
+        name: "Sovereign Omni-Channel Enterprise", 
+        budget: "high", 
+        market: "8,000", 
+        price: "3,999", 
+        p: "The ultimate outsourced tech strike directorate.", 
+        f: ["1. Server-to-Server GA4 Attribution Logs APIs", "2. Secure Database Files Encryption Vault Fields", "3. Location-Responsive Dynamic Landing Page Variant Setups", "4. Cross-Channel Profile Handles Sync Tracking Loops", "5. Zero Touch Automated Client Intake System Sheets", "6. Multi-Regional Server Speed Delivery Cloud Networks", "7. News Media Press Release Networks Distribution", "8. Master Strategy Slack Channel Direct Linking Access", "9. 1-on-1 Consultation Access with Primary Founders"] 
+      }
     ]
   };
 
