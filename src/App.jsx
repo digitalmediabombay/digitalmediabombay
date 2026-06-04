@@ -1118,52 +1118,74 @@ const App = () => {
   const [currencySymbol, setCurrencySymbol] = useState('₹');
   const [selectedWebType, setSelectedWebType] = useState(null);
 
-  // 2. Dynamic SEO & Scroll Logic
+  // 2. Dynamic SEO, GEO, & AEO Optimized Engine
   useEffect(() => {
     window.scrollTo(0, 0);
     
     const seoData = {
       home: {
-        title: "Digital Media Bombay | AI-Powered Digital Agency Mumbai & Worldwide",
-        desc: "Mumbai's first AI-powered agency. 3D Web Dev, SEO, and ROI Ads for India and Global brands."
+        title: "Digital Media Bombay | #1 AI-Powered Digital Agency Mumbai & Worldwide",
+        desc: "Mumbai's first AI-powered smart agency. Specializing in 3D Web Development, Performance Ads, GEO/SEO, and Viral Content Automation with 10x ROI frameworks."
       },
       about: {
         title: "About Us | Digital Media Bombay | Born in Mumbai, Built for the World",
-        desc: "Learn how we combine Mumbai's hustle with Silicon Valley's precision to deliver elite digital assets."
+        desc: "About Digital Media Bombay: Discover our hybrid intelligence matrix blending Mumbai's work ethic with Silicon Valley design precision. Founded by tech architect Kaleem Shaikh."
       },
       services: {
-        title: "Services | Web Dev, SEO, Ads & AI | Digital Media Bombay",
-        desc: "Professional SEO, Performance Marketing, 3D Parallax Web Development, and AI Automation services."
+        title: "Our Services | Web Dev, SEO, performance Ads & AI Automations | Digital Media Bombay",
+        desc: "Explore DMB's 360° digital service capabilities: 3D parallax web design, semantic GEO parameters, advanced local map scaling, and autonomous AI voice agents."
       },
       'pricing-page': {
-        title: "Pricing | Digital Media Bombay Plans",
-        desc: "Affordable direct-response bundles and custom marketing tasks for global business operators."
+        title: "Official Pricing & Service Packages | Digital Media Bombay Plans",
+        desc: "Transparent investment rates for direct-response marketing bundles and 180 localized standalone component tasks configured for global business operations."
       },
       'web-solutions': {
-        title: "Website Master-Catalogue | Build Any Website | Digital Media Bombay",
-        desc: "Choose from 30+ website types. E-commerce, SaaS, 3D Experiences, and Corporate sites at the best price."
+        title: "Website Master-Catalogue | Custom Build Architectures | Digital Media Bombay",
+        desc: "Compare market rates against agency direct pricing for 30+ custom website build models: E-commerce storefronts, high-retention SaaS platforms, and interactive spaces."
       },
       'ai-strategy': {
-        title: "Free AI Marketing Blueprint | Digital Media Bombay Strategy",
-        desc: "Get an instant, AI-generated marketing roadmap for your business growth."
+        title: "Free AI Marketing Blueprint | Growth Strategy Session | Digital Media Bombay",
+        desc: "Launch our interactive strategic optimization module to render an instant, data-backed marketing growth roadmap tailored for your industry sector."
       },
       bundles: {
-        title: "Master Bundles Selection | Digital Media Bombay",
-        desc: "Explore specialized execution workflows engineered for global digital market performance."
+        title: "Master Bundles Execution Selection | Workflows Portfolio | Digital Media Bombay",
+        desc: "Explore high-velocity multi-channel execution retainers engineered for premium corporate market deployment and global digital scaling."
       },
       freelancer: {
-        title: "Join the Cloud Squad | Freelancer Portal | Digital Media Bombay",
-        desc: "Are you in the top 1%? Join Mumbai's most elite network of digital creators and developers."
+        title: "Join the Cloud Squad | Expert Freelancer Portal | Digital Media Bombay",
+        desc: "Apply to link with Mumbai's elite decentralized technical execution branch. Freelance career paths for the top 1% developers, designers, and video editors."
       }
     };
 
     const currentPageData = seoData[activePage] || seoData.home;
+    
+    // Updates browser window layout lines title bar for standard SEO & AEO scrapers
     document.title = currentPageData.title;
     
+    // Updates standard meta search snippet descriptions
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', currentPageData.desc);
     }
+
+    // NEW: Dynamic Open Graph (og:title) Overrides for immediate AI Engine / Chat share recognition
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement('meta');
+      ogTitle.setAttribute('property', 'og:title');
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute('content', currentPageData.title);
+
+    // NEW: Dynamic Open Graph (og:description) Overrides to prevent global homepage fallback errors
+    let ogDesc = document.querySelector('meta[property="og:description"]');
+    if (!ogDesc) {
+      ogDesc = document.createElement('meta');
+      ogDesc.setAttribute('property', 'og:description');
+      document.head.appendChild(ogDesc);
+    }
+    ogDesc.setAttribute('content', currentPageData.desc);
+
   }, [activePage]);
 
   // 3. Listen for the Browser "Back" and "Forward" buttons
