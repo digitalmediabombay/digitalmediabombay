@@ -17,6 +17,11 @@
     <meta name="description" content="Digital Media Bombay is a premier AI-powered agency founded by Kaleem Shaikh. Specializing in 3D Web Development, Performance Ads, GEO/SEO, and Viral Social Media Automation for global brands with 10x ROI.">
     <meta name="keywords" content="Digital Marketing Agency Mumbai, Web Development India, AI Marketing Agency, SEO Services Mumbai, Performance Ads India, 3D Website Design, Social Media Marketing Mumbai, Digital Media Bombay, Best Digital Agency Maharashtra, Global Tech Solutions, ROI Driven Marketing, Kaleem Shaikh, Generative Engine Optimization, GEO marketing">
     <meta name="author" content="Digital Media Bombay">
+    
+    <!-- ADDED: THIS FORCEFULLY TELLS GOOGLE THE EXACT NAME NEXT TO THE LOGO -->
+    <meta property="og:site_name" content="Digital Media Bombay">
+    <meta name="apple-mobile-web-app-title" content="Digital Media Bombay">
+
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
     <meta name="geo.region" content="IN-MH" />
@@ -41,6 +46,19 @@
 
     <script src="https://cdn.jsdelivr.net/gh/vapi-ai/browser-sdk@latest/dist/vapi-browser-sdk.js"></script>
 
+    <!-- FIXED SCHEMA: Isolated and explicit WebSite declaration for Google Site Names -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://digitalmediabombay.com/#website",
+      "url": "https://digitalmediabombay.com/",
+      "name": "Digital Media Bombay",
+      "alternateName": ["DMB", "Digital Media Of Bombay"]
+    }
+    </script>
+
+    <!-- Rest of your original Graph data continues here cleanly -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -87,13 +105,6 @@
             "Hyper-Local SEO Mapping",
             "Multilingual AI Content Generation"
           ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://digitalmediabombay.com/#website",
-          "url": "https://digitalmediabombay.com/",
-          "name": "Digital Media Bombay",
-          "publisher": {"@id": "https://digitalmediabombay.com/#agency"}
         },
         {
           "@type": "FAQPage",
