@@ -1453,7 +1453,7 @@ const App = () => {
     icon: <TrendingUp size={32} className="text-green-400" />,
     desc: "Direct, tracking-heavy ad campaigns focused strictly on your profit margins, customer phone calls, and active sales leads.",
     color: "green",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1080",
+    img: "https://technokeens.com/wp-content/uploads/2025/05/Performance-Marketing-with-title.png",
     deliverables: ["Sales Call Inbound Funnels", "Customer Lead Generation", "Real-Time Tracking Sheets", "ROI Data Monitoring", "Profitable Ads Setup"]
   },
   {
