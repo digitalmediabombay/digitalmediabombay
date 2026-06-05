@@ -1462,7 +1462,7 @@ const App = () => {
     icon: <Sparkles size={32} className="text-indigo-400" />,
     desc: "We clear up your web text structures so that smart AI chat tools like ChatGPT, Claude, and Gemini recommend your brand directly.",
     color: "indigo",
-    img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1080",
+    img: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*kgWEqYnNIhbUVz4O.png",
     deliverables: ["AI Search Visibility Updates", "Factual Truth Profile Mapping", "ChatGPT Citation Seeding", "AI Engine Scraper Formats", "Brand Info Visibility Audits"]
   },
   {
@@ -1471,7 +1471,7 @@ const App = () => {
     icon: <Search size={32} className="text-blue-400" />,
     desc: "We write clean information frameworks that place your service pages on the front page of Google searches naturally.",
     color: "blue",
-    img: "https://images.unsplash.com/photo-1571786256017-aee7a0c009b6?q=80&w=1080",
+    img: "https://bow-now.com/dcms_media/image/SEO_img01.jpg",
     deliverables: ["Google First Page Planning", "Website Error Cleaning", "Trustworthy Authority Links", "Content Strategy Frameworks", "Organic View Competitor Reports"]
   },
   {
@@ -1480,7 +1480,7 @@ const App = () => {
     icon: <MessageSquare size={32} className="text-pink-400" />,
     desc: "We format your web details into question-and-answer frames so spoken mobile applications read out your business name loud.",
     color: "pink",
-    img: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=1080",
+    img: "https://bullseyestrategy.com/wp-content/uploads/2025/08/AdobeStock_1522786432-scaled.jpeg.avif",
     deliverables: ["Voice Assistant Data Codes", "Simple Conversational Text blocks", "FAQ Layout Adjustments", "Mobile Voice Search Targeting", "Spoken Answer Verification"]
   },
   {
