@@ -1094,6 +1094,7 @@ const App = () => {
     const path = window.location.pathname;
     if (path.startsWith('/blog/')) return 'blog-detail';
     if (path === '/pricing') return 'pricing-page';
+    if (path === '/contact-us') return 'contact-us';
     if (path === '/starterbundles') return 'bundles';
     if (path === '/growthbundles') return 'bundles';
     if (path === '/royalebundles') return 'bundles';
@@ -2518,6 +2519,7 @@ const Header = () => (
           <button onClick={() => navigateTo('about')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">About</button>
           <button onClick={() => navigateTo('services')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Services</button>
           <button onClick={() => navigateTo('pricing')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Pricing</button>
+          <button onClick={() => navigateTo('contact-us')} className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Contact</button>
           <button onClick={() => navigateTo('freelancer')} className="text-slate-300 hover:text-amber-400 transition-colors text-sm font-medium">Join the Squad</button>
           <button onClick={() => navigateTo('ai-strategy')} className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white px-4 py-2 rounded-full font-bold text-xs shadow-lg shadow-purple-500/20 transition-all flex items-center gap-2 transform hover:scale-105"><Sparkles size={14} /> Free AI Strategy</button>
         </div>
@@ -2549,6 +2551,8 @@ const Header = () => (
           <button onClick={() => navigateTo('services')} className="block w-full text-left px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md">Services</button>
 
           <button onClick={() => navigateTo('freelancer')} className="block w-full text-left px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md">Freelancers</button>
+
+          <button onClick={() => navigateTo('contact-us')} className="block w-full text-left px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 rounded-md">Contact Us</button>
 
         </div>
 
@@ -5874,6 +5878,7 @@ const AIStrategyPage = () => {
         {activePage === 'privacy' && <PrivacyPolicyPage />}
         {activePage === 'terms' && <TermsOfServicePage />}
         {activePage === 'web-solutions' && <WebSolutionsPage pricingMode={pricingMode} navigateTo={navigateTo} currencySymbol={currencySymbol} />}
+        {activePage === 'contact-us' && <ContactUsPage navigateTo={navigateTo} />}
       </main>
 
       <CookieBanner />
@@ -6840,5 +6845,430 @@ function FullPricingPage({ pricingMode, currencySymbol, onContactClick }) {
     </div>
   );
 }
+const ContactUsPage = ({ navigateTo }) => {
+  const [formData, setFormData] = useState({ name: '', email: '', reason: 'Sales Inquiry', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const phone = "918850739933";
+    const msg = `*New Contact Page Message* 📩\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Reason:* ${formData.reason}\n*Message:* ${formData.message}\n\n_Source: Contact Us Page_`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
+  };
+
+  const faqs = [
+    {
+      q: "How do I contact Digital Media Bombay for a new project?",
+      a: "Fill out the contact form on this page or send a WhatsApp message to +91 88507 39933. You can also email us at digitalmediabombay@gmail.com. We typically respond within 24 hours on business days."
+    },
+    {
+      q: "What is the best way to get a price quote from Digital Media Bombay?",
+      a: "The fastest way is to use the contact form above, select 'Sales Inquiry' as your reason, and briefly describe your project. Our team will send you a custom quote within 24 hours."
+    },
+    {
+      q: "Does Digital Media Bombay work with international clients outside India?",
+      a: "Yes. We work with businesses in the US, UK, UAE, Canada, Australia, Singapore, and across Europe. All project work is done remotely and communication happens over email, WhatsApp, and video calls."
+    },
+    {
+      q: "What are Digital Media Bombay's working hours?",
+      a: "Our team is available Monday to Saturday, 10:00 AM to 8:00 PM IST (Indian Standard Time). We respond to WhatsApp messages faster than email during business hours."
+    },
+    {
+      q: "How long does Digital Media Bombay take to start a new project after contact?",
+      a: "After initial contact and scope confirmation, most projects are onboarded within 48 to 72 hours. We move quickly and skip the unnecessary meeting loops common at traditional agencies."
+    },
+    {
+      q: "Can I contact Digital Media Bombay for a free website or marketing audit?",
+      a: "Yes. We offer a free digital presence audit for new clients. Use the contact form, select 'Free Audit Request' as your reason, and include your website URL or social media handle."
+    },
+    {
+      q: "Is there a WhatsApp number I can message Digital Media Bombay on directly?",
+      a: "Yes. You can send a direct WhatsApp message to +91 88507 39933. This is the fastest way to get a reply, especially for quick questions about services and pricing."
+    },
+    {
+      q: "What happens after I submit the contact form on this page?",
+      a: "After you submit the form, your message is instantly routed to our WhatsApp business account. A strategist from the Digital Media Bombay team will follow up with you directly within 24 hours."
+    },
+    {
+      q: "Can I collaborate with Digital Media Bombay as a freelancer or creative partner?",
+      a: "Yes. We are always looking for top-tier designers, developers, video editors, and performance marketers. Visit our Freelancer page or select 'Collaboration / Partnership' in the contact form to apply."
+    },
+    {
+      q: "Where is Digital Media Bombay physically located?",
+      a: "Our headquarters is in Kalina, Santacruz East, Mumbai, Maharashtra 400098, India. While most client work is handled remotely, in-person strategy sessions can be arranged for Mumbai-based clients."
+    }
+  ];
+
+  const socials = [
+    {
+      name: "Instagram",
+      handle: "@digitalmediabombay",
+      cta: "Follow us for daily tips, reels, and creative work",
+      color: "from-pink-500 to-rose-500",
+      icon: <Instagram size={28} />,
+      url: "https://instagram.com/digitalmediabombay"
+    },
+    {
+      name: "LinkedIn",
+      handle: "Digital Media Bombay",
+      cta: "Connect with us for professional partnerships and B2B conversations",
+      color: "from-blue-600 to-blue-500",
+      icon: <Linkedin size={28} />,
+      url: "https://linkedin.com/company/digitalmediabombay"
+    },
+    {
+      name: "Facebook",
+      handle: "Digital Media Bombay",
+      cta: "Like our page for updates, case studies, and service launches",
+      color: "from-blue-700 to-indigo-600",
+      icon: <Facebook size={28} />,
+      url: "https://facebook.com/digitalmediabombay"
+    },
+    {
+      name: "X / Twitter",
+      handle: "@digitalmediabom",
+      cta: "Follow for quick digital marketing insights and agency updates",
+      color: "from-slate-600 to-slate-500",
+      icon: <Twitter size={28} />,
+      url: "https://x.com/digitalmediabom"
+    },
+    {
+      name: "WhatsApp",
+      handle: "+91 88507 39933",
+      cta: "Message us directly for the fastest reply — we respond in minutes",
+      color: "from-green-600 to-emerald-500",
+      icon: <MessageCircle size={28} />,
+      url: "https://wa.me/918850739933"
+    },
+    {
+      name: "Email",
+      handle: "digitalmediabombay@gmail.com",
+      cta: "Send a detailed brief or partnership proposal to our inbox",
+      color: "from-amber-500 to-orange-500",
+      icon: <Mail size={28} />,
+      url: "mailto:digitalmediabombay@gmail.com"
+    }
+  ];
+
+  return (
+    <div className="bg-[#0a192f] min-h-screen text-slate-200 font-sans">
+
+      {/* ── SECTION 1: HERO ── */}
+      <section className="relative pt-36 pb-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-[-15%] left-[10%] w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-[0%] right-[5%] w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[100px]"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-6">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            We're Online & Ready
+          </span>
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
+            Let's Build Something<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400">
+              Remarkable Together
+            </span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Whether you need a new website, a full performance marketing system, or just want to ask a question — we are here. Most inquiries receive a response within <span className="text-white font-semibold">24 hours</span>.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2 text-slate-300"><CheckCircle size={16} className="text-cyan-400" /> Free Initial Consultation</div>
+            <div className="flex items-center gap-2 text-slate-300"><CheckCircle size={16} className="text-cyan-400" /> No Long-Term Contracts</div>
+            <div className="flex items-center gap-2 text-slate-300"><CheckCircle size={16} className="text-cyan-400" /> Global Clients Welcome</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 2: CONTACT FORM + DIRECT DETAILS ── */}
+      <section className="py-20 bg-[#050c18] border-t border-slate-800 relative">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs block mb-2">Reach Out Directly</span>
+            <h2 className="text-3xl md:text-5xl font-black text-white">How Would You Like to Connect?</h2>
+            <p className="text-slate-400 mt-3 max-w-xl mx-auto">Use the form, call us, email us, or just shoot a WhatsApp — whatever works best for you.</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            {/* COLUMN A: FORM */}
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 to-blue-600/30 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
+              <div className="relative bg-[#0f2440]/70 backdrop-blur-xl border border-slate-700 rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                  <Send size={20} className="text-cyan-400" /> Send Us a Message
+                </h3>
+                {!submitted ? (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label className="block text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">Your Name</label>
+                      <input
+                        required type="text" value={formData.name}
+                        onChange={e => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="Enter your full name"
+                        className="w-full bg-[#0a192f] border border-slate-600 rounded-xl p-3.5 text-white focus:border-cyan-400 outline-none transition-all placeholder-slate-600 text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">Email Address</label>
+                      <input
+                        required type="email" value={formData.email}
+                        onChange={e => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="your@email.com"
+                        className="w-full bg-[#0a192f] border border-slate-600 rounded-xl p-3.5 text-white focus:border-cyan-400 outline-none transition-all placeholder-slate-600 text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">Reason for Inquiry</label>
+                      <select
+                        value={formData.reason}
+                        onChange={e => setFormData({ ...formData, reason: e.target.value })}
+                        className="w-full bg-[#0a192f] border border-slate-600 rounded-xl p-3.5 text-white focus:border-cyan-400 outline-none transition-all text-sm"
+                      >
+                        <option>Sales Inquiry</option>
+                        <option>Website Development</option>
+                        <option>Performance Marketing</option>
+                        <option>SEO / GEO / AEO Services</option>
+                        <option>AI Automations</option>
+                        <option>Social Media Management</option>
+                        <option>Free Audit Request</option>
+                        <option>Collaboration / Partnership</option>
+                        <option>Freelancer Application</option>
+                        <option>General Support</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">Your Message</label>
+                      <textarea
+                        required rows={5} value={formData.message}
+                        onChange={e => setFormData({ ...formData, message: e.target.value })}
+                        placeholder="Tell us about your project, goals, or any questions you have..."
+                        className="w-full bg-[#0a192f] border border-slate-600 rounded-xl p-3.5 text-white focus:border-cyan-400 outline-none transition-all placeholder-slate-600 text-sm resize-none"
+                      />
+                    </div>
+                    <button type="submit" className="w-full py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-black rounded-xl shadow-lg transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
+                      Send Message <Send size={18} />
+                    </button>
+                    <p className="text-center text-slate-500 text-xs mt-2">We reply within 24 hours on business days. No spam, ever.</p>
+                  </form>
+                ) : (
+                  <div className="flex flex-col items-center justify-center py-12 text-center">
+                    <div className="w-20 h-20 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center mb-6 border-2 border-green-500/40">
+                      <CheckCircle size={40} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                    <p className="text-slate-400 text-sm">Our team has received your inquiry. We'll reply within 24 hours on WhatsApp or email.</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* COLUMN B: DIRECT CONTACT DETAILS */}
+            <div className="flex flex-col gap-6">
+              <div className="bg-[#0f2440]/50 border border-slate-700 rounded-2xl p-8 space-y-6">
+                <h3 className="text-xl font-bold text-white mb-4">Direct Contact Details</h3>
+
+                <a href="mailto:digitalmediabombay@gmail.com" className="flex items-start gap-4 p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/60 border border-slate-700 hover:border-cyan-500/40 transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0 border border-amber-500/30">
+                    <Mail size={22} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mb-1">Email Us</p>
+                    <p className="text-white font-bold group-hover:text-cyan-400 transition-colors text-sm">digitalmediabombay@gmail.com</p>
+                    <p className="text-slate-500 text-xs mt-0.5">Best for detailed project briefs and proposals</p>
+                  </div>
+                </a>
+
+                <a href="tel:+918850739933" className="flex items-start gap-4 p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/60 border border-slate-700 hover:border-cyan-500/40 transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 flex-shrink-0 border border-cyan-500/30">
+                    <Phone size={22} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mb-1">Call Us</p>
+                    <p className="text-white font-bold group-hover:text-cyan-400 transition-colors text-sm">+91 88507 39933</p>
+                    <p className="text-slate-500 text-xs mt-0.5">Tap to dial directly from your mobile phone</p>
+                  </div>
+                </a>
+
+                <a href="https://wa.me/918850739933" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/60 border border-slate-700 hover:border-green-500/40 transition-all group">
+                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 flex-shrink-0 border border-green-500/30">
+                    <MessageCircle size={22} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mb-1">WhatsApp (Fastest)</p>
+                    <p className="text-white font-bold group-hover:text-green-400 transition-colors text-sm">+91 88507 39933</p>
+                    <p className="text-slate-500 text-xs mt-0.5">We reply within minutes during business hours</p>
+                  </div>
+                </a>
+
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700">
+                  <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0 border border-purple-500/30">
+                    <Activity size={22} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mb-1">Business Hours</p>
+                    <p className="text-white font-bold text-sm">Monday – Saturday</p>
+                    <p className="text-slate-400 text-sm">10:00 AM – 8:00 PM IST</p>
+                    <p className="text-slate-500 text-xs mt-1">Indian Standard Time (UTC +5:30). Closed on Sundays and national holidays.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border border-cyan-500/20 rounded-2xl p-6 text-center">
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  <span className="text-cyan-400 font-bold">Have a quick question?</span> Check our{' '}
+                  <button onClick={() => { const el = document.getElementById('contact-faq'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }} className="text-amber-400 font-bold hover:underline">
+                    FAQ section below
+                  </button>{' '}
+                  — you may find your answer instantly without waiting for a reply.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: SOCIAL MEDIA + LOCATION/MAP ── */}
+      <section className="py-20 bg-[#0a192f] border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* SOCIAL MEDIA */}
+          <div className="text-center mb-14">
+            <span className="text-amber-400 font-bold tracking-widest uppercase text-xs block mb-2">Social Channels</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Prefer a DM? Connect With Us Here</h2>
+            <p className="text-slate-400 mt-3 max-w-xl mx-auto">Follow us across platforms to stay updated on our latest work, strategies, and behind-the-scenes content.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+            {socials.map((s, i) => (
+              
+                key={i} href={s.url} target="_blank" rel="noopener noreferrer"
+                className="group flex items-start gap-4 p-5 rounded-2xl bg-[#0f2440]/40 border border-slate-700 hover:border-slate-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
+                  {s.icon}
+                </div>
+                <div>
+                  <p className="text-white font-bold text-base group-hover:text-cyan-400 transition-colors">{s.name}</p>
+                  <p className="text-cyan-400 text-sm font-mono font-bold">{s.handle}</p>
+                  <p className="text-slate-500 text-xs mt-1 leading-relaxed">{s.cta}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          {/* LOCATION + MAP */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+            <div className="bg-[#0f2440]/50 border border-slate-700 rounded-2xl p-8 flex flex-col justify-between">
+              <div>
+                <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs block mb-3">Our Headquarters</span>
+                <h3 className="text-2xl font-black text-white mb-6">Digital Media Bombay</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <MapPin size={20} className="text-amber-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-white font-bold text-sm">Kalina, Santacruz East</p>
+                      <p className="text-slate-400 text-sm">Mumbai, Maharashtra 400098</p>
+                      <p className="text-slate-400 text-sm">India</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Globe size={20} className="text-cyan-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <p className="text-white font-bold text-sm">Remote-First Agency</p>
+                      <p className="text-slate-400 text-sm">We serve clients globally from Mumbai. All project delivery is remote-first — no office visit required.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 p-4 bg-slate-800/40 rounded-xl border border-slate-700">
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  <span className="text-amber-400 font-bold">In-Person Meetings:</span> Available for Mumbai-based clients by prior appointment. Contact us to schedule a visit to our Santacruz East location.
+                </p>
+              </div>
+            </div>
+
+            {/* GOOGLE MAP EMBED */}
+            <div className="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl min-h-[350px] relative">
+              <iframe
+                title="Digital Media Bombay Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.2897543765527!2d72.85685931490218!3d19.07982098709939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c94aaaaaaaab%3A0x1234567890abcdef!2sKalina%2C%20Santacruz%20East%2C%20Mumbai%2C%20Maharashtra%20400098!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85) contrast(0.9)', minHeight: '350px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="absolute bottom-4 left-4 z-10">
+                
+                  href="https://maps.google.com/?q=Kalina+Santacruz+East+Mumbai+400098"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#0a192f]/90 border border-slate-600 rounded-full text-white text-xs font-bold hover:border-cyan-400 transition-colors backdrop-blur-sm shadow-lg"
+                >
+                  <MapPin size={14} className="text-cyan-400" /> Open in Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: FAQ ── */}
+      <section id="contact-faq" className="py-20 bg-[#050c18] border-t border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="text-cyan-400 font-bold tracking-widest uppercase text-xs block mb-2">Quick Answers</span>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Frequently Asked Questions</h2>
+            <p className="text-slate-400 mt-3 max-w-xl mx-auto">Get instant answers to the most common questions before reaching out — it might save you a wait.</p>
+          </div>
+
+          <div className="space-y-3">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isOpen ? 'border-cyan-500/50 bg-[#112240]/80 shadow-[0_0_20px_rgba(34,211,238,0.1)]' : 'border-slate-800 bg-[#0f2440]/30 hover:border-slate-700'}`}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full text-left p-5 flex justify-between items-center gap-4 focus:outline-none"
+                  >
+                    <span className={`font-bold text-sm md:text-base leading-snug transition-colors ${isOpen ? 'text-cyan-400' : 'text-slate-200'}`}>{faq.q}</span>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all ${isOpen ? 'bg-cyan-500/20 text-cyan-400 rotate-180' : 'bg-slate-800 text-slate-400'}`}>
+                      <Plus size={16} />
+                    </div>
+                  </button>
+                  <div className={`transition-all duration-400 overflow-hidden ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="px-5 pb-5 text-slate-300 text-sm leading-relaxed border-t border-slate-700/50 pt-4">{faq.a}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-slate-400 text-sm mb-4">Didn't find what you were looking for?</p>
+            <button
+              onClick={() => window.open('https://wa.me/918850739933?text=Hi, I have a question about your services.', '_blank')}
+              className="px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold rounded-full text-sm shadow-lg transition-all hover:scale-105"
+            >
+              Ask Us Directly on WhatsApp
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
 // --- THIS MUST BE THE VERY LAST LINE OF THE FILE ---
 export default App;
