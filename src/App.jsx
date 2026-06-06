@@ -7148,20 +7148,23 @@ const ContactUsPage = ({ navigateTo }) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
             {socials.map((s, i) => (
-              
-key={i} href={s.url} target="_blank" rel="noopener noreferrer"
-                className="group flex items-start gap-4 p-5 rounded-2xl bg-[#0f2440]/40 border border-slate-700 hover:border-slate-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
-                  {s.icon}
-                </div>
-                <div>
-                  <p className="text-white font-bold text-base group-hover:text-cyan-400 transition-colors">{s.name}</p>
-                  <p className="text-cyan-400 text-sm font-mono font-bold">{s.handle}</p>
-                  <p className="text-slate-500 text-xs mt-1 leading-relaxed">{s.cta}</p>
-                </div>
-              </a>
-            ))}
+  <a 
+    key={i} 
+    href={s.url} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="group flex items-start gap-4 p-5 rounded-2xl bg-[#0f2440]/40 border border-slate-700 hover:border-slate-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+  >
+    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
+      {s.icon}
+    </div>
+    <div>
+      <p className="text-white font-bold text-base group-hover:text-cyan-400 transition-colors">{s.name}</p>
+      <p className="text-cyan-400 text-sm font-mono font-bold">{s.handle}</p>
+      <p className="text-slate-500 text-xs mt-1 leading-relaxed">{s.cta}</p>
+    </div>
+  </a>
+))}
           </div>
 
           {/* LOCATION + MAP */}
@@ -7208,14 +7211,15 @@ key={i} href={s.url} target="_blank" rel="noopener noreferrer"
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="absolute bottom-4 left-4 z-10">
-                
-                  href="https://maps.google.com/?q=Kalina+Santacruz+East+Mumbai+400098"
-                  target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#0a192f]/90 border border-slate-600 rounded-full text-white text-xs font-bold hover:border-cyan-400 transition-colors backdrop-blur-sm shadow-lg"
-                >
-                  <MapPin size={14} className="text-cyan-400" /> Open in Google Maps
-                </a>
-              </div>
+  <a
+    href="https://maps.google.com"
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex items-center gap-2 px-4 py-2 bg-[#0a192f]/90 border border-slate-600 rounded-full text-white text-xs font-bold hover:border-cyan-400 transition-colors backdrop-blur-sm shadow-lg"
+  >
+    <MapPin size={14} className="text-cyan-400" /> Open in Google Maps
+  </a>
+</div>
             </div>
           </div>
         </div>
