@@ -1499,7 +1499,7 @@ const App = () => {
     icon: <Smartphone size={32} className="text-sky-400" />,
     desc: "We take full charge of your online handles to ensure your feeds publish everyday posts that engage casual buyers consistently.",
     color: "sky",
-    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080",
+    img: "socialmediamarketing.jpg",
     deliverables: ["Everyday Feed Publishing", "Audience Comment Replies", "Viral Trend Adaptations", "Bio Layout Improvements", "Profile Management Tracking"]
   },
   {
@@ -1526,7 +1526,7 @@ const App = () => {
     icon: <Award size={32} className="text-indigo-400" />,
     desc: "We shape your entire company look, corporate messaging, and identity assets to position your brand as a premium industry leader.",
     color: "indigo",
-    img: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1080",
+    img: "branding.jpg",
     deliverables: ["Corporate Identity Guidelines", "Brand Story Messaging", "Customer Trust Building Cues", "Premium Market Placement", "Unified Brand Asset Blueprints"]
   },
   {
