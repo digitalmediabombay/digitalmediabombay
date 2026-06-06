@@ -1580,7 +1580,7 @@ const App = () => {
     icon: <HelpCircle size={32} className="text-yellow-400" />,
     desc: "Professional 1-on-1 brand audits and structural growth roadmaps engineered to bypass market blocks and cut ad waste.",
     color: "yellow",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1080",
+    img: "https://i.pinimg.com/1200x/33/d9/53/33d9530ea6da45019abd5bc307a0e642.jpg",
     deliverables: ["Structural Brand Audits", "Competitor Data Analysis", "Marketing Cost Cutting Plans", "Monthly Revenue Roadmap Drafts", "1-on-1 Growth Consultation Sessions"]
   }
 ];
