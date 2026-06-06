@@ -7149,7 +7149,7 @@ const ContactUsPage = ({ navigateTo }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
             {socials.map((s, i) => (
               
-                key={i} href={s.url} target="_blank" rel="noopener noreferrer"
+key={i} href={s.url} target="_blank" rel="noopener noreferrer"
                 className="group flex items-start gap-4 p-5 rounded-2xl bg-[#0f2440]/40 border border-slate-700 hover:border-slate-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${s.color} flex items-center justify-center text-white flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
