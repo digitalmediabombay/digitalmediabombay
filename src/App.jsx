@@ -1517,7 +1517,7 @@ const App = () => {
     icon: <MapPin size={32} className="text-amber-400" />,
     desc: "We optimize your local search placement maps so local buyers locate and call your branch immediately when looking for services nearby.",
     color: "amber",
-    img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1080",
+    img: "https://www.inquisitor.in/img/other/google-list-services-top-banner.jpeg",
     deliverables: ["Google Map Listing Creation", "Local Street Ranking Updates", "Review Sourcing Systems", "Address Data Verifications", "Transit corridor Optimization"]
   },
   {
