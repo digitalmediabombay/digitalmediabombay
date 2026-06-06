@@ -7202,7 +7202,7 @@ const ContactUsPage = ({ navigateTo }) => {
             <div className="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl min-h-[350px] relative">
               <iframe
                 title="Digital Media Bombay Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.2897543765527!2d72.85685931490218!3d19.07982098709939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c94aaaaaaaab%3A0x1234567890abcdef!2sKalina%2C%20Santacruz%20East%2C%20Mumbai%2C%20Maharashtra%20400098!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.6980963292251!2d72.86326834340373!3d19.075655035642026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa86c7b0932c4fe9%3A0x6e6dc190d854b18c!2sDigital%20Media%20Bombay!5e0!3m2!1sen!2sin!4v1780768271485!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85) contrast(0.9)', minHeight: '350px' }}
