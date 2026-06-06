@@ -1508,7 +1508,7 @@ const App = () => {
     icon: <Layers size={32} className="text-emerald-400" />,
     desc: "Paid commercial placements across Facebook, Instagram, and Google dashboards to put your services right in front of high-intent buyers.",
     color: "emerald",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1080",
+    img: "metagoogleads.png",
     deliverables: ["Facebook Lead Forms", "Instagram Feed Placements", "Google Search Paid Clicks", "Target Audience Adjustments", "Ad Budget Protection Settings"]
   },
   {
@@ -1535,7 +1535,7 @@ const App = () => {
     icon: <Terminal size={32} className="text-slate-400" />,
     desc: "High-impact video clipping layouts and text animations that stop casual scrolling behaviors on mobile applications in split seconds.",
     color: "slate",
-    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1080",
+    img: "https://i.pinimg.com/736x/24/6d/fd/246dfdfeed723319a5fa504152e328eb.jpg",
     deliverables: ["Mobile Reels Production", "Captions & Text Animations", "Visual Sound Design Additions", "Kinetic Hook Strategies", "YouTube Short Edits"]
   },
   {
@@ -1544,7 +1544,7 @@ const App = () => {
     icon: <Palette size={32} className="text-teal-400" />,
     desc: "Beautiful, pixel-perfect visual layouts, creative social post grids, and clean marketing banners designed completely for your brand.",
     color: "teal",
-    img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1080",
+    img: "https://i.pinimg.com/1200x/bd/dd/2a/bddd2a086b0f4fedaf5fb5353aa70dd8.jpg",
     deliverables: ["Social Grid Layout Design", "Commercial Ad Graphics", "Marketing Banner Designs", "Custom Presentation Decks", "Print Flyer Files"]
   },
   {
@@ -1562,7 +1562,7 @@ const App = () => {
     icon: <ShieldCheck size={32} className="text-rose-400" />,
     desc: "We write highly persuasive, clear, and punchy promotional sales lines for your landing fields that make real people buy.",
     color: "rose",
-    img: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1080",
+    img: "https://i.pinimg.com/736x/18/43/ba/1843bac220f5cfd9e4fefb785dc22e00.jpg",
     deliverables: ["Landing Page Content Lines", "High-Converting Ad Copy", "Sales Page Headline Drafts", "Email Sales Pitch Sequences", "Clear Problem-Solving Messaging"]
   },
   {
@@ -1571,7 +1571,7 @@ const App = () => {
     icon: <Code size={32} className="text-cyan-500" />,
     desc: "Stunning page interfaces and custom user layout setups designed completely from clean slates using Figma vectors.",
     color: "cyan",
-    img: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1080",
+    img: "https://i.pinimg.com/736x/ee/79/de/ee79def0d8c57ffb0dc8a05b4e395bda.jpg",
     deliverables: ["Custom Figma Interface Sets", "User Flow Layout Mapping", "High-Retention Visual Flows", "Interactive Screen Mockups", "Unique Component Prototyping"]
   },
   {
