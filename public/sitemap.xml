@@ -31,7 +31,32 @@
     <lastmod>2026-05-25</lastmod>
     <priority>0.60</priority>
   </url>
-
+  <url>
+    <loc>https://www.digitalmediabombay.com/pricing</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/contact-us</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/starterbundles</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/growthbundles</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.digitalmediabombay.com/royalebundles</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.80</priority>
+  </url>
+  
   <url>
     <loc>https://www.digitalmediabombay.com/llms.txt</loc>
     <lastmod>2026-05-30</lastmod>
