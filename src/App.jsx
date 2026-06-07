@@ -2742,52 +2742,22 @@ const Footer = () => (
         
 
         {/* Column 1: Logo Section */}
-
-        <div className="col-span-1">
-
-          <div 
-
-            onClick={() => navigateTo('home')} 
-
-            className="flex-shrink-0 cursor-pointer group mb-4"
-
-          >
-
-            {/* Logo size increased from h-20 to h-60 (and w-auto for aspect ratio) */}
-
-            <img 
-
-              src="/logo.png" 
-
-              alt="Digital Media Bombay Logo" 
-
-              className="h-60 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
-
-            />
-
-          </div>
-
-          
-
-          <span 
-
-            onClick={() => navigateTo('home')}
-
-            className="font-bold text-2xl tracking-tight text-white block whitespace-nowrap cursor-pointer"
-
-          >
-
-            DIGITAL MEDIA <span className="text-amber-400">BOMBAY</span>
-
-          </span>
-
-          
-
-          <p className="mt-4 text-slate-400 text-sm leading-relaxed">
-
-            Mumbai's first AI-Powered Smart Agency. We combine top 1% human talent with advanced automation.
-
-          </p>
+<div className="col-span-1">
+  <div 
+    onClick={() => navigateTo('home')} 
+    className="flex-shrink-0 cursor-pointer group mb-4"
+  >
+    {/* Logo size increased from h-20 to h-60 (and w-auto for aspect ratio) */}
+    <img 
+      src="/logo.png" 
+      alt="Digital Media Bombay Logo" 
+      className="h-60 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+    />
+  </div>
+  
+  <p className="mt-6 text-slate-400 text-sm leading-relaxed">
+    Mumbai's first AI-Powered Smart Agency. We combine top 1% human talent with advanced automation.
+  </p>
 
           
 
