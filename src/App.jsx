@@ -1118,6 +1118,7 @@ const App = () => {
   const [isLocationLocked, setIsLocationLocked] = useState(true);
   const [currencySymbol, setCurrencySymbol] = useState('₹');
   const [selectedWebType, setSelectedWebType] = useState(null);
+  const [selectedTier, setSelectedTier] = useState(getInitialTier());
 
   // 2. Dynamic SEO, GEO, & AEO Optimized Engine
   useEffect(() => {
