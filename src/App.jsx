@@ -2508,7 +2508,7 @@ const Header = () => (
 
     alt="Digital Media Bombay Logo" 
 
-   className="h-26 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+   className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
 
           />
 
